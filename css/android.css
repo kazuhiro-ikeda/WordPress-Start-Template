@@ -1,15 +1,15 @@
 /*//////////////////////////////////////////
 
-	@640
+	アンドロイドバグフィックス
 
 //////////////////////////////////////////*/
 @media (max-width:640px){
 
-/* Android bugfix */
+/* Android bugfix ４系 */
 p {
 	background-image:url(image);
 }
-h1 , h2 , h3 , h4 , h5 , h6 {
+h1 , h2 , h3 , h4 , h5 , h6 , th , td {
 	background-image:url(image);
 }
 
