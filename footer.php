@@ -14,12 +14,8 @@
 	    }
 	};
 	$.preloadimages(
-		"<?php bloginfo('template_url'); ?>/images/common/nav-eg_on.png",
-		"<?php bloginfo('template_url'); ?>/images/common/nav-dg_on.png",
-		"<?php bloginfo('template_url'); ?>/images/common/nav-gc_on.png",
-		"<?php bloginfo('template_url'); ?>/images/common/nav-teachers_on.png",
-		"<?php bloginfo('template_url'); ?>/images/common/nav-ae_on.png",
-		"<?php bloginfo('template_url'); ?>/images/common/nav-news_on.png"
+		"<?php bloginfo('template_url'); ?>/images/common/xxx_on.png",
+		"<?php bloginfo('template_url'); ?>/images/common/yyy_on.png"
 	);
 </script>
 <?php wp_footer(); ?>

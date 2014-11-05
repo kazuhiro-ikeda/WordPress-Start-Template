@@ -52,8 +52,40 @@ a {
 }
 .empty {
 	display: none;
-
 }
+
+/*//////////////////////////////////////////
+
+	PC SP 切り分け
+
+//////////////////////////////////////////*/
+.pc-block {
+	display: block;
+}
+.sp-block {
+	display: none;
+}
+.pc-inline {
+	display: inline;
+}
+.sp-inline {
+	display: none;
+}
+
+@media (max-width:640px){
+.pc-block {
+	display: none;
+}
+.sp-block {
+	display: block;
+}
+.pc-inline {
+	display: none;
+}
+.sp-inline {
+	display: inline;
+}
+}/* /sp */
 
 /*//////////////////////////////////////////
 
@@ -62,24 +94,18 @@ a {
 //////////////////////////////////////////*/
 body {
 	color: #595757;
-	font-family: 'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3', Meiryo, メイリオ, sans-serif;
+	font-family: Meiryo, メイリオ, 'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3', sans-serif;
 	font-size: 16px;
 	word-wrap: break-word;
 	-webkit-font-smoothing: subpixel-antialiased;
 	}
-wrap {
-
-}
-.container {
-
-}
 
 /*//////////////////////////////////////////
 
 	段落 / 見出し / 文書 
 
 //////////////////////////////////////////*/
-.single p , .page p {
+p {
 	line-height: 175%;
 	margin-bottom: 25px;
 	text-align: justify;
@@ -122,16 +148,8 @@ footer {
 	メインエリアレイアウト
 
 //////////////////////////////////////////*/
-.main {
 
-}
-/* サイド */
-article.contents {
 
-}
-aside.side {
-
-}
 
 
 

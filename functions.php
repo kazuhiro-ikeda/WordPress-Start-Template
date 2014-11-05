@@ -1,4 +1,15 @@
 <?php
+	
+	// カスタムメニュー
+	register_nav_menus(
+		array(
+			'global' => 'グローバル' ,
+			'side-01' => 'サイド01' ,
+			'footer-01' => 'フッター01' ,
+			'sp-01' => 'スマホ01' ,
+			'sitemap-01' => 'サイトマップ01' ,
+			)   
+			);
 
 	//エディタのスタイル
 	add_editor_style('editor-style.css');
