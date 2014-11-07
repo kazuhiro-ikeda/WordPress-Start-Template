@@ -75,6 +75,19 @@
 			return $classes;
 		}
 		add_filter('body_class', 'pagename_class');
+		
+	//アイキャッチ画像の有効化
+		add_theme_support('post-thumbnails');
+		add_image_size( 'image-l', 640, 480, true ); 
+		add_image_size( 'image-m', 320, 240, true ); 
+		add_image_size( 'image-s', 160, 120, true );
+		
+	//カテゴリをID順に取得
+		function get_the_category_orderby_parent( $categories ) {
+		    usort( $categories, '_usort_terms_by_ID');
+		    return $categories;
+		}
+		add_filter( 'get_the_categories', 'get_the_category_orderby_parent' );
 
 	//不要なタグを表示しない
 		remove_action('wp_head', 'wp_generator');
