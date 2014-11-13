@@ -6,6 +6,7 @@
 <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 <meta name="viewport" content="width=640">
 <link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_url'); ?>">
+<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css" />
 <link rel="shortcut icon" href="<?php bloginfo('template_url'); ?>/favicon.ico">
 <link rel="apple-touch-icon" href="<?php bloginfo('template_url'); ?>/icon.png">
 <title>
