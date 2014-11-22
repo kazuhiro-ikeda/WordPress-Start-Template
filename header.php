@@ -56,9 +56,9 @@
 						'theme_location' => 'global' ,
 						'container'       => 'nav',
 						'container_id'    => 'global-nav',
-						'container_class' => 'screen cl',
+						'container_class' => '',
 						'menu_id'         => 'global-ul',
-						'menu_class'      => 'ul-nav'
+						'menu_class'      => 'ul-nav screen cl'
 						//スタイル
 						//<nav id="global-nav" class="screen cl">
 						//<ul id="global-ul" class="ul-nav">

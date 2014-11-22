@@ -146,7 +146,7 @@ ul#global-ul {/* グローバルナビ ul */
 .ul-nav li a {
 	display: block;
 }
-.ul-nav li a:first-child {}
+.ul-nav li:first-child a {}
 
 
 /*//////////////////////////////////////////
