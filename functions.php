@@ -4,7 +4,7 @@
 		register_nav_menus(
 			array(
 				'global' => 'グローバル' ,
-				'side-01' => 'サイド01' ,
+				'side' => 'サイド' ,
 				'footer-01' => 'フッター01' ,
 				'sp-01' => 'スマホ01' ,
 				'sitemap-01' => 'サイトマップ01' ,
