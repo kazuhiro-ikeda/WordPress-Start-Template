@@ -133,6 +133,21 @@ header {
 	グローバルナビ
 
 //////////////////////////////////////////*/
+nav#global-nav {/* グローバルナビ nav エリア */
+
+}
+ul#global-ul {/* グローバルナビ ul */
+	
+}
+.ul-nav {}
+.ul-nav li {
+	float: left;
+}
+.ul-nav li a {
+	display: block;
+}
+.ul-nav li a:first-child {}
+
 
 /*//////////////////////////////////////////
 

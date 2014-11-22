@@ -32,35 +32,43 @@
 <body <?php body_class(); ?>>
 	
 <header>
-	<?php wp_nav_menu(
-		array(
-			'theme_location' => 'global' ,
-			'container'       => 'nav',
-			'container_id'    => '',
-			'container_class' => 'screen cl',
-			'menu_id'         => 'global-nav',
-			'menu_class'      => ''
-			//スタイル
-			//<nav class="screen cl">
-			//<ul id="global-nav">
-			//<li><a href=""></a></li>
-			//</ul>
-			//</nav>
-	)); ?>
+		<!-- サイトID -->
+		<div id="site-id">
+			<a href="<?php bloginfo('url'); ?>"><<?php diverge_site_id(); ?> class="logo">
+			<img src="<?php bloginfo('template_url'); ?>/images/common/id-logo.png" alt="<?php bloginfo('name'); ?>" width="433" height="26"></<?php diverge_site_id(); ?>></a>
+			<a href="<?php bloginfo('url'); ?>"><<?php diverge_tagline(); ?> class="tagline">
+			<img src="<?php bloginfo('template_url'); ?>/images/common/id-simbol.png" alt="<?php bloginfo('description'); ?>" width="234" height="120" class="simbol"></<?php diverge_tagline(); ?>></a>
+		</div><!-- /site-id -->
 	
-	<!-- サイトID -->
-	<div id="site-id">
-		<a href="<?php bloginfo('url'); ?>"><<?php diverge_site_id(); ?> class="logo">
-		<img src="<?php bloginfo('template_url'); ?>/images/common/id-logo.png" alt="<?php bloginfo('name'); ?>" width="433" height="26"></<?php diverge_site_id(); ?>></a>
-		<a href="<?php bloginfo('url'); ?>"><<?php diverge_tagline(); ?> class="tagline">
-		<img src="<?php bloginfo('template_url'); ?>/images/common/id-simbol.png" alt="<?php bloginfo('description'); ?>" width="234" height="120" class="simbol"></<?php diverge_tagline(); ?>></a>
-	</div><!-- /site-id -->
-	
-	<h1><?php
-			global $wp_query;
-			$postID = $wp_query->post->ID;
-			echo get_post_meta($postID, 'h1', true);
-		?></h1>
+		<h1><?php
+				global $wp_query;
+				$postID = $wp_query->post->ID;
+				echo get_post_meta($postID, 'h1', true);
+			?></h1>
+			
+	<?php if (wp_is_mobile()) : ?>
+				<!-- mobile -->
+				
+		<?php else : ?>
+				<!-- pc -->
+				<?php wp_nav_menu(
+					array(
+						'theme_location' => 'global' ,
+						'container'       => 'nav',
+						'container_id'    => 'global-nav',
+						'container_class' => 'screen cl',
+						'menu_id'         => 'global-ul',
+						'menu_class'      => 'ul-nav'
+						//スタイル
+						//<nav id="global-nav" class="screen cl">
+						//<ul id="global-ul" class="ul-nav">
+						//<li><a href=""></a></li>
+						//</ul>
+						//</nav>
+				)); ?>
+				
+		<?php  endif; ?>
+				<!-- /if_mobile -->
 	
 	
 </header>
