@@ -1,5 +1,19 @@
 <?php get_header(); ?>
+
 <article id="main" <?php post_class(); ?>>
+	<?php
+		if ( is_front_page() && is_home() ) {
+			// デフォルトホームページ
+			} elseif ( is_front_page() ) {
+			// 固定ペーシを使ったホームページ
+			} elseif ( is_home() ) {
+			// ブログページ
+			} else {
+				//WP Sitemanager breadcrumb
+				if ( class_exists( 'WP_SiteManager_bread_crumb' ) ) { WP_SiteManager_bread_crumb::bread_crumb(); } /* 条件分岐とセットの記述　単独では <?php ?> で囲む*/ 
+		}
+	?>
+	
 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 	<h1><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h1>
 	<?php remove_filter ('the_content', 'wpautop'); ?>

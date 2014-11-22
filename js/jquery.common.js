@@ -31,16 +31,16 @@ Author : Kazuhiro Ikeda
 	//トグルパネル
 	/* 
 		USAGE
-		<div class="toggle" data-number="0">トグル</div>
-		<div id="panel0" class="hide-panel">パネル</div>
+		<div class="toggle" title="navigation">トグル</div>
+		<div class="hide-panel panel-navigation">パネル</div>
 	 */
 	
 		$(function(){
 			$(".hide-panel").hide();
 			$(".toggle").css("cursor" , "pointer");
 			$(".toggle").on("click", function() {
-				var panelId = $(this).attr("data-number");
-				var panel = "#panel" + panelId;
+				var panelId = $(this).attr("title");
+				var panel = ".panel-" + panelId;
 				$(this).toggleClass("active");//開いた時、ボタンにクラスを追加
 				$(panel).fadeToggle("fast");//”slow”、”normal”、”fast”
 			});

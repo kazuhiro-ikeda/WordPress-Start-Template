@@ -167,7 +167,27 @@ footer {
 #main {}
 #sidebar {}
 
+/*//////////////////////////////////////////
 
+	パン屑
+
+//////////////////////////////////////////*/
+ul.bread_crumb {
+	margin-bottom: 15px;
+}
+.bread_crumb li {
+	display: inline;
+}
+.bread_crumb li.sub{
+}
+.bread_crumb li.sub:before {
+	content: "　＞　"
+} 
+@media (max-width:640px){
+ul.bread_crumb {
+	margin-left: 15px;
+}
+}/* /sp */
 
 
 
