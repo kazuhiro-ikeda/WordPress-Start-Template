@@ -1,10 +1,11 @@
 /*
 Author : Kazuhiro Ikeda
 */
-	
+
+$(function(){
+		
 	//ロールオーバー
-	
-		$(function(){
+		
 			$("img.rollover").mouseover(function(){
 				$(this).attr("src",$(this).attr("src").replace(/^(.+)(\.[a-z]+)$/, "$1_on$2"));
 			}).mouseout(function(){
@@ -12,12 +13,9 @@ Author : Kazuhiro Ikeda
 			}).each(function(){
 				$("<img>").attr("src",$(this).attr("src").replace(/^(.+)(\.[a-z]+)$/, "$1_on$2"));
 			});
-		});
-		
 		
 	//スムーススクロール
 	
-		$(function(){
 			$('a[href^=#]').click(function() {
 			   	var speed = 400; 
 			   	var href= jQuery(this).attr("href");
@@ -26,16 +24,14 @@ Author : Kazuhiro Ikeda
 			$('body,html').animate({scrollTop:position}, speed, 'swing');
 		    	return false;
 			});
-		});
 
 	//トグルパネル
 	/* 
 		USAGE
 		<div class="toggle" title="navigation">トグル</div>
-		<div class="hide-panel panel-navigation">パネル</div>
+		<div class="panel-navigation hide-panel">パネル</div>
 	 */
 	
-		$(function(){
 			$(".hide-panel").hide();
 			$(".toggle").css("cursor" , "pointer");
 			$(".toggle").on("click", function() {
@@ -44,4 +40,5 @@ Author : Kazuhiro Ikeda
 				$(this).toggleClass("active");//開いた時、ボタンにクラスを追加
 				$(panel).fadeToggle("fast");//”slow”、”normal”、”fast”
 			});
-		});
+			
+});// END TAG
