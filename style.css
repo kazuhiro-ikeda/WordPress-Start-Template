@@ -1,3 +1,4 @@
+@charset "utf-8";
 /*
 Theme Name: スターターパッケージ
 Theme URI: http://xxx.jp/
@@ -8,3 +9,6 @@ Author URI: http://moriad.jp/
 */
 @import url(css/reset.css);
 @import url(css/common.css);
+
+@import url(css/custom.css);
+

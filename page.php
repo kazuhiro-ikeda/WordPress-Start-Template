@@ -10,7 +10,7 @@
 			<?php endwhile; else: ?>
 				<p>お探しの記事はありません。</p>
 			<?php endif; ?>
-			</article></article><!-- /#main post_class -->
+			</article><!-- /#main post_class -->
 			<?php else : ?>
 			
 			<!-- pc -->
