@@ -7,18 +7,8 @@
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script> 
 <script src="<?php bloginfo(template_url);?>/js/jquery.common.js"></script>
-<script>
-	//nav
-	jQuery.preloadimages = function(){
-	    for(var i = 0; i<arguments.length; i++){
-	        jQuery("<img>").attr("src", arguments[i]);
-	    }
-	};
-	$.preloadimages(
-		"<?php bloginfo('template_url'); ?>/images/common/xxx_on.png",
-		"<?php bloginfo('template_url'); ?>/images/common/yyy_on.png"
-	);
-</script>
+<script src="<?php bloginfo(template_url);?>/js/jquery.adjust.js"></script>
+
 <?php wp_footer(); ?>
 </body>
 </html>
