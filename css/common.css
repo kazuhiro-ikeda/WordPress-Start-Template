@@ -54,6 +54,41 @@ a {
 .empty {
 	display: none;
 }
+/* ボトムマージン調整 */
+.margin-bottom-0 {
+	margin-bottom: 0 !important;
+	display: block;
+}
+.margin-bottom-5 {
+	margin-bottom: 5px !important;
+	display: block;
+}
+.margin-bottom-10 {
+	margin-bottom: 10px !important;
+	display: block;
+}
+.margin-bottom-15 {
+	margin-bottom: 15px !important;
+	display: block;
+}
+/* マージン調節 */
+.margin-height-0 {
+	margin-top: 0 !important;
+	margin-bottom: 0 !important:
+}
+.margin-height-5 {
+	margin-top: 5px !important;
+	margin-bottom: 5px !important:
+}
+.margin-height-10 {
+	margin-top: 10px !important;
+	margin-bottom: 10px !important:
+}
+.margin-height-15 {
+	margin-top: 15px !important;
+	margin-bottom: 15px !important:
+}
+
 
 /*//////////////////////////////////////////
 
