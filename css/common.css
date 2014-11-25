@@ -88,7 +88,13 @@ a {
 	margin-top: 15px !important;
 	margin-bottom: 15px !important:
 }
-
+/* 左右マージン 0 */
+.margin-left-0 {
+	margin-left: 0 !important;
+}
+.margin-right-0 {
+	margin-right: 0 !important;
+}
 
 /*//////////////////////////////////////////
 
