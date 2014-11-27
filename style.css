@@ -9,6 +9,8 @@ Author URI: http://moriad.jp/
 */
 @import url(css/reset.css);
 @import url(css/common.css);
+@import url(css/hgroup-btn-box.css);
+@import url(css/form.css);
 
 @import url(css/custom.css);
 

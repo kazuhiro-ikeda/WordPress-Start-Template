@@ -1,0 +1,76 @@
+@charset "utf-8";
+/*//////////////////////////////////////////
+
+	form
+	
+//////////////////////////////////////////*/
+.form {
+	width: 100%;
+	line-height: 175%;
+	border: 1px solid #8f0780;
+}
+.form th {
+	border: 1px solid #8f0780;
+	padding: 10px 15px;
+	border: 1px solid #8f0780;
+	background-color: #f2e1f0;
+}
+.form td {
+	padding: 10px 15px;
+	border: 1px solid #8f0780;
+}
+input[type="text"] {
+	width: 430px;
+	height: 30px;
+	font-size: 18px;
+}
+textarea {
+	width: 500px;
+	font-size: 18px;
+	height: 90px;
+}
+select , input[type="button"] {
+	cursor: pointer;
+}
+a.btn-send {
+	width: 240px;
+	display: block;
+	margin: 20px auto;
+}
+input[type="button"] {
+	border: none;
+	background-color: white;
+	background-image: url(../images/common/xxx.png);
+	background-repeat: no-repeat;
+	width: xxxpx;
+	height: xxxpx;
+}
+select {
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+    width: 200px;
+    height: 30px;
+    border: 1px solid #a0a0a0;
+    border-radius: 0;
+    text-indent: 2em;
+    line-height: 1.5em;
+    background-image: url(../images/common/form-select-arrows-pc.png);
+    background-repeat: no-repeat;
+    background-position: right center;
+    font-size: 18px;
+}
+@-moz-document url-prefix() {/* firefoxハック */
+select {
+	-webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+	text-indent: 0.2em;
+	background-image: none;
+}
+}
+@media screen and (-webkit-min-device-pixel-ratio:0) {/* chromeハック */
+select {
+    text-indent: 0.2em;
+}
+}
