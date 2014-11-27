@@ -10,7 +10,7 @@
 			if(has_post_thumbnail()) {
 				the_post_thumbnail('image-small');
 			} else {
-				echo '<img src="'. get_template_directory_uri() .'/images/common/no-img-small.png" class="eye-catch"/>';
+				echo '<img src="'. get_template_directory_uri() .'/images/common/no-img-small.png" class="eye-catch-no_img"/>';
 			}
 		?>
 		<div class="r-box">
@@ -23,8 +23,9 @@
 		</div><!-- /.category-nav cl -->
 		</a>
 	<?php endwhile; else: ?>
-	<p style="text-align:center; font-size:24px; font-weight:bold; color:#ddd; margin:100px auto;">お探しの記事は準備中です。<br>近日中に公開となります。</p>
+		<p style="text-align:center; font-size:24px; font-weight:bold; color:#ddd; margin:100px auto;">お探しの記事は準備中です。<br>近日中に公開となります。</p>
 	<?php endif; ?>
+		<?php if ( class_exists( 'WP_SiteManager_page_navi' ) ) { WP_SiteManager_page_navi::page_navi(); } ?>
 	
 </article><!-- /.contents -->
 
