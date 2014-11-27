@@ -12,7 +12,7 @@
 <title>
 <?php full_title(); ?>
 </title>
-<meta name="Author" content="xxx">
+<meta name="Author" content="<?php bloginfo('name'); ?>">
 <script>
 (function(){
     var _UA = navigator.userAgent;
