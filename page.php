@@ -2,16 +2,12 @@
 
 <article id="main" <?php post_class(); ?>>
 	<?php
-		if ( is_front_page() && is_home() ) {
-			// デフォルトホームページ
-			} elseif ( is_front_page() ) {
-			// 固定ペーシを使ったホームページ
-			} elseif ( is_home() ) {
-			// ブログページ
-			} else {
-				//WP Sitemanager breadcrumb
-				if ( class_exists( 'WP_SiteManager_bread_crumb' ) ) { WP_SiteManager_bread_crumb::bread_crumb(); } /* 条件分岐とセットの記述　単独では <?php ?> で囲む*/ 
-		}
+		if(is_front_page()):
+			//
+		else:
+			//
+			if ( class_exists( 'WP_SiteManager_bread_crumb' ) ) { WP_SiteManager_bread_crumb::bread_crumb(); } /* 条件分岐とセットの記述　単独では <?php ?> で囲む*/
+		endif;
 	?>
 	
 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
