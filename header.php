@@ -16,7 +16,7 @@
 <script>
 (function(){
     var _UA = navigator.userAgent;
-    if (_UA.indexOf('iPhone') > -1 || _UA.indexOf('iPod') > -1) {
+    if (_UA.indexOf('iPhone') > -1 || _UA.indexOf('iPad') > -1) {
         document.write('<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/iphone.css">');
     }else if(_UA.indexOf('Android') > -1){
         document.write('<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/android.css">');

@@ -9,9 +9,15 @@ Author URI: http://moriad.jp/
 */
 @import url(css/reset.css);
 @import url(css/common.css);
+@import url(css/preload.css);
 @import url(css/hgroup-btn-box.css);
+
+/* ページ */
 @import url(css/form.css);
 
+/* テスト */
 @import url(css/custom.css);
+
+/* jQuery */
 @import url(css/lightbox.css);
 
