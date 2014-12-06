@@ -40,5 +40,30 @@ $(function(){
 				$(this).toggleClass("active");//開いた時、ボタンにクラスを追加
 				$(panel).fadeToggle("fast");//”slow”、”normal”、”fast”
 			});
+	
+	//ホバーメニュー
+	/*
+		USSAGE
+		<ul>
+			<li>AAA</li>
+			<li class="list-btn">BBB
+			<ul class="sub-panel">
+				<li>１２３４</li>
+				<li>５６７８</li>
+				<li>９１０１１</li>
+				<li>１２１３１４１５</li>
+			</ul>
+			</li>
+			<li>CCC</li>
+			<li>DDD</li>
+		</ul>
+	*/
+			$(".sub-panel").hide();
+			$(".list-btn").hover(function(){
+				$(this).find("ul").slideDown("slow");
+			}, function(){
+				$(this).find("ul").slideUp("fast");
+			});	
+			
 			
 });// END TAG
