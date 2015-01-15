@@ -29,14 +29,14 @@ $(function(){
 	/* 
 		USAGE
 		<div class="toggle" title="navigation">トグル</div>
-		<div class="panel-navigation hide-panel">パネル</div>
+		<div id="panel-navigation" class="hide-panel">パネル</div>
 	 */
 	
 			$(".hide-panel").hide();
 			$(".toggle").css("cursor" , "pointer");
 			$(".toggle").on("click", function() {
 				var panelId = $(this).attr("title");
-				var panel = ".panel-" + panelId;
+				var panel = "#panel-" + panelId;
 				$(this).toggleClass("active");//開いた時、ボタンにクラスを追加
 				$(panel).fadeToggle("fast");//”slow”、”normal”、”fast”
 			});
