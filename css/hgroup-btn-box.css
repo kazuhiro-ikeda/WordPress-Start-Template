@@ -5,26 +5,8 @@
 	
 //////////////////////////////////////////*/
 /* 共通項目 */
-h2 , h3 {font-size: 23px; height: 42px;/* 48px; */ padding-top: 6px; text-align: center; margin-bottom: 30px;}
-h4 {font-size: 15px; text-align: left;}
+
 /* スタイル別 */
-.h-01 {background-image: url(../images/hgroup-btn/bg-square-brown.png); color: #40220f;}
-.h-02 {background-color: #e6e6e6; color: #231815;}
-.h-03 {color: #e1007f;}
-.h-04 {color: #e75514; text-align: left;}
-.h-05 {color: #40220f; border-bottom: 1px solid #c8c8c8;　margin-bottom: 25px; text-align: left;}
-.h-05 a {float: right;}
-
-@media (max-width:640px){
-/* 共通項目 */
-h2 , h3 {font-size: 28px; height: 49px;/* 55px; */ padding-top: 6px; text-align: center; margin-bottom: 30px;}
-h4 {font-size: 22px; text-align: center;}
-.h-03 {color: #d40051;}
-.h-04 {color: #e75514; text-align: center;}
-.h-05 {color: #40220f; border-bottom: none;　margin-bottom: 0; text-align: center; height: 90px; overflow: hidden;}
-.h-05 a {float: none; display: block; position: relative; left: 200px;}
-
-}/* /640px */
 
 /*//////////////////////////////////////////
 
@@ -32,27 +14,22 @@ h4 {font-size: 22px; text-align: center;}
 	
 //////////////////////////////////////////*/
 /* 共通項目 */
-a.btn {display: block; background-repeat: no-repeat; color: white; font-size: 23px; font-weight: bold; text-align: center; margin-bottom: 20px;}
-a.btn:hover {filter: alpha(opacity=50); -moz-opacity:0.5; opacity:0.5;}
+.btn {
+	display: block;
+	background-repeat: no-repeat;
+}
+.btn:hover {
+	filter: alpha(opacity=50);
+	-moz-opacity:0.5;
+	opacity:0.5;
+	transition: opacity .15s ease-in-out;
+	-moz-transition: opacity .15s ease-in-out;
+	-webkit-transition: opacity .15s ease-in-out;
+	background-color: white;/* firefox バグフックス */
+}
+
 
 /* スタイル別 */
-.btn-01 {background-image: url(../images/hgroup-btn/btn-arrow-purple-long.png); height: 35px;/* 50px */ padding-top: 15px; margin-left: 3px;}
-.btn-02 {background-image: url(../images/hgroup-btn/btn-dia-arrow-pink-long.png); height: 39px;/* 60px */ padding-top: 21px;}
-.btn-03 {background-image: url(../images/hgroup-btn/btn-dia-arrow-purple-long.png); height: 39px;/* 60px */ padding-top: 21px;}
-.btn-02:after ,.btn-03:after {content:url(../images/hgroup-btn/btn-dia-arrow-icon-long.png); position: relative; top: -1px}
-
-@media (max-width:640px){
-/* 共通項目 */
-a.btn {display: block; background-repeat: no-repeat; color: white; font-size: 26px; font-weight: bold; text-align: center; margin-bottom: 25px;}
-a.btn:hover {filter: alpha(opacity=100); -moz-opacity:1; opacity:1;}
-
-/* スタイル別 */
-.btn-01 {background-image: url(../images/hgroup-btn/btn-arrow-purple-long-sp.png); height: 40px;/* 60px */ padding-top: 20px;}
-.btn-02 {background-image: url(../images/hgroup-btn/btn-dia-arrow-pink-long-sp.png); height: 40px;/* 54px */ padding-top: 14px;}
-.btn-03 {background-image: url(../images/hgroup-btn/btn-dia-arrow-purple-long-sp.png); height: 40px;/* 54px */ padding-top: 14px;}
-.btn-02:after ,.btn-03:after {content:url(../images/hgroup-btn/btn-dia-arrow-icon-long-sp.png); position: relative; top: -1px}
-
-}/* /640px */
 
 
 /*//////////////////////////////////////////
@@ -60,20 +37,12 @@ a.btn:hover {filter: alpha(opacity=100); -moz-opacity:1; opacity:1;}
 	ボックス
 	
 //////////////////////////////////////////*/
-.box-01 {border: 4px solid #c8c8c8; padding: 10px 20px; margin-bottom: 25px; overflow: hidden;}
-.box-01 > img {max-width: 679px; height: auto; width: auto; display: block; margin: 0 auto;}/* 直下の画像横幅サイズのはみ出し禁止調整 */
-
-@media (max-width:640px){
-.box-01 {border: 8px solid #c8c8c8; padding: 20px; margin-bottom: 30px; overflow: hidden;}
-.box-01 > img {max-width: 550px; height: auto; width: auto; display: block; margin: 0 auto;}/* 直下の画像横幅サイズのはみ出し禁止調整 */
-}/* /640px */
 
 /*//////////////////////////////////////////
 
 	しきり線
 	
 //////////////////////////////////////////*/
-.hr-dots {background-image: url(../images/hgroup-btn/hr-dots.png); background-repeat: repeat-x; border: none; height: 4px; clear: both; margin: 25px 0;}
 
 
 
