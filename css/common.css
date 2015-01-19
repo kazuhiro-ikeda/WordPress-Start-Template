@@ -235,6 +235,41 @@ ul.bread_crumb {
 }
 }/* /sp */
 
+/*//////////////////////////////////////////
+
+	ページネイション　WP Sitemanager
+	
+//////////////////////////////////////////*/
+.pagenation {
+	overflow: hidden;
+	margin: 40px 0;
+}
+ul.page_navi {
+	
+	float: left;
+	position: relative;
+	left: 50%;
+}
+.page_navi li {
+	float: left;
+	margin-right: 10px;
+	position: relative;
+	left: -50%;
+}
+.page_navi li a {
+	display: block;
+	border: 1px solid #d8d8d8;
+	padding: 5px 8px;
+}
+.page_navi li a:hover {
+	text-decoration: underline;
+}
+.page_navi li.current span {
+	display: block;
+	border: 1px solid #d8d8d8;/* サイズ調整 */
+	color: #323232;
+	padding: 5px 8px;
+}
 
 
 
