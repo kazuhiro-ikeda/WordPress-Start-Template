@@ -1,5 +1,53 @@
 <?php
 	
+	/*
+	//相対パスに変更
+		class relative_URI {
+				    function relative_URI() {
+				        add_action('get_header', array(&$this, 'get_header'), 1);
+				        add_action('wp_footer', array(&$this, 'wp_footer'), 99999);
+				    }
+				    function replace_relative_URI($content) {
+				        $home_url = trailingslashit(get_home_url('/'));
+				        return str_replace($home_url, '/', $content);
+				    }
+				    function get_header(){
+				        ob_start(array(&$this, 'replace_relative_URI'));
+				    }
+				    function wp_footer(){
+				        ob_end_flush();
+				    }
+				}
+		new relative_URI();
+		*/
+		
+	//管理画面スラッグ表示
+		function add_page_columns_name($columns) {
+	    $columns['slug'] = "スラッグ";
+	    return $columns;
+		}
+		function add_page_column($column_name, $post_id) {
+		    if( $column_name == 'slug' ) {
+		        $post = get_post($post_id);
+		        $slug = $post->post_name;
+		        echo attribute_escape($slug);
+		    }
+		}
+		add_filter( 'manage_pages_columns', 'add_page_columns_name');
+		add_action( 'manage_pages_custom_column', 'add_page_column', 10, 2);
+
+	//抜粋文の長さ
+		function custom_excerpt_length( $length ) {
+	     return 48;	
+		}	
+		add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
+	
+	//read more リンク
+		function new_excerpt_more( $more ) {
+		return '<br><a class="read-more" href="'. get_permalink( get_the_ID() ) . '">続きを見る→</a>';
+		}
+		add_filter( 'excerpt_more', 'new_excerpt_more' );
+	
 	// カスタムメニュー
 		register_nav_menus(
 			array(
