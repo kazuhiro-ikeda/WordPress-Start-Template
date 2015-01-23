@@ -43,7 +43,7 @@ $(function(){
 	
 	//ホバーメニュー
 	/*
-		USSAGE
+		USAGE
 		<ul>
 			<li>AAA</li>
 			<li class="list-btn">BBB
