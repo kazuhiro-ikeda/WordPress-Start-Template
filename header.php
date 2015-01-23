@@ -69,6 +69,4 @@
 				
 		<?php  endif; ?>
 				<!-- /if_mobile -->
-	
-	
 </header>
