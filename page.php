@@ -2,12 +2,12 @@
 
 <article id="main" <?php post_class(); ?>>
 	<?php
-		if(is_front_page()):
+		if(is_front_page()){
+			
+		} else{
 			//
-		else:
-			//
-			if ( class_exists( 'WP_SiteManager_bread_crumb' ) ) { WP_SiteManager_bread_crumb::bread_crumb(); } /* 条件分岐とセットの記述　単独では <?php ?> で囲む*/
-		endif;
+			if ( class_exists( 'WP_SiteManager_bread_crumb' ) ) { WP_SiteManager_bread_crumb::bread_crumb(); }
+		}
 	?>
 	
 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
