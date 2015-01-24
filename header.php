@@ -32,19 +32,20 @@
 <body <?php body_class(); ?>>
 	
 <header>
-		<!-- サイトID -->
-		<div id="site-id">
-			<a href="<?php bloginfo('url'); ?>"><<?php diverge_site_id(); ?> class="logo">
-			<img src="<?php bloginfo('template_url'); ?>/images/common/id-logo.png" alt="<?php bloginfo('name'); ?>" width="433" height="26"></<?php diverge_site_id(); ?>></a>
-			<a href="<?php bloginfo('url'); ?>"><<?php diverge_tagline(); ?> class="tagline">
-			<img src="<?php bloginfo('template_url'); ?>/images/common/id-simbol.png" alt="<?php bloginfo('description'); ?>" width="234" height="120" class="simbol"></<?php diverge_tagline(); ?>></a>
-		</div><!-- /site-id -->
-	
-		<h1><?php
-				global $wp_query;
-				$postID = $wp_query->post->ID;
-				echo get_post_meta($postID, 'h1', true);
-			?></h1>
+	<!-- サイトID -->
+	<div id="site-id">
+		<a href="<?php bloginfo('url'); ?>"><<?php diverge_site_id(); ?> class="logo">
+		<img src="<?php bloginfo('template_url'); ?>/images/common/id-logo.png" alt="<?php bloginfo('name'); ?>" width="433" height="26"></<?php diverge_site_id(); ?>></a>
+		<a href="<?php bloginfo('url'); ?>"><<?php diverge_tagline(); ?> class="tagline">
+		<img src="<?php bloginfo('template_url'); ?>/images/common/id-simbol.png" alt="<?php bloginfo('description'); ?>" width="234" height="120" class="simbol"></<?php diverge_tagline(); ?>></a>
+	</div>
+	<!-- /site-id -->
+
+	<h1><?php
+			global $wp_query;
+			$postID = $wp_query->post->ID;
+			echo get_post_meta($postID, 'h1', true);
+	?></h1>
 			
 	<?php if (wp_is_mobile()) : ?>
 				<!-- mobile -->
