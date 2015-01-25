@@ -51,6 +51,9 @@ a {
     vertical-align:baseline;
     background:transparent;
 }
+address {
+	font-style: normal;
+}
 /* change colours to suit your needs */
 ins {
     background-color:#ff9;
