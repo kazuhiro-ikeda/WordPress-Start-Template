@@ -64,6 +64,14 @@ $(function(){
 			}, function(){
 				$(this).find("ul").slideUp("fast");
 			});	
+	
+	//リンク無効
+			$('.no-link a').click(function(){
+				return false;
+			}).css('cursor' , 'default');
+			$('li.no-link a').hover(function(){
+				$(this).css('textDecoration' , 'none');
+			});
 			
 			
 });// END TAG
