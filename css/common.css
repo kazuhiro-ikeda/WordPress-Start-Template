@@ -54,6 +54,7 @@ a {
 .empty {
 	display: none;
 }
+
 /* ボトムマージン調整 */
 .mb-0 {
 	margin-bottom: 0 !important;
@@ -75,6 +76,7 @@ a {
 	margin-bottom: 25px !important;
 	display: block;
 }
+
 /* マージン調節 */
 .mh-0 {
 	margin-top: 0 !important;
@@ -92,6 +94,7 @@ a {
 	margin-top: 15px !important;
 	margin-bottom: 15px !important:
 }
+
 /* 左右マージン 0 */
 .ml-0 {
 	margin-left: 0 !important;
@@ -99,6 +102,18 @@ a {
 .mr-0 {
 	margin-right: 0 !important;
 }
+
+/* ラインハイト */
+.lh-200 {
+	line-height: 200%;
+}
+.lh-225 {
+	line-height: 225%;
+}
+.lh-250 {
+	line-height: 250%;
+}
+
 
 /*//////////////////////////////////////////
 
@@ -144,7 +159,17 @@ body {
 	font-size: 16px;
 	word-wrap: break-word;
 	-webkit-font-smoothing: subpixel-antialiased;
-	}
+}
+@media (max-width:768px){/* タブレット対応 <meta name="viewport" content="width= .screen + 40px"> */
+body {
+	margin: 0 20px;
+}
+}/* /768px */
+@media (max-width:640px){/* スマートフォン対応 <meta name="viewport" content="width= .screen + 40px"> */
+body {
+	margin: 0 20px;
+}
+}/* /640px */
 
 /*//////////////////////////////////////////
 
