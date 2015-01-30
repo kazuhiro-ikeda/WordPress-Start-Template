@@ -21,3 +21,53 @@ Author URI: http://moriad.jp/
 /* jQuery */
 @import url(css/lightbox.css);
 
+@charset "utf-8";
+
+
+/*//////////////////////////////////////////　コーディングポリシー　//////////////////////////////////////////*/
+/*
+＊命名規則
+	＊＊視認性及び必要以上の時間節約のために画像名とCSSクラス名は親子関係や単語の意味合いの違いがあってもハイフンつなぎで実装。
+		CSS：.xxx-yyy-zzz
+		画像：xxx-yyy-zzz.png 
+		
+	＊＊関係を「特に強調したい場合のみ」アンダーバーで表現
+		CSS：.box-osx_imac  .box-win_ibm など
+
+	＊＊画像はファインダーで探しやすいように命名は要素のカテゴリを意識して付与。大枠から小枠へ命名。
+		場所に関連して命名する場合　［場所］-［要素のカテゴリー］-［名称］：header-logo.png  footer-logo.png  header-btn-contact.png side-btn-contact.png  footer-btn-contact
+		要素に関連して命名する場合　［要素のカテゴリー］-［場所］-［名称］：logo-header.png  logo-footer.png  btn-header-contact.png  btn-side-contact.png  btn-footer-contact
+			
+	＊＊場所に依存するセレクタはあまり使用しない
+		よくない例：
+			#header h1 , footer p , nav ul , #hoge h2
+			
+		良い例：
+			<header>
+				<h1 class="page-ttl">hogehoge</h1>
+			</header>
+			
+			<nav id="hoge">
+				<ul id="nav-hoge" class="hoge-list nav-list">
+					<li class="hoge-list-item nav-list-item">hogehoge</li>
+				</ul>
+			</nav>
+			
+			<section id="hoge">
+				<h1 class="h-01">hogehoge</h1>
+			</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+*/
