@@ -73,5 +73,18 @@ $(function(){
 				$(this).css('textDecoration' , 'none');
 			});
 			
+	//フロートボックス　２カラム
+			$('ul.item-list-half li').addClass('heightLine');	
+			$('ul.item-list-half li:nth-child(odd)').css('float' , 'left');
+			$('ul.item-list-half li:nth-child(even)').css('float' , 'right');
+			$('ul.item-list-half').addClass('cl');
+			
+			
+	//フロートボックス　３カラム
+			$('ul.item-list-triple li:nth-child(n3)').css('margin-right' , '0');
+			$('ul.item-list-triple li').addClass('heightLine');		
+			
+			
+			
 			
 });// END TAG

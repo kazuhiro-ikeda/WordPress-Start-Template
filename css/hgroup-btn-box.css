@@ -37,6 +37,58 @@
 	ボックス
 	
 //////////////////////////////////////////*/
+/* コンテンツアイテムリスト・インナーフロート/ ボックス 750px、左画像 280px、右ボックス 435px */
+ul.item-list {
+}
+ul.item-list > li {
+	margin-bottom: 50px;/* 要調性 */
+}
+.item-box {
+}
+.item-box > img {
+	max-width: 280px;/* 要調性 */
+	height: auto;
+	width: auto;
+	display: block;
+	float: left;
+}
+.item-box-r {
+	width: 435px;/* 要調性 */
+	float: right;
+}
+
+/* コンテンツアイテムリスト／ハーフ  ボックス 750px、ハーフボックス 350px
+	必須　jquery.common.js にレイアウトスクリプトあり
+	必須　jquery.height
+*/
+ul.item-list-half {
+	/* jquery でクリアフィックス */
+}
+ul.item-list-half > li {
+	margin-bottom: 50px;/* 要調整 */
+	display: inline-block;
+	width: 350px;/* 要調整 */
+}
+
+/* コンテンツアイテムリスト／トリプル  ボックス 750px、３カラム 240px
+	必須　jquery.common.js にレイアウトスクリプトあり
+	必須　jquery.height
+*/
+ul.item-list-triple {
+}
+ul.item-list-triple > li {
+	margin-bottom: 50px;/* 要調整 */
+	display: inline-block;
+	width: 240px;/* 要調整 */
+	margin-right: 15px;/* 要調整 */
+}
+
+/* カラーボックス */
+.box-gray {
+	border: 1px solid #b5b5b6;/* 要調整 */
+	padding: 15px;/* 要調整 */
+	margin: 0 0 35px;/* 要調整 */
+}
 
 /*//////////////////////////////////////////
 
