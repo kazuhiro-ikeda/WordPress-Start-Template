@@ -234,7 +234,14 @@ footer {
 	メインエリアレイアウト
 
 //////////////////////////////////////////*/
-#main {}
+#main {
+	width: 750px;
+}
+#main img {
+	max-width: 750px;
+	height: auto;
+	width: auto;
+}
 #sidebar {}
 
 /*//////////////////////////////////////////
@@ -284,16 +291,16 @@ ul.page_navi {
 .page_navi li a {
 	display: block;
 	border: 1px solid #d8d8d8;
-	padding: 8px 8px 5px;
+	padding: 8px 8px 5px;/* サイズ調整 */
 }
 .page_navi li a:hover {
 	text-decoration: underline;
 }
 .page_navi li.current span {
 	display: block;
-	border: 1px solid #d8d8d8;/* サイズ調整 */
+	border: 1px solid #d8d8d8;
 	color: #323232;
-	padding: 8px 8px 5px;
+	padding: 8px 8px 5px;/* サイズ調整 */
 }
 
 
