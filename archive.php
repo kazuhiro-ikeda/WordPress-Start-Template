@@ -25,11 +25,8 @@
 			<!-- /.category-nav cl -->
 		</a>
 	<?php endwhile; else: ?>
-		<p style="text-align:center; font-size:24px; font-weight:bold; color:#ddd; margin:100px auto;">お探しの記事は準備中です。<br>近日中に公開となります。</p>
-	<?php endif; ?>
-	
 	<?php if ( class_exists( 'WP_SiteManager_page_navi' ) ) { WP_SiteManager_page_navi::page_navi(); } ?>
-	<?php 	/* ページ送りを使用する場合の必須設定　２項目
+	<?php 	/* WP_Queryなどページ送りを使用する場合の必須設定　２項目
 			$paged = get_query_var('paged') ? get_query_var('paged') : 1;←ページ送りの情報を取得
 			$args = array(
 			'paged' => $paged,←クエリに加える
@@ -46,7 +43,7 @@
 				)
 			); */
 	 ?>
-	
+	<?php endif; ?>
 </article>
 <!-- /.contents -->
 
