@@ -185,11 +185,11 @@ body {
 //////////////////////////////////////////*/
 p {
 	line-height: 175%;
-	margin-bottom: 25px;
 	text-align: justify;
 	text-justify: inter-ideograph;
 	-ms-text-justify: inter-ideograph;
 }
+
 /*//////////////////////////////////////////
 
 	ヘッダー
