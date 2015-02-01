@@ -3,7 +3,7 @@
 <div id="main" <?php post_class(); ?> role="main">
 <?php //アイキャッチ画像付き archive.php ?>
 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-	<?php remove_filter ('the_content', 'wpautop'); ?>
+<?php remove_filter ('the_content', 'wpautop'); ?>
 	<a href="<?php the_permalink(); ?>">
 		<div class="category-nav cl">
 		<?php 
@@ -24,6 +24,7 @@
 		</div>
 		<!-- /.category-nav cl -->
 	</a>
+	
 <?php endwhile; else: ?>
 <?php if ( class_exists( 'WP_SiteManager_page_navi' ) ) { WP_SiteManager_page_navi::page_navi(); } ?>
 <?php 	/* WP_Queryなどページ送りを使用する場合の必須設定　２項目
@@ -43,7 +44,9 @@
 			)
 		); */
  ?>
+ 
 <?php endif; ?>
+
 </div>
 <!-- /.contents -->
 
