@@ -60,7 +60,7 @@
 			'container_id'    => 'nav-global',
 			'container_class' => '',
 			'menu_id'         => 'nav-ul-global',
-			'menu_class'      => 'nav-list-global screen cl'
+			'menu_class'      => 'nav-list-horizontal screen cl'
 	)); ?>
 				
 <?php  endif ; //if_mobile ?>

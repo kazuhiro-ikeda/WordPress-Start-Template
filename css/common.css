@@ -210,14 +210,14 @@ header {
 	ナビゲーションリスト
 
 //////////////////////////////////////////*/
-.ul-nav {}
-.ul-nav li {
+.nav-list-horizontal {}
+.nav-list-horizontalv li {
 	float: left;
 }
-.ul-nav li a {
+.nav-list-horizontal li a {
 	display: block;
 }
-.ul-nav li:first-child a {}
+.nav-list-horizontal li:first-child a {}
 
 
 /*//////////////////////////////////////////
