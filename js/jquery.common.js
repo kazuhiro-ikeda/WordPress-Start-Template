@@ -35,7 +35,7 @@ $(function(){
 			$(".hide-panel").hide();
 			$(".toggle").css("cursor" , "pointer");
 			$(".toggle").on("click", function() {
-				var panelId = $(this).attr("title");
+				var panelId = $(this).attr("data-title");
 				var panel = "#panel-" + panelId;
 				$(this).toggleClass("active");//開いた時、ボタンにクラスを追加
 				$(panel).fadeToggle("fast");//”slow”、”normal”、”fast”
