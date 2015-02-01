@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<article id="main" <?php post_class(); ?>>
+<div id="main" <?php post_class(); ?> role="main">
 <?php //アイキャッチ画像付き archive.php ?>
 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 	<?php remove_filter ('the_content', 'wpautop'); ?>
@@ -44,7 +44,7 @@
 		); */
  ?>
 <?php endif; ?>
-</article>
+</div>
 <!-- /.contents -->
 
 <?php if (wp_is_mobile()) : //mobile only ?>

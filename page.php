@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<article id="main" <?php post_class(); ?>>
+<div id="main" <?php post_class(); ?> role="main">
 	<?php
 		if(is_front_page()){
 			
@@ -18,7 +18,7 @@
 	<p style="text-align:center; font-size:24px; font-weight:bold; color:#ddd; margin:100px auto;">お探しの記事は準備中です。<br>近日中に公開となります。</p>
 <?php endif; ?>
 
-</article><!-- /#main post_class -->
+</div><!-- /#main post_class -->
 
 <?php if (wp_is_mobile()) : //mobile only ?>
 			

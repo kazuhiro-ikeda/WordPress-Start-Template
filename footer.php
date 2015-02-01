@@ -12,5 +12,6 @@
 <script src="<?php bloginfo(template_url);?>/js/jquery.adjust.js"></script>
 
 <?php wp_footer(); ?>
+
 </body>
 </html>
