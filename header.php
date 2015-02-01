@@ -45,28 +45,24 @@
 			$postID = $wp_query->post->ID;
 			echo get_post_meta($postID, 'h1', true);
 	?></h1>
-			
-	<?php if (wp_is_mobile()) : ?>
-				<!-- mobile -->
+	
 				
-		<?php else : ?>
-				<!-- pc -->
-				<?php wp_nav_menu(
-					array(
-						'theme_location' => 'global' ,
-						'container'       => 'nav',
-						'container_id'    => 'global-nav',
-						'container_class' => '',
-						'menu_id'         => 'global-ul',
-						'menu_class'      => 'ul-nav screen cl'
-						//スタイル
-						//<nav id="global-nav" class="screen cl">
-						//<ul id="global-ul" class="ul-nav">
-						//<li><a href=""></a></li>
-						//</ul>
-						//</nav>
-				)); ?>
+	
 				
-		<?php  endif; ?>
-				<!-- /if_mobile -->
+	
+<?php if (wp_is_mobile()) : //mobile only ?>
+				
+<?php else : //pc only ?>
+	<?php wp_nav_menu(
+		array(
+			'theme_location' => 'global' ,
+			'container'       => 'nav',
+			'container_id'    => 'nav-global',
+			'container_class' => '',
+			'menu_id'         => 'nav-ul-global',
+			'menu_class'      => 'nav-list-global screen cl'
+	)); ?>
+				
+<?php  endif ; //if_mobile ?>
+		
 </header>
