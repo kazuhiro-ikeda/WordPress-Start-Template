@@ -8,10 +8,15 @@
 <link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_url'); ?>">
 <link rel="shortcut icon" href="<?php bloginfo('template_url'); ?>/favicon.ico">
 <link rel="apple-touch-icon" href="<?php bloginfo('template_url'); ?>/icon.png">
-<title>
-<?php full_title(); ?>
-</title>
+
+<?php
+	wp_deregister_script('jquery');	
+	wp_enqueue_script('jquery', 'http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js', array(), '1.11.0');
+?>
+
+<title><?php full_title(); ?></title>
 <meta name="Author" content="<?php bloginfo('name'); ?>">
+
 <script>
 (function(){
     var _UA = navigator.userAgent;
@@ -24,7 +29,7 @@
     }
 })();
 </script>
-<?php wp_deregister_script('jquery'); ?>
+
 <?php wp_head(); ?>
 </head>
 
@@ -45,11 +50,7 @@
 			$postID = $wp_query->post->ID;
 			echo get_post_meta($postID, 'h1', true);
 	?></h1>
-	
-				
-	
-				
-	
+		
 <?php if (wp_is_mobile()) : //mobile only ?>
 				
 <?php else : //pc only ?>
