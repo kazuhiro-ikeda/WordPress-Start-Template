@@ -1,7 +1,7 @@
 <?php
 	
 	/*
-	//相対パスに変更
+	//相対パスに変更　阪本さん専用
 		class relative_URI {
 				    function relative_URI() {
 				        add_action('get_header', array(&$this, 'get_header'), 1);
@@ -20,6 +20,35 @@
 				}
 		new relative_URI();
 		*/
+
+	//タブレットをモバイルから除外
+	function is_mobile() {
+	    $useragents = array(
+	        'iPhone',          // iPhone
+	        'iPod',            // iPod touch
+	        'Android.*Mobile', // 1.5+ Android Only mobile
+	        'Windows.*Phone',  // Windows Phone
+	        'dream',           // Pre 1.5 Android
+	        'CUPCAKE',         // 1.5+ Android
+	        'blackberry9500',  // Storm
+	        'blackberry9530',  // Storm
+	        'blackberry9520',  // Storm v2
+	        'blackberry9550',  // Storm v2
+	        'blackberry9800',  // Torch
+	        'webOS',           // Palm Pre Experimental
+	        'incognito',       // Other iPhone browser
+	        'webmate'          // Other iPhone browser
+	    );
+	    $pattern = '/'.implode('|', $useragents).'/i';
+	    return preg_match($pattern, $_SERVER['HTTP_USER_AGENT']);
+	}
+
+	//カレンダープラグイン：The Event Calender CSS Replace
+	function replace_tribe_events_calendar_stylesheet() {
+		$styleUrl = get_bloginfo('template_url') . '/css/calender.css';
+		return $styleUrl;
+	}
+	add_filter('tribe_events_stylesheet_url', 'replace_tribe_events_calendar_stylesheet');
 		
 	//管理画面スラッグ表示
 		function add_page_columns_name($columns) {
@@ -48,7 +77,7 @@
 		}
 		add_filter( 'excerpt_more', 'new_excerpt_more' );
 	
-	// カスタムメニュー
+	//カスタムメニュー
 		register_nav_menus(
 			array(
 				'global'     => 'グローバル',
@@ -78,7 +107,7 @@
 					}
 				}
 	
-	//even and odd addc class
+	//リストアップクラス追加：even and odd addc class
 		function oddeven_post_class ( $classes ) {
 			global $current_class;
 			$classes[] = $current_class;
@@ -89,7 +118,7 @@
 			global $current_class;
 			$current_class = 'odd';
 
-	//最初と最後の要素
+	//最初と最後の要素にクラスを追加
 		function isFirst(){
 			global $wp_query;
 			return ($wp_query->current_post === 0);
