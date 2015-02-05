@@ -9,30 +9,33 @@ Author URI: http://moriad.jp/
 */
 @import url(css/reset.css);
 @import url(css/common.css);
+@import url(css/nav.css);
 @import url(css/preload.css);
-@import url(css/hgroup-btn-box.css);
+@import url(css/element-style.css);
 
 /* ページ */
 @import url(css/form.css);
 
-/* テスト */
+/* カスタム */
 @import url(css/custom.css);
 
 /* jQuery */
 @import url(css/lightbox.css);
 
-@charset "utf-8";
+
+
 
 
 /*//////////////////////////////////////////　コーディングポリシー　//////////////////////////////////////////*/
+
 /*
 ＊命名規則
 	＊＊視認性及び「必要以上の時間節約」のために画像名とCSSクラス名は親子関係や単語の意味合いの違いがあってもハイフンつなぎで命名。
 		CSS：.xxx-yyy-zzz
 		画像：xxx-yyy-zzz.png 
 		
-	＊＊関係を「特に強調したい場合のみ」アンダーバーで命名
-		CSS：.box-osx_imac  .box-win_ibm など
+	＊＊関係を「ユニークな名称など特に強調したい場合のみ」アンダーバーで命名
+		CSS：.box-osx_imac .box-osx_mac_book_air .box-win_ibm など
 
 	＊＊画像はファインダーで探しやすいように要素のカテゴリを意識して命名。カテゴリや要素の大枠から小枠へ命名。
 		場所に関連して命名する場合　［場所］-［要素のカテゴリー］-［名称］：header-logo.png  footer-logo.png  header-btn-contact.png side-btn-contact.png  footer-btn-contact

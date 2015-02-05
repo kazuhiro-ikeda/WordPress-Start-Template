@@ -1,23 +1,9 @@
 @charset "utf-8";
-
-
-/*//////////////////////////////////////////
-
-	アンカー
-
-//////////////////////////////////////////*/
+/*//////////////////////////////////////////　リンクスタイル　//////////////////////////////////////////*/
 a {
 	color: #7543ba;
 	text-decoration: none;
 }
-
-/*//////////////////////////////////////////　inner　//////////////////////////////////////////*/
-.screen {
-	width: 1000px;
-	margin-left: auto;
-	margin-right: auto;
-}
-
 
 /*//////////////////////////////////////////　body　//////////////////////////////////////////*/
 body {
@@ -26,6 +12,27 @@ body {
 	font-size: 16px;
 	word-wrap: break-word;
 	-webkit-font-smoothing: subpixel-antialiased;
+}
+@media (max-width:768px){
+	@viewport {
+		width: device-width;
+	}
+	body {
+		width: 100%;
+		margin: 0 20px;
+	}
+}/* /768px */
+@media (max-width:640px){
+	@viewport {
+		width: 640px;
+	}
+}/* /640px */
+
+/*//////////////////////////////////////////　inner　//////////////////////////////////////////*/
+.screen {
+	width: 1000px;
+	margin-left: auto;
+	margin-right: auto;
 }
 @media (max-width:768px){
 	/* タブレット対応 <meta name="viewport" content="width= .screen + 40px"> */
@@ -44,52 +51,7 @@ body {
 	}
 }/* /640px */
 
-
-/*//////////////////////////////////////////
-
-	ヘッダー
-
-//////////////////////////////////////////*/
-/* ヘッダー */
-header {
-
-}
-
-/* ロゴ */
-#site-id {
-
-}
-
-/*//////////////////////////////////////////
-
-	ナビゲーションリスト
-
-//////////////////////////////////////////*/
-.nav-list-horizontal {}
-.nav-list-horizontalv li {
-	float: left;
-}
-.nav-list-horizontal li a {
-	display: block;
-}
-.nav-list-horizontal li:first-child a {}
-
-
-/*//////////////////////////////////////////
-
-	フッター
-
-//////////////////////////////////////////*/
-footer {
-
-}
-
-
-/*//////////////////////////////////////////
-
-	メインエリアレイアウト
-
-//////////////////////////////////////////*/
+/*//////////////////////////////////////////　レイアウト：メインエリア・サイドバー　//////////////////////////////////////////*/
 #main {
 	width: 750px;
 }
@@ -98,13 +60,34 @@ footer {
 	height: auto;
 	width: auto;
 }
-#sidebar {}
+@media (max-width:640px){
+	#main {
+		width: 600px;
+		margin: 0 auto;
+		float: none;
+	}
+	#main img {
+	max-width: 600px;
+	height: auto;
+	width: auto;
+	/* 中央揃え */
+	display: block;
+	margin: 0 auto;
+	}
+}/* /640px */
 
-/*//////////////////////////////////////////
+/*//////////////////////////////////////////　ヘッダー　//////////////////////////////////////////*/
 
-	パン屑
+/* ヘッダー */
+header {}
 
-//////////////////////////////////////////*/
+/* サイトアイデンティティ */
+#site-id {}
+
+/*//////////////////////////////////////////　フッター　//////////////////////////////////////////*/
+footer {}
+
+/*//////////////////////////////////////////　パンくず　//////////////////////////////////////////*/
 ul.bread_crumb {
 	margin-bottom: 15px;
 	line-height: 175%;
@@ -117,17 +100,8 @@ ul.bread_crumb {
 .bread_crumb li.sub:before {
 	content: "　＞　"
 } 
-@media (max-width:640px){
-ul.bread_crumb {
-	margin-left: 15px;
-}
-}/* /sp */
 
-/*//////////////////////////////////////////
-
-	ページネイション　WP Sitemanager
-	
-//////////////////////////////////////////*/
+/*//////////////////////////////////////////　ページネイション　WP Sitemanager　//////////////////////////////////////////*/
 .pagenation {
 	overflow: hidden;
 	margin: 40px 0;
@@ -159,7 +133,7 @@ ul.page_navi {
 	padding: 8px 8px 5px;/* サイズ調整 */
 }
 
-/*//////////////////////////////////////////　段落 / 見出し / 仕切り線　//////////////////////////////////////////*/
+/*//////////////////////////////////////////　段落 / 見出し　//////////////////////////////////////////*/
 
 /* 見出し */
 h1, h2, h3, h4, h5, h6 {
@@ -174,22 +148,9 @@ p {
 	-ms-text-justify: inter-ideograph;
 }
 
-/* 仕切り線 */
-hr.horizontal-narrow {
-	margin-bottom: 30px;
-	margin-top: 30px;
-	border: 0;
-	height: 1px;
-	background-image: -webkit-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.45), rgba(0,0,0,0));
-	background-image: -moz-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.45), rgba(0,0,0,0));
-	background-image: -ms-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.45), rgba(0,0,0,0));
-	background-image: -o-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.45), rgba(0,0,0,0));
-	width: 75%;
-	margin-left: auto;
-	margin-right: auto;
-}
-
 /*//////////////////////////////////////////　基本レイアウト　//////////////////////////////////////////*/
+
+/* ポジション・フロート */
 .relative {
 	position: relative;
 }
