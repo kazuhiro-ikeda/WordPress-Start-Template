@@ -3,7 +3,7 @@
 
 /* 基本スタイル */
 .nav-list-horizontal {}
-.nav-list-horizontalv li {
+.nav-list-horizontal li {
 	float: left;
 }
 .nav-list-horizontal li a {
