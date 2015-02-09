@@ -99,6 +99,7 @@ ul.bread_crumb {
 } 
 
 /*//////////////////////////////////////////　ページネイション　WP Sitemanager　//////////////////////////////////////////*/
+/*
 .pagenation {
 	overflow: hidden;
 	margin: 40px 0;
@@ -118,7 +119,7 @@ ul.page_navi {
 .page_navi li a {
 	display: block;
 	border: 1px solid #d8d8d8;
-	padding: 8px 8px 5px;/* サイズ調整 */
+	padding: 8px 8px 5px;
 }
 .page_navi li a:hover {
 	text-decoration: underline;
@@ -127,7 +128,35 @@ ul.page_navi {
 	display: block;
 	border: 1px solid #d8d8d8;
 	color: #323232;
-	padding: 8px 8px 5px;/* サイズ調整 */
+	padding: 8px 8px 5px;
+}
+*/
+
+/*//////////////////////////////////////////　ページネイション　pagenation.php //////////////////////////////////////////*/
+.pagenation {
+	overflow: hidden;
+	margin: 40px 0;
+}
+ul.page_navi {
+	
+	float: left;
+	position: relative;
+	left: 50%;
+}
+.page_navi li {
+	display: block;
+	float: left;
+	border: 1px solid #d8d8d8;
+	margin-right: 10px;
+	padding: 8px 8px 5px;
+	position: relative;
+	left: -50%;
+}
+.page_navi li a {
+	color: green;
+	text-decoration: underline;
+}
+.page_navi li a:hover {
 }
 
 /*//////////////////////////////////////////　段落 / 見出し　//////////////////////////////////////////*/
@@ -146,26 +175,6 @@ p {
 }
 
 /*//////////////////////////////////////////　基本レイアウト　//////////////////////////////////////////*/
-
-/* ポジション・フロート */
-.relative {
-	position: relative;
-}
-.left {
-	float: left;
-}
-.right {
-	float: right;
-}
-.center {
-	text-align: center;
-}
-.block {
-	display: block;
-}
-.empty {
-	display: none;
-}
 
 /* ボトムマージン調整 要注意スマートフォンサイト */
 .mb-0 {

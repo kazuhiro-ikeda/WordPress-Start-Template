@@ -30,29 +30,41 @@ Author URI: http://moriad.jp/
 
 /*
 ＊命名規則
+
 	＊＊視認性及び「必要以上の時間節約」のために画像名とCSSクラス名は親子関係や単語の意味合いの違いがあってもハイフンつなぎで命名。
+	
 		CSS：.xxx-yyy-zzz
 		画像：xxx-yyy-zzz.png 
 		
 	＊＊関係を「ユニークな名称など特に強調したい場合のみ」アンダーバーで命名
+	
 		CSS：.box-osx_imac .box-osx_mac_book_air .box-win_ibm など
 
 	＊＊画像はファインダーで探しやすいように要素のカテゴリを意識して命名。カテゴリや要素の大枠から小枠へ命名。
+	
 		場所に関連して命名する場合　［場所］-［要素のカテゴリー］-［名称］：header-logo.png  footer-logo.png  header-btn-contact.png side-btn-contact.png  footer-btn-contact
 		要素に関連して命名する場合　［要素のカテゴリー］-［場所］-［名称］：logo-header.png  logo-footer.png  btn-header-contact.png  btn-side-contact.png  btn-footer-contact
 			
-	＊＊場所に依存するセレクタは「あまり」使用しない。
-		よくない例：
-			#header h1 , footer p , nav ul , #hoge h2
+	＊＊場所や海藻に依存するセレクタは「あまり」使用しない。
+	
+		よくない例：要素の親をたどり命名する方法。htmlはシンプルになるがスタイリング複雑になる。
+		
+			#header h1
+			footer p
+			nav ul
+			#hoge h2
 			
 		良い例：
+		
 			<header>
 				<h1 class="page-ttl">hogehoge</h1>
 			</header>
 			
 			<nav id="hoge">
 				<ul id="nav-hoge" class="hoge-list nav-list">
-					<li class="hoge-list-item nav-list-item">hogehoge</li>
+					<li id="hoge-list-item-01" class="hoge-list-item nav-list-item">hogehoge</li>
+					<li id="hoge-list-item-02" class="hoge-list-item nav-list-item">hogehoge</li>
+					<li id="hoge-list-item-03" class="hoge-list-item nav-list-item">hogehoge</li>
 				</ul>
 			</nav>
 			
@@ -92,7 +104,15 @@ Author URI: http://moriad.jp/
 			left: 100px;
 		}
 
+＊構造の視覚化
 
+	＊＊クリアフィックス
+	
+		基本として、どこに処理が施されているか分かりやすくするためクリアフィックスが必要なhtmlの要素にクラスを指定 .cl
+		
+	＊＊inner
+	
+		基本として、どこにinnerスタイルが施されているか分かりやすくするため必要なhtmlの要素にクラスを指定 .screen
 
 
 
