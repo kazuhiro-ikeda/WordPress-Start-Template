@@ -13,7 +13,7 @@
 	}
 ?>
 <?php if(1 != $pages): ?>
-    <div class="pagenation">
+    <div class="pagination">
         <ul class="page_navi">
         	<?php
                 if($paged > 2 && $paged > $range+1 && $showitems < $pages) echo '<a href="'. get_pagenum_link(1). '">1</a>・・・';

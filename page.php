@@ -12,9 +12,8 @@
 
 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 <?php remove_filter ('the_content', 'wpautop'); ?>
-	<?php the_content(); ?>
-	
-	<?php //advanced custom fields プラグイン the_field("prefecture", $post->ID); ?>
+<?php the_content(); ?>
+<?php //advanced custom fields プラグイン the_field("prefecture", $post->ID); ?>
 	
 <?php endwhile; else: ?>
 	<p style="text-align:center; font-size:24px; font-weight:bold; color:#ddd; margin:100px auto;">お探しの記事は準備中です。<br>近日中に公開となります。</p>

@@ -107,7 +107,7 @@
 					}
 				}
 	
-	//リストアップクラス追加：even and odd addc class
+	//post_class にクラス追加：even and odd add class
 		function oddeven_post_class ( $classes ) {
 			global $current_class;
 			$classes[] = $current_class;
