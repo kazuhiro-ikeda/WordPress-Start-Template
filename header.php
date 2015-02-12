@@ -6,6 +6,14 @@
 <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_url'); ?>">
+<?php $ua = $_SERVER['HTTP_USER_AGENT'];
+	if(preg_match( '/Macintosh/', $ua)) {
+		//Mac
+		echo '<link rel="stylesheet" href="'.get_template_directory_uri().'/css/mac.css">';
+	} else {
+	//
+	} ?>
+
 <link rel="shortcut icon" href="<?php bloginfo('template_url'); ?>/favicon.ico">
 <link rel="apple-touch-icon" href="<?php bloginfo('template_url'); ?>/icon.png">
 <?php
