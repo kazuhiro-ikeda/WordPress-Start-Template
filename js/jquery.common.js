@@ -82,7 +82,13 @@ $(function(){
 			
 	//フロートボックス　３カラム
 			$( 'ul.item-list-triple li:nth-child(n3)' ).css( 'margin-right', '0' );
-			$( 'ul.item-list-triple li' ).addClass( 'heightLine' );		
+			$( 'ul.item-list-triple li' ).addClass( 'heightLine' );
+	
+	//IE ACTIVE FOCUS remove outline
+			if (document.documentElement.attachEvent)
+			    document.documentElement.attachEvent('onmousedown',function(){
+			    	event.srcElement.hideFocus=true
+			});	
 			
 			
 			
