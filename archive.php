@@ -8,25 +8,8 @@
 <?php //advanced custom fields プラグイン the_field("prefecture", $post->ID); ?>
 
 <?php endwhile; else: ?>
-<?php get_template_part( 'parts/pagination' ); ?>
-<?php 	/* WP_Queryなどページ送りを使用する場合の必須設定　２項目
-		$paged = get_query_var('paged') ? get_query_var('paged') : 1;←ページ送りの情報を取得
-		$args = array(
-		'paged' => $paged,←クエリに加える
-		'post_type' => 'clinic',
-		'order' => 'ASC',
-		'orderby' => 'meta_value_num',
-		'meta_key' => 'list_number',
-		'tax_query' => array(
-			array(
-				'taxonomy' => 'network-list',
-				'field' => 'slug',
-				'terms' => 'accession',
-				)
-			)
-		); */
- ?>
- 
+<?php the_posts_pagination( array( 'mid_size' => 3, 'prev_text' => '<<', 'next_text' => '>>', 'screen_reader_text' => '',  ));  ?>
+
 <?php endif; ?>
 
 </div>
