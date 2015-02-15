@@ -21,6 +21,35 @@ body {
 	margin: 0 auto;
 }
 
+/*//////////////////////////////////////////　段落 / 見出し　//////////////////////////////////////////*/
+
+/* 見出し */
+h1, h2, h3, h4, h5, h6 {
+	line-height: 150%;
+}
+
+/* 段落 */
+p {
+	line-height: 175%;
+	text-align: justify;
+	text-justify: inter-ideograph;
+	-ms-text-justify: inter-ideograph;
+}
+
+/*//////////////////////////////////////////　リンクスタイル　//////////////////////////////////////////*/
+
+/* a */
+a {
+	color: #7543ba;
+	text-decoration: none;
+}
+
+/* none：outline, border */
+a:active, a:focus {
+   outline:  none;
+   ie-dummy: expression(this.hideFocus=true);
+}
+
 /*//////////////////////////////////////////　レイアウト：メインエリア・サイドバー　//////////////////////////////////////////*/
 
 /* main */
@@ -168,35 +197,6 @@ a.page-numbers {
 }
 .nav-links a.prev {
 	border: none;
-}
-
-/*//////////////////////////////////////////　段落 / 見出し　//////////////////////////////////////////*/
-
-/* 見出し */
-h1, h2, h3, h4, h5, h6 {
-	line-height: 150%;
-}
-
-/* 段落 */
-p {
-	line-height: 175%;
-	text-align: justify;
-	text-justify: inter-ideograph;
-	-ms-text-justify: inter-ideograph;
-}
-
-/*//////////////////////////////////////////　リンクスタイル　//////////////////////////////////////////*/
-
-/* a */
-a {
-	color: #7543ba;
-	text-decoration: none;
-}
-
-/* none：outline, border */
-a:active, a:focus {
-   outline:  none;
-   ie-dummy: expression(this.hideFocus=true);
 }
 
 /*//////////////////////////////////////////　基本レイアウト　//////////////////////////////////////////*/
