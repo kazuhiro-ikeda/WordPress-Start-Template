@@ -1,51 +1,80 @@
 @charset "utf-8";
+/*//////////////////////////////////////////　comment　//////////////////////////////////////////*/
+/*
+	
+	エラー対策：テキストフィールドが並んでいる場合エラーメッセージが<span>で出力されるため、それぞれをブロック要素にする必要がある
+	<div class="box-error">姓　　[mwform_text name="sei" id="sei"]</div>
+	<div class="box-error">名　　[mwform_text name="mei" id="mei"]</div>
+
+ */
+.box-error {
+	float: left;
+	margin-right: 14px;
+}
+
 /*//////////////////////////////////////////
 
 	form
 	
 //////////////////////////////////////////*/
-.form {
+#contact-table {
 	width: 100%;
 	line-height: 175%;
-	border: 1px solid #8f0780;
 }
-.form th {
-	border: 1px solid #8f0780;
+#contact-table  th {
 	padding: 10px 15px;
-	border: 1px solid #8f0780;
+	border: 1px solid #9e9e9e;
 	background-color: #f2e1f0;
 }
-.form td {
+#contact-table  td {
 	padding: 10px 15px;
-	border: 1px solid #8f0780;
+	border: 1px solid #9e9e9e;
 }
-input[type="text"] {
-	width: 430px;
-	height: 30px;
-	font-size: 18px;
+#contact-table  .require {
+	font-weight: normal;
 }
-textarea {
-	width: 500px;
-	font-size: 18px;
-	height: 90px;
+#contact-table .example-text {
+	color: #c9caca;
+	font-weight: normal;
 }
-select , input[type="button"] {
-	cursor: pointer;
+#contact-table .agree-text {
+	text-align: center;
+	color: #e60012;
+	margin: 40px 0 20px;
 }
-a.btn-send {
-	width: 240px;
-	display: block;
-	margin: 20px auto;
+#contact-table input[type="text"] {
+	width: 250px;
+	height: 26px;
+	background-image: url(../images/page/text-field-bg.png);
+	background-repeat: repeat-x;
 }
-input[type="button"] {
+#contact-table input[type="text"]#sei, input[type="text"]#mei, input[type="text"]#sei-furigana, input[type="text"]#mei-furigana {
+	width: 140px;
+}
+#contact-table textarea {
+	width: 470px;
+	height: 130px;
+}
+
+/* 送信ボタン */
+#contact-table input[type="submit"] {
+	font-size: xxpx;
+	color: white;
 	border: none;
 	background-color: white;
-	background-image: url(../images/common/xxx.png);
+	background-image: url(../images/page/btn-send.png);
 	background-repeat: no-repeat;
-	width: xxxpx;
-	height: xxxpx;
+	width: xxpx;
+	height: xxpx;
+	display: block;
+	margin: 0 auto;
 }
-select {
+#contact-table input[type="submit"]:hover {
+	cursor: pointer;
+}
+
+/* ドロップダウン */
+#contact-table select {
     -webkit-appearance: button;
     -moz-appearance: button;
     appearance: button;
@@ -61,7 +90,7 @@ select {
     font-size: 18px;
 }
 @-moz-document url-prefix() {/* firefoxハック */
-select {
+#contact-table select {
 	-webkit-appearance: button;
     -moz-appearance: button;
     appearance: button;
@@ -70,7 +99,7 @@ select {
 }
 }
 @media screen and (-webkit-min-device-pixel-ratio:0) {/* chromeハック */
-select {
+#contact-table select {
     text-indent: 0.2em;
 }
 }
