@@ -89,6 +89,12 @@
     background-position: right center;
     font-size: 18px;
 }
+
+/* IE10以上で動作 */
+select::-ms-expand {
+  display: none;
+}
+
 @-moz-document url-prefix() {/* firefoxハック */
 #contact-table select {
 	-webkit-appearance: button;
