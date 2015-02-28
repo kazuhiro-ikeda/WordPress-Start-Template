@@ -72,6 +72,9 @@ $(function(){
 			$( 'li.no-link a').hover(function(){
 				$(this).css( 'textDecoration', 'none' );
 			});
+	
+	//投稿コンテンツの段落にクリアフィックス
+			$( '.single-content p' ).addClass( 'cl' );
 			
 	//フロートボックス　２カラム
 			$( 'ul.item-list-half li' ).addClass( 'heightLine' );	

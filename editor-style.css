@@ -42,8 +42,9 @@ p {
 p {
 	clear: both;
 }
-ul {
-	margin-top: 90px;
+
+ul, ol {
+	margin: 90px 0;
 	clear: both;
 }
 

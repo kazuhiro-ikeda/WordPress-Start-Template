@@ -9,6 +9,7 @@ Author URI: http://moriad.jp/
 */
 @import url(css/reset.css);
 @import url(css/common.css);
+@import url(css/single.css);
 @import url(css/nav.css);
 @import url(css/preload.css);
 @import url(css/element.css);
