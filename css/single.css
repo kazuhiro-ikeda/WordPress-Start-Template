@@ -2,49 +2,38 @@
 /*//////////////////////////////////////////　投稿：ビジュアルエディタ用　//////////////////////////////////////////*/
 
 /* ビジュアルリッチエディタのスタイル 　<div class="single-content"><?php the_content(); ?></div> */
-* {
-		font-family: Meiryo, メイリオ, 'MS Pゴシック', 'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3', sans-serif;
-}
-h1 {
+.single-content h1 {
 	font-size: 26px;
 	font-size: 2.6rem;
 	line-height: 1.1538;
 	margin-top: 1.8462em;
 	margin-bottom: 0.9231em;
 }
-h2 {
+.single-content h2 {
 	font-size: 22px;
 	font-size: 2.2rem;
 	line-height: 1.3636;
 	margin-top: 2.1818em;
 	margin-bottom: 1.0909em;
 }
-h3 {
+.single-content h3 {
 	font-size: 18px;
 	font-size: 1.8rem;
 	line-height: 1.3333;
 	margin-top: 2.6667em;
 	margin-bottom: 1.3333em;
 }
-h4, h5, h6 {
+.single-content h4, .single-content h5, .single-content h6 {
 	font-size: 15px;
 	font-size: 1.5rem;
 	line-height: 1.2;
 	margin-top: 3.2em;
 	margin-bottom: 1.6em;
 }
-p {
+.single-content p {
 	font-size: 15px;
 	line-height: 200%;
 	margin-bottom: 35px;
-}
-
-p {
-	clear: both;
-}
-ul {
-	margin-top: 90px;
-	clear: both;
 }
 
 /* リスト */
