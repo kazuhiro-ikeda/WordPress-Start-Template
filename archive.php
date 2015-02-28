@@ -8,9 +8,10 @@
 <?php //advanced custom fields プラグイン the_field("prefecture", $post->ID); ?>
 
 <?php endwhile; else: ?>
-<?php the_posts_pagination( array( 'mid_size' => 3, 'prev_text' => '<<', 'next_text' => '>>', 'screen_reader_text' => '',  ));  ?>
 
 <?php endif; ?>
+
+<?php the_posts_pagination( array( 'mid_size' => 3, 'prev_text' => '<<', 'next_text' => '>>', 'screen_reader_text' => '',  ));  ?>
 
 </div>
 <!-- /.contents -->
