@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <?php header('X-UA-Compatible: IE=edge,chrome=1'); ?>
 <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width">
 <link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_url'); ?>">
 <?php $ua = $_SERVER['HTTP_USER_AGENT'];
 	if(preg_match( '/Macintosh/', $ua)) {
