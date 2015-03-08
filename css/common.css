@@ -13,8 +13,8 @@ body {
 	-webkit-font-smoothing: subpixel-antialiased;
 }
 
+/* tablet */
 @media screen and (max-device-width:768px){
-	/* タブレットは通常サイト */
 	@viewport {
 		width: 1040px;
 	}
