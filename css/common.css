@@ -305,7 +305,7 @@ a.page-numbers {
 	display: none;
 }
 
-@media (max-width:640px){
+@media (max-device-width:640px){
 .pc-block {
 	display: none;
 }
