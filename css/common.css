@@ -8,15 +8,49 @@ html {
 body {
 	color: #595757;
 	font-family: Meiryo, メイリオ, 'MS Pゴシック', 'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3', sans-serif;
-	font-size: 1.6em;
+	font-size: 1.3em;
 	word-wrap: break-word;
 	-webkit-font-smoothing: subpixel-antialiased;
 }
+
+@media screen and (max-device-width:768px){
+	/* タブレットは通常サイト */
+	@viewport {
+		width: 1040px;
+	}
+	body {
+		width: 1040px;
+	}
+	.screen {
+		width: 1000px;
+		margin: 0 20px;
+	}
+}/* /768px */
+
+/* smartphone */
+@media screen and (max-device-width:640px){
+	@viewport {
+		width: 640px;
+	}
+	body {
+		width: 640px;
+		font-size: 1.8em;
+	}
+}/* /640px */
+
 
 /*//////////////////////////////////////////　inner　//////////////////////////////////////////*/
 
 /* inner main */
 .screen {
+	width: 1000px;
+	margin: 0 auto;
+}
+
+/*//////////////////////////////////////////　レイアウト：メインエリア・サイドバー　//////////////////////////////////////////*/
+
+/* main */
+#main {
 	width: 1000px;
 	margin: 0 auto;
 }
@@ -48,14 +82,6 @@ a {
 a:active, a:focus {
    outline:  none;
    ie-dummy: expression(this.hideFocus=true);
-}
-
-/*//////////////////////////////////////////　レイアウト：メインエリア・サイドバー　//////////////////////////////////////////*/
-
-/* main */
-#main {
-	width: 1000px;
-	margin: 0 auto;
 }
 
 /*//////////////////////////////////////////　ヘッダー　//////////////////////////////////////////*/
