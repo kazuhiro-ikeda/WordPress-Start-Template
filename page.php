@@ -22,8 +22,4 @@
 
 </div><!-- /#main post_class -->
 
-<?php if (wp_is_mobile()) : //mobile only ?>	
-<?php else : //pc only ?>	
-<?php  endif ; //if_mobile ?>
-
 <?php get_footer(); ?>

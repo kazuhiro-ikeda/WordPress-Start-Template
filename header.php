@@ -67,19 +67,4 @@
 			echo get_post_meta($postID, 'h1', true);
 	?></h1>
 		
-<?php if (wp_is_mobile()) : //mobile only ?>
-				
-<?php else : //pc only ?>
-	<?php wp_nav_menu(
-		array(
-			'theme_location' => 'global' ,
-			'container'       => 'nav',
-			'container_id'    => 'nav-global',
-			'container_class' => '',
-			'menu_id'         => 'nav-ul-global',
-			'menu_class'      => 'nav-list-horizontal screen cl'
-	)); ?>
-				
-<?php  endif ; //if_mobile ?>
-		
 </header>
