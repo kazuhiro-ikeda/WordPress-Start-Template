@@ -32,7 +32,6 @@ $(function(){
 		<div id="panel-navigation" class="hide-panel">パネル</div>
 	 */
 	
-			$( ".hide-panel" ).hide();
 			$( ".toggle" ).css( "cursor", "pointer" );
 			$( ".toggle" ).on( "click", function() {
 				var panelId = $(this).attr( "data-title" );
