@@ -106,6 +106,8 @@ footer {}
 
 /* WP Sitemanager */
 ul.bread_crumb {
+	color: #2EA7E0;
+	font-size: 13px;
 	margin-bottom: 15px;
 	line-height: 175%;
 }
@@ -115,6 +117,7 @@ ul.bread_crumb {
 .bread_crumb li.sub{
 }
 .bread_crumb li.sub:before {
+	color: #5E4B32;
 	content: "　＞　"
 } 
 
