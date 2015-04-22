@@ -42,7 +42,7 @@
 	wp_enqueue_script('jquery', 'http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js', array(), '1.11.0');
 ?>
 
-<title><?php full_title(); ?></title>
+<title><?php the_title(); ?><?php // full_title(); ?></title>
 <meta name="Author" content="<?php bloginfo('name'); ?>">
 
 
