@@ -14,7 +14,7 @@ body {
 }
 
 /* tablet */
-@media screen and (max-device-width:768px){
+@media screen and (max-device-width:1024px){
 	@viewport {
 		width: 1040px;
 	}
@@ -25,7 +25,7 @@ body {
 		width: 1000px;
 		margin: 0 20px;
 	}
-}/* /768px */
+}/* /1024px */
 
 /* smartphone */
 @media screen and (max-device-width:640px){
