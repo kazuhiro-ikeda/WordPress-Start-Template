@@ -30,6 +30,8 @@
 	margin-top: 3.2em;
 	margin-bottom: 1.6em;
 }
+
+/* パラグラフ */
 .single-content p {
 	font-size: 15px;
 	line-height: 200%;
@@ -38,16 +40,42 @@
 
 /* リスト */
 .single-content ul {
+	font-size: 15px;
 	list-style-type: circle;
 	list-style-position: inside;
 	line-height: 225%;
 	margin-bottom: 60px;
 }
 .single-content ol {
+	font-size: 15px;
 	list-style-position: inside;
 	line-height: 225%;
 	margin-bottom: 60px;
 }
+
+@media screen and (max-device-width:640px){
+	/* パラグラフ */
+	.single-content p {
+		font-size: 22px;
+		line-height: 200%;
+		margin-bottom: 35px;
+	}
+	
+	/* リスト */
+	.single-content ul {
+		font-size: 22px;
+		list-style-type: circle;
+		list-style-position: inside;
+		line-height: 225%;
+		margin-bottom: 60px;
+	}
+	.single-content ol {
+		font-size: 22px;
+		list-style-position: inside;
+		line-height: 225%;
+		margin-bottom: 60px;
+	}
+}/* /640px */
 
 .single-content a {
 	color: #709ae8;
@@ -75,4 +103,14 @@
 	margin-right: auto;
 	margin-left: auto;
 }
+
+@media screen and (max-device-width:640px){
+ .single-content img {
+	 max-width: 400px;
+	 height: auto;
+	 width: auto;
+	 display: block;
+	 margin: 20px auto;
+ }
+}/* /640px */
 
