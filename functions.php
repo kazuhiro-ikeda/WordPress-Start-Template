@@ -42,13 +42,6 @@
 	    $pattern = '/'.implode('|', $useragents).'/i';
 	    return preg_match($pattern, $_SERVER['HTTP_USER_AGENT']);
 	}
-
-	//カレンダープラグイン：The Event Calender CSS Replace
-	function replace_tribe_events_calendar_stylesheet() {
-		$styleUrl = get_bloginfo('template_url') . '/css/calender.css';
-		return $styleUrl;
-	}
-	add_filter('tribe_events_stylesheet_url', 'replace_tribe_events_calendar_stylesheet');
 		
 	//管理画面スラッグ表示
 		function add_page_columns_name($columns) {
@@ -176,5 +169,9 @@
 		remove_action( 'wp_head', 'feed_links_extra', 3);
 
 		remove_action( 'wp_head', 'feed_links', 2);
+		
+		remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
+		
+		remove_action( 'wp_print_styles', 'print_emoji_styles' );
 			
 ?>
