@@ -28,7 +28,7 @@ $(function(){
 	//トグルパネル
 	/* 
 		USAGE
-		<div class="toggle" title="navigation">トグル</div>
+		<div class="toggle" data-title="navigation">トグル</div>
 		<div id="panel-navigation" class="hide-panel">パネル</div>
 	 */
 	
