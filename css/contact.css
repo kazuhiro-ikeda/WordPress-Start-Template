@@ -12,39 +12,71 @@
 	margin-right: 14px;
 }
 
-/*//////////////////////////////////////////
+/*////////////////////////////////////////// お問い合わせ //////////////////////////////////////////*/
 
-	form
-	
-//////////////////////////////////////////*/
+/* テーブル */
 #contact-table {
 	width: 100%;
 	line-height: 175%;
+	border-top: 1px solid #9e9e9e;
+	border-right: 1px solid #9e9e9e;
 }
+
+@media screen and (max-device-width:640px){
+	#contact-table {
+		width: 600px;
+		line-height: 175%;
+		border-top: 2px solid #9e9e9e;
+		border-right: 2px solid #9e9e9e;
+		margin: 0 auto 30px;
+	}
+}/* /640px */
+
+
+/* th */
 #contact-table th {
 	padding: 13px 50px 10px;
-	border: 1px solid #9e9e9e;
+	border-left: 1px solid #9e9e9e;
+	border-bottom: 1px solid #9e9e9e;
 	background-color: #DDFFF8;
 	vertical-align: middle;
 	width: 4em;
 }
+
+@media screen and (max-device-width:640px){
+	#contact-table th {
+		padding: 13px 50px 10px;
+		border-left: 2px solid #9e9e9e;
+		border-bottom: 2px solid #9e9e9e;
+		background-color: #DDFFF8;
+		vertical-align: baseline;
+		display: block;
+		width: 500px;
+		text-align: center;
+		font-size: 20px;
+	}
+}/* /640px */
+
+/* td */
 #contact-table td {
 	padding: 13px 20px 10px;
-	border: 1px solid #9e9e9e;
+	border-left: 1px solid #9e9e9e;
+	border-bottom: 1px solid #9e9e9e;
 }
-#contact-table .require {
-	font-weight: normal;
-}
-#contact-table .example-text {
-	color: #00A2B8;
-	font-weight: normal;
-	padding-left: 20px;
-}
-#contact-table .agree-text {
-	text-align: center;
-	color: #e60012;
-	margin: 40px 0 20px;
-}
+
+@media screen and (max-device-width:640px){
+	#contact-table td {
+		padding: 13px 20px 13px;
+		border-left: 2px solid #9e9e9e;
+		border-bottom: 2px solid #9e9e9e;
+		display: block;
+		width: 560px;
+		text-align: center;
+		font-size: 20px;
+	}
+}/* /640px */
+
+/* インプット */
 #contact-table input[type="text"] {
 	width: 250px;
 	height: 14px;
@@ -54,12 +86,21 @@
 	font-size: 14px;
 	padding: 5px;
 }
-input[type="text"]#sei, input[type="text"]#mei, input[type="text"]#sei-furigana, input[type="text"]#mei-furigana, input[type="text"]#year {
-	width: 140px;
-}
-input[type="text"]#month, input[type="text"]#day {
-	width: 60px;
-}
+
+@media screen and (max-device-width:640px){
+	#contact-table input[type="text"] {
+		width: 250px;
+		height: 20px;
+		border: 2px solid silver;
+		background-image: url(../images/page/text-field-bg.png);
+		background-repeat: repeat-x;
+		font-size: 20px;
+		padding: 5px;
+	}
+}/* /640px */
+
+
+/* テキストエリア */
 #contact-table textarea {
 	border: 1px solid silver;
 	width: 470px;
@@ -68,9 +109,56 @@ input[type="text"]#month, input[type="text"]#day {
 	padding: 5px;
 }
 
-/* 確認画面非表示 */
+@media screen and (max-device-width:640px){
+	#contact-table textarea {
+		border: 2px solid silver;
+		width: 470px;
+		height: 130px;
+		font-size: 20px;
+		padding: 5px;
+	}
+}/* /640px */
+
+/* サイズ調整 */
+input[type="text"]#sei, input[type="text"]#mei, input[type="text"]#sei-furigana, input[type="text"]#mei-furigana, input[type="text"]#year {
+	width: 140px;
+}
+
+input[type="text"]#month, input[type="text"]#day {
+	width: 40px;
+}
+
+/* 例 */
+#contact-table .example-text {
+	color: #00A2B8;
+	font-weight: normal;
+	padding-left: 20px;
+}
+
+@media screen and (max-device-width:640px){
+	#contact-table .example-text {
+		color: #00A2B8;
+		font-weight: normal;
+		padding-left: 20px;
+		display: block;
+		margin-top: 10px;
+	}
+}/* /640px */
+
+/* 必須 */
+#contact-table .require {
+	font-weight: normal;
+}
+
 .mw_wp_form_confirm .require,.mw_wp_form_confirm .example-text {
 	display: none;
+}
+
+/* 同意 */
+#contact-table .agree-text {
+	text-align: center;
+	color: #00A2B8;
+	margin: 40px 0 20px;
 }
 
 /* ラベル */

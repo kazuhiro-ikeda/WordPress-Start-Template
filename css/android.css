@@ -9,3 +9,11 @@ h1 , h2 , h3 , h4 , h5 , h6 , th , td {
 	background-image:url(image);
 }
 
+textarea {
+	font-size: 20px;
+}
+
+input[type="text"] {
+	font-size: 20px;
+}
+
