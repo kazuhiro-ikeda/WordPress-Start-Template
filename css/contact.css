@@ -76,22 +76,22 @@ label {
 }
 
 /* 送信ボタン */
-#contact-table input[type="submit"] {
-	font-size: xxpx;
+input[type="submit"] {
+	font-size: 14px;
 	color: white;
 	border: none;
 	background-color: white;
-	background-image: url(../images/page/btn-send.png);
+	text-indent: -9999px;
+	background-image: url(../images/contact/btn-confirm.png);
 	background-repeat: no-repeat;
 	width: xxpx;
 	height: xxpx;
 	display: block;
-	margin: 0 auto;
+	margin: 60px auto;
 }
 #contact-table input[type="submit"]:hover {
 	cursor: pointer;
 }
-
 /* ドロップダウン */
 #contact-table select {
     -webkit-appearance: button;
