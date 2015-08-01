@@ -68,6 +68,11 @@ input[type="text"]#month, input[type="text"]#day {
 	padding: 5px;
 }
 
+/* 確認画面非表示 */
+.mw_wp_form_confirm .require,.mw_wp_form_confirm .example-text {
+	display: none;
+}
+
 /* ラベル */
 label {
 	margin-right: 20px;
