@@ -21,21 +21,24 @@
 	width: 100%;
 	line-height: 175%;
 }
-#contact-table  th {
-	padding: 10px 15px;
+#contact-table th {
+	padding: 13px 50px 10px;
 	border: 1px solid #9e9e9e;
-	background-color: #f2e1f0;
+	background-color: #DDFFF8;
+	vertical-align: middle;
+	width: 4em;
 }
-#contact-table  td {
-	padding: 10px 15px;
+#contact-table td {
+	padding: 13px 20px 10px;
 	border: 1px solid #9e9e9e;
 }
-#contact-table  .require {
+#contact-table .require {
 	font-weight: normal;
 }
 #contact-table .example-text {
-	color: #c9caca;
+	color: #00A2B8;
 	font-weight: normal;
+	padding-left: 20px;
 }
 #contact-table .agree-text {
 	text-align: center;
@@ -44,16 +47,32 @@
 }
 #contact-table input[type="text"] {
 	width: 250px;
-	height: 26px;
+	height: 14px;
+	border: 1px solid silver;
 	background-image: url(../images/page/text-field-bg.png);
 	background-repeat: repeat-x;
+	font-size: 14px;
+	padding: 5px;
 }
-#contact-table input[type="text"]#sei, input[type="text"]#mei, input[type="text"]#sei-furigana, input[type="text"]#mei-furigana {
+input[type="text"]#sei, input[type="text"]#mei, input[type="text"]#sei-furigana, input[type="text"]#mei-furigana, input[type="text"]#year {
 	width: 140px;
 }
+input[type="text"]#month, input[type="text"]#day {
+	width: 60px;
+}
 #contact-table textarea {
+	border: 1px solid silver;
 	width: 470px;
 	height: 130px;
+	font-size: 14px;
+	padding: 5px;
+}
+
+/* ラベル */
+label {
+	margin-right: 20px;
+	position: relative;
+	top: 2px;
 }
 
 /* 送信ボタン */
@@ -80,16 +99,15 @@
     appearance: button;
     width: 200px;
     height: 30px;
-    border: 1px solid #a0a0a0;
+    background-color: white;
+    border: 1px solid silver;
     border-radius: 0;
-    text-indent: 2em;
-    line-height: 1.5em;
+    padding: 0 5px;
     background-image: url(../images/common/form-select-arrows-pc.png);
     background-repeat: no-repeat;
     background-position: right center;
-    font-size: 18px;
+    font-size: 14px;
 }
-
 /* IE10以上で動作 */
 select::-ms-expand {
   display: none;
