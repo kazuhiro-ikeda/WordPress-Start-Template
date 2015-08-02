@@ -237,10 +237,8 @@ select::-ms-expand {
 	margin-bottom: 10px;
 }
 
-/* テキスト */
-#privacy-policy-text {
-	font-size: 15px;
-	line-height: 175%;
+/* テキストエリア（白バック） */
+#privacy-policy-text-area {
 	background-color: white;
 	border: 1px solid #B1B1B1;
 	height: 115px;
@@ -250,13 +248,23 @@ select::-ms-expand {
 	margin-bottom: 15px;
 }
 
+/* テキスト */
+.privacy-policy-text {
+	font-size: 15px;
+	line-height: 175%;
+	margin-bottom: 20px;
+}
+
 /* リスト */
 #privacy-policy-items {
+	font-size: 15px;
 	line-height: 200%;
+	margin-bottom: 20px;
 }
 
 /* 所在地 */
 #privacy-policy-address {
+	font-size: 15px;
 	line-height: 200%;
 }
 
