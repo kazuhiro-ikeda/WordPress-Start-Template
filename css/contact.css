@@ -146,6 +146,9 @@ input[type="text"]#month, input[type="text"]#day {
 }/* /640px */
 
 /* 必須 */
+.require {
+	color: #00487B;
+}
 #contact-table .require {
 	font-weight: normal;
 }
