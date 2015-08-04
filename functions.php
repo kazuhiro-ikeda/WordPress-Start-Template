@@ -20,28 +20,40 @@
 				}
 		new relative_URI();
 		*/
+		
+	//ダッシュボード
+		function remove_menus() {
+			//remove_menu_page( 'edit.php' );
+			remove_menu_page( 'edit-comments.php' );
+			//remove_menu_page( 'edit.php?post_type=mw-wp-form' );
+		}
+		add_action( 'admin_menu', 'remove_menus' );
+	//advanced custom field	
+		//add_filter('acf/settings/show_admin', '__return_false');
+
+
 
 	//タブレットをモバイルから除外
-	function is_mobile() {
-	    $useragents = array(
-	        'iPhone',          // iPhone
-	        'iPod',            // iPod touch
-	        'Android.*Mobile', // 1.5+ Android Only mobile
-	        'Windows.*Phone',  // Windows Phone
-	        'dream',           // Pre 1.5 Android
-	        'CUPCAKE',         // 1.5+ Android
-	        'blackberry9500',  // Storm
-	        'blackberry9530',  // Storm
-	        'blackberry9520',  // Storm v2
-	        'blackberry9550',  // Storm v2
-	        'blackberry9800',  // Torch
-	        'webOS',           // Palm Pre Experimental
-	        'incognito',       // Other iPhone browser
-	        'webmate'          // Other iPhone browser
-	    );
-	    $pattern = '/'.implode('|', $useragents).'/i';
-	    return preg_match($pattern, $_SERVER['HTTP_USER_AGENT']);
-	}
+		function is_mobile() {
+		    $useragents = array(
+		        'iPhone',          // iPhone
+		        'iPod',            // iPod touch
+		        'Android.*Mobile', // 1.5+ Android Only mobile
+		        'Windows.*Phone',  // Windows Phone
+		        'dream',           // Pre 1.5 Android
+		        'CUPCAKE',         // 1.5+ Android
+		        'blackberry9500',  // Storm
+		        'blackberry9530',  // Storm
+		        'blackberry9520',  // Storm v2
+		        'blackberry9550',  // Storm v2
+		        'blackberry9800',  // Torch
+		        'webOS',           // Palm Pre Experimental
+		        'incognito',       // Other iPhone browser
+		        'webmate'          // Other iPhone browser
+		    );
+		    $pattern = '/'.implode('|', $useragents).'/i';
+		    return preg_match($pattern, $_SERVER['HTTP_USER_AGENT']);
+		}
 		
 	//管理画面スラッグ表示
 		function add_page_columns_name($columns) {
