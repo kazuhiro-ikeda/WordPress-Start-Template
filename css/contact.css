@@ -173,21 +173,28 @@ label {
 
 /* 送信ボタン */
 input[type="submit"] {
-	font-size: 14px;
+	font-size: 20px;
 	color: white;
 	border: none;
-	background-color: white;
-	text-indent: -9999px;
-	background-image: url(../images/contact/btn-confirm.png);
+	background-color: #0054A6;
 	background-repeat: no-repeat;
-	width: xxpx;
-	height: xxpx;
+	width: 16em;
+	padding: 10px 40px;
+	border-radius: 5px;
 	display: block;
 	margin: 60px auto;
+	outline: none;
 }
-#contact-table input[type="submit"]:hover {
+input[type="submit"]:hover {
 	cursor: pointer;
+	filter: alpha(opacity=80);
+	-moz-opacity:0.8;
+	opacity:0.8;
+	transition: opacity .15s ease-in-out;
+	-moz-transition: opacity .15s ease-in-out;
+	-webkit-transition: opacity .15s ease-in-out;
 }
+
 /* ドロップダウン */
 #contact-table select {
     -webkit-appearance: button;
