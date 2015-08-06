@@ -2,19 +2,19 @@
 /**
  * Name       : MWF Functions
  * Description: 関数
- * Version    : 1.3.0
+ * Version    : 1.4.4
  * Author     : Takashi Kitajima
  * Author URI : http://2inc.org
  * Created    : May 29, 2013
- * Modified   : July 24, 2014
+ * Modified   : May 26, 2015
  * License    : GPLv2
  * License URI: http://www.gnu.org/licenses/gpl-2.0.html
  */
 class MWF_Functions {
 
 	/**
-	 * is_numeric
 	 * 引数で渡された変数が存在し、かつ数値であるなら true
+	 *
 	 * @param string $value 参照渡し
 	 * @return bool
 	 */
@@ -26,8 +26,8 @@ class MWF_Functions {
 	}
 
 	/**
-	 * array_clean
 	 * 配列の空要素を削除
+	 *
 	 * @param array $array
 	 * @return array
 	 */
@@ -36,13 +36,13 @@ class MWF_Functions {
 	}
 
 	/**
-	 * is_empty
 	 * 値が空（0は許可）
+	 *
 	 * @param mixed
 	 * @return bool
 	 */
 	public static function is_empty( $value ) {
-		if ( $value === array() || $value === '' || $value === null ) {
+		if ( $value === array() || $value === '' || $value === null || $value === false ) {
 			return true;
 		} else {
 			return false;
@@ -50,8 +50,8 @@ class MWF_Functions {
 	}
 
 	/**
-	 * fileurl_to_path
 	 * ファイルURLをファイルパスに変換
+	 *
 	 * @param string $fileurl
 	 * @return string
 	 */
@@ -70,8 +70,8 @@ class MWF_Functions {
 	}
 
 	/**
-	 * filepath_to_url
 	 * ファイルパスをURLに変換
+	 *
 	 * @param string $filepath
 	 * @return string
 	 */
@@ -89,8 +89,8 @@ class MWF_Functions {
 	}
 
 	/**
-	 * convert_eol
 	 * 改行コードを \n に統一
+	 *
 	 * @param sring $string
 	 * @return string $string
 	 */
@@ -99,8 +99,8 @@ class MWF_Functions {
 	}
 
 	/**
-	 * deprecated_message
 	 * 古いメソッドを使った場合にエラーを出力
+	 *
 	 * @param string $function_name メソッド名
 	 * @param string $new_function 代替のメソッド名
 	 */
@@ -151,8 +151,8 @@ class MWF_Functions {
 	}
 
 	/**
-	 * move_temp_file_to_upload_dir
-	 * Tempディレクトリからuploadディレクトリにファイルを移動。
+	 * Tempディレクトリからuploadディレクトリにファイルを移動
+	 *
 	 * @param string ファイルパス
 	 * @return bool
 	 */
@@ -173,14 +173,14 @@ class MWF_Functions {
 	}
 
 	/**
-	 * save_attachments_in_media
 	 * 添付ファイルをメディアに保存、投稿データに添付ファイルのキー（配列）を保存
 	 * $this->settings が確定した後でのみ利用可能
+	 *
 	 * @param int post_id
 	 * @param array ( ファイルのname属性値 => ファイルパス, … )
 	 * @param int 生成フォーム（usedb）の post_id
 	 */
-	public static function save_attachments_in_media( $post_id, $attachments, $form_key_post_id ) {
+	public static function save_attachments_in_media( $post_id, $attachments, $form_id ) {
 		require_once( ABSPATH . 'wp-admin' . '/includes/media.php' );
 		require_once( ABSPATH . 'wp-admin' . '/includes/image.php' );
 		$save_attached_key = array();
@@ -190,7 +190,10 @@ class MWF_Functions {
 			}
 
 			$wp_check_filetype = wp_check_filetype( $filepath );
-			$post_type = get_post_type_object( MWF_Config::DBDATA . $form_key_post_id );
+			$post_type = get_post_type_object( self::get_contact_data_post_type_from_form_id( $form_id ) );
+			if ( empty( $post_type->label ) ) {
+				continue;
+			}
 			$attachment = array(
 				'post_mime_type' => $wp_check_filetype['type'],
 				'post_title'     => $key,
@@ -213,7 +216,8 @@ class MWF_Functions {
 	}
 
 	/**
-	 * check_file_type
+	 * ファイルタイプのチェック
+	 *
 	 * @param string $filepath アップロードされたファイルのパス
 	 * @param string $filename ファイル名（未アップロード時の$_FILEの検査の場合、temp_nameは乱数になっているため）
 	 * @return bool
@@ -265,14 +269,20 @@ class MWF_Functions {
 		}
 
 		if ( version_compare( phpversion(), '5.3.0' ) >= 0 ) {
+			if ( !file_exists( $filepath ) ) {
+				return false;
+			}
 			$finfo = new finfo( FILEINFO_MIME_TYPE );
 			$type = $finfo->file( $filepath );
+			if ( $finfo === false ) {
+				return false;
+			}
 			if ( is_array( $wp_check_filetype['type'] ) ) {
-				if ( !( $finfo !== false && in_array( $type, $wp_check_filetype['type'] ) ) ) {
+				if ( !in_array( $type, $wp_check_filetype['type'] ) ) {
 					return false;
 				}
 			} else {
-				if ( !( $finfo !== false && $type === $wp_check_filetype['type'] ) ) {
+				if ( $type !== $wp_check_filetype['type'] ) {
 					return false;
 				}
 			}
@@ -281,7 +291,8 @@ class MWF_Functions {
 	}
 
 	/**
-	 * get_tracking_number_title
+	 * 問い合わせ番号の表示名を取得
+	 *
 	 * @param string $post_type　問い合わせデータの投稿タイプ名
 	 * @return string
 	 */
@@ -298,14 +309,109 @@ class MWF_Functions {
 	}
 
 	/**
-	 * contact_data_post_type_to_form_key
+	 * 問い合わせデータの投稿タイプ名をフォーム識別子に変換
+	 *
 	 * @param string $post_type 問い合わせデータの投稿タイプ名
 	 * @return string|null フォーム識別子
 	 */
 	public static function contact_data_post_type_to_form_key( $post_type ) {
-		if ( preg_match( '/^' . MWF_Config::DBDATA . '(\d+)$/', $post_type, $match ) ) {
-			$form_key = MWF_Config::NAME . '-' . $match[1];
-			return $form_key;
+		if ( self::is_contact_data_post_type( $post_type ) ) {
+			if ( preg_match( '/(\d+)$/', $post_type, $match ) ) {
+				$form_key = self::get_form_key_from_form_id( $match[1] );
+				return $form_key;
+			}
+		}
+	}
+
+	/**
+	 * フォームの投稿 ID をフォーム識別子に変換
+	 *
+	 * @param int $form_id
+	 * @return string フォーム識別子
+	 */
+	public static function get_form_key_from_form_id( $form_id ) {
+		$form_key = MWF_Config::NAME . '-' . $form_id;
+		return $form_key;
+	}
+
+	/**
+	 * フォームの投稿 ID を問い合わせデータの投稿タイプに変換
+	 *
+	 * @param int $form_id
+	 * @return string フォーム識別子
+	 */
+	public static function get_contact_data_post_type_from_form_id( $form_id ) {
+		$contact_data_post_type = MWF_Config::DBDATA . $form_id;
+		return $contact_data_post_type;
+	}
+
+	/**
+	 * 問い合わせデータ投稿タイプかどうか
+	 *
+	 * @param string $post_type
+	 * @return bool
+	 */
+	public static function is_contact_data_post_type( $post_type ) {
+		if ( preg_match( '/^' . MWF_Config::DBDATA . '\d+$/', $post_type ) ) {
+			return true;
+		}
+		return false;
+	}
+
+	/**
+	 * 添付データを適切なHTMLに変換して返す
+	 *
+	 * @param string $value
+	 * @return string
+	 */
+	public static function get_multimedia_data( $value ) {
+		$mimetype = get_post_mime_type( $value );
+		if ( $mimetype ) {
+			// 画像だったら
+			if ( in_array( $mimetype, array( 'image/jpeg', 'image/gif', 'image/png', 'image/bmp' ) ) ) {
+				$src_thumbnail = wp_get_attachment_image_src( $value, 'thumbnail' );
+				$src_full      = wp_get_attachment_image_src( $value, 'full' );
+				return sprintf(
+					'<a href="%s" target="_blank"><img src="%s" alt="" style="max-height:50px" /></a>',
+					esc_url( $src_full[0] ),
+					esc_url( $src_thumbnail[0] )
+				);
+			}
+			// 画像以外
+			else {
+				$src = wp_mime_type_icon( $mimetype );
+				return sprintf(
+					'<a href="%s" target="_blank"><img src="%s" alt="" style="height:32px" /></a>',
+					esc_url( wp_get_attachment_url( $value ) ),
+					esc_url( $src )
+				);
+			}
+		}
+		// 添付されているけど、フック等でメタ情報が書き換えられて添付ファイルID以外になってしまった場合
+		else {
+			return esc_html( $value );
+		}
+	}
+
+	/**
+	 * 添付データのIDを返す
+	 * 過去バージョンでの不具合でアップロードファイルを示すメタデータが空になっていることがあるのでその場合の代替処理
+	 *
+	 * @param WP_Post $post
+	 * @param int $meta_key
+	 * @return int
+	 */
+	public static function get_multimedia_id__fallback( $post, $meta_key ) {
+		$Contact_Data_Setting = new MW_WP_Form_Contact_Data_Setting( $post->ID );
+		$key = $Contact_Data_Setting->get_key_in_upload_file_keys( $post, $meta_key );
+		$attachments = get_posts( array(
+			'post_type'      => 'attachment',
+			'post_parent'    => $post->ID,
+			'posts_per_page' => 1,
+			'offset'         => $key,
+		) );
+		if ( isset( $attachments[0] ) ) {
+			return $attachments[0]->ID;
 		}
 	}
 }

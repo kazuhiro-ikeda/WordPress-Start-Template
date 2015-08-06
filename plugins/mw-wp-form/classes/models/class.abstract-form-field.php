@@ -2,17 +2,15 @@
 /**
  * Name       : MW WP Form Abstract Form Field
  * Description: フォームフィールドの抽象クラス
- * Version    : 1.7.0
+ * Version    : 1.7.4
  * Author     : Takashi Kitajima
  * Author URI : http://2inc.org
  * Created    : December 14, 2012
- * Modified   : January 2, 2015
+ * Modified   : June 23, 2015
  * License    : GPLv2
  * License URI: http://www.gnu.org/licenses/gpl-2.0.html
  */
-abstract class MW_WP_Form_Abstract_Form_Field extends MW_Form_Field {
-}
-abstract class MW_Form_Field {
+abstract class MW_WP_Form_Abstract_Form_Field {
 
 	/**
 	 * $shortcode_name
@@ -31,6 +29,11 @@ abstract class MW_Form_Field {
 	 * @var MW_WP_Form_Form
 	 */
 	protected $Form;
+
+	/**
+	 * @var MW_WP_Form_Data
+	 */
+	protected $Data;
 
 	/**
 	 * $defaults
@@ -83,27 +86,10 @@ abstract class MW_Form_Field {
 	 * __construct
 	 */
 	public function __construct() {
-		$parent_class = get_parent_class( $this );
-		$class        = get_class( $this );
-		if ( is_admin() && in_array( 'MW_Form_Field', array( $parent_class, $class ) ) ) {
-			MWF_Functions::deprecated_message(
-				'MW_Form_Field',
-				'MW_WP_Form_Abstract_Form_Field'
-			);
-		}
 		$this->_set_names();
-		// 後方互換
-		if ( method_exists( $this, 'setDefaults' ) ) {
-			MWF_Functions::deprecated_message(
-				'MW_Form_Field::setDefaults()',
-				'MW_WP_Form_Abstract_Form_Field::set_defaults()'
-			);
-			$this->defaults = $this->setDefaults();
-		} else {
-			$this->defaults = $this->set_defaults();
-		}
+		$this->defaults = $this->set_defaults();
 		$this->_add_mwform_tag_generator();
-		add_action( 'mwform_add_shortcode', array( $this, 'add_shortcode' ), 10, 4 );
+		add_action( 'mwform_add_shortcode', array( $this, 'add_shortcode' ), 10, 5 );
 		add_filter( 'mwform_form_fields'  , array( $this, 'mwform_form_fields' ) );
 	}
 
@@ -122,26 +108,6 @@ abstract class MW_Form_Field {
 		$args = $this->set_names();
 		$this->shortcode_name = $args['shortcode_name'];
 		$this->display_name   = $args['display_name'];
-	}
-
-	/**
-	 * set_qtags
-	 * @param string $id
-	 * @param string $display
-	 * @param string $arg1 開始タグ（ショートコード）
-	 * @param string $arg2 終了タグ（ショートコード）
-	 */
-	protected function set_qtags( $id, $display, $arg1, $arg2 = '' ) {
-		MWF_Functions::deprecated_message(
-			'MW_Form_Field::set_qtags()',
-			'MW_WP_Form_Abstract_Form_Field::set_names()'
-		);
-		$this->qtags = array(
-			'id'      => $id,
-			'display' => $display,
-			'arg1'    => $arg1,
-			'arg2'    => $arg2,
-		);
 	}
 
 	/**
@@ -178,22 +144,13 @@ abstract class MW_Form_Field {
 			return apply_filters( 'mwform_error_message_wrapper', $_ret, $this->form_key );
 		}
 	}
-	protected function getError( $key ) {
-		MWF_Functions::deprecated_message(
-			'MW_Form_Field::getError()',
-			'MW_WP_Form_Abstract_Form_Field::get_error()'
-		);
-		return $this->get_error( $key );
-	}
 
 	/**
 	 * set_defaults
 	 * $this->defaultsを設定し返す
 	 * @return array defaults
 	 */
-	protected function set_defaults() {
-		// 本当は abstract。後方互換のためしてない。
-	}
+	abstract protected function set_defaults();
 
 	/**
 	 * input_page
@@ -201,11 +158,9 @@ abstract class MW_Form_Field {
 	 * @param array $atts
 	 * @return string HTML
 	 */
-	protected function input_page() {
-		// 本当は abstract。後方互換のためしてない。
-	}
+	abstract protected function input_page();
 	public function _input_page( $atts ) {
-		if ( isset( $this->defaults['value'], $atts['name'] ) && !isset( $atts['value'] ) ) {
+		if ( array_key_exists( 'value', $this->defaults ) && isset( $atts['name'] ) && !isset( $atts['value'] ) ) {
 			$atts['value'] = apply_filters(
 				'mwform_value_' . $this->form_key,
 				$this->defaults['value'],
@@ -213,14 +168,6 @@ abstract class MW_Form_Field {
 			);
 		}
 		$this->atts = shortcode_atts( $this->defaults, $atts );
-		// 後方互換
-		if ( method_exists( $this, 'inputPage' ) ) {
-			MWF_Functions::deprecated_message(
-				'MW_Form_Field::inputPage()',
-				'MW_WP_Form_Abstract_Form_Field::input_page()'
-			);
-			return $this->inputPage();
-		}
 		return $this->input_page();
 	}
 
@@ -230,19 +177,9 @@ abstract class MW_Form_Field {
 	 * @param array $atts
 	 * @return string HTML
 	 */
-	protected function confirm_page() {
-		// 本当は abstract。後方互換のためしてない。
-	}
+	abstract protected function confirm_page();
 	public function _confirm_page( $atts ) {
 		$this->atts = shortcode_atts( $this->defaults, $atts );
-		// 後方互換
-		if ( method_exists( $this, 'confirmPage' ) ) {
-			MWF_Functions::deprecated_message(
-				'MW_Form_Field::confirmPage()',
-				'MW_WP_Form_Abstract_Form_Field::confirm_page()'
-			);
-			return $this->confirmPage();
-		}
 		return $this->confirm_page();
 	}
 
@@ -259,6 +196,7 @@ abstract class MW_Form_Field {
 			$this->Form     = $Form;
 			$this->Error    = $Error;
 			$this->form_key = $form_key;
+			$this->Data     = MW_WP_Form_Data::getInstance();
 			switch( $view_flg ) {
 				case 'input' :
 					add_shortcode( $this->shortcode_name, array( $this, '_input_page' ) );
@@ -275,8 +213,8 @@ abstract class MW_Form_Field {
 	}
 
 	/**
-	 * get_children
 	 * 選択肢の配列を返す（:が含まれている場合は分割して前をキーに、後ろを表示名にする）
+	 *
 	 * @param string $_children
 	 * @return array $children
 	 */
@@ -286,9 +224,18 @@ abstract class MW_Form_Field {
 			$_children = explode( ',', $_children );
 		}
 		if ( is_array( $_children ) ) {
-			$_children = array_map( 'trim', $_children );
 			foreach ( $_children as $child ) {
-				$child = array_map( 'trim', explode( ':', $child, 2 ) );
+				$temp_replacement = '@-[_-_]-@';
+				if ( preg_match( '/(^:[^:])|([^:]:[^:])/', $child ) ) {
+					$child = str_replace( '::', $temp_replacement, $child );
+					$child = explode( ':', $child, 2 );
+				} else {
+					$child = str_replace( '::', $temp_replacement, $child );
+					$child = array( $child );
+				}
+				foreach ( $child as $child_key => $child_value ) {
+					$child[$child_key] = str_replace( $temp_replacement, ':', $child_value );
+				}
 				if ( count( $child ) === 1 ) {
 					$children[$child[0]] = $child[0];
 				} else {
@@ -300,13 +247,6 @@ abstract class MW_Form_Field {
 			$children = apply_filters( 'mwform_choices_' . $this->form_key, $children, $this->atts );
 		}
 		return $children;
-	}
-	public function getChildren( $_children ) {
-		MWF_Functions::deprecated_message(
-			'MW_Form_Field::getChildren()',
-			'MW_WP_Form_Abstract_Form_Field::get_children()'
-		);
-		return $this->get_children( $_children );
 	}
 
 	/**

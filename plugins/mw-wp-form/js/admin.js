@@ -57,7 +57,7 @@ jQuery( function( $ ) {
 				send_to_editor( mwform_create_shortcode( $( this ).attr( 'id' ) ) );
 				$( this ).dialog( 'close' );
 			},
-			'Cansel': function() {
+			'Cancel': function() {
 				$( this ).dialog( 'close' );
 			}
 		},
@@ -75,5 +75,18 @@ jQuery( function( $ ) {
 	$( '#mw-wp-form_validation .repeatable-boxes' ).sortable( {
 		items : '> .repeatable-box',
 		handle: '.sortable-icon-handle'
+	} );
+
+	/**
+	 * 問い合わせ番号フィールド
+	 */
+	$( 'input[name="open_tracking_number_field"]' ).click( function() {
+		var tracking_number_field = $( '#tracking_number_field' );
+		var is_open = $( this ).prop( 'checked' );
+		if ( is_open ) {
+			tracking_number_field.removeAttr( 'disabled' );
+		} else {
+			tracking_number_field.attr( 'disabled', 'disabled' );
+		}
 	} );
 } );

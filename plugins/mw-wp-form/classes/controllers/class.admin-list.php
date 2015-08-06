@@ -1,31 +1,56 @@
 <?php
 /**
  * Name       : MW WP Form Admin List Controller
- * Version    : 1.0.0
+ * Version    : 1.1.0
  * Author     : Takashi Kitajima
  * Author URI : http://2inc.org
  * Created    : January 1, 2015
- * Modified   : 
+ * Modified   : March 27, 2015
  * License    : GPLv2
  * License URI: http://www.gnu.org/licenses/gpl-2.0.html
  */
-class MW_WP_Form_Admin_List_Controller {
+class MW_WP_Form_Admin_List_Controller extends MW_WP_Form_Controller {
 	
 	/**
 	 * initialize
 	 */
 	public function initialize() {
-		add_action( 'admin_head', array( $this, 'add_columns' ) );
+		$screen = get_current_screen();
+		add_filter( 'views_' . $screen->id , array( $this, 'donate_link' ) );
+		add_action( 'admin_head'           , array( $this, 'add_columns' ) );
+		add_action( 'admin_enqueue_scripts', array( $this, 'admin_enqueue_scripts' ) );
+	}
+
+	/**
+	 * 寄付リンクを出力
+	 *
+	 * @param array $views
+	 * @return array
+	 */
+	public function donate_link( $views ) {
+		$donation = array(
+			'donation' =>
+				'<div class="donation"><p>' .
+				__( 'Your contribution is needed for making this plugin better.', MWF_Config::DOMAIN ) .
+				' <a href="http://www.amazon.co.jp/registry/wishlist/39ANKRNSTNW40" class="button">' .
+				__( 'Donate', MWF_Config::DOMAIN ) . '</a></p></div>'
+		);
+		$views = array_merge( $donation, $views );
+		return $views;
+	}
+
+	/**
+	 * admin_enqueue_scripts
+	 */
+	public function admin_enqueue_scripts() {
+		$url = plugins_url( MWF_Config::NAME );
+		wp_enqueue_style( MWF_Config::NAME . '-admin-list', $url . '/css/admin-list.css' );
 	}
 
 	/**
 	 * add_columns
 	 */
 	public function add_columns() {
-		$post_type = get_post_type();
-		if ( $post_type !== MWF_Config::NAME ) {
-			return;
-		}
 		add_filter( 'manage_posts_columns'      , array( $this, 'manage_posts_columns' ) );
 		add_action( 'manage_posts_custom_column', array( $this, 'manage_posts_custom_column' ), 10, 2 );
 	}
@@ -49,10 +74,9 @@ class MW_WP_Form_Admin_List_Controller {
 	 * @param int $post_id
 	 */
 	public function manage_posts_custom_column( $column_name, $post_id ) {
-		$View = new MW_WP_Form_Admin_List_View();
-		$View->set( 'post_id', get_the_ID() );
+		$this->assign( 'post_id', get_the_ID() );
 		if ( $column_name === 'mwform_form_key' ) {
-			$View->form_key();
+			$this->render( 'admin-list/form-key' );
 		}
 	}
 }

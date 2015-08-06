@@ -2,45 +2,51 @@
 /**
  * Name       : MW WP Form Main Controller
  * Description: フロントエンドにおいて、適切な画面にリダイレクトさせる
- * Version    : 1.0.2
+ * Version    : 1.0.6
  * Author     : Takashi Kitajima
  * Author URI : http://2inc.org
  * Created    : December 23, 2014
- * Modified   : January 22, 2015
+ * Modified   : May 11, 2015
  * License    : GPLv2
  * License URI: http://www.gnu.org/licenses/gpl-2.0.html
  */
 class MW_WP_Form_Main_Controller {
 
 	/**
-	 * $Data
 	 * @var MW_WP_Form_Data
 	 */
 	protected $Data;
 
 	/**
-	 * $ExecShortcode
 	 * @var MW_WP_Form_Exec_Shortcode
 	 */
 	protected $ExecShortcode;
 
 	/**
-	 * $Redirected
 	 * @var MW_WP_Form_Redrected
 	 */
 	protected $Redirected;
 
 	/**
-	 * $Setting
 	 * @var MW_WP_Form_Setting
 	 */
 	protected $Setting;
 
 	/**
-	 * $validation_rules
 	 * @var array
 	 */
 	protected $validation_rules = array();
+
+	/**
+	 * @var string
+	 */
+	protected $token_name = 'token';
+
+	/**
+	 * リダイレクトされてからの complete であれば true
+	 * @var bool
+	 */
+	protected $complete_twice = false;
 
 	/**
 	 * __construct
@@ -54,13 +60,13 @@ class MW_WP_Form_Main_Controller {
 	 * initialize
 	 */
 	public function initialize() {
-		add_filter( 'nocache_headers' , array( $this, 'nocache_headers' ) , 1 );
-		add_action( 'parse_request'   , array( $this, 'remove_query_vars_from_post' ) );
-		add_filter( 'template_include', array( $this, 'template_include' ), 10000 );
+		add_filter( 'nocache_headers'     , array( $this, 'nocache_headers' ) , 1 );
+		add_action( 'parse_request'       , array( $this, 'remove_query_vars_from_post' ) );
+		add_filter( 'template_include'    , array( $this, 'template_include' ), 10000 );
+		add_filter( 'mwform_form_end_html', array( $this, 'mwform_form_end_html' ) );
 	}
 
 	/**
-	 * remove_query_vars_from_post
 	 * WordPressへのリクエストに含まれている、$_POSTの値を削除
 	 */
 	public function remove_query_vars_from_post( $wp_query ) {
@@ -80,8 +86,8 @@ class MW_WP_Form_Main_Controller {
 	}
 
 	/**
-	 * template_include
 	 * 表示画面でのプラグインの処理等
+	 *
 	 * @param string $template
 	 * @return string $template
 	 */
@@ -110,7 +116,7 @@ class MW_WP_Form_Main_Controller {
 		$Error = new MW_WP_Form_Error();
 		$this->Validation = new MW_WP_Form_Validation( $Error );
 		$this->Validation->set_validation_rules( $this->validation_rules );
-		$this->Validation->set_rules( $this->Setting, $this->Data );
+		$this->Validation->set_rules( $this->Setting );
 		$this->Validation = apply_filters(
 			'mwform_validation_' . $form_key,
 			$this->Validation,
@@ -118,7 +124,8 @@ class MW_WP_Form_Main_Controller {
 			clone $this->Data
 		);
 
-		$post_condition = $this->Data->get_post_condition();
+		$token_check    = $this->token_check();
+		$post_condition = $this->Data->get_post_condition( $token_check );
 		$is_valid = $this->Validation->check();
 		$this->Redirected = new MW_WP_Form_Redirected(
 			$this->ExecShortcode->get( 'input_url' ),
@@ -138,7 +145,7 @@ class MW_WP_Form_Main_Controller {
 		}
 		// complete のとき
 		if ( $view_flg === 'complete' ) {
-			if ( !$this->Data->is_complete_twice() ) {
+			if ( !$this->is_complete_twice() ) {
 				$this->send();
 			}
 			// 手動フォームの場合は完了画面に ExecShortcode が無く footer の clear_values が
@@ -151,20 +158,23 @@ class MW_WP_Form_Main_Controller {
 
 		// スクロール用スクリプトのロード
 		if ( $this->Setting->get( 'scroll' ) ) {
-			if ( in_array( $view_flg, array( 'confirm', 'complete' ) ) || !$is_valid ) {
+			if ( $post_condition !== 'input' ) {
 				add_action( 'wp_enqueue_scripts', array( $this, 'scroll_script' ) );
 			}
 		}
 
 		// 画面表示用のショートコードを登録
-		$Form = new MW_WP_Form_Form( $this->Data );
-		$View = new MW_WP_Form_Main_View();
-		$View->set( 'Form', $Form );
-		$View->set( 'Error', $Error );
-		$View->set( 'Setting', $this->Setting );
-		$View->set( 'form_key', $form_key );
-		$View->set( 'view_flg', $view_flg );
-		$View->add_shortcode_that_display_content();
+		do_action(
+			'mwform_add_shortcode',
+			new MW_WP_Form_Form(),
+			$view_flg,
+			$Error,
+			$form_key,
+			$this->Data
+		);
+
+		$Form = new MW_WP_Form_Form();
+		$this->ExecShortcode->add_shortcode( $view_flg, $this->Setting, $Form );
 
 		add_action( 'wp_footer'         , array( $this->Data, 'clear_values' ) );
 		add_action( 'wp_enqueue_scripts', array( $this      , 'wp_enqueue_scripts' ) );
@@ -173,8 +183,8 @@ class MW_WP_Form_Main_Controller {
 	}
 
 	/**
-	 * redirect
 	 * 現在のURLと引数で渡されたリダイレクトURLが同じであればリダイレクトしない
+	 *
 	 * @param string リダイレクトURL
 	 */
 	private function redirect( $url ) {
@@ -225,8 +235,8 @@ class MW_WP_Form_Main_Controller {
 	}
 	
 	/**
-	 * nocache_headers
-	 * Nginx Cache Controller用
+	 * Nginx Cache Controller 用に header をカスタマイズ
+	 *
 	 * @param array $headers
 	 * @return array $headers
 	 */
@@ -236,69 +246,47 @@ class MW_WP_Form_Main_Controller {
 	}
 
 	/**
-	 * send
 	 * メール送信
 	 */
 	protected function send() {
 		$Mail         = new MW_WP_Form_Mail();
 		$form_key     = $this->ExecShortcode->get( 'key' );
 		$attachments  = $this->get_attachments();
-		$Mail_Service = new MW_WP_Form_Mail_Service( $Mail, $this->Data, $form_key, $this->validation_rules, $this->Setting, $attachments );
+		$Mail_Service = new MW_WP_Form_Mail_Service( $Mail, $form_key, $this->Setting, $attachments );
 
 		// 管理画面で作成した場合だけ自動で送信
 		if ( $this->ExecShortcode->is_generated_by_formkey() ) {
-			$Mail_admin_raw = $Mail_Service->get_Mail_admin_raw();
-
-			// save_mail_body で登録されないように
-			foreach ( $attachments as $key => $attachment ) {
-				$this->Data->clear_value( $key );
-			}
-
-			// メール送信前にファイルのリネームをしないと、tempファイル名をメールで送信してしまう。
-			if ( $this->Setting->get( 'usedb' ) ) {
-				$Mail_Service->save_contact_data( $Mail_admin_raw, $attachments );
-			}
-
-			$Mail_admin = $Mail_Service->get_Mail_admin();
-			$Mail_admin->send();
-
-			// DB非保存時は管理者メール送信後、ファイルを削除
-			if ( !$this->Setting->get( 'usedb' ) ) {
-				$File = new MW_WP_Form_File();
-				$File->delete_files( $attachments );
-			}
+			$Mail_Service->send_admin_mail();
 
 			// 自動返信メールの送信
 			$automatic_reply_email = $this->Setting->get( 'automatic_reply_email' );
 			if ( $automatic_reply_email ) {
-				$automatic_reply_email = $this->Data->get_raw( $automatic_reply_email );
+				$automatic_reply_email = $this->Data->get_post_value_by_key( $automatic_reply_email );
 				$is_invalid_mail_address = $this->validation_rules['mail']->rule(
 					$automatic_reply_email
 				);
 				if ( $automatic_reply_email && !$is_invalid_mail_address ) {
-					$Mail_auto = $Mail_Service->get_Mail_auto();
-					$Mail_auto->send();
+					$Mail_Service->send_reply_mail();
 				}
 			}
 
 			// 問い合わせ番号を加算
-			if ( preg_match( '{' . MWF_Config::TRACKINGNUMBER . '}', $Mail_admin_raw->body ) ) {
-				$this->Setting->update_tracking_number();
-			}
+			$Mail_Service->update_tracking_number();
 		}
 	}
 
 	/**
-	 * get_attachments
+	 * 送信されたデータをもとに添付ファイル用の配列を生成して返す
+	 *
 	 * @return array $attachments pathの配列
 	 */
 	protected function get_attachments() {
 		$attachments = array();
-		$upload_file_keys = $this->Data->get_raw( MWF_Config::UPLOAD_FILE_KEYS );
+		$upload_file_keys = $this->Data->get_post_value_by_key( MWF_Config::UPLOAD_FILE_KEYS );
 		if ( $upload_file_keys !== null && is_array( $upload_file_keys ) ) {
 			$wp_upload_dir = wp_upload_dir();
 			foreach ( $upload_file_keys as $key ) {
-				$upload_file_url = $this->Data->get_raw( $key );
+				$upload_file_url = $this->Data->get_post_value_by_key( $key );
 				if ( !$upload_file_url ) {
 					continue;
 				}
@@ -315,13 +303,12 @@ class MW_WP_Form_Main_Controller {
 	}
 
 	/**
-	 * file_upload
 	 * ファイルアップロード処理。実際のアップロード状況に合わせてフォームデータも再生成する。
 	 */
 	protected function file_upload() {
 		$File  = new MW_WP_Form_File();
 		$files = array();
-		$upload_files = $this->Data->get_raw( MWF_Config::UPLOAD_FILES );
+		$upload_files = $this->Data->get_post_value_by_key( MWF_Config::UPLOAD_FILES );
 		if ( !is_array( $upload_files ) ) {
 			$upload_files = array();
 		}
@@ -333,5 +320,51 @@ class MW_WP_Form_Main_Controller {
 		$uploaded_files = $File->upload( $files );
 		$this->Data->set_upload_file_keys();
 		$this->Data->push_uploaded_file_keys( $uploaded_files );
+	}
+
+	/**
+	 * トークンチェック
+	 *
+	 * @return bool
+	 */
+	protected function token_check() {
+		if ( isset( $_POST[$this->token_name] ) ) {
+			$request_token = $_POST[$this->token_name];
+		}
+		$values   = $this->Data->gets();
+		$form_key = $this->ExecShortcode->get( 'key' );
+		if ( isset( $request_token ) && wp_verify_nonce( $request_token, $form_key ) ) {
+			return true;
+		} elseif ( empty( $_POST ) && $values ) {
+			$this->complete_twice = true;
+			return true;
+		}
+		return false;
+	}
+
+	/**
+	 * トークンを挿入
+	 *
+	 * @param string $html
+	 * @return string
+	 */
+	public function mwform_form_end_html( $html ) {
+		if ( is_a( $this->ExecShortcode, 'MW_WP_Form_Exec_Shortcode' ) ) {
+			$form_key = $this->ExecShortcode->get( 'key' );
+			$html .= wp_nonce_field( $form_key, $this->token_name, true, false );
+			return $html;
+		}
+	}
+
+	/**
+	 * リダイレクト後の complete かチェック
+	 *
+	 * @return bool
+	 */
+	protected function is_complete_twice() {
+		if ( $this->complete_twice === true ) {
+			return true;
+		}
+		return false;
 	}
 }

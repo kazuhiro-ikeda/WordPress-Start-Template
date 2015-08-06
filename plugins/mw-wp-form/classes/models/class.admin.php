@@ -2,11 +2,11 @@
 /**
  * Name       : MW WP Form Admin
  * Description: 管理画面クラス
- * Version    : 2.0.0
+ * Version    : 2.0.3
  * Author     : Takashi Kitajima
  * Author URI : http://2inc.org
  * Created    : February 21, 2013
- * Modified   : January 1, 2015
+ * Modified   : May 25, 2015
  * License    : GPLv2
  * License URI: http://www.gnu.org/licenses/gpl-2.0.html
  */
@@ -29,6 +29,12 @@ class MW_WP_Form_Admin {
 			return $post_id;
 
 		$data = $_POST[MWF_Config::NAME];
+
+		$triminglists = array( 'mail_from', 'mail_to', 'mail_cc', 'mail_bcc', 'admin_mail_from' );
+		foreach ( $triminglists as $name ) {
+			$data[$name] = trim( mb_convert_kana( $data[$name], 's', get_option( 'blog_charset' ) ) );
+		}
+
 		if ( !empty( $data['validation'] ) && is_array( $data['validation'] ) ) {
 			$validation = array();
 			foreach ( $data['validation'] as $_validation ) {
@@ -84,6 +90,12 @@ class MW_WP_Form_Admin {
 
 		$Setting = new MW_WP_Form_Setting( $post_id );
 		$Setting->sets( $data );
+
+		if ( isset( $_POST[MWF_Config::TRACKINGNUMBER] ) ) {
+			$tracking_number = $_POST[MWF_Config::TRACKINGNUMBER];
+			$Setting->update_tracking_number( $tracking_number );
+		}
+
 		$Setting->save();
 	}
 
@@ -97,5 +109,22 @@ class MW_WP_Form_Admin {
 			'posts_per_page' => -1,
 		) );
 		return $forms;
+	}
+
+	/**
+	 * get_forms_using_database
+	 * @return array データベースに保存が有効なフォーム（WP_Post）の配列
+	 */
+	public function get_forms_using_database() {
+		$forms_using_database = array();
+		$forms = $this->get_forms();
+		foreach ( $forms as $form ) {
+			$Setting = new MW_WP_Form_Setting( $form->ID );
+			if ( !$Setting->get( 'usedb' ) ) {
+				continue;
+			}
+			$forms_using_database[$form->ID] = $form;
+		}
+		return $forms_using_database;
 	}
 }

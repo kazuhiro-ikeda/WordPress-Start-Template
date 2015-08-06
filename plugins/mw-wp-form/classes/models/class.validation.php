@@ -2,31 +2,28 @@
 /**
  * Name       : MW WP Form Validation
  * Description: 与えられたデータに対してバリデーションエラーがあるかチェックする
- * Version    : 1.8.1
+ * Version    : 1.8.5
  * Author     : Takashi Kitajima
  * Author URI : http://2inc.org
  * Created    : July 20, 2012
- * Modified   : January 14, 2015
+ * Modified   : April 15, 2015
  * License    : GPLv2
  * License URI: http://www.gnu.org/licenses/gpl-2.0.html
  */
 class MW_WP_Form_Validation {
 
 	/**
-	 * $Error
 	 * @var MW_WP_Form_Error
 	 */
 	protected $Error;
 
 	/**
-	 * $validate
 	 * バリデートをかける項目（name属性）と、それにかけるバリデーションの配列
 	 * @var array
 	 */
-	public $validate = array();
+	protected $validate = array();
 
 	/**
-	 * $validation_rules
 	 * バリデーションルールの配列
 	 * @var array
 	 */
@@ -34,6 +31,7 @@ class MW_WP_Form_Validation {
 
 	/**
 	 * __construct
+	 *
 	 * @param MW_WP_Form_Error $Error
 	 */
 	public function __construct( MW_WP_Form_Error $Error ) {
@@ -41,8 +39,8 @@ class MW_WP_Form_Validation {
 	}
 
 	/**
-	 * set_validation_rules
 	 * 各バリデーションルールクラスのインスタンスをセット
+	 *
 	 * @param array $validation_rules
 	 */
 	public function set_validation_rules( array $validation_rules ) {
@@ -54,8 +52,17 @@ class MW_WP_Form_Validation {
 	}
 
 	/**
-	 * is_valid
+	 * セットされたバリデーションルールクラスを取得
+	 *
+	 * @return array
+	 */
+	public function get_validation_rules() {
+		return $this->validation_rules;
+	}
+
+	/**
 	 * バリデートが通っているかチェック
+	 *
 	 * @return bool
 	 */
 	protected function is_valid() {
@@ -69,11 +76,12 @@ class MW_WP_Form_Validation {
 
 	/**
 	 * set_rules
+	 *
 	 * @param MW_WP_Form_Setting $Setting
-	 * @param MW_WP_Form_Data $Data
-	 * @return array $rules
 	 */
-	public function set_rules( MW_WP_Form_Setting $Setting, MW_WP_Form_Data $Data ) {
+	public function set_rules( MW_WP_Form_Setting $Setting ) {
+		$Data = MW_WP_Form_Data::getInstance();
+		
 		$rules = array();
 		$validations = $Setting->get('validation' );
 		if ( $validations ) {
@@ -103,10 +111,11 @@ class MW_WP_Form_Validation {
 
 	/**
 	 * set_rule
+	 *
 	 * @param string ターゲットのname属性
 	 * @param string バリデーションルール名
 	 * @param array オプション
-	 * @return bool
+	 * @return MW_WP_Form_Validation
 	 */
 	public function set_rule( $key, $rule, array $options = array() ) {
 		$rules = array(
@@ -116,17 +125,10 @@ class MW_WP_Form_Validation {
 		$this->validate[$key][] = $rules;
 		return $this;
 	}
-	public function setRule( $key, $rule, array $options = array() ) {
-		MWF_Functions::deprecated_message(
-			'MW_Validations::setRule()',
-			'MW_WP_Form_Validation::set_rule()'
-		);
-		return $this->set_rule( $key, $rule, $options );
-	}
 
 	/**
-	 * check
 	 * validate実行
+	 *
 	 * @return bool エラーがなければ true
 	 */
 	public function check() {
@@ -137,8 +139,8 @@ class MW_WP_Form_Validation {
 	}
 
 	/**
-	 * single_check
 	 * 特定の項目のvalidate実行
+	 *
 	 * @param string $key
 	 * @return bool エラーがなければ true
 	 */
@@ -148,12 +150,15 @@ class MW_WP_Form_Validation {
 			$rules = $this->validate[$key];
 			$this->_check( $key, $rules );
 		}
-		return $this->is_valid();
+		if ( $this->Error->get_error( $key ) ) {
+			return false;
+		}
+		return true;
 	}
 
 	/**
-	 * _check
 	 * validate実行の実体
+	 *
 	 * @param string $key
 	 * @param array $rules
 	 */

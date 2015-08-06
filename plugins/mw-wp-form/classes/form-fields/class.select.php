@@ -2,11 +2,11 @@
 /**
  * Name       : MW WP Form Field Select
  * Description: セレクトボックスを出力
- * Version    : 1.5.2
+ * Version    : 1.5.7
  * Author     : Takashi Kitajima
  * Author URI : http://2inc.org
  * Created    : December 14, 2012
- * Modified   : January 22, 2015
+ * Modified   : April 1, 2015
  * License    : GPLv2
  * License URI: http://www.gnu.org/licenses/gpl-2.0.html
  */
@@ -39,9 +39,10 @@ class MW_WP_Form_Field_Select extends MW_WP_Form_Abstract_Form_Field {
 	protected function set_defaults() {
 		return array(
 			'name'       => '',
-			'id'         => '',
+			'id'         => null,
 			'children'   => '',
 			'value'      => '',
+			'post_raw'   => 'false',
 			'show_error' => 'true',
 		);
 	}
@@ -52,12 +53,19 @@ class MW_WP_Form_Field_Select extends MW_WP_Form_Abstract_Form_Field {
 	 * @return string html
 	 */
 	protected function input_page() {
+		$value = $this->Data->get_raw( $this->atts['name'] );
+		if ( is_null( $value ) ) {
+			$value = $this->atts['value'];
+		}
 		$children = $this->get_children( $this->atts['children'] );
+		
 		$_ret = $this->Form->select( $this->atts['name'], $children, array(
 			'id'    => $this->atts['id'],
-			'value' => $this->atts['value'],
+			'value' => $value,
 		) );
-		$_ret .= $this->Form->children( $this->atts['name'], $children );
+		if ( $this->atts['post_raw'] === 'false' ) {
+			$_ret .= $this->Form->children( $this->atts['name'], $children );
+		}
 		if ( $this->atts['show_error'] !== 'false' ) {
 			$_ret .= $this->get_error( $this->atts['name'] );
 		}
@@ -71,11 +79,13 @@ class MW_WP_Form_Field_Select extends MW_WP_Form_Abstract_Form_Field {
 	 */
 	protected function confirm_page() {
 		$children     = $this->get_children( $this->atts['children'] );
-		$value        = $this->Form->get_selected_value( $this->atts['name'], $children );
-		$posted_value = $this->Form->get_raw( $this->atts['name'] );
+		$value        = $this->Data->get( $this->atts['name'], $children );
+		$posted_value = $this->Data->get_raw( $this->atts['name'] );
 		$_ret         = esc_html( $value );
 		$_ret        .= $this->Form->hidden( $this->atts['name'], $posted_value );
-		$_ret        .= $this->Form->children( $this->atts['name'], $children );
+		if ( $this->atts['post_raw'] === 'false' ) {
+			$_ret .= $this->Form->children( $this->atts['name'], $children );
+		}
 		return $_ret;
 	}
 
@@ -101,8 +111,16 @@ class MW_WP_Form_Field_Select extends MW_WP_Form_Abstract_Form_Field {
 			<textarea name="children"><?php echo esc_attr( $children ); ?></textarea>
 			<span class="mwf_note">
 				<?php esc_html_e( 'Input one line about one item.', MWF_Config::DOMAIN ); ?><br />
-				<?php esc_html_e( 'Example: value1&crarr;value2 or key1:value1&crarr;key2:value2', MWF_Config::DOMAIN ); ?>
+				<?php esc_html_e( 'Example: value1&crarr;value2 or key1:value1&crarr;key2:value2', MWF_Config::DOMAIN ); ?><br />
+				<?php esc_html_e( 'You can split the post value and display value by ":". But display value is sent in e-mail.', MWF_Config::DOMAIN ); ?><br />
+				<?php esc_html_e( 'When you want to use ":", please enter "::".', MWF_Config::DOMAIN ); ?>
 			</span>
+		</p>
+		<p>
+			<strong><?php esc_html_e( 'Send value by e-mail', MWF_Config::DOMAIN ); ?></strong>
+			<?php $value = $this->get_value_for_generator( 'value', $options ); ?>
+			<?php $post_raw = $this->get_value_for_generator( 'post_raw', $options ); ?>
+			<label><input type="checkbox" name="post_raw" value="true" <?php checked( 'true', $post_raw ); ?> /> <?php esc_html_e( 'Send post value when you split the post value and display value by ":" in choices.', MWF_Config::DOMAIN ); ?></label>
 		</p>
 		<p>
 			<strong><?php esc_html_e( 'Default value', MWF_Config::DOMAIN ); ?></strong>
