@@ -170,6 +170,10 @@ label {
 	position: relative;
 	top: 2px;
 }
+input[type="radio"] {
+	position: relative;
+	top: -2px;
+}
 
 /* 送信ボタン */
 input[type="submit"] {
