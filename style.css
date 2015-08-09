@@ -15,10 +15,9 @@ Author URI: http://moriad.jp/
 @import url(css/nav.css);
 
 /* ページ */
-@import url(css/contact.css);
-
-/* カスタム */
-@import url(css/custom.css);
+@import url(css/home.css);/* フロントページ */
+@import url(css/pages.css);/* ページ */
+@import url(css/contact.css);/* コンタクト */
 
 /* jQuery */
 @import url(css/lightbox.css);
