@@ -1,8 +1,9 @@
+<?php header('X-UA-Compatible: IE=edge,chrome=1'); ?>
+
 <!doctype html>
 <html>
 <head>
 <meta charset="UTF-8">
-<?php header('X-UA-Compatible: IE=edge,chrome=1'); ?>
 <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 <?php if(is_page( 'contact' )): ?>
 <meta name="viewport" content="width=640, user-scalable=no">
