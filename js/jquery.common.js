@@ -56,13 +56,21 @@ $(function(){
 			<li>CCC</li>
 			<li>DDD</li>
 		</ul>
+		.list-btn に relative .sub-panel absolute
+		.sub-panel がずれているときは上位の ul li のスタイルを継承している可能性大
 	*/
 			$( ".sub-panel" ).hide();
 			$( ".list-btn" ).hover(function(){
 				$(this).find( "ul" ).slideDown( "slow" );
 			}, function(){
 				$(this).find( "ul" ).slideUp( "fast" );
-			});	
+			});
+			//↑スマホ、ホバー対策
+			$( 'a' ).bind( 'touchstart', function(){
+			$( this ).addClass( 'hover' );
+			}).bind( 'touchend', function(){
+				$( this ).removeClass( 'hover' );
+			});
 	
 	//リンク無効
 			$( '.no-link a' ).click(function(){
