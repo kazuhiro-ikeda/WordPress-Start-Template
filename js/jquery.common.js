@@ -82,25 +82,54 @@ $(function(){
 	
 	//投稿コンテンツの段落にクリアフィックス
 			$( '.single-content p' ).addClass( 'cl' );
-			
-	//フロートボックス　２カラム
-			$( 'ul.item-list-half li' ).addClass( 'heightLine' );	
-			$( 'ul.item-list-half li:nth-child(odd)' ).css( 'float', 'left' );
-			$( 'ul.item-list-half li:nth-child(even)' ).css( 'float', 'right' );
-			$( 'ul.item-list-half' ).addClass( 'cl' );
-			
-			
-	//フロートボックス　３カラム
-			$( 'ul.item-list-triple li:nth-child(n3)' ).css( 'margin-right', '0' );
-			$( 'ul.item-list-triple li' ).addClass( 'heightLine' );
-	
+				
 	//IE ACTIVE FOCUS remove outline
 			if (document.documentElement.attachEvent)
 			    document.documentElement.attachEvent('onmousedown',function(){
 			    	event.srcElement.hideFocus=true
 			});	
 			
-			
+	//ゆらゆら
+	$.fn.yurayura = function( config ) {
+	    var obj = this;
+	    var i = 0;
+	    var defaults = {
+	      'move' : 5,     // 動く量
+	      'duration' : 1000,  // 移動にかける時間
+	      'delay' : 0     // 両端で停止する時間
+	    };
+	    var setting = $.extend( defaults, config );
+	    return obj.each(function() {
+	      	(function move() {
+		        i = i > 0 ? -1 : 1;
+		        var p = obj.position().top;
+		        $( obj )
+		            .delay( setting.delay )
+		            .animate( { top : p + i * setting.move }, {
+			            duration : setting.duration,
+			            complete : move
+		           });
+		        })();
+		    });
+		};
+	/*
+		フッターに設置
+		<script>
+			$(function(){
+		        $('#btn-scroll').yurayura( {
+		            'move' : 20,
+		            'delay' : 10,
+		            'duration' : 600
+		        } );
+		    });
+		</script>
+	*/
+	
+	//MW WP Form 必須
+	$( '#mw_wp_form_mw-wp-form-識別ナンバー select option[value=""]' ).html( 'お問合せ内容を選択' );
+	
+	//br 除去
+	$( '.hogehogehoge' ).find( 'br' ).replaceWith( '' );		
 			
 			
 });// END TAG
