@@ -1,110 +1,17 @@
 @charset "utf-8";
-/*//////////////////////////////////////////　見出し　//////////////////////////////////////////*/
-
-
-
-
-
-
 /*//////////////////////////////////////////　ボタン　//////////////////////////////////////////*/
-/* 共通項目 */
+
+/* 透過ブロック要素 */
 .btn {
 	display: block;
 	background-repeat: no-repeat;
 }
 .btn:hover {
-	filter: alpha(opacity=50);
-	-moz-opacity:0.5;
-	opacity:0.5;
+	filter: alpha(opacity=70);
+	-moz-opacity:0.7;
+	opacity:0.7;
 	transition: opacity .15s ease-in-out;
 	-moz-transition: opacity .15s ease-in-out;
 	-webkit-transition: opacity .15s ease-in-out;
 	background-color: white;/* 適用する要素の背景色を指定すること！firefox バグフックス */
 }
-
-
-/*//////////////////////////////////////////　ボックス　//////////////////////////////////////////*/
-
-/* コンテンツアイテムリスト・インナーフロート/ ボックス 750px、左画像 280px、右ボックス 435px */
-ul.item-list {
-}
-ul.item-list > li {
-	margin-bottom: 50px;/* 要調性 */
-}
-.item-box {
-}
-.item-box > img {
-	max-width: 280px;/* 要調性 */
-	height: auto;
-	width: auto;
-	display: block;
-	float: left;
-}
-.item-box-r {
-	width: 435px;/* 要調性 */
-	float: right;
-}
-
-/* コンテンツアイテムリスト／ハーフ  ボックス 750px、ハーフボックス 350px
-	必須　jquery.common.js にレイアウトスクリプトあり
-	必須　jquery.height
-*/
-ul.item-list-half {
-	/* jquery でクリアフィックス */
-}
-ul.item-list-half > li {
-	margin-bottom: 50px;/* 要調整 */
-	display: inline-block;
-	width: 350px;/* 要調整 */
-}
-
-/* コンテンツアイテムリスト／トリプル  ボックス 750px、３カラム 240px
-	必須　jquery.common.js にレイアウトスクリプトあり
-	必須　jquery.height
-*/
-ul.item-list-triple {
-}
-ul.item-list-triple > li {
-	margin-bottom: 50px;/* 要調整 */
-	display: inline-block;
-	width: 240px;/* 要調整 */
-	margin-right: 15px;/* 要調整 */
-}
-
-/* カラーボックス */
-.box-gray {
-	border: 1px solid #b5b5b6;/* 要調整 */
-	padding: 15px;/* 要調整 */
-	margin: 0 0 35px;/* 要調整 */
-}
-
-/*//////////////////////////////////////////　仕切り線　//////////////////////////////////////////*/
-hr.horizontal-narrow {
-	margin-bottom: 30px;
-	margin-top: 30px;
-	border: 0;
-	height: 1px;
-	background-image: -webkit-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.45), rgba(0,0,0,0));
-	background-image: -moz-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.45), rgba(0,0,0,0));
-	background-image: -ms-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.45), rgba(0,0,0,0));
-	background-image: -o-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.45), rgba(0,0,0,0));
-	width: 75%;
-	margin-left: auto;
-	margin-right: auto;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
