@@ -90,6 +90,12 @@ a:active, a:focus {
    ie-dummy: expression(this.hideFocus=true);
 }
 
+/* アンカー調整 */
+.anc {
+	margin-top: -0px;
+    padding-top: 0px;
+}
+
 /*//////////////////////////////////////////　ヘッダー　//////////////////////////////////////////*/
 
 /* ヘッダー */
