@@ -154,6 +154,7 @@ $(function(){
     /*	
 	    CSS
 	    #hoge.sticky {
+		    width: 100%;
 		    position: fixed;
 		    top: 0;
 		}
