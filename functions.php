@@ -111,15 +111,18 @@
 				}
 	
 	//子ページ条件判定
-		function is_subpage() {
-		  global $post;
-		  if (is_page() && $post->post_parent){
-		    $parentID = $post->post_parent;
-		    return $parentID;
-		  } else {
-		    return false;
-		  };
-		};
+		function is_subpage( $pagename ) {
+		  if ( is_page() ) { //固定ページである。
+		    global $post;
+		    if ( $post->ancestors ) { //誰かのサブページである。
+		      $root = $post->ancestors[count($post->ancestors) - 1]; //配列の一番後ろが一番上の親。
+		      $root_post = get_post( $root );
+		      $name = esc_attr( $root_post->post_name );
+		      if ( $pagename == $name ) return true;
+		    }
+		  }
+		  return false;
+		}
 		
 	//post_class にクラス追加：even and odd add class
 		function oddeven_post_class ( $classes ) {
