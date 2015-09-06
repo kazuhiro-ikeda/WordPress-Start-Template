@@ -31,8 +31,6 @@
 	//advanced custom field	
 		//add_filter('acf/settings/show_admin', '__return_false');
 
-
-
 	//タブレットをモバイルから除外
 		function is_mobile() {
 		    $useragents = array(
@@ -112,6 +110,17 @@
 					}
 				}
 	
+	//子ページ条件判定
+		function is_subpage() {
+		  global $post;
+		  if (is_page() && $post->post_parent){
+		    $parentID = $post->post_parent;
+		    return $parentID;
+		  } else {
+		    return false;
+		  };
+		};
+		
 	//post_class にクラス追加：even and odd add class
 		function oddeven_post_class ( $classes ) {
 			global $current_class;
