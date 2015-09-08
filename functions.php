@@ -172,9 +172,11 @@
 		
 	//アイキャッチ画像の有効化
 		add_theme_support( 'post-thumbnails' );
-		add_image_size( 'image-l', 640, 480, true);
-		add_image_size( 'image-m', 320, 240, true);
-		add_image_size( 'image-s', 160, 120, true);
+		add_image_size( 'VGA', 640, 480, true);
+		add_image_size( 'ランドスケープM', 320, 240, true);
+		add_image_size( 'ランドスケープS', 160, 120, true);
+		add_image_size( 'ポートレートM', 240, 320, true);
+		add_image_size( 'ポートレートS', 120, 160, true);
 		
 	//カテゴリをID順に取得
 		function get_the_category_orderby_parent( $categories ) {
