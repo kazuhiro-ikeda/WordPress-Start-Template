@@ -1,0 +1,24 @@
+@charset "utf-8";
+/*//////////////////////////////////////////　comment　//////////////////////////////////////////*/
+
+/* 非表示 */
+li#category-1>label {
+	display:none;
+}
+
+/* チェックボックス非表示 */
+li#category-17 > label > input[type="checkbox"], li#category-39 > label > input[type="checkbox"] {
+	display: none;
+	cursor: default;
+}
+
+/* インデント */
+ul#categorychecklist li {
+	text-indent: 2em;
+}
+ul#categorychecklist li#category-2, ul#categorychecklist li#category-3, ul#categorychecklist li#category-4, ul#categorychecklist li#category-17 {
+	text-indent: -0.5em;
+}
+ul#categorychecklist li#category-39 {
+	text-indent: -0.5em;
+}
