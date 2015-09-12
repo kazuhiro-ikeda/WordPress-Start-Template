@@ -1,8 +1,8 @@
 <?php
 /*
-Plugin Name: xxx
+Plugin Name: TAMIAS-control-contents
 Plugin URI: http://moriad.jp/
-Description: xxx
+Description: コンテンツ登録
 Version: 1.0
 Author: Kazuhiro Ikeda
 Author URI: http://moriad.jp/
