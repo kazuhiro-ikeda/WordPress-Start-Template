@@ -1,7 +1,7 @@
 	<form action="<?php bloginfo( 'url' ); ?>/" method="get" class="screen">
 	    <fieldset>
-			<!-- 保育 or 介護のチェックボックス -->
-			<h3>保育 or 介護</h3>
+			<!-- Aのチェックボックス -->
+			<h3>A</h3>
 			<div class="toggle" data-title="01">こだわらない</div>
 			
 			<div id="panel-01" class="hide-panel check-panel">
@@ -20,8 +20,8 @@
 			
 			<hr>
 			
-			<!-- 職種のチェックボックス -->
-			<h3>職種</h3>
+			<!-- Bのチェックボックス -->
+			<h3>B</h3>
 			<div class="toggle" data-title="02">こだわらない</div>
 			
 			<div id="panel-02" class="hide-panel check-panel">
@@ -40,8 +40,8 @@
 			
 			<hr>
 
-			<!-- エリアのチェックボックス -->
-			<h3>エリア</h3>
+			<!-- Cのチェックボックス -->
+			<h3>C</h3>
 			<div class="toggle" data-title="03">こだわらない</div>
 			
 			<div id="panel-03" class="hide-panel check-panel">
@@ -59,8 +59,8 @@
 			
 			<hr>
 	
-			<!-- こだわり条件のチェックボックス -->
-			<h3>こだわり条件</h3>
+			<!-- Dのチェックボックス -->
+			<h3>D</h3>
 			<div class="toggle" data-title="04">こだわらない</div>
 
 			<div id="panel-04" class="hide-panel check-panel">
