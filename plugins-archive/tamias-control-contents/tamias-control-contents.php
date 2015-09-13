@@ -31,4 +31,25 @@ Author URI: http://moriad.jp/
 		}
 		add_action( 'init' , 'place_post_type' , 1);
 		
+		/*ひな形
+		function show_term_area( $defaults ) {
+			$defaults['★タクソノミーの英語名★'] = '★タクソノミーの日本語名★';
+			return $defaults;
+		}
+		add_filter('manage_★投稿タイプの英語名★_posts_columns', 'show_term_area', 15, 1);
+		 
+		function show_term_area_id($column_name, $id) {
+			if( $column_name == '★タクソノミーの英語名★' ) {
+				$terms = $terms = get_the_terms( $id, '★タクソノミーの英語名★' );
+				$cnt = 0;
+				foreach($terms as $var) {
+				echo $cnt != 0 ? ", " : "";
+				echo "<a href=\"" . get_admin_url() . "edit.php?★タクソノミーの英語名★=" . $var->slug . "&post_type=★投稿タイプの英語名★" . "\">" . $var->name . "</a>";
+				++$cnt;
+				}
+			}
+		}
+		add_action('manage_★投稿タイプの英語名★_posts_custom_column', 'show_term_area_id', 15, 2);
+		*/
+		
 ?>
