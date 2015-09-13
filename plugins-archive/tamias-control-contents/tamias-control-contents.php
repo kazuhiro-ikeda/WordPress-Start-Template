@@ -1,6 +1,6 @@
 <?php
 /*
-Plugin Name: TAMIAS-control-contents
+Plugin Name: TAMIAS Control Contents
 Plugin URI: http://moriad.jp/
 Description: コンテンツ登録
 Version: 1.0
