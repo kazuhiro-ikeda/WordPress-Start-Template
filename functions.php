@@ -20,16 +20,6 @@
 				}
 		new relative_URI();
 		*/
-		
-	//ダッシュボード
-		function remove_menus() {
-			//remove_menu_page( 'edit.php' );
-			remove_menu_page( 'edit-comments.php' );
-			//remove_menu_page( 'edit.php?post_type=mw-wp-form' );
-		}
-		add_action( 'admin_menu', 'remove_menus' );
-	//advanced custom field	
-		//add_filter('acf/settings/show_admin', '__return_false');
 
 	//タブレットをモバイルから除外
 		function is_mobile() {
