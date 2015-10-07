@@ -10,6 +10,9 @@
 	}
 ?>
 
+<?php $template_slug = get_post($wp_query->post->ID)->post_name; ?>
+<?php get_template_part( 'parts/'.$template_slug ); ?>
+
 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 <?php remove_filter ( 'the_content', 'wpautop' ); ?>
 <?php the_content(); ?>
