@@ -6,7 +6,7 @@
 	<h1><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h1>
 	<?php the_content(); ?>
 <?php endwhile; else: ?>
-	<p style="text-align:center; font-size:24px; font-weight:bold; color:#ddd; margin:300px auto;">お探しの記事は存在しないか準備中です。</p>
+	<p style="text-align:center; font-size:24px; font-weight:bold; color:#ddd; margin:100px auto; line-height:200%;">お探しの記事は準備中です。<br>近日中に公開となります。</p>
 <?php endif; ?>
 
 </div>

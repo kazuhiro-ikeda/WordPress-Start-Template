@@ -14,7 +14,7 @@
 <div class="single-content"><?php the_content(); ?></div>
 	
 <?php endwhile; else: ?>
-	<p style="text-align:center; font-size:24px; font-weight:bold; color:#ddd; margin:100px auto;">お探しの記事は準備中です。<br>近日中に公開となります。</p>
+	<p style="text-align:center; font-size:24px; font-weight:bold; color:#ddd; margin:100px auto; line-height:200%;">お探しの記事は準備中です。<br>近日中に公開となります。</p>
 	
 <?php endif; ?>
 
