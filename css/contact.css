@@ -239,27 +239,32 @@ select::-ms-expand {
 
 /* ラップ */
 #privacy-policy {
-	background-color: #F1ECE3;
+	background-color: #E6E6E6;
 	padding: 20px;
 	margin-top: 20px;
 }
 
 /* タイトル */
-#privacy-policy-h2 {
-	font-size: 15px;
+#privacy-policy-ttl {
+	font-size: 18px;
 	font-weight: bold;
 	margin-bottom: 10px;
 }
+.privacy-policy-ttl-sub {
+	font-size: 15px;
+	font-weight: bold;
+}
 
 /* テキストエリア（白バック） */
-#privacy-policy-text-area {
+.scroll-pane {
 	background-color: white;
 	border: 1px solid #B1B1B1;
-	height: 115px;
-	padding: 10px;
-	overflow: scroll;
-	overflow-y: scroll;
-	margin-bottom: 15px;
+	width: 100%;
+	height: 112px;
+	overflow: auto;
+}
+.scroll-pane-inner {
+	padding: 15px;
 }
 
 /* テキスト */
@@ -272,22 +277,23 @@ select::-ms-expand {
 /* リスト */
 #privacy-policy-items {
 	font-size: 15px;
-	line-height: 200%;
+	line-height: 175%;
 	margin-bottom: 20px;
 }
 
 /* 所在地 */
 #privacy-policy-address {
 	font-size: 15px;
-	line-height: 200%;
+	line-height: 175%;
 }
 
 /* 同意 */
 .agree-text {
-	font-size: 15px;
+	font-size: 18px;
 	line-height: 175%;
+	text-align: center;
 }
 .agree-text label {
-	font-size: 17px;
-	font-weight: bold;
+	font-size: 22px;
+	font-weight: normal;
 }
