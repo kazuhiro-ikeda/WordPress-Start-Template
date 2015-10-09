@@ -12,7 +12,11 @@
 <script src="<?php bloginfo(template_url);?>/js/jquery.jscrollpane.min.js"></script>
 <script>
 	$(function() {
-		$('.scroll-pane').jScrollPane();
+		$('.scroll-pane').jScrollPane({
+			showArrows:false,
+			scrollbarWidth: 50,
+			scrollbarMargin:0
+		});
 	});
 </script>
 
