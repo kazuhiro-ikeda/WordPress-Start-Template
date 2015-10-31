@@ -161,6 +161,60 @@ $(function(){
 		}
 	*/
 	
+	//フェーダー
+    var $setElm = $('#fader'),
+    fadeSpeed = 5500,
+    switchDelay = 6000;
+ 
+    $setElm.each(function(){
+        var targetObj = $(this);
+        var findUl = targetObj.find('ul');
+        var findLi = targetObj.find('li');
+        var findLiFirst = targetObj.find('li:first');
+ 
+        findLi.css({display:'block',opacity:'0',zIndex:'99'});
+        findLiFirst.css({zIndex:'100'}).stop().animate({opacity:'1'},fadeSpeed);
+ 
+        setInterval(function(){
+            findUl.find('li:first-child').animate({opacity:'0'},fadeSpeed).next('li').css({zIndex:'100'}).animate({opacity:'1'},fadeSpeed).end().appendTo(findUl).css({zIndex:'99'});
+        },switchDelay);
+    });
+    /*
+	    <div id="fader">
+			<ul>
+				<li><img src="img/photo01.jpg" width="400" height="300" alt=""></li>
+				<li><img src="img/photo02.jpg" width="400" height="300" alt=""></li>
+				<li><img src="img/photo03.jpg" width="400" height="300" alt=""></li>
+				<li><img src="img/photo04.jpg" width="400" height="300" alt=""></li>
+				<li><img src="img/photo05.jpg" width="400" height="300" alt=""></li>
+			</ul>
+		</div>
+	    #fader {
+		    margin: 0 auto;
+		    width: 400px;
+		    height: 300px;
+		    text-align: left;
+		    overflow: hidden;
+		}
+		 
+		#fader ul {
+		    width: 400px;
+		    height: 300px;
+		    text-align: left;
+		    overflow: hidden;
+		    position: relative;
+		}
+		 
+		#fader ul li {
+		    top: 0;
+		    left: 0;
+		    width: 400px;
+		    height: 300px;
+		    display: none;
+		    position: absolute;
+		}
+	*/
+	
 	//MW WP Form 必須
 	$( '#mw_wp_form_mw-wp-form-識別ナンバー select option[value=""]' ).html( 'お問合せ内容を選択' );
 	
