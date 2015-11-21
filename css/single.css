@@ -1,0 +1,64 @@
+@charset "utf-8";
+/*//////////////////////////////////////////　single.php　//////////////////////////////////////////*/
+
+/* タイトル */
+#post-ttl {
+	font-size: 22px;
+	line-height: 150%;
+	margin-bottom: 22px;
+}
+.block-item-ttl {
+	font-size: 18px;
+	line-height: 150%;
+	margin-bottom: 12px;
+}
+.single-ttl-sub {
+	font-size: 18px;
+	line-height: 150%;
+	margin-bottom: 12px;
+}
+
+/* 図版 */
+#post-main-img {
+	max-width: 640px;
+	height: auto;
+	width: auto;
+	display: block;
+	margin: 0 auto 40px;
+}
+
+/* リスト：ギャラリー */
+#post-gallery-items {
+	margin-bottom: 60px;
+}
+#post-gallery-items li {
+	float: left;
+	margin-right: 5px;
+	margin-bottom: 5px;
+}
+#post-gallery-items li:nth-child(3n) {
+	margin-right: 0;
+}
+
+/* グーグルマップ */
+.acf-map {
+	width: 640px;
+	height: 200px;
+	margin: 0 auto 20px;
+}
+#acf-map-caption {
+	line-height: 175%;
+	margin-bottom: 60px;
+}
+
+/* リスト */
+#post-link-items {
+	line-height: 200%;
+	margin-bottom: 60px;
+}
+#post-link-items li :hover {
+	text-decoration: underline;
+}
+#post-link-items li:after {
+	content: url(../images/commmon/icon-outer-link-grape.png);
+}
