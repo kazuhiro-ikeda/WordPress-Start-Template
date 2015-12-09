@@ -1,11 +1,11 @@
 <?php
 /*
 Plugin Name: TAMIAS Search Refine
-Plugin URI: http://moriad.jp/
+Plugin URI: http://tamias.co.jp/
 Description: 絞込み検索
 Version: 1.0
 Author: Kazuhiro Ikeda
-Author URI: http://moriad.jp/
+Author URI: http://tamias.co.jp/
 */
 
 	//投稿ページのみを検索対象

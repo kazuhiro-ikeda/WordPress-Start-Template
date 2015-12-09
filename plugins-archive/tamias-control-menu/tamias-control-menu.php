@@ -1,11 +1,11 @@
 <?php
 /*
 Plugin Name: TAMIAS Control Menu
-Plugin URI: http://moriad.jp/
+Plugin URI: http://tamias.co.jp/
 Description: 管理画面変更
 Version: 1.0
 Author: Kazuhiro Ikeda
-Author URI: http://moriad.jp/
+Author URI: http://tamias.co.jp/
 */	
 
 	//ダッシュボード

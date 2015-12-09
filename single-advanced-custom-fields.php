@@ -47,7 +47,7 @@
 	<?php endif; ?>
 	
 	<?php 
-		$location = get_field('post_map');
+		$location = get_field('map');
 		if( !empty($location) ):
 	?>		
 		<?php get_template_part( 'parts/googlemap'); ?>
