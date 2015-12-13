@@ -57,7 +57,6 @@
 <body <?php body_class(); ?>>
 	
 <header>
-	<!-- サイトID -->
 	<div id="site-id">
 		<<?php diverge_site_id(); ?> class="logo"><a href="<?php bloginfo( 'url' ); ?>">
 		<img src="<?php bloginfo( 'template_url' ); ?>/images/common/id-logo.png" alt="<?php bloginfo( 'name' ); ?>" width="433" height="26"></a></<?php diverge_site_id(); ?>>
