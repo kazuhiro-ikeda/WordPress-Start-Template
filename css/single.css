@@ -29,16 +29,43 @@
 
 /* リスト：ギャラリー */
 #post-gallery-items {
-	margin-bottom: 60px;
+	margin-bottom: 20px;
 }
 #post-gallery-items li {
 	float: left;
-	margin-right: 5px;
-	margin-bottom: 5px;
+	margin-right: 50px;
+	margin-bottom: 50px;
 }
-#post-gallery-items li:nth-child(3n) {
+#post-gallery-items li:nth-child(5n) {
 	margin-right: 0;
 }
+
+@media screen and (max-device-width: 640px) {
+	/* リスト：ギャラリー */
+	#post-gallery-items {
+		width: 90%;
+		margin: 0 auto 4.6875%;
+	}
+	#post-gallery-items li {
+		float: none;
+		width: 160px;
+		margin-right: 0;
+		margin-bottom: 5%;
+	}
+	#post-gallery-items li a img {
+		max-width: 100%;
+		height: auto;
+	}
+	#post-gallery-items li:nth-child(odd) {
+		float: left;
+	}
+	#post-gallery-items li:nth-child(even) {
+		float: right;
+	}
+	#post-gallery-items li:nth-child(5n) {
+		margin-right: 0;
+	}
+}/* /640px */
 
 /* グーグルマップ */
 .acf-map {
