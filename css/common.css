@@ -1,24 +1,19 @@
 @charset "utf-8";
-/*//////////////////////////////////////////　html & body　//////////////////////////////////////////*/
+/*//////////////////////　html & body　//////////////////////*/
 
 /* root */
-html {
-	font-size: 62.5%;
-}
+html {}
 body {
 	color: #595757;
 	font-family: Meiryo, メイリオ, 'MS Pゴシック', 'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3', sans-serif;
-	font-size: 1.3em;
+	font-size: 14px;
 	word-wrap: break-word;
 	-webkit-font-smoothing: subpixel-antialiased;
 	-webkit-text-size-adjust: 100%;
 }
 
 /* tablet */
-@media screen and (max-device-width:1024px){
-	@viewport {
-		width: 1040px;
-	}
+@media screen and (max-device-width: 1024px){
 	body {
 		width: 1040px;
 	}
@@ -29,54 +24,52 @@ body {
 }/* /1024px */
 
 /* smartphone */
-@media screen and (max-device-width:640px){
-	@viewport {
-		width: 640px;
-	}
+@media screen and (max-width: 736px) {
 	body {
-		width: 640px;
-		font-size: 1.8em;
+		width: 100%;
+		font-size: 14px;
 	}
 }/* /640px */
 
 
-/*//////////////////////////////////////////　inner　//////////////////////////////////////////*/
+/*//////////////////////　inner　//////////////////////*/
 
-/* inner main */
+/* inner */
 .screen {
 	width: 1000px;
 	margin: 0 auto;
 }
 
-/*//////////////////////////////////////////　レイアウト：メインエリア・サイドバー　//////////////////////////////////////////*/
+@media screen and (max-width: 736px) {
+	/* inner */
+	.screen {
+		width: 100%;
+	}
+}/* /736px */
+
+/*//////////////////////　レイアウト：メインエリア・サイドバー　//////////////////////*/
 
 /* main */
-#main {
-	width: 1000px;
-	margin: 0 auto;
-}
+#main {}
 
 /* 非表示パネル */
 .hide-panel {
 	display: none;
 }
 
-/*//////////////////////////////////////////　段落 / 見出し　//////////////////////////////////////////*/
+/*//////////////////////　段落 / 見出し　//////////////////////*/
 
 /* 見出し */
-h1, h2, h3, h4, h5, h6 {
-	line-height: 150%;
-}
+h1, h2, h3, h4, h5, h6 {}
 
 /* 段落 */
 p {
-	line-height: 175%;
 	text-align: justify;
 	text-justify: inter-ideograph;
 	-ms-text-justify: inter-ideograph;
 }
 
-/*//////////////////////////////////////////　リンクスタイル　//////////////////////////////////////////*/
+/*//////////////////////　リンクスタイル　//////////////////////*/
 
 /* a */
 a {
@@ -96,7 +89,7 @@ a:active, a:focus {
     padding-top: 0px;
 }
 
-/*//////////////////////////////////////////　ヘッダー　//////////////////////////////////////////*/
+/*//////////////////////　ヘッダー　//////////////////////*/
 
 /* ヘッダー */
 header {}
@@ -104,12 +97,12 @@ header {}
 /* サイトアイデンティティ */
 #site-id {}
 
-/*//////////////////////////////////////////　フッター　//////////////////////////////////////////*/
+/*//////////////////////　フッター　//////////////////////*/
 
 /* footer */
 footer {}
 
-/*//////////////////////////////////////////　パンくず　//////////////////////////////////////////*/
+/*//////////////////////　パンくず　//////////////////////*/
 
 /* WP Sitemanager */
 ul.bread_crumb {
@@ -128,13 +121,13 @@ ul.bread_crumb {
 	content: "　＞　"
 } 
 
-/*//////////////////////////////////////////
-	
-	ページネイション
-	the_posts_pagination( array( 'mid_size' => 3, 'prev_text' => '<<', 'next_text' => '>>', 'screen_reader_text' => '',  ));
-	
-//////////////////////////////////////////*/
+/*////////////////////// ページネイション //////////////////////*/
 
+
+/*	the_posts_pagination( array( 'mid_size' => 3, 'prev_text' => '<<', 'next_text' => '>>', 'screen_reader_text' => '',  ))
+---------------------------------*/;
+
+/* ラップ */
 .pagination {
 	text-align: center;
 	margin-bottom: 60px;
@@ -170,78 +163,8 @@ a.page-numbers {
 	border: none;
 }
 
-/*//////////////////////////////////////////　基本レイアウト　//////////////////////////////////////////*/
+/*//////////////////////　PC SP 切り分け　//////////////////////*/
 
-/* ボトムマージン調整 要注意スマートフォンサイト */
-.mb-0 {
-	margin-bottom: 0;
-}
-.mb-05 {
-	margin-bottom: 5px;
-}
-.mb-10 {
-	margin-bottom: 10px;
-}
-.mb-15 {
-	margin-bottom: 15px;
-}
-.mb-25 {
-	margin-bottom: 25px;
-}
-.mb-30 {
-	margin-bottom: 30px;
-}
-.mb-35 {
-	margin-bottom: 35px;
-}
-.mb-40 {
-	margin-bottom: 40px;
-}
-.mb-45 {
-	margin-bottom: 45px;
-}
-.mb-50 {
-	margin-bottom: 50px;
-}
-.mb-55 {
-	margin-bottom: 55px;
-}
-.mb-60 {
-	margin-bottom: 60px;
-}
-.mb-65 {
-	margin-bottom: 65px;
-}
-.mb-70 {
-	margin-bottom: 70px;
-}
-
-/* ラインハイト */
-.lh-125 {
-	line-height: 125%;
-}
-.lh-150 {
-	line-height: 150%;
-}
-.lh-175 {
-	line-height: 175%;
-}
-.lh-200 {
-	line-height: 200%;
-}
-.lh-225 {
-	line-height: 225%;
-}
-.lh-250 {
-	line-height: 250%;
-}
-.lh-300 {
-	line-height: 300%;
-}
-
-/*//////////////////////////////////////////　PC SP 切り分け　//////////////////////////////////////////*/
-
-/* <div class="pc-block"> <br class="sp-inline"> */
 .pc-block {
 	display: block;
 }
@@ -255,24 +178,23 @@ a.page-numbers {
 	display: none;
 }
 
-@media (max-device-width:640px){
-.pc-block {
-	display: none;
-}
-.sp-block {
-	display: block;
-}
-.pc-inline {
-	display: none;
-}
-.sp-inline {
-	display: inline;
-}
+@media screen and (max-width: 736px){
+	.pc-block {
+		display: none;
+	}
+	.sp-block {
+		display: block;
+	}
+	.pc-inline {
+		display: none;
+	}
+	.sp-inline {
+		display: inline;
+	}
 }/* /sp */
 
-/*//////////////////////////////////////////　clearfix　//////////////////////////////////////////*/
+/*//////////////////////　clearfix　//////////////////////*/
 
-/* <div class="cl"> <フロートしたコンテンツ> <フロートしたコンテンツ> </div> */
 .cl:before, .cl:after {
 	content: " ";
 	display: table;
