@@ -5,11 +5,22 @@
 <head>
 <meta charset="UTF-8">
 <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-<?php if(is_page( 'contact' )): ?>
-<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<?php if (is_page( 'contact' )) : //smartphone only ?>
+	<?php if (is_mobile()): //smartphone only ?>
+		<meta name="viewport" content="width=device-width, initial-scale=1,  user-scalable=no">		
+	<?php else: //pc tablet ?>
+		<meta name="viewport" content="width=1020">		
+	<?php  endif; //if_mobile ?>
+	
 <?php else: ?>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<?php endif; ?>
+	<?php if (is_mobile()) : //smartphone only ?>
+		<meta name="viewport" content="width=device-width, initial-scale=1">		
+	<?php else : //pc tablet ?>
+		<meta name="viewport" content="width=1020">		
+	<?php  endif ; //if_mobile ?>
+
+<?php  endif; ?>
+
 <link rel="stylesheet" type="text/css" href="<?php bloginfo( 'stylesheet_url' ); ?>">
 <?php $ua = $_SERVER['HTTP_USER_AGENT'];
 	if(preg_match( '/Macintosh/', $ua)) {
