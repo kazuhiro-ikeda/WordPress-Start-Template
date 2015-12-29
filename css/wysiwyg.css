@@ -53,27 +53,27 @@
 	margin-bottom: 60px;
 }
 
-@media screen and (max-device-width:640px){
+@media screen and (max-device-width: 736px){
 	/* パラグラフ */
 	.single-content p {
-		font-size: 22px;
+		font-size: 13px;
 		line-height: 200%;
-		margin-bottom: 35px;
+		margin-bottom: 3.125%;
 	}
 	
 	/* リスト */
 	.single-content ul {
-		font-size: 22px;
+		font-size: 13px;
 		list-style-type: circle;
 		list-style-position: inside;
 		line-height: 225%;
-		margin-bottom: 60px;
+		margin-bottom: 6.25%;
 	}
 	.single-content ol {
-		font-size: 22px;
+		font-size: 13px;
 		list-style-position: inside;
 		line-height: 225%;
-		margin-bottom: 60px;
+		margin-bottom: 6.25%;
 	}
 }/* /640px */
 
@@ -104,7 +104,7 @@
 	margin-left: auto;
 }
 
-@media screen and (max-device-width:640px){
+@media screen and (max-device-width: 736px){
  .single-content img {
 	 max-width: 400px;
 	 height: auto;
