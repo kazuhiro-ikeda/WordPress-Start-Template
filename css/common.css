@@ -4,7 +4,7 @@
 /* root */
 html {}
 body {
-	color: #595757;
+	color: black;
 	font-family: Meiryo, メイリオ, 'MS Pゴシック', 'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3', sans-serif;
 	font-size: 14px;
 	word-wrap: break-word;
@@ -15,10 +15,10 @@ body {
 /* tablet */
 @media screen and (max-device-width: 1024px){
 	body {
-		width: 1040px;
+		width: 1020px;
 	}
 	.screen {
-		width: 1000px;
+		width: 980px;
 		margin: 0 20px;
 	}
 }/* /1024px */
@@ -27,7 +27,7 @@ body {
 @media screen and (max-width: 736px) {
 	body {
 		width: 100%;
-		font-size: 14px;
+		font-size: 13px;
 	}
 }/* /640px */
 
@@ -36,14 +36,15 @@ body {
 
 /* inner */
 .screen {
-	width: 1000px;
+	width: 980px;
 	margin: 0 auto;
 }
 
 @media screen and (max-width: 736px) {
 	/* inner */
 	.screen {
-		width: 100%;
+		width: 94%;
+		margin: 0 auto;
 	}
 }/* /736px */
 
@@ -55,6 +56,14 @@ body {
 /* 非表示パネル */
 .hide-panel {
 	display: none;
+}
+
+/*//////////////　画像　//////////////*/
+
+/* 要素 */
+img {
+	max-width: 100%;
+	height: auto;
 }
 
 /*//////////////////////　段落 / 見出し　//////////////////////*/
@@ -73,7 +82,7 @@ p {
 
 /* a */
 a {
-	color: #7543ba;
+	color: black;
 	text-decoration: none;
 }
 
