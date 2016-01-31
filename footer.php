@@ -21,7 +21,7 @@
 <script src="<?php bloginfo('template_url');?>/js/jquery.bxslider.js"></script>
 <script>
 $(function(){
-	$('.slide_body').bxSlider({
+	$('#bxslider').bxSlider({
 		slideWidth: 980,
 		minSlides: 3,
 		maxSlides: 3,
