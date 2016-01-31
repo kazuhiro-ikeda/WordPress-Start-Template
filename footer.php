@@ -18,7 +18,18 @@
 		});
 	});
 </script>
-
+<script src="<?php bloginfo('template_url');?>/js/jquery.bxslider.js"></script>
+<script>
+$(function(){
+	$('.slide_body').bxSlider({
+		slideWidth: 980,
+		minSlides: 3,
+		maxSlides: 3,
+		moveSlides: 1,
+		slideMargin: 0
+	});
+});
+</script>
 
 <?php wp_footer(); ?>
 
