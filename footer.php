@@ -21,12 +21,13 @@
 <script src="<?php bloginfo('template_url');?>/js/jquery.bxslider.js"></script>
 <script>
 $(function(){
-	$('#bxslider').bxSlider({
+	$('#bxslider__items').bxSlider({
+		auto: true,
 		slideWidth: 980,
 		minSlides: 3,
 		maxSlides: 3,
 		moveSlides: 1,
-		slideMargin: 0
+		slideMargin: 10,
 	});
 });
 </script>

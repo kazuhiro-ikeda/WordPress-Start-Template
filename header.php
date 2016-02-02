@@ -68,8 +68,8 @@
 <body <?php body_class(); ?>>
 	
 <header>
-	<div id="site-id">
-		<<?php diverge_site_id(); ?> class="logo"><a href="<?php bloginfo( 'url' ); ?>">
+	<div id="site__id">
+		<<?php diverge_site_id(); ?> id="header__logo"><a href="<?php bloginfo( 'url' ); ?>">
 		<img src="<?php bloginfo( 'template_url' ); ?>/images/common/id-logo.png" alt="<?php bloginfo( 'name' ); ?>" width="433" height="26"></a></<?php diverge_site_id(); ?>>
 		<<?php diverge_tagline(); ?> class="tagline"><a href="<?php bloginfo( 'url' ); ?>">
 		<img src="<?php bloginfo( 'template_url' ); ?>/images/common/id-simbol.png" alt="<?php bloginfo( 'description' ); ?>" width="234" height="120" class="simbol"></a></<?php diverge_tagline(); ?>>
