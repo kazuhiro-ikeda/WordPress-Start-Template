@@ -24,3 +24,6 @@ Author URI: http://tamias.co.jp/
 @import url(css/lightbox.css);
 @import url(css/jquery.jscrollpane.css);
 @import url(css/jquery.bxslider.css);
+
+/* クライアント */
+@import url(css/custom.css);
