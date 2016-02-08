@@ -1,28 +1,39 @@
 <div class="screen">
-	<p class="table-caption">下記フォームにご入力の上、送信してください。<span class="require">※</span>は必須項目です</p>
-	<table id="contact-table">
+
+	<table id="contact__table">
 		<tr>
-			<th>お名前<span class="require">※</span></th>
+			<th>お問い合わせ内容<span class="require">必須</span></th>
+			<td>[mwform_select name="category" id="category" children=",オーダーについて,アトリエについて,ワークショップについて,その他"]</td>
+		</tr>
+		<tr>
+			<th>お名前<span class="require">必須</span></th>
 			<td>[mwform_text name="name" id="name"]</td>
 		</tr>
 		<tr>
-			<th>フリガナ<span class="require">※</span></th>
+			<th>フリガナ<span class="require">必須</span></th>
 			<td>[mwform_text name="furigana" id="furigana"]</td>
 		</tr>
 		<tr>
-			<th>お電話番号</th>
+			<th>お電話番号<span class="require">必須</span></th>
 			<td>[mwform_text name="tel" id="tel"]</td>
 		</tr>
 		<tr>
-			<th>メール<span class="require">※</span></th>
-			<td>[mwform_text name="mail" id="mail"]</td>
-		</tr>
-		<tr id="confirm-tr">
-			<th>メール [確認用]<span class="require">※</span></th>
-			<td>[mwform_text name="confirm" id="confirm"]</td>
+			<th>メール<span class="require">必須</span></th>
+			<td><span class="input-block">[mwform_text name="mail" id="mail"]</span>[mwform_text name="confirm" id="confirm" placeholder="確認"]</td>
 		</tr>
 		<tr>
-			<th>お問合せ内容詳細<span class="require">※</span></th>
+			<th>郵便番号</th>
+			<td>[mwform_text name="zip" id="zip"]</td>
+		</tr>
+		<tr>
+			<th>住所</th>
+			<td><span class="input-block">[mwform_select name="pref" id="pref" children=",北海道,青森県,岩手県,宮城県,秋田県,山形県,福島県,茨城県,栃木県,群馬県,埼玉県,千葉県,東京都,神奈川県,新潟県,富山県,石川県,福井県,山梨県,長野県,岐阜県,静岡県,愛知県,三重県,滋賀県,京都府,大阪府,兵庫県,奈良県,和歌山県,鳥取県,島根県,岡山県,広島県,山口県,徳島県,香川県,愛媛県,高知県,福岡県,佐賀県,長崎県,熊本県,大分県,宮崎県,鹿児島県,沖縄県"]</span>
+			<span class="input-block"><span class="example-text">市区町村　　　</span>[mwform_text name="address1" id="address1"]</span>
+			<span class="input-block"><span class="example-text">丁目番地　　　</span>[mwform_text name="address2" id="address2"]</span>
+			<span class="example-text">ビル・建物名　</span>[mwform_text name="address3" id="address3"]</td>
+		</tr>
+		<tr>
+			<th>お問合せ内容詳細<span class="require">必須</span></th>
 			<td>[mwform_textarea name="message" id="message"]</td>
 		</tr>
 	</table>
@@ -31,28 +42,17 @@
 		<h2 id="privacy-policy-ttl">個人情報のお取り扱い</h2>
 		<div class="scroll-pane">
 			<div class="scroll-pane-inner">
-				<p class="privacy-policy-text">当社は、以下のとおり個人情報保護方針を定め、個人情報保護の仕組みを構築し、全従業員に個人情報保護の重要性の認識と取組みを徹底させることにより、個人情報の保護を推進致します。</p>
-				<h3 class="privacy-policy-ttl-sub">個人情報の管理</h3>
-				<p class="privacy-policy-text">当社は、お客さまの個人情報を正確かつ最新の状態に保ち、個人情報への不正アクセス・紛失・破損・改ざん・漏洩などを防止するため、セキュリティシステムの維持・管理体制の整備・社員教育の徹底等の必要な措置を講じ、安全対策を実施し個人情報の厳重な管理を行ないます。</p>
-				<h3 class="privacy-policy-ttl-sub">個人情報の利用目的</h3>
-				<p class="privacy-policy-text">お客さまからお預かりした個人情報は、当社からのご連絡や業務のご案内やご質問に対する回答として、電子メールや資料のご送付に利用いたします。</p>
-				<h3 class="privacy-policy-ttl-sub">個人情報の第三者への開示・提供の禁止</h3>
-				<p class="privacy-policy-text">当社は、お客さまよりお預かりした個人情報を適切に管理し、次のいずれかに該当する場合を除き、個人情報を第三者に開示いたしません。</p>
+				<p class="privacy-policy-text">当社は、事業運営上取扱うすべての個人情報の保護について社会的責務を充分に認識し、当社の業務に従事するすべての者が、個人情報に関する法令の遵守と適切な運用、保護に努めるため、以下のとおり個人情報保護基本方針を定め、社内に周知徹底を図ります。</p>
+			
 				<ul id="privacy-policy-items">
-					<li>•	お客さまの同意がある場合</li>
-					<li>•	お客さまが希望されるサービスを行なうために当社が業務を委託する業者に対して開示する場合</li>
-					<li>•	法令に基づき開示することが必要である場合</li>
+					<li>１．個人情報は、当社の業務請負及び人材派遣の事業に伴う、登録スタッフの皆様の登録及び従業員の雇用、人材管理上において必要な範囲に限定して、その取得、利用及び提供を行い、目的外の利用はいたしません。</li>
+					<li>２．個人情報を第三者に提供する場合は、正当な目的に合った範囲内で利用目的を明らかにし、本人の同意を得た上で適切に取扱います。</li>
+					<li>３．個人情報への不正アクセス、個人情報の紛失、毀損、滅失及び漏洩等のリスクに対して、技術的、組織的において合理的な安全対策及び是正・予防処置を講じます。</li>
+					<li>４．個人情報保護のために社内体制を整備し、個人情報に関する法令及び国が定める指針その他の規範を遵守するとともに、個人情報保護基本方針、社内規定を継続して改善します。</li>
+					<li>５．個人情報に関するお問い合わせ、相談及び苦情への対応は下記の窓口で適切に実施します。</li>
 				</ul>
-				<h3 class="privacy-policy-ttl-sub">個人情報の安全対策</h3>
-				<p class="privacy-policy-text">当社は、個人情報の正確性及び安全性確保のために、セキュリティに万全の対策を講じています。</p>
-				<h3 class="privacy-policy-ttl-sub">ご本人の照会</h3>
-				<p class="privacy-policy-text">お客さまがご本人の個人情報の照会・修正・削除などをご希望される場合には、ご本人であることを確認の上、対応させていただきます。</p>
-				<h3 class="privacy-policy-ttl-sub">法令、規範の遵守と見直し</h3>
-				<p class="privacy-policy-text">当社は、保有する個人情報に関して適用される日本の法令、その他規範を遵守するとともに、本ポリシーの内容を適宜見直し、その改善に努めます。</p>
-				<h3 class="privacy-policy-ttl-sub">お問い合せ</h3>
-				<p class="privacy-policy-text">当社の個人情報の取扱に関するお問い合せは下記までご連絡ください。</p>
-				<h3 class="privacy-policy-ttl-sub">【連絡先】</h3>
-				<address id="privacy-policy-address">xxxxxxxxxxxxxxxxxxxxx<br>〒xxx-xxx　xxxxxxxxxxxxxxxxxxxxxxxxxx<br>TEL：xxxx-xx-xxxx</address>
+				<p class="privacy-policy-text">当方針は、当社の全従業員により周知させるとともに、従業員各自の教育と啓発に努め、常に個人情報保護に対する意義の高揚を図ります。</p>
+				<address id="privacy-policy-address">貝殻アトリエ　Jyarinko<br>愛知県蒲郡市三谷町須田5-25<br>TEL.0533-79-9620</address>
 			</div>
 			<!-- /.scroll-pane-inner -->
 		</div>
@@ -68,3 +68,5 @@
 
 </div>
 <!-- /.screen -->
+
+

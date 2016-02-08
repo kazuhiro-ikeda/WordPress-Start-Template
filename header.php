@@ -29,7 +29,8 @@
 	} else {
 	//
 	} ?>
-<link rel="alternate" hreflang="ja" href="<?php bloginfo( 'url' ); ?>/">
+	
+<link rel="alternate" hreflang="ja" href="<?php the_permalink(); ?>">
 <link rel="shortcut icon" href="<?php bloginfo( 'template_url' ); ?>/favicon.ico">
 <link rel="apple-touch-icon" href="<?php bloginfo( 'template_url' ); ?>/icon.png">
 <?php
