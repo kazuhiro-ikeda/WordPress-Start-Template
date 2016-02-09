@@ -4,11 +4,28 @@
 	<div id="main" <?php post_class(); ?> role="main">
 	
 	<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-	<?php //メイン画像
-		$image = get_field('post_img');
-		if( !empty($image) ):		
-	?>
-		<img id="post-main-img" src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
+	<?php 
+	$image = get_field( 'post_img' );
+	if( !empty($image) ): 
+	
+		// vars
+		$url = $image['url'];
+		$title = $image['title'];
+		$alt = $image['alt'];
+		$caption = $image['caption'];
+	
+		// thumbnail
+		$size = 'functions.phpで定義';
+		$thumb = $image['sizes'][ $size ];
+		$width = $image['sizes'][ $size . '-width' ];
+		$height = $image['sizes'][ $size . '-height' ];
+	
+		 ?>
+		 
+		<img src="<?php echo $thumb; ?>" alt="<?php echo $alt; ?>" width="<?php echo $width; ?>" height="<?php echo $height; ?>" />
+		
+	<?php else: ?>
+			
 	<?php endif; ?>
 	
 	<h1 id="post-ttl"><?php the_title(); ?></h1>
