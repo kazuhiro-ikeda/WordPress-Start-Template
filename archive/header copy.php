@@ -6,22 +6,30 @@
 <meta charset="UTF-8">
 <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 <?php if (is_page( 'contact' )) : //smartphone only ?>
-<?php if (is_mobile()): //smartphone only ?>
-<meta name="viewport" content="width=device-width, initial-scale=1,  user-scalable=no">		
-<?php else: //pc tablet ?>
-<meta name="viewport" content="width=1020">		
-<?php  endif; //if_mobile ?>
+	<?php if (is_mobile()): //smartphone only ?>
+		<meta name="viewport" content="width=device-width, initial-scale=1,  user-scalable=no">		
+	<?php else: //pc tablet ?>
+		<meta name="viewport" content="width=1020">		
+	<?php  endif; //if_mobile ?>
 	
 <?php else: ?>
-<?php if (is_mobile()) : //smartphone only ?>
-<meta name="viewport" content="width=device-width, initial-scale=1">		
-<?php else : //pc tablet ?>
-<meta name="viewport" content="width=1020">		
-<?php  endif ; //if_mobile ?>
+	<?php if (is_mobile()) : //smartphone only ?>
+		<meta name="viewport" content="width=device-width, initial-scale=1">		
+	<?php else : //pc tablet ?>
+		<meta name="viewport" content="width=1020">		
+	<?php  endif ; //if_mobile ?>
 
 <?php  endif; ?>
 
-<link rel="stylesheet" type="text/css" href="<?php bloginfo( 'stylesheet_url' ); ?>">	
+<link rel="stylesheet" type="text/css" href="<?php bloginfo( 'stylesheet_url' ); ?>">
+<?php $ua = $_SERVER['HTTP_USER_AGENT'];
+	if(preg_match( '/Macintosh/', $ua)) {
+		//Mac
+		echo '<link rel="stylesheet" href="'.get_template_directory_uri().'/css/mac.css">';
+	} else {
+	//
+	} ?>
+	
 <link rel="alternate" hreflang="ja" href="<?php the_permalink(); ?>">
 <link rel="shortcut icon" href="<?php bloginfo( 'template_url' ); ?>/favicon.ico">
 <link rel="apple-touch-icon" href="<?php bloginfo( 'template_url' ); ?>/icon.png">
@@ -52,6 +60,8 @@
 ?>
 
 <title><?php the_title(); ?><?php // full_title(); ?></title>
+<meta name="Author" content="<?php bloginfo( 'name' ); ?>">
+
 
 <?php wp_head(); ?>
 </head>
@@ -60,9 +70,17 @@
 	
 <header>
 	<div id="site__id">
-		<<?php diverge_site_id(); ?> id="header__logo"><a href="<?php bloginfo( 'url' ); ?>"><img src="<?php bloginfo( 'template_url' ); ?>/images/common/logo.png" alt="<?php bloginfo( 'name' ); ?>"></a></<?php diverge_site_id(); ?>>
-		<<?php diverge_tagline(); ?> class="tagline"><a href="<?php bloginfo( 'url' ); ?>"><img src="<?php bloginfo( 'template_url' ); ?>/images/common/tagline.png" alt="<?php bloginfo( 'description' ); ?>"></a></<?php diverge_tagline(); ?>>
+		<<?php diverge_site_id(); ?> id="header__logo"><a href="<?php bloginfo( 'url' ); ?>">
+		<img src="<?php bloginfo( 'template_url' ); ?>/images/common/id-logo.png" alt="<?php bloginfo( 'name' ); ?>" width="433" height="26"></a></<?php diverge_site_id(); ?>>
+		<<?php diverge_tagline(); ?> class="tagline"><a href="<?php bloginfo( 'url' ); ?>">
+		<img src="<?php bloginfo( 'template_url' ); ?>/images/common/id-simbol.png" alt="<?php bloginfo( 'description' ); ?>" width="234" height="120" class="simbol"></a></<?php diverge_tagline(); ?>>
 	</div>
 	<!-- /site-id -->
 
+	<h1><?php
+			global $wp_query;
+			$postID = $wp_query->post->ID;
+			echo get_post_meta($postID, 'h1', true);
+	?></h1>
+		
 </header>

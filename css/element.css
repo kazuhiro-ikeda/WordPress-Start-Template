@@ -1,31 +1,11 @@
 @charset "utf-8";
 /*//////////////　ボタン　//////////////*/
 
-/* 透過ブロック要素 */
 .btn {
-	display: block;
-	background-repeat: no-repeat;
+	opacity: 1;
+	transition: opacity 0.5s;
 }
 .btn:hover {
-	filter: alpha(opacity=70);
-	-moz-opacity:0.7;
-	opacity:0.7;
-	transition: opacity .15s ease-in-out;
-	-moz-transition: opacity .15s ease-in-out;
-	-webkit-transition: opacity .15s ease-in-out;
-	background-color: white;/* 適用する要素の背景色を指定すること！firefox バグフックス */
-}
-/* 透過インライン要素 */
-.btn-inline {
-	display: inline-block;
-	background-repeat: no-repeat;
-}
-.btn-inline:hover {
-	filter: alpha(opacity=70);
-	-moz-opacity:0.7;
-	opacity:0.7;
-	transition: opacity .15s ease-in-out;
-	-moz-transition: opacity .15s ease-in-out;
-	-webkit-transition: opacity .15s ease-in-out;
-	background-color: white;/* 適用する要素の背景色を指定すること！firefox バグフックス */
+	opacity: 0.3;
+	
 }
