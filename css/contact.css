@@ -1,53 +1,26 @@
 @charset "utf-8";
-/*//////////////////////////////////////////　comment　//////////////////////////////////////////*/
-/*
-	
-	エラー対策：テキストフィールドが並んでいる場合エラーメッセージが<span>で出力されるため、それぞれをブロック要素にする必要がある
-	<div class="box-error">姓　　[mwform_text name="sei" id="sei"]</div>
-	<div class="box-error">名　　[mwform_text name="mei" id="mei"]</div>
+/*//////////////　　//////////////*/
 
- */
+/*	エラー対策
+---------------------------------*/
+
 .box-error {
 	float: left;
 	margin-right: 14px;
 }
 
-/*////////////////////////////////////////// お問い合わせ //////////////////////////////////////////*/
+/*	テーブル
+---------------------------------*/
+.teble_ordinary {}
+.teble_ordinary th {}
+.teble_ordinary td{}
 
-/* テーブル */
-#contact__table {
-	width: 100%;
-	line-height: 200%;
-	border-top: 1px solid #9e9e9e;
-	border-right: 1px solid #9e9e9e;
-}
-
-/* th */
-#contact__table th {
-	padding: 13px 50px 10px;
-	border-left: 1px solid #9e9e9e;
-	border-bottom: 1px solid #9e9e9e;
-	background-color: #DDFFF8;
-	text-align: left;
-	vertical-align: top;
-	width: 160px;
-}
-
-/* td */
-#contact__table td {
-	padding: 13px 20px 10px;
-	border-left: 1px solid #9e9e9e;
-	border-bottom: 1px solid #9e9e9e;
-}
-
-/* インプット */
+/*	インプット
+---------------------------------*/
 input[type="text"] {
 	width: 250px;
 	height: 14px;
 	border: 1px solid silver;
-	background-image: url(../images/page/text-field-bg.png);
-	background-repeat: repeat-x;
-	font-size: 14px;
 	padding: 5px;
 }
 
@@ -56,30 +29,13 @@ textarea {
 	border: 1px solid silver;
 	width: 470px;
 	height: 130px;
-	font-size: 14px;
 	padding: 5px;
 }
 
-/* 住所 */
+/* インプットをブロック要素に */
 .input-block {
 	display: block;
 	margin-bottom: 10px;
-}
-
-/* 例 */
-.example__text {
-	color: #00A2B8;
-	font-weight: normal;
-	padding-left: 20px;
-}
-
-/* 必須 */
-.require {
-	color: #00487B;
-}
-
-.mw_wp_form_confirm .require,.mw_wp_form_confirm .example__text {
-	display: none;
 }
 
 /* ラベル */
@@ -88,6 +44,8 @@ label {
 	position: relative;
 	top: 2px;
 }
+
+/* ラジオボタン */
 input[type="radio"] {
 	position: relative;
 	top: -2px;
@@ -106,15 +64,12 @@ input[type="submit"] {
 	display: block;
 	margin: 60px auto;
 	outline: none;
+	opacity: 1;
+	transition: opacity 0.5s;
 }
 input[type="submit"]:hover {
 	cursor: pointer;
-	filter: alpha(opacity=80);
-	-moz-opacity:0.8;
-	opacity:0.8;
-	transition: opacity .15s ease-in-out;
-	-moz-transition: opacity .15s ease-in-out;
-	-webkit-transition: opacity .15s ease-in-out;
+	opacity: 0.4;
 }
 
 /* ドロップダウン */
@@ -151,6 +106,29 @@ select {
 select {
     text-indent: 0.2em;
 }
+}
+
+/*	エレメント
+---------------------------------*/
+
+/* 例 */
+.example__text {
+	color: #00A2B8;
+	font-weight: normal;
+	padding-left: 20px;
+}
+
+/* 必須 */
+.require {
+	color: #00487B;
+}
+
+
+/*	非表示
+---------------------------------*/
+
+.mw_wp_form_confirm .require,.mw_wp_form_confirm .example__text {
+	display: none;
 }
 
 /*//////////////////////////////////////////　プライバシーポリシー　//////////////////////////////////////////*/
