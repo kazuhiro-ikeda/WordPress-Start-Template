@@ -1,26 +1,71 @@
 @charset "utf-8";
-/*//////////////　お問い合わせ　//////////////*/
+/*//////////////　contact　//////////////*/
 
-/*	エラー対策
+/* 例外処理 */
+#contact__ttl__wrap {
+	margin: 100px 0 0;
+}
+
+/* wrap */
+#contact__wrap {
+	width: 980px;
+	margin: 0 auto;
+}
+
+/*	error
 ---------------------------------*/
 
+/*
+	
+	エラー対策：テキストフィールドが並んでいる場合エラーメッセージが<span>で出力されるため、それぞれをブロック要素にする必要がある
+	<div class="box-error">姓　　[mwform_text name="sei" id="sei"]</div>
+	<div class="box-error">名　　[mwform_text name="mei" id="mei"]</div>
+
+ */
+ 
 .box-error {
 	float: left;
 	margin-right: 14px;
 }
 
-/*	テーブル
+/*	table
 ---------------------------------*/
-.table_ordinary {}
-.table_ordinary th {}
-.table_ordinary td {}
 
-/*	インプット
+/* table */
+.table_ordinary {
+	width: 100%;
+	line-height: 200%;
+	border-top: 1px solid #B3B3B3;
+}
+.table_ordinary tr {
+	border-bottom: 1px solid #B3B3B3;
+}
+.table_ordinary tr:nth-child(odd) {}
+.table_ordinary tr:nth-child(even) {
+	background-color: #F2F2F2;
+}
+.table_ordinary th {
+	font-weight: normal;
+	text-align: left;
+	vertical-align: top;
+	width: 180px;
+	padding: 13px 50px 10px;
+}
+.table_ordinary td {
+	padding: 13px 20px 10px;
+}
+
+/* form parts
 ---------------------------------*/
+
+/* インプット */
 input[type="text"] {
 	width: 250px;
 	height: 14px;
 	border: 1px solid silver;
+	background-image: url(../images/page/text-field-bg.png);
+	background-repeat: repeat-x;
+	font-size: 14px;
 	padding: 5px;
 }
 
@@ -29,13 +74,8 @@ textarea {
 	border: 1px solid silver;
 	width: 470px;
 	height: 130px;
+	font-size: 14px;
 	padding: 5px;
-}
-
-/* インプットをブロック要素に */
-.input-block {
-	display: block;
-	margin-bottom: 10px;
 }
 
 /* ラベル */
@@ -64,15 +104,19 @@ input[type="submit"] {
 	display: block;
 	margin: 60px auto;
 	outline: none;
-	opacity: 1;
-	transition: opacity 0.5s;
 }
 input[type="submit"]:hover {
 	cursor: pointer;
-	opacity: 0.4;
+	filter: alpha(opacity=80);
+	-moz-opacity:0.8;
+	opacity:0.8;
+	transition: opacity .15s ease-in-out;
+	-moz-transition: opacity .15s ease-in-out;
+	-webkit-transition: opacity .15s ease-in-out;
 }
 
-/* ドロップダウン */
+/*	ドロップダウン
+---------------------------------*/
 select {
     -webkit-appearance: button;
     -moz-appearance: button;
@@ -88,12 +132,14 @@ select {
     background-position: right center;
     font-size: 14px;
 }
+
 /* IE10以上で動作 */
 select::-ms-expand {
   display: none;
 }
 
-@-moz-document url-prefix() {/* firefoxハック */
+/* firefoxハック */
+@-moz-document url-prefix() {
 select {
 	-webkit-appearance: button;
     -moz-appearance: button;
@@ -102,14 +148,22 @@ select {
 	background-image: none;
 }
 }
-@media screen and (-webkit-min-device-pixel-ratio:0) {/* chromeハック */
+
+/* chromeハック */
+@media screen and (-webkit-min-device-pixel-ratio:0) {
 select {
     text-indent: 0.2em;
 }
 }
 
-/*	エレメント
+/* element
 ---------------------------------*/
+
+/* 住所 */
+.input-block {
+	display: block;
+	margin-bottom: 10px;
+}
 
 /* 例 */
 .example__text {
@@ -123,11 +177,8 @@ select {
 	color: #00487B;
 }
 
-
-/*	非表示
----------------------------------*/
-
-.mw_wp_form_confirm .require,.mw_wp_form_confirm .example__text {
+/* 非表示 */
+.mw_wp_form_confirm .require,.mw_wp_form_confirm .example__text,.mw_wp_form_confirm #privacy-policy {
 	display: none;
 }
 
@@ -135,20 +186,21 @@ select {
 
 /* ラップ */
 #privacy-policy {
-	background-color: #E6E6E6;
+	background-color: white;
 	padding: 20px;
 	margin-top: 20px;
+	border: 1px solid #B3B3B3;
 }
 
 /* タイトル */
-#privacy-policy-ttl {
+.privacy-policy__ttl {
 	font-size: 18px;
 	font-weight: bold;
 	margin-bottom: 10px;
 }
-.privacy-policy-ttl-sub {
-	font-size: 15px;
-	font-weight: bold;
+.privacy-policy__ttl_sub {
+	font-weight: normal;
+	margin-bottom: 10px;
 }
 
 /* テキストエリア（白バック） */
@@ -158,38 +210,30 @@ select {
 	width: 100%;
 	height: 112px;
 	overflow: auto;
+	margin-bottom: 10px;
 }
 .scroll-pane-inner {
 	padding: 15px;
 }
 
 /* テキスト */
-.privacy-policy-text {
-	font-size: 15px;
+.privacy-policy__text {
 	line-height: 175%;
 	margin-bottom: 20px;
 }
 
 /* リスト */
-#privacy-policy-items {
-	font-size: 15px;
-	line-height: 175%;
+.privacy-policy__items {
+	line-height: 200%;
 	margin-bottom: 20px;
 }
 
-/* 所在地 */
-#privacy-policy-address {
+/* 同意 */
+.agree__text {
 	font-size: 15px;
 	line-height: 175%;
 }
-
-/* 同意 */
-.agree-text {
-	font-size: 18px;
-	line-height: 175%;
-	text-align: center;
-}
-.agree-text label {
-	font-size: 22px;
-	font-weight: normal;
+.agree__text label {
+	font-size: 17px;
+	font-weight: bold;
 }

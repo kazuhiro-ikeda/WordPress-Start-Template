@@ -54,11 +54,8 @@
 			array(
 				'global'     => 'グローバル',
 				'side'       => 'サイド',
-				'footer-01'  => 'フッター01',
-				'sp-01'      => 'スマホ01',
-				'sitemap-01' => 'サイトマップ01',
 				)   
-				);
+			);
 
 	//エディタのスタイル
 		add_editor_style( 'editor-style.css' );
@@ -153,6 +150,17 @@
 		    return $categories;
 		}
 		add_filter( 'get_the_categories', 'get_the_category_orderby_parent' );
+		
+	//ここから
+		function include_php($params = array()) {
+		    extract(shortcode_atts(array(
+		        'file' => 'default'
+		    ), $params));
+		    ob_start();
+		    include(get_theme_root() . '/' . get_template() . "/parts/$file.php");
+		    return ob_get_clean();
+		}
+		add_shortcode('inc_php', 'include_php');
 
 	//不要なメタタグを表示しない
 		remove_action( 'wp_head', 'wp_generator' );
