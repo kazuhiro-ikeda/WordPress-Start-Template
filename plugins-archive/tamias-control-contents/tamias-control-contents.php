@@ -7,7 +7,30 @@ Version: 1.0
 Author: Kazuhiro Ikeda
 Author URI: http://tamias.co.jp/
 */
-
+	//カスタム投稿タイプダッシュボード並べ替え
+	add_filter( 'custom_menu_order', '__return_true' );
+	add_filter( 'menu_order'       , 'pm_menu_order' );  
+	
+	function pm_menu_order( $menu_order ) {
+	    $menu = array();
+	
+	    foreach ( $menu_order as $key => $val ) {
+	        if ( 0 === strpos( $val, 'edit.php' ) )
+	            break;
+	            
+	        $menu[] = $val;
+	        unset( $menu_order[$key] );
+	    }
+	    
+	    foreach ( $menu_order as $key => $val ) {
+	        if ( 0 === strpos( $val, 'edit.php' ) ) {
+	            $menu[] = $val;
+	            unset( $menu_order[$key] );
+	        }
+	    }
+	
+	    return array_merge( $menu, $menu_order );
+	}
 
 
 	//店舗登録
