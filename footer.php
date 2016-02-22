@@ -23,7 +23,7 @@
 $(function(){
 	$('#bxslider__items').bxSlider({
 		auto: true,
-		slideWidth: 980,
+		slideWidth: 1000,
 		minSlides: 3,
 		maxSlides: 3,
 		moveSlides: 1,
@@ -31,6 +31,13 @@ $(function(){
 	});
 });
 </script>
+<script src="<?php bloginfo('template_url');?>/js/glide.js"></script>
+<script>
+    $("#Glide").glide({
+        type: "carousel"
+    });
+</script>
+
 
 <?php wp_footer(); ?>
 

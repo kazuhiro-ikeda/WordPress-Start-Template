@@ -24,6 +24,8 @@ Author URI: http://tamias.co.jp/
 @import url(css/lightbox.css);
 @import url(css/jquery.jscrollpane.css);
 @import url(css/jquery.bxslider.css);
+@import url(css/glide.core.css);
+@import url(css/glide.theme.css);
 
 /* クライアント */
 @import url(css/custom.css);

@@ -182,10 +182,10 @@ ul.bxslider {
 
 /* 設定 */
 #slider__container {width: 100%; height: 100%; overflow-x: hidden;}
-#slider__all {width: 980px; margin: 0 auto; height: 431px; position: relative;}
-#slider__wrap {width: 2940px; position: absolute; left: 50%; margin-left: -1470px;}
+#slider__all {width: 1000px; margin: 0 auto; height: 350px; position: relative;}
+#slider__wrap {width: 3000px; position: absolute; left: 50%; margin-left: -1500px;}
 #bxslider__items {width: 100%;}
-.slide {width: 980px;}
+.slide {width: 1000px;}
 .slide img {width: 100%; vertical-align: bottom;}
 
 
