@@ -1,0 +1,333 @@
+@charset "UTF-8";
+/*
+	# 変更不可 ＊変更は custom.css へコピーして変更
+	
+	## CSS検索ワードリスト
+	header
+	footer
+	home
+	pages
+		＊各ページ
+	
+*/
+/*//////////////　preload　//////////////*/
+body:after {
+  content: url("../images/") url("");
+  display: none;
+}
+
+/*//////////////　common　//////////////*/
+/*	html
+---------------------------------*/
+body {
+  color: black;
+  font-family: "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", Meiryo, メイリオ, sans-serif;
+  font-size: 13px;
+  word-wrap: break-word;
+  -webkit-font-smoothing: subpixel-antialiased;
+  -webkit-text-size-adjust: 100%;
+}
+
+@media screen and (max-width: 1024px) {
+  body {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 736px) {
+  body {
+    width: 100%;
+    font-size: 13px;
+  }
+}
+
+/* link */
+a {
+  color: black;
+  text-decoration: none;
+}
+
+a:active, a:focus {
+  outline: none;
+  ie-dummy: expression(this.hideFocus=true);
+}
+
+/* element */
+.btn {
+  opacity: 1;
+  transition: opacity 0.5s;
+}
+
+.btn:hover {
+  opacity: 0.5;
+}
+
+/* adjust anchor */
+.anc {
+  margin-top: -0px;
+  padding-top: 0px;
+}
+
+/* figure */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* heading */
+h1, h2, h3, h4, h5, h6 {
+  line-height: 150%;
+}
+
+/* text */
+p {
+  text-align: justify;
+  text-justify: inter-ideograph;
+  -ms-text-justify: inter-ideograph;
+}
+
+/* text */
+.text {
+  line-height: 200%;
+}
+
+/* text */
+.paragraph {
+  line-height: 200%;
+  margin-bottom: 30px;
+}
+
+@media screen and (max-width: 736px) {
+  .paragraph {
+    line-height: 200%;
+    margin-bottom: 5%;
+  }
+}
+
+/*	screen
+---------------------------------*/
+.screen {
+  width: 980px;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 1024px) {
+  .screen {
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 736px) {
+  .screen {
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+
+/*	clearfix
+---------------------------------*/
+/* add parent object */
+.cl:before, .cl:after {
+  content: " ";
+  display: table;
+}
+
+.cl:after {
+  clear: both;
+}
+
+.cl {
+  *zoom: 1;
+  display: block;
+}
+
+/*	section
+---------------------------------*/
+#main {
+  width: 100%;
+}
+
+/*	pagination
+---------------------------------*/
+/* wrap */
+.pagination {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+/* heading */
+.screen-reader-text {
+  display: none;
+}
+
+/* wrap */
+.nav-links {
+  overflow: hidden;
+}
+
+/* link */
+a.page-numbers {
+  background-color: #C2B185;
+  color: white;
+  display: inline-block;
+  margin-right: 15px;
+  padding: 6px 6px 3px;
+}
+
+.nav-links .current {
+  display: inline-block;
+  margin-right: 15px;
+  color: #C2B185;
+}
+
+.dots {
+  margin-right: 15px;
+}
+
+.nav-links a.next {
+  border: none;
+}
+
+.nav-links a.prev {
+  border: none;
+}
+
+/*	display
+---------------------------------*/
+.hide-panel {
+  display: none;
+}
+
+/* wrap */
+.pc-block {
+  display: block;
+}
+
+@media screen and (max-width: 736px) {
+  .pc-block {
+    display: none;
+  }
+}
+
+.sp-block {
+  display: none;
+}
+
+@media screen and (max-width: 736px) {
+  .sp-block {
+    display: block;
+  }
+}
+
+.pc-inline {
+  display: inline;
+}
+
+@media screen and (max-width: 736px) {
+  .pc-inline {
+    display: none;
+  }
+}
+
+.sp-inline {
+  display: none;
+}
+
+@media screen and (max-width: 736px) {
+  .sp-inline {
+    display: inline;
+  }
+}
+
+/*//////////////　device　//////////////*/
+/* Android bugfix ４系 */
+p {
+  background-image: url(image);
+}
+
+h1, h2, h3, h4, h5, h6, th, td {
+  background-image: url(image);
+}
+
+/* iOS */
+input[type="submit"] {
+  -webkit-appearance: none;
+  border-radius: 0;
+}
+
+/*//////////////　header　//////////////*/
+/*//////////////　footer　//////////////*/
+/*//////////////　nav　//////////////*/
+/*//////////////　post　//////////////*/
+/* heading */
+.single-content h1 {
+  font-size: 2.6rem;
+  margin-bottom: 2.6rem;
+}
+
+.single-content h2 {
+  font-size: 2.2rem;
+  margin-bottom: 2.2rem;
+}
+
+.single-content h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1.8rem;
+}
+
+.single-content h4, .single-content h5, .single-content h6 {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+/* text */
+.single-content p {
+  line-height: 200%;
+  margin-bottom: 30px;
+}
+
+/* list */
+.single-content ul {
+  list-style-type: circle;
+  list-style-position: inside;
+  line-height: 225%;
+  margin-bottom: 60px;
+}
+
+.single-content ol {
+  list-style-position: inside;
+  line-height: 225%;
+  margin-bottom: 60px;
+}
+
+/* link */
+.single-content a {
+  color: #709ae8;
+}
+
+.single-content a:hover {
+  text-decoration: underline;
+}
+
+/* modifier */
+.alignleft {
+  display: inline;
+  float: left;
+  padding-right: 10px;
+}
+
+.alignright {
+  display: inline;
+  float: right;
+  padding-left: 10px;
+}
+
+.aligncenter {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/*//////////////　home　//////////////*/
+/*//////////////　pages　//////////////*/

@@ -8,24 +8,14 @@ Author: Kazuhiro Ikeda
 Author URI: http://tamias.co.jp/
 */
 @import url(css/reset.css);
-@import url(css/common.css);
-@import url(css/preload.css);
-@import url(css/element.css);
-@import url(css/wysiwyg.css);
-@import url(css/nav.css);
-
-/* ページ */
-@import url(css/home.css);/* フロントページ */
-@import url(css/pages.css);/* ページ */
-@import url(css/single.css);/* お知らせ */
-@import url(css/contact.css);/* コンタクト */
+@import url(sass/styles.css);
 
 /* jQuery */
-@import url(css/lightbox.css);
-@import url(css/jquery.jscrollpane.css);
-@import url(css/jquery.bxslider.css);
-@import url(css/glide.core.css);
-@import url(css/glide.theme.css);
+@import url(css/js/lightbox.css);
+@import url(css/js/jquery.jscrollpane.css);
+@import url(css/js/jquery.bxslider.css);
+@import url(css/js/glide.core.css);
+@import url(css/js/glide.theme.css);
 
 /* クライアント */
 @import url(css/custom.css);
