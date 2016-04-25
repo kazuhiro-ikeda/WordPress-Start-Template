@@ -73,6 +73,12 @@ p { text-align: justify; text-justify: inter-ideograph; -ms-text-justify: inter-
 ---------------------------------*/
 #main { width: 100%; }
 
+/*	breads
+---------------------------------*/
+#breads { width: 1020px; margin: 20px auto; }
+
+#breads a:hover { text-decoration: underline; }
+
 /*	pagination
 ---------------------------------*/
 /* wrap */

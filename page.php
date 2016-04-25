@@ -1,14 +1,24 @@
 <?php get_header(); ?>
 
 <div id="main" <?php post_class(); ?> role="main">
-<?php
-	if(is_front_page()){
-		
-	} else{
-		//
-		if ( class_exists( 'WP_SiteManager_bread_crumb' ) ) { WP_SiteManager_bread_crumb::bread_crumb(); }
-	}
-?>
+	
+<?php if (is_mobile()) : //for breads ?>
+			
+<?php else : //pc tablet ?>
+<nav id="breads">
+	<?php if(is_front_page()): ?>
+	
+	<?php elseif(is_singular( 'blog' )): ?>
+	<a href="<?php bloginfo( 'url' ); ?>/"><?php bloginfo( 'name' ); ?></a> > <a href="<?php bloginfo( 'url' ); ?>/blog">ブログ一覧</a> > <?php the_title(); ?>
+	
+	<?php else: ?>
+	<a href="<?php bloginfo( 'url' ); ?>/"><?php bloginfo( 'name' ); ?></a> > <?php the_title(); ?>
+	
+	<?php endif; ?>
+	
+</nav>
+			
+<?php  endif ; //end for breads ?>
 
 <?php $template_slug = get_post($wp_query->post->ID)->post_name; ?>
 <?php get_template_part( 'parts/'.$template_slug ); ?>

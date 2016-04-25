@@ -1,5 +1,8 @@
 <?php
 	
+	//コメント許可
+	remove_filter( 'the_content', 'wptexturize' );
+	
 	//タブレットをモバイルから除外
 		function is_mobile() {
 		    $useragents = array(

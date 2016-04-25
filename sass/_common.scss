@@ -128,6 +128,16 @@ p {
 
 #side {}
 
+/*	breads
+---------------------------------*/
+#breads {
+	width: 1020px;
+	margin: 20px auto;
+	
+	a:hover {
+		text-decoration: underline;
+	}
+}
 
 /*	pagination
 ---------------------------------*/
