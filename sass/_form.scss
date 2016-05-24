@@ -10,3 +10,39 @@
 	display: block;
 	margin-bottom: 10px;
 }
+
+/* ドロップダウン */
+select {
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+    height: 30px;
+    background-color: white;
+    border: 1px solid silver;
+    border-radius: 0;
+    padding: 0 5px;
+    background-image: url(../images/form/arrow-select.png);
+    background-repeat: no-repeat;
+    background-position: right center;
+    font-size: 14px;
+}
+
+/* IE10以上で動作 */
+select::-ms-expand {
+  display: none;
+}
+
+@-moz-document url-prefix() {/* firefoxハック */
+#contact-table select {
+	-webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+	text-indent: 0.2em;
+	background-image: none;
+}
+}
+@media screen and (-webkit-min-device-pixel-ratio:0) {/* chromeハック */
+#contact-table select {
+    text-indent: 0.2em;
+}
+}

@@ -1,0 +1,39 @@
+.ccpBox{
+	margin-top:20px;
+}
+.ccpBox h3{
+	font-size:180%!important;
+}
+
+.ccpBox dl{
+	border-bottom:solid 2px #eeeeee;
+	padding:0px;
+	margin:0 0 20px 0;
+}
+
+.ccpBox dl:last-of-type{
+	margin-bottom:0;
+	border-bottom:none;
+}
+
+.ccpBox dt{
+	font-size:160%!important;
+}
+.ccpBox dd{
+	margin:0;
+}
+
+.ccpBox ul{
+	overflow:hidden;
+}
+.ccpBox ul li{
+	list-style:none;
+	float:left;
+	padding-right:2em;
+}
+
+.ccpBox ul li input,
+.ccpBox ul li label{
+	vertical-align:bottom;
+	font-size:117%!important;
+}
