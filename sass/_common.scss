@@ -20,7 +20,7 @@ body {
 	@media screen and (max-width: 1024px) {
 		width: 100%;
 	}
-	@media screen and (max-width: 736px) {
+	@media screen and (max-width: 768px) {
 		width: 100%;
 		font-size: 13px;
 	}
@@ -79,7 +79,7 @@ p {
 .paragraph {
 	line-height: 200%;
 	margin-bottom: 30px;
-	@media screen and (max-width: 736px) {
+	@media screen and (max-width: 768px) {
 		line-height: 200%;
 		margin-bottom: 5%;
 	}
@@ -95,7 +95,7 @@ p {
 		width: 100%;
 		margin: 0 auto;
 	}
-	@media screen and (max-width: 736px) {
+	@media screen and (max-width: 768px) {
 		width: 100%;
 		margin: 0 auto;
 	}
@@ -189,25 +189,25 @@ a.page-numbers {
 /* wrap */
 .pc-block {
 	display: block;
-	@media screen and (max-width: 736px) {
+	@media screen and (max-width: 768px) {
 		display: none;
 	}
 }
 .sp-block {
 	display: none;
-	@media screen and (max-width: 736px) {
+	@media screen and (max-width: 768px) {
 		display: block;
 	}
 }
 .pc-inline {
 	display: inline;
-	@media screen and (max-width: 736px) {
+	@media screen and (max-width: 768px) {
 		display: none;
 	}
 }
 .sp-inline {
 	display: none;
-	@media screen and (max-width: 736px) {
+	@media screen and (max-width: 768px) {
 		display: inline;
 	}
 }

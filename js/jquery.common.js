@@ -13,6 +13,27 @@ $(function(){
 			}).each(function(){
 				$( "<img>" ).attr( "src",$(this).attr( "src" ).replace(/^(.+)(\.[a-z]+)$/, "$1_on$2" ));
 			});
+	
+	//画像切り替え
+			$(window).on('load resize', function(){
+				var windowWidth=window.innerWidth;
+				$('figure.branch img').each(function(){
+					var $obj=$(this);
+					var imgSrc=$obj.attr('src');
+					var ext=imgSrc.split(".").pop();
+					if(windowWidth<=768){
+						if(!$obj.hasClass('figure_s')){
+							var replaceSrc=imgSrc.replace('.'+ext,'_s.'+ext);
+							$obj.addClass('figure_s').attr('src',replaceSrc);
+						}
+					} else {
+						if($obj.hasClass('figure_s')){
+							var replaceSrc=imgSrc.replace('_s.'+ext,'.'+ext);
+							$obj.removeClass('figure_s').attr('src',replaceSrc);
+						}
+					}
+				});
+			});			
 		
 	//スムーススクロール
 	
