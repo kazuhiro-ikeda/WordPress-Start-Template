@@ -17,7 +17,7 @@ $(function(){
 	//画像切り替え
 			$(window).on('load resize', function(){
 				var windowWidth=window.innerWidth;
-				$('figure.branch img').each(function(){
+				$('.branch img').each(function(){
 					var $obj=$(this);
 					var imgSrc=$obj.attr('src');
 					var ext=imgSrc.split(".").pop();
@@ -56,7 +56,7 @@ $(function(){
 			$( ".toggle" ).css( "cursor", "pointer" );
 			$( ".toggle" ).on( "click", function() {
 				var panelId = $(this).attr( "data-title" );
-				var panel = "#panel-" + panelId;
+				var panel = "#" + panelId;
 				$(this).toggleClass( "active" );//開いた時、ボタンにクラスを追加
 				$(panel).fadeToggle( "fast" );//”slow”、”normal”、”fast”
 			});
