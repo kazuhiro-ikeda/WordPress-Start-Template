@@ -14,7 +14,7 @@
 <?php the_posts_pagination( array( 'mid_size' => 3, 'prev_text' => '<<', 'next_text' => '>>', 'screen_reader_text' => '',  ));  ?>
 
 </div>
-<!-- /.contents -->
+<!-- /#main -->
 
 <?php if (is_mobile()) : //mobile only ?>
 			

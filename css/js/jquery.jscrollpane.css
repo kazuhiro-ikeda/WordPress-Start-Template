@@ -52,7 +52,7 @@
 {
 	background: white;
 	position: relative;
-	background-image: url(../images/form/bar-vertical.png);
+	background-image: url(../../images/form/bar-vertical.png);
 	background-repeat: repeat-y;
 }
 
@@ -63,7 +63,7 @@
 	top: 0;
 	left: 0;
 	cursor: pointer;
-	background-image: url(../images/form/bar-drag.png);
+	background-image: url(../../images/form/bar-drag.png);
 	background-repeat: no-repeat;
 }
 
