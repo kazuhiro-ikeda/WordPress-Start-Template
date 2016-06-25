@@ -27,26 +27,6 @@
 <link rel="alternate" hreflang="ja" href="<?php the_permalink(); ?>">
 <link rel="shortcut icon" href="<?php bloginfo( 'template_url' ); ?>/favicon.ico">
 <link rel="apple-touch-icon" href="<?php bloginfo( 'template_url' ); ?>/icon.png">
-<?php
-	$ua = $_SERVER['HTTP_USER_AGENT'];
-	if(strpos($ua, 'Android' ) !== false && strpos($ua, 'Mobile' ) === false) {
-		//android tablet
-	    echo '<link rel="stylesheet" href="'.get_template_directory_uri().'/css/android.css">';
-	} elseif(strpos($ua, 'Android' ) !== false && strpos($ua, 'Mobile' ) !== false) {
-		//android smartphone
-	    echo '<link rel="stylesheet" href="'.get_template_directory_uri().'/css/android.css">';
-	} elseif(strpos($ua, 'iPhone' ) !== false) {
-		//iPhone
-	    echo '<link rel="stylesheet" href="'.get_template_directory_uri().'/css/iphone.css">';
-	} elseif(strpos($ua, 'iPad' ) !== false) {
-		//iPad
-	    echo '<link rel="stylesheet" href="'.get_template_directory_uri().'/css/iphone.css">';
-	} elseif(strpos($ua, 'iPod' ) !== false) {
-		//iPod
-	} else {
-		//iPhone、iPad、iPod、Android以外
-	}
-?>
 
 <?php
 	wp_deregister_script( 'jquery' );	
