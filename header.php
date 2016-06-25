@@ -1,4 +1,4 @@
- <?php header( 'X-UA-Compatible: IE=edge,chrome=1' ); ?>
+<?php header( 'X-UA-Compatible: IE=edge,chrome=1' ); ?>
 
 <!doctype html>
 <html lang="ja">
@@ -6,7 +6,6 @@
 <meta charset="UTF-8">
 <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 
-<?php if (is_mobile()) : //smartphone only ?>
 <?php if(is_page( 'registration' )): ?>
 <meta name="viewport" content="width=device-width, initial-scale=1,  user-scalable=no">
 
@@ -17,11 +16,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <?php endif; ?>
-			
-<?php else : //pc tablet ?>
-<meta name="viewport" content="width=1020">	
-			
-<?php  endif ; //if_mobile ?>
 
 <link rel="stylesheet" type="text/css" href="<?php bloginfo( 'stylesheet_url' ); ?>">	
 <link rel="alternate" hreflang="ja" href="<?php the_permalink(); ?>">
