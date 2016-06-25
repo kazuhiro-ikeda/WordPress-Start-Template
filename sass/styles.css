@@ -175,6 +175,60 @@ input[type="submit"] { -webkit-appearance: none; border-radius: 0; }
 ---------------------------------*/
 /*	heading 見出しスタイル
 ---------------------------------*/
+/*	非表示
+---------------------------------*/
+.mw_wp_form_confirm .require { display: none; }
+
+.mw_wp_form_confirm #privacy-policy { display: none; }
+
+input[type="submit"] { background: url(../images/form/btn-confirm.png) no-repeat white; border: none; text-indent: -9999px; width: 303px; height: 78px; display: block; margin: 0 auto 120px; cursor: pointer; opacity: 1; transition: opacity 0.5s; }
+
+input[type="submit"]:hover { opacity: 0.5; }
+
+.mw_wp_form_confirm input[type="submit"] { background: url(../images/form/btn-send.png) no-repeat white; }
+
+/*	wrap_form
+---------------------------------*/
+#wrap_form { margin-bottom: 60px; }
+
+@media screen and (max-width: 768px) { #wrap_form { margin-bottom: 10vw; } }
+
+#wrap_form > p { line-height: 200%; margin-bottom: 20px; }
+
+@media screen and (max-width: 768px) { #wrap_form > p { line-height: 200%; margin-bottom: 3vw; } }
+
+#wrap_form .require { color: #7ab529; }
+
+#wrap_form table { width: 100%; line-height: 200%; margin-bottom: 30px; }
+
+@media screen and (max-width: 768px) { #wrap_form table { width: 100%; line-height: 200%; margin-bottom: 5vw; } }
+
+#wrap_form table tr:nth-child(odd) { background: #f4f7e5; }
+
+@media screen and (max-width: 768px) { #wrap_form table tr:nth-child(odd) { background: white; } }
+
+#wrap_form table th { font-weight: normal; text-align: left; vertical-align: top; padding: 10px 10px 10px; width: 200px; }
+
+@media screen and (max-width: 768px) { #wrap_form table th { font-weight: normal; text-align: left; vertical-align: top; padding: 2vw; display: block; box-sizing: border-box; width: 100%; background: #f4f7e5; } }
+
+#wrap_form table td { padding: 10px 10px 10px; }
+
+@media screen and (max-width: 768px) { #wrap_form table td { padding: 2vw; display: block; } }
+
+#wrap_form input[type="text"] { height: 22px; width: 300px; padding: 0 5px; }
+
+@media screen and (max-width: 768px) { #wrap_form input[type="text"] { height: 22px; box-sizing: border-box; width: 100%; padding: 0 5px; } }
+
+#wrap_form #year { width: 90px; }
+
+#wrap_form #month { width: 60px; }
+
+#wrap_form #day { width: 60px; }
+
+#wrap_form textarea { height: 200px; width: 300px; padding: 0 5px; }
+
+@media screen and (max-width: 768px) { #wrap_form textarea { height: 200px; box-sizing: border-box; width: 100%; padding: 0 5px; } }
+
 /*	form
 ---------------------------------*/
 .mwform-checkbox-field.horizontal-item { margin-right: 0 !important; margin-left: 0 !important; padding-right: 0 !important; padding-left: 0 !important; display: block; margin-bottom: 10px; }
@@ -194,7 +248,11 @@ select::-ms-expand { display: none; }
 /*	プライバシーポリシー
 ---------------------------------*/
 /* ラップ */
-#privacy-policy { background-color: #E6E6E6; padding: 20px; margin-top: 20px; }
+#privacy-policy { background-color: #f4f7e5; padding: 20px; margin-bottom: 60px; }
+
+#privacy-policy > h1 { margin-bottom: 5px; }
+
+#privacy-policy > p { margin-bottom: 10px; }
 
 /* タイトル */
 #privacy-policy-ttl { font-size: 18px; font-weight: bold; margin-bottom: 10px; }
@@ -203,6 +261,12 @@ select::-ms-expand { display: none; }
 
 /* テキストエリア（白バック） */
 .scroll-pane { background-color: white; border: 1px solid #B1B1B1; width: 100%; height: 112px; margin-bottom: 15px; overflow: auto; }
+
+.scroll-pane h1, .scroll-pane h2, .scroll-pane h3, .scroll-pane h4, .scroll-pane h5 { margin-bottom: 5px; }
+
+.scroll-pane p { margin-bottom: 15px; line-height: 150%; }
+
+.scroll-pane ul { margin-bottom: 15px; line-height: 150%; }
 
 .scroll-pane-inner { padding: 15px; }
 
@@ -216,6 +280,4 @@ select::-ms-expand { display: none; }
 #privacy-policy-address { font-size: 15px; line-height: 175%; }
 
 /* 同意 */
-.agree-text { font-size: 18px; line-height: 175%; }
-
-.agree-text label { font-size: 18px; font-weight: normal; }
+.agree__text span { display: block; margin-top: 10px; font-size: 18px; font-weight: normal; }

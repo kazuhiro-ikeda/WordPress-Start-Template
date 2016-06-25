@@ -37,6 +37,15 @@ $(function(){
         type: "carousel"
     });
 </script>
+<?php if(is_page( 'entry' ) || is_page( 'registration' )): ?>
+	<script>
+	$(window).resize(function() {
+	    console.log('resized');
+	    location.reload();
+	});
+	</script>
+
+<?php endif; ?>
 
 
 <?php wp_footer(); ?>
