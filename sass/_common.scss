@@ -186,7 +186,7 @@ a.page-numbers {
 	display: none;
 }
 
-/* wrap */
+//wrap
 .pc-block {
 	display: block;
 	@media screen and (max-width: 768px) {
@@ -212,29 +212,28 @@ a.page-numbers {
 	}
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+//wrap
+.block_p {
+	display: block;
+	@media screen and (max-width: 768px) {
+		display: none;
+	}
+}
+.block_s {
+	display: none;
+	@media screen and (max-width: 768px) {
+		display: block;
+	}
+}
+.inline_p {
+	display: inline;
+	@media screen and (max-width: 768px) {
+		display: none;
+	}
+}
+.inline_s {
+	display: none;
+	@media screen and (max-width: 768px) {
+		display: inline;
+	}
+}

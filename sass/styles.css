@@ -105,7 +105,6 @@ a.page-numbers { background-color: #C2B185; color: white; display: inline-block;
 ---------------------------------*/
 .hide-panel { display: none; }
 
-/* wrap */
 .pc-block { display: block; }
 
 @media screen and (max-width: 768px) { .pc-block { display: none; } }
@@ -121,6 +120,22 @@ a.page-numbers { background-color: #C2B185; color: white; display: inline-block;
 .sp-inline { display: none; }
 
 @media screen and (max-width: 768px) { .sp-inline { display: inline; } }
+
+.block_p { display: block; }
+
+@media screen and (max-width: 768px) { .block_p { display: none; } }
+
+.block_s { display: none; }
+
+@media screen and (max-width: 768px) { .block_s { display: block; } }
+
+.inline_p { display: inline; }
+
+@media screen and (max-width: 768px) { .inline_p { display: none; } }
+
+.inline_s { display: none; }
+
+@media screen and (max-width: 768px) { .inline_s { display: inline; } }
 
 /*	device
 ---------------------------------*/
