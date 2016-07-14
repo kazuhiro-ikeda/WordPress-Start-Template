@@ -1,15 +1,5 @@
 @charset "UTF-8";
-/*
-	# 変更不可 ＊変更は custom.css へコピーして変更
-	
-	## CSS検索ワードリスト
-	header
-	footer
-	home
-	pages
-		＊各ページ
-	
-*/
+/* # 変更不可 ＊変更は custom.css へコピーして変更 */
 /*	preload
 ---------------------------------*/
 body:after { content: url("../images/") url(""); display: none; }
