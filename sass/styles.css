@@ -8,7 +8,7 @@ body:after { content: url("../images/") url(""); display: none; }
 ---------------------------------*/
 body { color: black; font-family: "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", Meiryo, メイリオ, sans-serif; font-size: 13px; word-wrap: break-word; -webkit-font-smoothing: subpixel-antialiased; -webkit-text-size-adjust: 100%; }
 
-@media screen and (max-width: 768px) { body { width: 100%; font-size: 13px; } }
+@media screen and (max-width: 640px) { body { width: 100%; font-size: 13px; } }
 
 /* link */
 a { color: black; text-decoration: none; }
@@ -36,7 +36,7 @@ p { text-align: justify; text-justify: inter-ideograph; -ms-text-justify: inter-
 ---------------------------------*/
 .screen { width: 980px; margin: 0 auto; }
 
-@media screen and (max-width: 768px) { .screen { width: 100%; margin: 0 auto; } }
+@media screen and (max-width: 640px) { .screen { width: 100%; margin: 0 auto; } }
 
 /*	clearfix
 ---------------------------------*/
@@ -83,35 +83,35 @@ a.page-numbers { background-color: #C2B185; color: white; display: inline-block;
 
 .pc-block { display: block; }
 
-@media screen and (max-width: 768px) { .pc-block { display: none; } }
+@media screen and (max-width: 640px) { .pc-block { display: none; } }
 
 .sp-block { display: none; }
 
-@media screen and (max-width: 768px) { .sp-block { display: block; } }
+@media screen and (max-width: 640px) { .sp-block { display: block; } }
 
 .pc-inline { display: inline; }
 
-@media screen and (max-width: 768px) { .pc-inline { display: none; } }
+@media screen and (max-width: 640px) { .pc-inline { display: none; } }
 
 .sp-inline { display: none; }
 
-@media screen and (max-width: 768px) { .sp-inline { display: inline; } }
+@media screen and (max-width: 640px) { .sp-inline { display: inline; } }
 
 .block_p { display: block; }
 
-@media screen and (max-width: 768px) { .block_p { display: none; } }
+@media screen and (max-width: 640px) { .block_p { display: none; } }
 
 .block_s { display: none; }
 
-@media screen and (max-width: 768px) { .block_s { display: block; } }
+@media screen and (max-width: 640px) { .block_s { display: block; } }
 
 .inline_p { display: inline; }
 
-@media screen and (max-width: 768px) { .inline_p { display: none; } }
+@media screen and (max-width: 640px) { .inline_p { display: none; } }
 
 .inline_s { display: none; }
 
-@media screen and (max-width: 768px) { .inline_s { display: inline; } }
+@media screen and (max-width: 640px) { .inline_s { display: inline; } }
 
 /*	device
 ---------------------------------*/
@@ -164,11 +164,11 @@ input[type="submit"] { -webkit-appearance: none; border-radius: 0; }
 ---------------------------------*/
 .n3 { margin-bottom: 20px; overflow: hidden; }
 
-@media screen and (max-width: 768px) { .n3 { margin-bottom: 5vw; } }
+@media screen and (max-width: 640px) { .n3 { margin-bottom: 5vw; } }
 
 .n3 li { width: 32%; float: left; margin-right: 2%; margin-bottom: 15px; }
 
-@media screen and (max-width: 768px) { .n3 li { width: 100%; float: none; margin-right: 0; margin-bottom: 5vw; text-align: center; } }
+@media screen and (max-width: 640px) { .n3 li { width: 100%; float: none; margin-right: 0; margin-bottom: 5vw; text-align: center; } }
 
 .n3 li:nth-child(3n) { margin-right: 0; }
 
@@ -194,33 +194,33 @@ input[type="submit"]:hover { opacity: 0.5; }
 ---------------------------------*/
 #wrap_form { margin-bottom: 60px; }
 
-@media screen and (max-width: 768px) { #wrap_form { margin-bottom: 10vw; } }
+@media screen and (max-width: 640px) { #wrap_form { margin-bottom: 10vw; } }
 
 #wrap_form > p { line-height: 200%; margin-bottom: 20px; }
 
-@media screen and (max-width: 768px) { #wrap_form > p { line-height: 200%; margin-bottom: 3vw; } }
+@media screen and (max-width: 640px) { #wrap_form > p { line-height: 200%; margin-bottom: 3vw; } }
 
 #wrap_form .require { color: #7ab529; }
 
 #wrap_form table { width: 100%; line-height: 200%; margin-bottom: 30px; }
 
-@media screen and (max-width: 768px) { #wrap_form table { width: 100%; line-height: 200%; margin-bottom: 5vw; } }
+@media screen and (max-width: 640px) { #wrap_form table { width: 100%; line-height: 200%; margin-bottom: 5vw; } }
 
 #wrap_form table tr:nth-child(odd) { background: #f4f7e5; }
 
-@media screen and (max-width: 768px) { #wrap_form table tr:nth-child(odd) { background: white; } }
+@media screen and (max-width: 640px) { #wrap_form table tr:nth-child(odd) { background: white; } }
 
 #wrap_form table th { font-weight: normal; text-align: left; vertical-align: top; padding: 10px 10px 10px; width: 200px; }
 
-@media screen and (max-width: 768px) { #wrap_form table th { font-weight: normal; text-align: left; vertical-align: top; padding: 2vw; display: block; box-sizing: border-box; width: 100%; background: #f4f7e5; } }
+@media screen and (max-width: 640px) { #wrap_form table th { font-weight: normal; text-align: left; vertical-align: top; padding: 2vw; display: block; box-sizing: border-box; width: 100%; background: #f4f7e5; } }
 
 #wrap_form table td { padding: 10px 10px 10px; }
 
-@media screen and (max-width: 768px) { #wrap_form table td { padding: 2vw; display: block; } }
+@media screen and (max-width: 640px) { #wrap_form table td { padding: 2vw; display: block; } }
 
 #wrap_form input[type="text"] { height: 22px; width: 300px; padding: 0 5px; }
 
-@media screen and (max-width: 768px) { #wrap_form input[type="text"] { height: 22px; box-sizing: border-box; width: 100%; padding: 0 5px; } }
+@media screen and (max-width: 640px) { #wrap_form input[type="text"] { height: 22px; box-sizing: border-box; width: 100%; padding: 0 5px; } }
 
 #wrap_form #year { width: 90px; }
 
@@ -230,7 +230,7 @@ input[type="submit"]:hover { opacity: 0.5; }
 
 #wrap_form textarea { height: 200px; width: 300px; padding: 0 5px; }
 
-@media screen and (max-width: 768px) { #wrap_form textarea { height: 200px; box-sizing: border-box; width: 100%; padding: 0 5px; } }
+@media screen and (max-width: 640px) { #wrap_form textarea { height: 200px; box-sizing: border-box; width: 100%; padding: 0 5px; } }
 
 /*	form
 ---------------------------------*/

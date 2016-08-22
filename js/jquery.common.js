@@ -21,7 +21,7 @@ $(function(){
 					var $obj=$(this);
 					var imgSrc=$obj.attr('src');
 					var ext=imgSrc.split(".").pop();
-					if(windowWidth<=768){
+					if(windowWidth<=640){
 						if(!$obj.hasClass('figure_s')){
 							var replaceSrc=imgSrc.replace('.'+ext,'_s.'+ext);
 							$obj.addClass('figure_s').attr('src',replaceSrc);
