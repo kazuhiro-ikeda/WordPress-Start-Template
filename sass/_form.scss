@@ -37,7 +37,7 @@ input[type="submit"] {
 #wrap_form {
 	margin-bottom: 60px;
 	
-	@media screen and (max-width: 768px) {
+	@media screen and (max-width: $viewport) {
 		margin-bottom: 10vw;
 	}
 	
@@ -45,7 +45,7 @@ input[type="submit"] {
 		line-height: 200%;
 		margin-bottom: 20px;
 		
-		@media screen and (max-width: 768px) {
+		@media screen and (max-width: $viewport) {
 			line-height: 200%;
 			margin-bottom: 3vw;
 		}
@@ -60,7 +60,7 @@ input[type="submit"] {
 		line-height: 200%;
 		margin-bottom: 30px;
 		
-		@media screen and (max-width: 768px) {
+		@media screen and (max-width: $viewport) {
 			width: 100%;
 			line-height: 200%;
 			margin-bottom: 5vw;
@@ -71,7 +71,7 @@ input[type="submit"] {
 				background: #f4f7e5;
 			}
 			
-			@media screen and (max-width: 768px) {
+			@media screen and (max-width: $viewport) {
 				&:nth-child(odd) {
 					background: white;
 				}
@@ -85,7 +85,7 @@ input[type="submit"] {
 			padding: 10px 10px 10px;
 			width: 200px;
 			
-			@media screen and (max-width: 768px) {
+			@media screen and (max-width: $viewport) {
 				font-weight: normal;
 				text-align: left;
 				vertical-align: top;
@@ -100,7 +100,7 @@ input[type="submit"] {
 		td {
 			padding: 10px 10px 10px;
 			
-			@media screen and (max-width: 768px) {
+			@media screen and (max-width: $viewport) {
 				padding: 2vw;
 				display: block;
 			}
@@ -112,7 +112,7 @@ input[type="submit"] {
 		width: 300px;
 		padding: 0 5px;
 		
-		@media screen and (max-width: 768px) {
+		@media screen and (max-width: $viewport) {
 			height: 22px;
 			box-sizing: border-box;
 			width: 100%;
@@ -137,7 +137,7 @@ input[type="submit"] {
 		width: 300px;
 		padding: 0 5px;
 		
-		@media screen and (max-width: 768px) {
+		@media screen and (max-width: $viewport) {
 			height: 200px;
 			box-sizing: border-box;
 			width: 100%;

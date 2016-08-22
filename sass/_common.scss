@@ -1,5 +1,5 @@
 @charset "utf-8";
-
+$viewport: 768px;
 $base: black;
 
 $メイリオ: Meiryo, メイリオ, 'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3', sans-serif;
@@ -17,10 +17,8 @@ body {
 	word-wrap: break-word;
 	-webkit-font-smoothing: subpixel-antialiased;
 	-webkit-text-size-adjust: 100%;	
-	@media screen and (max-width: 1024px) {
-		width: 100%;
-	}
-	@media screen and (max-width: 768px) {
+
+	@media screen and (max-width: $viewport) {
 		width: 100%;
 		font-size: 13px;
 	}
@@ -70,32 +68,13 @@ p {
 	-ms-text-justify: inter-ideograph;
 }
 
-/* text */
-.text {
-	line-height: 200%;
-}
-
-/* text */
-.paragraph {
-	line-height: 200%;
-	margin-bottom: 30px;
-	@media screen and (max-width: 768px) {
-		line-height: 200%;
-		margin-bottom: 5%;
-	}
-}
-
-
 /*	screen
 ---------------------------------*/
 .screen {
 	width: 980px;
 	margin: 0 auto;
-	@media screen and (max-width: 1024px) {
-		width: 100%;
-		margin: 0 auto;
-	}
-	@media screen and (max-width: 768px) {
+
+	@media screen and (max-width: $viewport) {
 		width: 100%;
 		margin: 0 auto;
 	}
@@ -129,8 +108,6 @@ p {
 /*	breads
 ---------------------------------*/
 #breads {
-	width: 1020px;
-	margin: 20px auto;
 	
 	a:hover {
 		text-decoration: underline;
@@ -189,25 +166,25 @@ a.page-numbers {
 //wrap
 .pc-block {
 	display: block;
-	@media screen and (max-width: 768px) {
+	@media screen and (max-width: $viewport) {
 		display: none;
 	}
 }
 .sp-block {
 	display: none;
-	@media screen and (max-width: 768px) {
+	@media screen and (max-width: $viewport) {
 		display: block;
 	}
 }
 .pc-inline {
 	display: inline;
-	@media screen and (max-width: 768px) {
+	@media screen and (max-width: $viewport) {
 		display: none;
 	}
 }
 .sp-inline {
 	display: none;
-	@media screen and (max-width: 768px) {
+	@media screen and (max-width: $viewport) {
 		display: inline;
 	}
 }
@@ -215,25 +192,25 @@ a.page-numbers {
 //wrap
 .block_p {
 	display: block;
-	@media screen and (max-width: 768px) {
+	@media screen and (max-width: $viewport) {
 		display: none;
 	}
 }
 .block_s {
 	display: none;
-	@media screen and (max-width: 768px) {
+	@media screen and (max-width: $viewport) {
 		display: block;
 	}
 }
 .inline_p {
 	display: inline;
-	@media screen and (max-width: 768px) {
+	@media screen and (max-width: $viewport) {
 		display: none;
 	}
 }
 .inline_s {
 	display: none;
-	@media screen and (max-width: 768px) {
+	@media screen and (max-width: $viewport) {
 		display: inline;
 	}
 }
