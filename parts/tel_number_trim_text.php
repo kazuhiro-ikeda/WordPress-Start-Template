@@ -1,0 +1,1 @@
+<?php $tel_trim = str_replace(array('-', 'ー', '−', '―', '‐'), '', $tel); ?>

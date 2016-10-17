@@ -1,5 +1,41 @@
 <?php
 	
+	//ビジュアルエディタの非表示
+	function disable_visual_editor_in_page(){
+		global $typenow;
+		if( $typenow == 'mw-wp-form' ){
+			add_filter('user_can_richedit', 'disable_visual_editor_filter');
+		}
+	}
+	function disable_visual_editor_filter(){
+		return false;
+	}
+	add_action( 'load-post.php', 'disable_visual_editor_in_page' );
+	add_action( 'load-post-new.php', 'disable_visual_editor_in_page' );
+	
+	//カスタム投稿タイプ表示数
+	add_action('pre_get_posts', 'xxx_pre_get_posts');
+	function xxx_pre_get_posts($query) {
+	    if (!is_admin() && $query->is_main_query() && is_post_type_archive('xxx')) {
+	        $query->set('posts_per_page', 9);
+	    }
+	}
+	
+	//検索対象の指定
+	function SearchFilter($query) {
+	  if ($query->is_search) {
+	    $query->set('post_type', 'xxx');
+	  }
+	  return $query;
+	}
+	add_filter('pre_get_posts','SearchFilter');
+	
+	//カスタムフィールド sarch query URL
+	add_filter( 'query_vars', 'url_query_vars' );
+	function url_query_vars( $public_query_vars ) {
+	    return array_merge( $public_query_vars, array( 'meta_key', 'meta_value' ) );
+	}
+	
 	//Google API
 	function my_acf_init() {
 	
