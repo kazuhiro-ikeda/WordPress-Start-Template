@@ -55,9 +55,10 @@ if( !empty($image) ):
 	        	<?php $key_caption = get_sub_field( 'key_caption' ); ?>
 	        	<?php $key_text = get_sub_field( 'key_text' ); ?>
 	        	<?php $key_link = get_sub_field( 'key_link' ); ?>
+	        	<?php $gallery_class = get_sub_field( 'gallery_class' ); ?>
 	        	
 	        	<?php if( have_rows( 'gallery' ) ): ?>	
-				<ul class="<?php the_sub_field( 'gallery_class' ); ?>">
+				<ul class="<?php echo $gallery_class; ?>">
 					
 				<?php while( have_rows( 'gallery' ) ): the_row(); 
 					// vars
