@@ -57,7 +57,7 @@ if( !empty($image) ):
 	        	<?php $key_link = get_sub_field( 'key_link' ); ?>
 	        	
 	        	<?php if( have_rows( 'gallery' ) ): ?>	
-				<ul>
+				<ul class="<?php the_sub_field( 'gallery_class' ); ?>">
 					
 				<?php while( have_rows( 'gallery' ) ): the_row(); 
 					// vars

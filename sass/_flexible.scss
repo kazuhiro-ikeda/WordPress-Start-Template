@@ -149,64 +149,6 @@
 
 .heading-center_gallery {
 	
-	ul {
-		margin-top: 30px;
-		overflow: hidden;
-		
-		@media screen and (max-width: $viewport) {
-			margin-top: 5vw;;
-			overflow: hidden;
-		}
-		
-		li {
-			box-sizing: border-box;
-			width: 32%;
-			float: left;
-			margin-right: 2%;
-			margin-bottom: 30px;
-			
-			@media screen and (max-width: $viewport) {
-				margin-bottom: 5vw;
-			}
-			
-			&:nth-child(3n) {
-				margin-right: 0;
-			}
-			
-			> img {
-				display: block;
-				margin-bottom: 10px;
-			}
-			
-			> span {
-				display: block;
-				margin-bottom: 10px;
-				line-height: 150%;
-			}
-			
-			.link {
-				text-align: right;
-				
-				> a {
-					opacity: 1;
-					transition: opacity .7s;
-					
-					&:hover {
-						opacity: .3;
-					}
-					
-					&::after {
-						color: #cfcfcf;
-						content: "\f054";
-						font-family: FontAwesome;
-						padding-left: 15px;
-					}
-				}
-			}
-		}//li
-	}//ul
-
-	/*
 	ul.n3 {
 		margin-top: 30px;
 		overflow: hidden;
@@ -231,15 +173,19 @@
 				margin-right: 0;
 			}
 			
-			> img {
-				display: block;
-				margin-bottom: 10px;
+			> figure {
+				text-align: center;
 			}
 			
-			> span {
-				display: block;
-				margin-bottom: 10px;
-				line-height: 150%;
+			.caption {
+				font-weight: bold;
+				text-align: center;
+			}
+			
+			.text {
+				@media screen and (max-width: $viewport) {
+					text-align: center;
+				}
 			}
 			
 			.link {
@@ -289,9 +235,43 @@
 			&:nth-child(5n) {
 				margin-right: 0;
 			}
-		}
-	}
-	*/
+			
+			> figure {
+				text-align: center;
+			}
+			
+			.caption {
+				font-weight: bold;
+				text-align: center;
+			}
+			
+			.text {
+				@media screen and (max-width: $viewport) {
+					text-align: center;
+				}
+			}
+			
+			.link {
+				text-align: right;
+				
+				> a {
+					opacity: 1;
+					transition: opacity .7s;
+					
+					&:hover {
+						opacity: .3;
+					}
+					
+					&::after {
+						color: #cfcfcf;
+						content: "\f054";
+						font-family: FontAwesome;
+						padding-left: 15px;
+					}
+				}
+			}
+		}//li
+	}//ul
 }
 
 .heading-center_landscape {
