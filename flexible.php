@@ -46,8 +46,8 @@ if( !empty($image) ):
 			    </ul>
 			<?php endif; ?>
 			
-		<?php elseif( get_row_layout() == 'heading-center_gallery' ): ?>
-		<section class="heading-center_gallery box_flexible">
+		<?php elseif( get_row_layout() == 'hn_text_gallery' ): ?>
+		<section class="hn_text_gallery box_flexible<?php if(get_sub_field( 'class' )): ?> <?php the_sub_field( 'class' ); ?><?php endif; ?>">
 			<div class="inner">
 				<<?php the_sub_field( 'tag' ); ?> class="ttl_flexible"><?php the_sub_field( 'heading' ); ?><?php if(get_sub_field( 'ttl_sub' )): ?><span><?php the_sub_field( 'ttl_sub' ); ?></span><?php endif; ?></<?php the_sub_field( 'tag' ); ?>>
 	        	<p><?php the_sub_field( 'text' ); ?></p>
@@ -66,7 +66,7 @@ if( !empty($image) ):
 					$caption = get_sub_field( 'caption' );
 					$text = get_sub_field( 'text' );
 					$link = get_sub_field( 'link' );
-					$slug = get_sub_field( 'slug_page' );
+					$link_page = get_sub_field( 'link_page' );
 					
 					// vars img
 					$url = $image['url'];
@@ -74,27 +74,28 @@ if( !empty($image) ):
 					$size = 'ランドスケープM';
 					$thumb = $image['sizes'][ $size ];
 				?>
-					<li><figure><img src="<?php echo $thumb; ?>" alt="<?php echo $alt; ?>"></figure><?php if(get_sub_field( 'caption' )): ?><span class="caption heightLine-<?php echo $key_caption; ?>"><?php echo $caption; ?></span><?php endif; ?><?php if(get_sub_field( 'text' )): ?><span class="text heightLine-<?php echo $key_text; ?>"><?php echo $text; ?></span><?php endif; ?><?php if(get_sub_field( 'link' )): ?><span class="link heightLine-<?php echo $key_link; ?>"><a href="<?php bloginfo( 'url' ); ?>/<?php echo $slug ?>"><?php echo $link; ?></a></span><?php endif; ?></li>
-					
+					<li><figure><img src="<?php echo $thumb; ?>" alt="<?php echo $alt; ?>"></figure><?php if(get_sub_field( 'caption' )): ?><span class="caption heightLine-<?php echo $key_caption; ?>"><?php echo $caption; ?></span><?php endif; ?><?php if(get_sub_field( 'text' )): ?><span class="text heightLine-<?php echo $key_text; ?>"><?php echo $text; ?></span><?php endif; ?><?php if(get_sub_field( 'link' )): ?><span class="link heightLine-<?php echo $key_link; ?>"><a href="<?php echo $link_page ?>"><?php echo $link; ?></a></span><?php endif; ?></li>
 				<?php endwhile; ?>
 				
 				</ul>
 				
 				<?php endif;//gallery ?>
 				
+				<a href="<?php the_sub_field( 'link_page' ); ?>"><?php the_sub_field( 'link' ); ?></a>
+				
 			</div>
 			<!-- /.inner -->
 				
 		</section>
-		<!-- /.heading-center_gallery -->
+		<!-- /.hn_text_gallery -->
 		
 		<?php elseif( get_row_layout() == 'editor' ): ?>
 		
-		<section class="editor_flexible box_flexible">
+		<section class="editor_flexible box_flexible<?php if(get_sub_field( 'class' )): ?> <?php the_sub_field( 'class' ); ?><?php endif; ?>">
 			<div class="inner">
-        	<?php the_sub_field( 'editor' ); ?>
+        	<div class="single-content"><?php the_sub_field( 'editor' ); ?></div>
         	
-        	<?php if(get_sub_field( 'link' )): ?><div class="area_btn_link"><a class="btn_link" href="<?php the_sub_field( 'url' ); ?>"><?php the_sub_field( 'link' ); ?></a></div><?php endif; ?>
+        	<a href="<?php the_sub_field( 'link_page' ); ?>"><?php the_sub_field( 'link' ); ?></a>
         	
         	</div>
 			<!-- /.inner -->
@@ -102,29 +103,42 @@ if( !empty($image) ):
 		</section>
 		<!-- /.text -->
 		
-		<?php elseif( get_row_layout() == 'editor_heading' ): ?>
+		<?php elseif( get_row_layout() == 'editor_hn' ): ?>
 		
-		<section class="editor_heading_flexible box_flexible">
+		<section class="editor_heading_flexible box_flexible<?php if(get_sub_field( 'class' )): ?> <?php the_sub_field( 'class' ); ?><?php endif; ?>">
 			<div class="inner">
 			<<?php the_sub_field( 'tag' ); ?> class="ttl_flexible"><?php the_sub_field( 'heading' ); ?><?php if(get_sub_field( 'ttl_sub' )): ?><span><?php the_sub_field( 'ttl_sub' ); ?></span><?php endif; ?></<?php the_sub_field( 'tag' ); ?>>
 			
-        	<?php the_sub_field( 'editor' ); ?>
+        	<div class="single-content"><?php the_sub_field( 'editor' ); ?></div>
         	
-        	<?php if(get_sub_field( 'link' )): ?><div class="area_btn_link"><a class="btn_link" href="<?php the_sub_field( 'url' ); ?>"><?php the_sub_field( 'link' ); ?></a></div><?php endif; ?>
+        	<a href="<?php the_sub_field( 'link_page' ); ?>"><?php the_sub_field( 'link' ); ?></a>
         	
         	</div>
 			<!-- /.inner -->
 			
 		</section>
 		<!-- /.text -->
+		
+		<?php elseif( get_row_layout() == 'pagelink' ): ?>
+		
+		<section class="pagelink_flexible box_flexible<?php if(get_sub_field( 'class' )): ?> <?php the_sub_field( 'class' ); ?><?php endif; ?>">
+			<div class="inner">
+        	
+        	<a href="<?php the_sub_field( 'link_page' ); ?>"><?php the_sub_field( 'link' ); ?></a>
+        	
+        	</div>
+			<!-- /.inner -->
+			
+		</section>
+		<!-- /.pagelink -->
 		
 		<?php elseif( get_row_layout() == 'text' ): ?>
 		
-		<section class="text_flexible box_flexible">
+		<section class="text_flexible box_flexible<?php if(get_sub_field( 'class' )): ?> <?php the_sub_field( 'class' ); ?><?php endif; ?>">
 			<div class="inner">
         	<p><?php the_sub_field( 'text' ); ?></p>
         	
-        	<?php if(get_sub_field( 'link' )): ?><div class="area_btn_link"><a class="btn_link" href="<?php the_sub_field( 'url' ); ?>"><?php the_sub_field( 'link' ); ?></a></div><?php endif; ?>
+        	<a href="<?php the_sub_field( 'link_page' ); ?>"><?php the_sub_field( 'link' ); ?></a>
         	
         	</div>
 			<!-- /.inner -->
@@ -132,28 +146,28 @@ if( !empty($image) ):
 		</section>
 		<!-- /.text -->
 			
-		<?php elseif( get_row_layout() == 'heading-center' ): ?>
+		<?php elseif( get_row_layout() == 'hn_text' ): ?>
 		
-		<section class="heading-center box_flexible">
+		<section class="hn_text box_flexible<?php if(get_sub_field( 'class' )): ?> <?php the_sub_field( 'class' ); ?><?php endif; ?>">
 			<div class="inner">
 			<<?php the_sub_field( 'tag' ); ?> class="ttl_flexible"><?php the_sub_field( 'heading' ); ?><?php if(get_sub_field( 'ttl_sub' )): ?><span><?php the_sub_field( 'ttl_sub' ); ?></span><?php endif; ?></<?php the_sub_field( 'tag' ); ?>>
         	<p><?php the_sub_field( 'text' ); ?></p>
         	
-        	<?php if(get_sub_field( 'link' )): ?><div class="area_btn_link"><a class="btn_link" href="<?php the_sub_field( 'url' ); ?>"><?php the_sub_field( 'link' ); ?></a></div><?php endif; ?>
+        	<a href="<?php the_sub_field( 'link_page' ); ?>"><?php the_sub_field( 'link' ); ?></a>
         	
         	</div>
 			<!-- /.inner -->
 						
 		</section>
-		<!-- /.heading-center -->
-
-        <?php elseif( get_row_layout() == 'heading-center_landscape' ): ?>
+		<!-- /.hn_text -->
 		
-		<section class="heading-center_landscape box_flexible">
+		<?php elseif( get_row_layout() == 'hn_text_btn' ): ?>
+		
+		<section class="hn_text_btn box_flexible<?php if(get_sub_field( 'class' )): ?> <?php the_sub_field( 'class' ); ?><?php endif; ?>">
 			<div class="inner">
 			<<?php the_sub_field( 'tag' ); ?> class="ttl_flexible"><?php the_sub_field( 'heading' ); ?><?php if(get_sub_field( 'ttl_sub' )): ?><span><?php the_sub_field( 'ttl_sub' ); ?></span><?php endif; ?></<?php the_sub_field( 'tag' ); ?>>
         	
-        	<figure><?php $image = get_sub_field( 'img' );
+        	<a href="<?php the_sub_field( 'link_page' ); ?>"><?php $image = get_sub_field( 'img' );
 			if( !empty($image) ): 
 			
 				// vars
@@ -162,7 +176,7 @@ if( !empty($image) ):
 				$alt = $image['alt'];
 			
 				// thumbnail
-				$size = 'ランドスケープM';
+				$size = 'ワイド';
 				$thumb = $image['sizes'][ $size ];
 			
 				 ?>
@@ -171,21 +185,19 @@ if( !empty($image) ):
 				
 			<?php else: ?>
 					
-			<?php endif; ?></figure>
+			<?php endif; ?></a>
 			
         	<p><?php the_sub_field( 'text' ); ?></p>
-        	
-        	<?php if(get_sub_field( 'link' )): ?><div class="area_btn_link"><a class="btn_link" href="<?php the_sub_field( 'url' ); ?>"><?php the_sub_field( 'link' ); ?></a></div><?php endif; ?>
 			
 			</div>
 			<!-- /.inner -->
 			
 		</section>
-		<!-- /.heading-center_landscape -->
-        	
-        <?php elseif( get_row_layout() == 'heading-center_portrait' ): ?>
+		<!-- /.hn_text_btn -->
 		
-		<section class="heading-center_portrait box_flexible">
+		<?php elseif( get_row_layout() == 'hn_text_wide' ): ?>
+		
+		<section class="hn_text_wide box_flexible<?php if(get_sub_field( 'class' )): ?> <?php the_sub_field( 'class' ); ?><?php endif; ?>">
 			<div class="inner">
 			<<?php the_sub_field( 'tag' ); ?> class="ttl_flexible"><?php the_sub_field( 'heading' ); ?><?php if(get_sub_field( 'ttl_sub' )): ?><span><?php the_sub_field( 'ttl_sub' ); ?></span><?php endif; ?></<?php the_sub_field( 'tag' ); ?>>
         	
@@ -198,7 +210,7 @@ if( !empty($image) ):
 				$alt = $image['alt'];
 			
 				// thumbnail
-				$size = 'ポートレートM';
+				$size = 'ワイド';
 				$thumb = $image['sizes'][ $size ];
 			
 				 ?>
@@ -211,13 +223,93 @@ if( !empty($image) ):
 			
         	<p><?php the_sub_field( 'text' ); ?></p>
         	
-        	<?php if(get_sub_field( 'link' )): ?><div class="area_btn_link"><a class="btn_link" href="<?php the_sub_field( 'url' ); ?>"><?php the_sub_field( 'link' ); ?></a></div><?php endif; ?>
+        	<a href="<?php the_sub_field( 'link_page' ); ?>"><?php the_sub_field( 'link' ); ?></a>
+			
+			</div>
+			<!-- /.inner -->
+			
+		</section>
+		<!-- /.hn_text_wide -->
+
+        <?php elseif( get_row_layout() == 'hn_text_landscape' ): ?>
+		
+		<section class="hn_text_landscape box_flexible<?php if(get_sub_field( 'class' )): ?> <?php the_sub_field( 'class' ); ?><?php endif; ?>">
+			<div class="inner">
+			<<?php the_sub_field( 'tag' ); ?> class="ttl_flexible"><?php the_sub_field( 'heading' ); ?><?php if(get_sub_field( 'ttl_sub' )): ?><span><?php the_sub_field( 'ttl_sub' ); ?></span><?php endif; ?></<?php the_sub_field( 'tag' ); ?>>
+        	
+        	<div class="primary">
+	        	<figure><?php $image = get_sub_field( 'img' );
+				if( !empty($image) ): 
+				
+					// vars
+					$url = $image['url'];
+					$title = $image['title'];
+					$alt = $image['alt'];
+				
+					// thumbnail
+					$size = 'ランドスケープM';
+					$thumb = $image['sizes'][ $size ];
+				
+					 ?>
+					 
+				<img src="<?php echo $thumb; ?>" alt="<?php echo $alt; ?>" />
+					
+				<?php else: ?>
+						
+				<?php endif; ?></figure>
+				
+	        	<p><?php the_sub_field( 'text' ); ?></p>
+        	
+        	</div>
+        	<!-- /.primary -->
+        	
+        	<a href="<?php the_sub_field( 'link_page' ); ?>"><?php the_sub_field( 'link' ); ?></a>
+			
+			</div>
+			<!-- /.inner -->
+			
+		</section>
+		<!-- /.hn_text_landscape -->
+        	
+        <?php elseif( get_row_layout() == 'hn_text_portrait' ): ?>
+		
+		<section class="hn_text_portrait box_flexible<?php if(get_sub_field( 'class' )): ?> <?php the_sub_field( 'class' ); ?><?php endif; ?>">
+			<div class="inner">
+			<<?php the_sub_field( 'tag' ); ?> class="ttl_flexible"><?php the_sub_field( 'heading' ); ?><?php if(get_sub_field( 'ttl_sub' )): ?><span><?php the_sub_field( 'ttl_sub' ); ?></span><?php endif; ?></<?php the_sub_field( 'tag' ); ?>>
+        	
+        	<div class="primary">
+	        	<figure><?php $image = get_sub_field( 'img' );
+				if( !empty($image) ): 
+				
+					// vars
+					$url = $image['url'];
+					$title = $image['title'];
+					$alt = $image['alt'];
+				
+					// thumbnail
+					$size = 'ポートレートM';
+					$thumb = $image['sizes'][ $size ];
+				
+					 ?>
+					 
+				<img src="<?php echo $thumb; ?>" alt="<?php echo $alt; ?>" />
+					
+				<?php else: ?>
+						
+				<?php endif; ?></figure>
+				
+	        	<p><?php the_sub_field( 'text' ); ?></p>
+        	
+        	</div>
+        	<!-- /.primary -->
+        	
+        	<a href="<?php the_sub_field( 'link_page' ); ?>"><?php the_sub_field( 'link' ); ?></a>
         	
         	</div>
 			<!-- /.inner -->
 			
 		</section>
-		<!-- /.heading-center_portrait -->
+		<!-- /.hn_text_portrait -->
 
         <?php endif; ?>
 

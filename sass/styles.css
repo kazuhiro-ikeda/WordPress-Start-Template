@@ -162,15 +162,15 @@ input[type="submit"] { -webkit-appearance: none; border-radius: 0; }
 
 /*	element
 ---------------------------------*/
-.n3 { margin-bottom: 20px; overflow: hidden; }
+.n3_ordinary { margin-bottom: 20px; overflow: hidden; }
 
-@media screen and (max-width: 640px) { .n3 { margin-bottom: 5vw; } }
+@media screen and (max-width: 640px) { .n3_ordinary { margin-bottom: 5vw; } }
 
-.n3 li { width: 32%; float: left; margin-right: 2%; margin-bottom: 15px; }
+.n3_ordinary li { width: 32%; float: left; margin-right: 2%; margin-bottom: 15px; }
 
-@media screen and (max-width: 640px) { .n3 li { width: 100%; float: none; margin-right: 0; margin-bottom: 5vw; text-align: center; } }
+@media screen and (max-width: 640px) { .n3_ordinary li { width: 100%; float: none; margin-right: 0; margin-bottom: 5vw; text-align: center; } }
 
-.n3 li:nth-child(3n) { margin-right: 0; }
+.n3_ordinary li:nth-child(3n) { margin-right: 0; }
 
 /*	pages
 ---------------------------------*/

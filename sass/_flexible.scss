@@ -2,28 +2,18 @@
 /*	pages
 ---------------------------------*/
 
-//メインイメージ
-.img_main {
-	overflow: hidden;
-		
-	> img {
-		width: 100%;
-		height: auto;
-	}
-}
-
 //ボックス
 .box_flexible {
-	padding: 60px 0;
+	padding: 0 0 30px;
 	
 	@media screen and (max-width: $viewport) {
-		padding: 10vw 0;
+		padding: 0 0 5vw;
 	}
 	
 	.inner {
-		width: 980px;
+		width: 100%;
 		margin: 0 auto;
-		min-width: 980px;
+		min-width: 100%;
 		overflow: hidden;
 		
 		@media screen and (max-width: $viewport) {
@@ -35,15 +25,22 @@
 		
 		//見出し
 		.ttl_flexible {
-			clear: both;
-			font-size: 26px;
-			font-weight: normal;
-			text-align: center;
+			font-size: 28px;
+			font-weight: bold;
+			text-align: left;
 			line-height: 150%;
-			margin-bottom: 30px;
+			margin-bottom: 20px;
+			
+			@media screen and (max-width: $viewport) {
+				font-size: 20px;
+				font-weight: normal;
+				text-align: left;
+				line-height: 150%;
+				margin-bottom: 2vw;
+			}
 			
 			> span {
-				color: orange;
+				color: violet;
 				font-size: 18px;
 				font-weight: bold;
 				padding-left: 20px;
@@ -53,101 +50,42 @@
 		}
 		
 		p {
-			line-height: 150%;
+			line-height: 200%;
+			margin-bottom: 30px;
+			
+			@media screen and (max-width: $viewport) {
+				line-height: 200%;
+				margin-bottom: 5vw;
+			}
 		}
 		
-		.btn_pink {
-			box-sizing: border-box;
+		> a {
+			width: 400px;
 			display: block;
-			width: 340px;
-			background: url(../images/bg/50.gif);
-			color: white;
-			font-size: 24px;
-			text-align: center;
-			border-radius: 7px;
-			padding: 20px 10px;
 			margin: 60px auto 0;
-			
-			@media screen and (max-width: $viewport) {
-				width: 100%;
-				float: none;
-				font-size: 20px;
-				margin: 10vw auto;
-			}
-			
-			> i {
-				font-size: 30px;
-				
-				@media screen and (max-width: $viewport) {
-					font-size: 20px;
-				}
-			}			
-		}
-		
-		.btn_green {
-			box-sizing: border-box;
-			display: block;
-			width: 340px;
-			background: url(../images/bg/34.gif);
+			padding: 10px 20px;
+			font-size: 20px;
+			text-align: center;
+			border-radius: 10px;
+			border: 6px solid lavender;
+			background: violet;
 			color: white;
-			font-size: 24px;
-			text-align: center;
-			border-radius: 7px;
-			padding: 20px 10px;
-			margin: 60px auto 0;
+			cursor: pointer;
+			transition: all .7s;
 			
-			@media screen and (max-width: $viewport) {
-				width: 100%;
-				float: none;
-				font-size: 20px;
-				margin: 10vw auto;
+			&:hover {
+				opacity: .5;
 			}
 			
-			> i {
-				font-size: 30px;
-				
-				@media screen and (max-width: $viewport) {
-					font-size: 20px;
-				}
-			}			
-		}
-		
-		.area_btn_link {
-			clear: both;
-			text-align: center;
-			margin-top: 30px;
-			
 			@media screen and (max-width: $viewport) {
-				margin-top: 5vw;
-			}
-			
-			.btn_link {
-				display: inline-block;
-				color: #935050;
-				font-weight: bold;
-				padding: 10px 20px 10px 30px;
-				background: url(../images/bg/34.gif);
-				border-radius: 5px;
-				opacity: 1;
-				transition: opacity .7s;
-				
-				&:hover {
-					opacity: .5;
-				}
-				
-				&::after {
-					color: #935050;
-					content: "\f054";
-					font-family: FontAwesome;
-					padding-left: 10px;
-				}
+				margin: 5vw auto 0;
 			}
 		}
 		
 	}//.inner
 }
 
-.heading-center_gallery {
+.hn_text_gallery {
 	
 	ul.n3 {
 		margin-top: 30px;
@@ -178,18 +116,83 @@
 			}
 			
 			.caption {
+				display: block;
 				font-weight: bold;
-				text-align: center;
 			}
 			
 			.text {
+				display: block;
+				
 				@media screen and (max-width: $viewport) {
 					text-align: center;
 				}
 			}
 			
 			.link {
-				text-align: right;
+				display: block;
+				
+				> a {
+					opacity: 1;
+					transition: opacity .7s;
+					
+					&:hover {
+						opacity: .3;
+					}
+					
+					&::after {
+						color: #cfcfcf;
+						content: "\f054";
+						font-family: FontAwesome;
+						padding-left: 15px;
+					}
+				}
+			}
+		}//li
+	}//ul
+	
+	ul.n4 {
+		margin-top: 30px;
+		overflow: hidden;
+		
+		@media screen and (max-width: $viewport) {
+			margin-top: 5vw;;
+			overflow: hidden;
+		}
+		
+		li {
+			box-sizing: border-box;
+			width: 22%;
+			float: left;
+			margin-right: 4%;
+			margin-bottom: 30px;
+			
+			@media screen and (max-width: $viewport) {
+				margin-bottom: 5vw;
+			}
+			
+			&:nth-child(3n) {
+				margin-right: 0;
+			}
+			
+			> figure {
+				text-align: center;
+			}
+			
+			.caption {
+				display: block;
+				font-weight: bold;
+			}
+			
+			.text {
+				display: block;
+				
+				@media screen and (max-width: $viewport) {
+					text-align: center;
+				}
+			}
+			
+			.link {
+				display: block;
 				
 				> a {
 					opacity: 1;
@@ -241,18 +244,20 @@
 			}
 			
 			.caption {
+				display: block;
 				font-weight: bold;
-				text-align: center;
 			}
 			
 			.text {
+				display: block;
+				
 				@media screen and (max-width: $viewport) {
 					text-align: center;
 				}
 			}
 			
 			.link {
-				text-align: right;
+				display: block;
 				
 				> a {
 					opacity: 1;
@@ -274,54 +279,67 @@
 	}//ul
 }
 
-.heading-center_landscape {
-	
+.hn_text_wide {
 	figure {
-		width: 320px;
-		float: right;
+		margin-bottom: 20px;
+	}
+}
+
+.hn_text_landscape {
+	
+	.primary {
+		overflow: hidden;
 		
-		@media screen and (max-width: $viewport) {
-			width: 100%;
-			float: none;
-			text-align: center;
-			margin-bottom: 5vw;
+		figure {
+			width: 320px;
+			float: right;
+			
+			@media screen and (max-width: $viewport) {
+				width: 100%;
+				float: none;
+				margin-bottom: 5vw;
+				text-align: center;
+			}
+		}
+		
+		p {
+			width: calc(100% - 340px);
+			float: left;
+			
+			@media screen and (max-width: $viewport) {
+				width: 100%;
+				float: none;
+			}
 		}
 	}
 	
-	p {
-		width: calc(100% - 340px);
-		float: left;
-		
-		@media screen and (max-width: $viewport) {
-			width: 100%;
-			float: none;
-			margin-bottom: 5vw;
-		}
-	}
 }//.heading-center_portrait
 
-.heading-center_portrait {
+.hn_text_portrait {
 	
-	figure {
-		width: 240px;
-		float: right;
+	.primary {
+		overflow: hidden;
 		
-		@media screen and (max-width: $viewport) {
-			width: 100%;
-			float: none;
-			text-align: center;
-			margin-bottom: 5vw;
+		figure {
+			width: 240px;
+			float: right;
+			
+			@media screen and (max-width: $viewport) {
+				width: 100%;
+				float: none;
+				margin-bottom: 5vw;
+				text-align: center;
+			}
 		}
-	}
-	
-	p {
-		width: calc(100% - 260px);
-		float: left;
 		
-		@media screen and (max-width: $viewport) {
-			width: 100%;
-			float: none;
-			margin-bottom: 5vw;
+		p {
+			width: calc(100% - 260px);
+			float: left;
+			
+			@media screen and (max-width: $viewport) {
+				width: 100%;
+				float: none;
+			}
 		}
 	}
 }//.heading-center_portrait
