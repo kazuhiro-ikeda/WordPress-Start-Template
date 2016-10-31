@@ -81,7 +81,10 @@ if( !empty($image) ):
 				
 				<?php endif;//gallery ?>
 				
+				<?php if(get_sub_field( 'link_page' )): ?>
 				<a href="<?php the_sub_field( 'link_page' ); ?>"><?php the_sub_field( 'link' ); ?></a>
+				
+				<?php endif; ?>
 				
 			</div>
 			<!-- /.inner -->
@@ -95,7 +98,10 @@ if( !empty($image) ):
 			<div class="inner">
         	<div class="single-content"><?php the_sub_field( 'editor' ); ?></div>
         	
-        	<a href="<?php the_sub_field( 'link_page' ); ?>"><?php the_sub_field( 'link' ); ?></a>
+        	<?php if(get_sub_field( 'link_page' )): ?>
+			<a href="<?php the_sub_field( 'link_page' ); ?>"><?php the_sub_field( 'link' ); ?></a>
+			
+			<?php endif; ?>
         	
         	</div>
 			<!-- /.inner -->
@@ -111,7 +117,10 @@ if( !empty($image) ):
 			
         	<div class="single-content"><?php the_sub_field( 'editor' ); ?></div>
         	
-        	<a href="<?php the_sub_field( 'link_page' ); ?>"><?php the_sub_field( 'link' ); ?></a>
+        	<?php if(get_sub_field( 'link_page' )): ?>
+			<a href="<?php the_sub_field( 'link_page' ); ?>"><?php the_sub_field( 'link' ); ?></a>
+			
+			<?php endif; ?>
         	
         	</div>
 			<!-- /.inner -->
@@ -124,7 +133,10 @@ if( !empty($image) ):
 		<section class="pagelink_flexible box_flexible<?php if(get_sub_field( 'class' )): ?> <?php the_sub_field( 'class' ); ?><?php endif; ?>">
 			<div class="inner">
         	
-        	<a href="<?php the_sub_field( 'link_page' ); ?>"><?php the_sub_field( 'link' ); ?></a>
+        	<?php if(get_sub_field( 'link_page' )): ?>
+			<a href="<?php the_sub_field( 'link_page' ); ?>"><?php the_sub_field( 'link' ); ?></a>
+			
+			<?php endif; ?>
         	
         	</div>
 			<!-- /.inner -->
@@ -138,7 +150,10 @@ if( !empty($image) ):
 			<div class="inner">
         	<p><?php the_sub_field( 'text' ); ?></p>
         	
-        	<a href="<?php the_sub_field( 'link_page' ); ?>"><?php the_sub_field( 'link' ); ?></a>
+        	<?php if(get_sub_field( 'link_page' )): ?>
+			<a href="<?php the_sub_field( 'link_page' ); ?>"><?php the_sub_field( 'link' ); ?></a>
+			
+			<?php endif; ?>
         	
         	</div>
 			<!-- /.inner -->
@@ -153,7 +168,10 @@ if( !empty($image) ):
 			<<?php the_sub_field( 'tag' ); ?> class="ttl_flexible"><?php the_sub_field( 'heading' ); ?><?php if(get_sub_field( 'ttl_sub' )): ?><span><?php the_sub_field( 'ttl_sub' ); ?></span><?php endif; ?></<?php the_sub_field( 'tag' ); ?>>
         	<p><?php the_sub_field( 'text' ); ?></p>
         	
-        	<a href="<?php the_sub_field( 'link_page' ); ?>"><?php the_sub_field( 'link' ); ?></a>
+        	<?php if(get_sub_field( 'link_page' )): ?>
+			<a href="<?php the_sub_field( 'link_page' ); ?>"><?php the_sub_field( 'link' ); ?></a>
+			
+			<?php endif; ?>
         	
         	</div>
 			<!-- /.inner -->
@@ -223,7 +241,10 @@ if( !empty($image) ):
 			
         	<p><?php the_sub_field( 'text' ); ?></p>
         	
-        	<a href="<?php the_sub_field( 'link_page' ); ?>"><?php the_sub_field( 'link' ); ?></a>
+        	<?php if(get_sub_field( 'link_page' )): ?>
+			<a href="<?php the_sub_field( 'link_page' ); ?>"><?php the_sub_field( 'link' ); ?></a>
+			
+			<?php endif; ?>
 			
 			</div>
 			<!-- /.inner -->
@@ -263,7 +284,10 @@ if( !empty($image) ):
         	</div>
         	<!-- /.primary -->
         	
-        	<a href="<?php the_sub_field( 'link_page' ); ?>"><?php the_sub_field( 'link' ); ?></a>
+        	<?php if(get_sub_field( 'link_page' )): ?>
+			<a href="<?php the_sub_field( 'link_page' ); ?>"><?php the_sub_field( 'link' ); ?></a>
+			
+			<?php endif; ?>
 			
 			</div>
 			<!-- /.inner -->
@@ -303,7 +327,10 @@ if( !empty($image) ):
         	</div>
         	<!-- /.primary -->
         	
-        	<a href="<?php the_sub_field( 'link_page' ); ?>"><?php the_sub_field( 'link' ); ?></a>
+        	<?php if(get_sub_field( 'link_page' )): ?>
+			<a href="<?php the_sub_field( 'link_page' ); ?>"><?php the_sub_field( 'link' ); ?></a>
+			
+			<?php endif; ?>
         	
         	</div>
 			<!-- /.inner -->
