@@ -8,18 +8,18 @@
 
 <?php if (is_mobile()) : //smartphone only ?>
 <?php if(is_page( 'registration' )): ?>
-<meta name="viewport" content="width=device-width, initial-scale=1,  user-scalable=no">
+<meta name="viewport" content="width=device-width, user-scalable=no">
 
 <?php elseif(is_page( 'entry' )): ?>
-<meta name="viewport" content="width=device-width, initial-scale=1,  user-scalable=no">
+<meta name="viewport" content="width=device-width, user-scalable=no">
 
 <?php else: ?>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width">
 
 <?php endif; ?>
 			
 <?php else : //pc tablet ?>
-<meta name="viewport" content="width=1020">
+<meta name="viewport" content="width=device-width">
 			
 <?php  endif ; //if_mobile ?>
 
