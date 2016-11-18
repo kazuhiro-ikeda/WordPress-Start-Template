@@ -7,10 +7,7 @@
 <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 
 <?php if (is_mobile()) : //smartphone only ?>
-<?php if(is_page( 'registration' )): ?>
-<meta name="viewport" content="width=device-width, user-scalable=no">
-
-<?php elseif(is_page( 'entry' )): ?>
+<?php if(is_page( 'entry' )): ?>
 <meta name="viewport" content="width=device-width, user-scalable=no">
 
 <?php else: ?>
@@ -35,7 +32,7 @@
 	wp_enqueue_script( 'jquery', 'http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js', array(), '1.11.0' );
 ?>
 
-<title><?php the_title(); ?><?php // full_title(); ?></title>
+<title><?php full_title(); ?></title>
 
 <?php wp_head(); ?>
 </head>
