@@ -31,7 +31,6 @@ a {
 }
 a:active, a:focus {
    outline:  none;
-   ie-dummy: expression(this.hideFocus=true);
 }
 
 /* element */
@@ -64,8 +63,6 @@ h1, h2, h3, h4, h5, h6 {
 /* text */
 p {
 	text-align: justify;
-	text-justify: inter-ideograph;
-	-ms-text-justify: inter-ideograph;
 }
 
 /*	screen

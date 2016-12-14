@@ -13,7 +13,7 @@ body { color: black; font-family: "Hiragino Kaku Gothic ProN", "ヒラギノ角�
 /* link */
 a { color: black; text-decoration: none; }
 
-a:active, a:focus { outline: none; ie-dummy: expression(this.hideFocus=true); }
+a:active, a:focus { outline: none; }
 
 /* element */
 .btn { opacity: 1; transition: opacity 0.5s; }
@@ -30,7 +30,7 @@ img { max-width: 100%; height: auto; }
 h1, h2, h3, h4, h5, h6 { line-height: 150%; }
 
 /* text */
-p { text-align: justify; text-justify: inter-ideograph; -ms-text-justify: inter-ideograph; }
+p { text-align: justify; }
 
 /*	screen
 ---------------------------------*/

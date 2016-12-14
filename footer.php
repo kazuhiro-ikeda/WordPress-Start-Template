@@ -6,7 +6,7 @@
 <script src="<?php bloginfo('template_url');?>/js/jquery.common.js"></script>
 <script src="<?php bloginfo('template_url');?>/js/jquery.adjust.js"></script>
 <script src="<?php bloginfo('template_url');?>/js/jquery.height.js"></script>
-<script src="<?php bloginfo('template_url');?>/js/jquery.matchHeight"></script>
+<script src="<?php bloginfo('template_url');?>/js/jquery.matchHeight.js"></script>
 <script>
 	$(function() {
 	    $('.item').matchHeight();
