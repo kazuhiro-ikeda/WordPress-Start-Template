@@ -198,7 +198,7 @@
 		}
 		add_filter( 'get_the_categories', 'get_the_category_orderby_parent' );
 		
-	//ここから
+	//エディタで ファイルをインクルード [inc_php file='hoge']
 		function include_php($params = array()) {
 		    extract(shortcode_atts(array(
 		        'file' => 'default'
