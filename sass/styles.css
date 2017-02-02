@@ -132,21 +132,35 @@ input[type="submit"] { -webkit-appearance: none; border-radius: 0; }
 /*	post
 ---------------------------------*/
 /* heading */
-.single-content h1 { font-size: 2.6rem; margin-bottom: 2.6rem; }
+.single-content h1 { font-size: 26px; line-height: 150%; margin-bottom: 20px; }
 
-.single-content h2 { font-size: 2.2rem; margin-bottom: 2.2rem; }
+@media screen and (max-width: 640px) { .single-content h1 { font-size: 18px; line-height: 150%; margin-bottom: 3vw; } }
 
-.single-content h3 { font-size: 1.8rem; margin-bottom: 1.8rem; }
+.single-content h2 { font-size: 22px; line-height: 150%; margin-bottom: 20px; }
 
-.single-content h4, .single-content h5, .single-content h6 { font-size: 1.5rem; margin-bottom: 1.5rem; }
+@media screen and (max-width: 640px) { .single-content h2 { font-size: 16px; line-height: 150%; margin-bottom: 3vw; } }
+
+.single-content h3 { font-size: 18px; line-height: 150%; margin-bottom: 20px; }
+
+@media screen and (max-width: 640px) { .single-content h3 { font-size: 14px; line-height: 150%; margin-bottom: 3vw; } }
+
+.single-content h4, .single-content h5, .single-content h6 { font-size: 15px; line-height: 150%; margin-bottom: 20px; }
+
+@media screen and (max-width: 640px) { .single-content h4, .single-content h5, .single-content h6 { font-size: 14px; line-height: 150%; margin-bottom: 3vw; } }
 
 /* text */
 .single-content p { line-height: 200%; margin-bottom: 30px; }
 
-/* list */
-.single-content ul { list-style-type: circle; list-style-position: inside; line-height: 225%; margin-bottom: 60px; }
+@media screen and (max-width: 640px) { .single-content p { margin-bottom: 5vw; } }
 
-.single-content ol { list-style-position: inside; line-height: 225%; margin-bottom: 60px; }
+/* list */
+.single-content ul { list-style-type: circle; list-style-position: inside; line-height: 200%; margin-bottom: 60px; }
+
+@media screen and (max-width: 640px) { .single-content ul { margin-bottom: 5vw; } }
+
+.single-content ol { list-style-position: inside; line-height: 200%; margin-bottom: 60px; }
+
+@media screen and (max-width: 640px) { .single-content ol { margin-bottom: 5vw; } }
 
 /* link */
 .single-content a { color: #709ae8; }
