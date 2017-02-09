@@ -155,10 +155,6 @@ a.page-numbers { background-color: #C2B185; color: white; display: inline-block;
 /*	device
 ---------------------------------*/
 /* Android bugfix ４系 */
-p { background-image: url(image); }
-
-h1, h2, h3, h4, h5, h6, th, td { background-image: url(image); }
-
 /* iOS */
 input[type="submit"] { -webkit-appearance: none; border-radius: 0; }
 
@@ -168,6 +164,50 @@ input[type="submit"] { -webkit-appearance: none; border-radius: 0; }
 ---------------------------------*/
 /*	nav
 ---------------------------------*/
+.toggle, .toggle span { display: inline-block; transition: all 0.4s; box-sizing: border-box; }
+
+.toggle { float: right; position: relative; width: 6vw; height: 5vw; }
+
+.toggle span { position: absolute; left: 0; width: 100%; height: 2px; background-color: black; }
+
+.page-home .toggle span { background-color: white; }
+
+.toggle span:nth-of-type(1) { top: 0; }
+
+.toggle span:nth-of-type(2) { top: 2.4vw; }
+
+.toggle span:nth-of-type(3) { bottom: 0; }
+
+.toggle { -webkit-animation: menu-close 0.6s; animation: menu-close 0.6s; }
+
+.toggle.active { -webkit-animation: menu-open 0.6s; animation: menu-open 0.6s; }
+
+@-webkit-keyframes menu-close { 30% { -webkit-transform: scale(0);
+    opacity: 0; }
+  100% { -webkit-transform: scale(1);
+    opacity: 1; } }
+
+@keyframes menu-close { 30% { transform: scale(0);
+    opacity: 0; }
+  100% { transform: scale(1);
+    opacity: 1; } }
+
+@-webkit-keyframes menu-open { 30% { -webkit-transform: scale(0);
+    opacity: 0; }
+  100% { -webkit-transform: scale(1);
+    opacity: 1; } }
+
+@keyframes menu-open { 30% { transform: scale(0);
+    opacity: 0; }
+  100% { transform: scale(1);
+    opacity: 1; } }
+
+.toggle.active span:nth-of-type(1) { -webkit-transform: translateY(2.4vw) rotate(-45deg); transform: translateY(2.4vw) rotate(-45deg); }
+
+.toggle.active span:nth-of-type(2) { opacity: 0; }
+
+.toggle.active span:nth-of-type(3) { -webkit-transform: translateY(-2.4vw) rotate(45deg); transform: translateY(-2.4vw) rotate(45deg); }
+
 /*	post
 ---------------------------------*/
 /* heading */

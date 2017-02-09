@@ -47,3 +47,9 @@
 	<!-- /site-id -->
 
 </header>
+
+<a class="toggle" data-title="global_s">
+	<span></span>
+	<span></span>
+	<span></span>
+</a>
