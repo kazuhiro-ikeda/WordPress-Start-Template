@@ -1,4 +1,4 @@
-<?php header( 'X-UA-Compatible: IE=edge,chrome=1' ); ?>
+<?php header( 'X-UA-Compatible: IE=edge' ); ?>
 
 <!doctype html>
 <html lang="ja">
