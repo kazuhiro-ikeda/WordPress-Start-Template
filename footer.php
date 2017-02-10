@@ -46,9 +46,5 @@ $(function(){
 
 <?php wp_footer(); ?>
 
-<pre>
-	<?php print_r($wp_query); ?>
-</pre>
-
 </body>
 </html>
