@@ -162,7 +162,7 @@ input[type="submit"] {
 /* ドロップダウン */
 select {
     -webkit-appearance: button;
-    -moz-appearance: button;
+    -moz-appearance: none;//firefox
     appearance: button;
     height: 30px;
     background-color: white;
@@ -173,6 +173,9 @@ select {
     background-repeat: no-repeat;
     background-position: right center;
     font-size: 14px;
+	text-indent: 0.01px;//firefox
+	text-overflow: '';//firefox
+
 }
 
 /* IE10以上で動作 */
