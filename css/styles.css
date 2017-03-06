@@ -116,6 +116,12 @@ a.page-numbers { background-color: #C2B185; color: white; display: inline-block;
 
 .nav-links a.prev { border: none; }
 
+.jsPagination ul { text-align: center !important; }
+
+.jsPagination ul li { margin-right: 15px; display: inline-block; color: orange; }
+
+.jsPagination ul li > button { display: block !important; color: white; background: orange !important; padding: 6px 6px 6px !important; }
+
 /*	display
 ---------------------------------*/
 .hide-panel { display: none; }

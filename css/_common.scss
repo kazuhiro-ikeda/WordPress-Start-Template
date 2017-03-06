@@ -1,6 +1,7 @@
 @charset "utf-8";
 $viewport: 640px;
 $base: black;
+$insert: orange;
 
 $游ゴシック: "游ゴシック", YuGothic,'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3', Meiryo, メイリオ, sans-serif;
 $メイリオ: Meiryo, メイリオ, 'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3', sans-serif;
@@ -153,6 +154,25 @@ a.page-numbers {
 }
 .nav-links a.prev {
 	border: none;
+}
+
+.jsPagination {
+	ul {
+		text-align: center !important;
+		
+		li {
+			margin-right: 15px;
+			display: inline-block;
+			color: $insert;
+			
+			> button {
+				display: block !important;
+				color: white;
+				background: $insert !important;
+				padding: 6px 6px 6px !important; 
+			}
+		}
+	}
 }
 
 /*	display
