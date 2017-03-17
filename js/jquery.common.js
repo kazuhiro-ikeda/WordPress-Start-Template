@@ -295,12 +295,6 @@ $(function(){
 			$('.page-home header.device').removeClass('fixed');
 		}
 		
-		if ($(window).scrollTop() > 700) {
-			$('#nav_foot').addClass('fixed');
-		} else {
-			$('.#nav_foot').removeClass('fixed');
-		}
-		
 	});
 	
 	//電話リンク
