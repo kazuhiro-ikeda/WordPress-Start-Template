@@ -315,15 +315,17 @@ input[type="submit"]:hover { opacity: 0.5; }
 
 @media screen and (max-width: 640px) { #wrap_form table td { padding: 2vw; display: block; } }
 
-#wrap_form input[type="text"] { height: 22px; width: 300px; padding: 0 5px; }
+#wrap_form input[type="text"], #wrap_form input[type="tel"] { height: 22px; width: 300px; padding: 0 5px; }
 
-@media screen and (max-width: 640px) { #wrap_form input[type="text"] { height: 22px; box-sizing: border-box; width: 100%; padding: 0 5px; } }
+@media screen and (max-width: 640px) { #wrap_form input[type="text"], #wrap_form input[type="tel"] { height: 22px; box-sizing: border-box; width: 100%; padding: 0 5px; } }
 
 #wrap_form #year { width: 90px; }
 
 #wrap_form #month { width: 60px; }
 
 #wrap_form #day { width: 60px; }
+
+#wrap_form #zip { width: 60px; }
 
 #wrap_form textarea { height: 200px; width: 300px; padding: 0 5px; }
 

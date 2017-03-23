@@ -107,7 +107,7 @@ input[type="submit"] {
 		}
 	}
 	
-	input[type="text"] {
+	input[type="text"], input[type="tel"] {
 		height: 22px;
 		width: 300px;
 		padding: 0 5px;
@@ -129,6 +129,10 @@ input[type="submit"] {
 	}
 	
 	#day {
+		width: 60px;
+	}
+	
+	#zip {
 		width: 60px;
 	}
 	
