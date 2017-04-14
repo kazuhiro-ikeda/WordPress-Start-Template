@@ -14,6 +14,19 @@ $(function(){
 		$( "<img>" ).attr( "src",$(this).attr( "src" ).replace(/^(.+)(\.[a-z]+)$/, "$1_on$2" ));
 	});
 	
+	//バナー	
+	$(window).scroll(function () {
+	    var s = $(this).scrollTop();
+	    var a = 700;  
+	    var b = $( "footer" ).offset();
+		    var c = b.top;
+	    if (s > a && s <= ( c-$(window).height() ) ) {
+	        $( "#nav_foot" ).fadeIn( "slow" );
+	    } else if( s <= a || s > ( c - $(window).height() ) ) {
+	        $( "#nav_foot" ).fadeOut( "slow" );
+	    }
+	});
+	
 	//画像切り替え
 	$(window).on('load resize', function(){
 		var windowWidth=window.innerWidth;

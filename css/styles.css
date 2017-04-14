@@ -168,6 +168,11 @@ input[type="submit"] { -webkit-appearance: none; border-radius: 0; }
 ---------------------------------*/
 /*	footer
 ---------------------------------*/
+#nav_foot { display: none; }
+
+@media screen and (max-width: 640px) { #nav_foot { display: none; box-sizing: border-box; position: fixed; width: 100%; left: 0; bottom: 10vw; padding: 4vw; overflow: hidden; }
+  #nav_foot > a { box-sizing: border-box; display: block; width: 12vw; height: 12vw; border-radius: 6vw; text-align: center; font-size: 6vw; font-weight: bold; color: orange; padding-top: 2vw; background: #b8b8b8; float: right; } }
+
 /*	nav
 ---------------------------------*/
 /*//toggle .toggle, .toggle span { display: inline-block; transition: all .4s; box-sizing: border-box; } .toggle { float: right; position: relative; width: 6vw; height: 5vw; } .toggle span { position: absolute; left: 0; width: 100%; height: 2px; background-color: $base; .page-home & { background-color: white; } } .toggle span:nth-of-type(1) { top: 0; } .toggle span:nth-of-type(2) { top: 2.4vw; } .toggle span:nth-of-type(3) { bottom: 0; } .toggle { -webkit-animation: menu-close .6s; animation: menu-close .6s; } .toggle.active { -webkit-animation: menu-open .6s; animation: menu-open .6s; } @-webkit-keyframes menu-close { 30% { -webkit-transform: scale(0); opacity: 0; } 100% { -webkit-transform: scale(1); opacity: 1; } } @keyframes menu-close { 30% { transform: scale(0); opacity: 0; } 100% { transform: scale(1); opacity: 1; } } @-webkit-keyframes menu-open { 30% { -webkit-transform: scale(0); opacity: 0; } 100% { -webkit-transform: scale(1); opacity: 1; } } @keyframes menu-open { 30% { transform: scale(0); opacity: 0; } 100% { transform: scale(1); opacity: 1; } } .toggle.active span:nth-of-type(1) { -webkit-transform: translateY(2.4vw) rotate(-45deg); transform: translateY(2.4vw) rotate(-45deg); } .toggle.active span:nth-of-type(2) { opacity: 0; } .toggle.active span:nth-of-type(3) { -webkit-transform: translateY(-2.4vw) rotate(45deg); transform: translateY(-2.4vw) rotate(45deg); } */
