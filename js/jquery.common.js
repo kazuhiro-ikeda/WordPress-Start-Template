@@ -48,7 +48,7 @@ $(function(){
 		});
 	});			
 	
-	//スムーススクロール
+	/*//スムーススクロール
 	//colorbox 対応可能
     $(window).on("scroll", function() {
         if ($(this).scrollTop() > 600) {
@@ -70,9 +70,9 @@ $(function(){
                 "bottom": "80px" //下から20px上げた位置に
             });
         }
-    });
+    });*/
 		    
-	/*//スムーススクロール
+	//スムーススクロール
 	
 	$( 'a[href^=#]' ).click(function() {
 	   	var speed = 400; 
@@ -81,7 +81,7 @@ $(function(){
 	   	var position = target.offset().top;
 	$( 'body,html' ).animate({scrollTop:position}, speed, 'swing' );
     	return false;
-	});*/
+	});
 
 	//トグルパネル
 	/* 
@@ -300,7 +300,7 @@ $(function(){
 		});
 	});
 	
-	//スクロール処理
+	/*//スクロール処理
     $(window).scroll(function(){
 		if ($(window).scrollTop() > 500) {
 			$('.page-home header.device').addClass('fixed');
@@ -308,7 +308,7 @@ $(function(){
 			$('.page-home header.device').removeClass('fixed');
 		}
 		
-	});
+	});*/
 	
 	//電話リンク
 	var ua = navigator.userAgent;
