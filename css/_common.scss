@@ -16,7 +16,7 @@ $heading_line-height: 100%;
 body {
 	color: $base;
 	font-family: $游ゴシック;
-	font-size: 13px;
+	font-size: 14px;
 	font-weight: 500;//$游ゴシック
 	word-wrap: break-word;
 	-webkit-font-smoothing: subpixel-antialiased;
@@ -24,7 +24,7 @@ body {
 
 	@media screen and (max-width: $viewport) {
 		width: 100%;
-		font-size: 13px;
+		font-size: 14px;
 	}
 }
 
