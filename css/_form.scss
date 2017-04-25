@@ -12,6 +12,7 @@
 
 input[type="submit"] {
 	background: url(../images/form/btn-confirm.png) no-repeat white;
+	background-size: 100%;
 	border: none;
 	text-indent: -9999px;
 	width: 303px;
@@ -25,10 +26,20 @@ input[type="submit"] {
 	&:hover {
 		opacity: 0.5;
 	}
+	
+	@media screen and (max-width: $viewport) {
+		width: 88%;
+		background-size: 100%;
+	}
 }
 	
 .mw_wp_form_confirm input[type="submit"] {
 	background: url(../images/form/btn-send.png) no-repeat white;
+	
+	@media screen and (max-width: $viewport) {
+		width: 88%;
+		background-size: 100%;
+	}
 }
 
 /*	wrap_form

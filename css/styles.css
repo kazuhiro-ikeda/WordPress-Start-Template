@@ -243,11 +243,15 @@ input[type="submit"] { -webkit-appearance: none; border-radius: 0; }
 
 .mw_wp_form_confirm #privacy-policy { display: none; }
 
-input[type="submit"] { background: url(../images/form/btn-confirm.png) no-repeat white; border: none; text-indent: -9999px; width: 303px; height: 78px; display: block; margin: 0 auto 120px; cursor: pointer; opacity: 1; transition: opacity 0.5s; }
+input[type="submit"] { background: url(../images/form/btn-confirm.png) no-repeat white; background-size: 100%; border: none; text-indent: -9999px; width: 303px; height: 78px; display: block; margin: 0 auto 120px; cursor: pointer; opacity: 1; transition: opacity 0.5s; }
 
 input[type="submit"]:hover { opacity: 0.5; }
 
+@media screen and (max-width: 640px) { input[type="submit"] { width: 88%; background-size: 100%; } }
+
 .mw_wp_form_confirm input[type="submit"] { background: url(../images/form/btn-send.png) no-repeat white; }
+
+@media screen and (max-width: 640px) { .mw_wp_form_confirm input[type="submit"] { width: 88%; background-size: 100%; } }
 
 /*	wrap_form
 ---------------------------------*/
