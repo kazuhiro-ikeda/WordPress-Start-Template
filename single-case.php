@@ -276,7 +276,7 @@
 				</table>
 				
 				<?php 
-					$location = get_field('map');
+					$location = get_field('google');
 					if( !empty($location) ):
 				?>
 				<?php get_template_part( 'parts/googlemap' ); ?>
@@ -296,12 +296,12 @@
 			</section>
 			<!-- /#requirements -->
 			
-			<a id="btn_entry" href="<?php echo esc_url(home_url('/')); ?>?page_id=15&post_id=<?php echo $post->ID; ?>">応募フォームに進む</a>
+			<a id="btn_entry" href="<?php echo esc_url(home_url('/')); ?>?page_id=35&post_id=<?php echo $post->ID; ?>">応募フォームに進む</a>
 			
 			<?php $state = get_field("link_tel"); if($state == 'ON'): ?>
-			<p class="block_p linktel_p"><span class="label">お電話でのご応募</span>TEL <span class="number">0561-76-7676</span></p>
+			<p class="block_p linktel_p"><span class="label">お電話でのご応募</span>TEL <span class="number">xxxxxxxx</span></p>
 			
-			<p class="block_s linktel_s"><a href="tel:0561767676"><span class="label">お電話でのご応募</span>TEL 0561-76-7676</a></p>
+			<p class="block_s linktel_s"><a href="tel:xxxxxxxx"><span class="label">お電話でのご応募</span>TEL xxxxxxxx</a></p>
 			
 			<?php else: ?>
 			
