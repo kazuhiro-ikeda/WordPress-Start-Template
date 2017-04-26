@@ -1,0 +1,250 @@
+@charset "utf-8";
+/*	entry
+---------------------------------*/
+$require: #c1272d;
+
+#entry {
+	width: 980px;
+	margin: 0 auto;
+	
+	@media screen and (max-width: 768px) {
+		width: 94vw;
+		margin: 0 auto;
+	}
+	
+	.inner {
+		border: 1px solid silver;
+		padding: 30px;
+		
+		figure {
+			margin-bottom: 20px;
+			
+			> img {
+				width: 100%;
+				height: auto;
+			}
+		}
+		
+		.attention {
+			line-height: 200%;
+			margin-bottom: 20px;
+		}
+	}
+}
+
+//modifire
+
+.mw_wp_form_confirm .require {
+	display: none;
+}
+
+.mw_wp_form_confirm .entry_contents {
+	display: none;
+}
+
+.display_confirm {
+	display: none;
+}
+
+.mw_wp_form_confirm .display_confirm {
+	display: block;
+}
+
+//form
+input[type="submit"] {
+	display: block;
+	width: 230px;
+	padding: 15px 20px;
+	margin: 0 auto 60px;
+	border: none;
+	text-align: left;
+	color: white;
+	font-size: 16px;
+	background: url(../images/form/bg_btn.png) no-repeat right 7px center #c1272d;
+	cursor: pointer;
+	opacity: 1;
+	transition: opacity 0.7s;
+	
+	&:hover {
+		opacity: .3;
+	}
+}
+	
+.mw_wp_form_confirm input[type="submit"] {}
+
+//element
+.require {
+	color: $require;
+	font-weight: bold;
+	padding-left: 10px;
+}
+
+//table
+#table_entry {
+	width: 100%;
+	line-height: 100%;
+	margin-bottom: 60px;
+	
+	@media screen and (max-width: $viewport) {
+		margin-bottom: 10vw;
+	}
+	
+	tr:nth-of-type(odd) {
+		background: #e6e6e6;
+		
+		@media screen and (max-width: 768px) {
+			background: none;
+		}
+	}
+	
+	th {
+		box-sizing: border-box;
+		width: 26%;
+		text-align: left;
+		vertical-align: top;
+		font-weight: normal;
+		padding: 15px;
+		
+		@media screen and (max-width: $viewport) {
+			display: block;
+			width: 100%;
+			background: #e6e6e6;
+			border-bottom: 1px solid silver;
+		}
+	}
+	
+	td {
+		box-sizing: border-box;
+		padding: 15px;
+		
+		@media screen and (max-width: $viewport) {
+			display: block;
+			width: 100%;
+		}
+	}
+}
+
+//form
+
+input[type="text"] {
+	height: 32px;
+	font-size: 16px;
+	box-sizing: border-box;
+	padding: 0 5px;
+	width: 100%;
+	
+	&#age {
+		width: 30%;
+	}
+}
+
+#zip {
+	box-sizing: border-box;
+	height: 32px;
+	width: 120px;
+	padding: 0 5px;
+	
+	@media screen and (max-width: $viewport) {
+		height: 32px;
+		box-sizing: border-box;
+		width: 100%;
+		padding: 0 5px;
+	}
+}
+
+&#pref_w {
+	display: block;
+	margin-bottom: 10px;
+	
+	> input {
+		width: 30%;
+		
+		@media screen and (max-width: $viewport) {
+			display: block;
+			margin-top: 2vw;
+			width: 100%;
+		}
+	}
+}
+
+&#city_w {
+	display: block;
+	margin-bottom: 10px;
+	
+	> input {
+		width: 60%;
+		
+		@media screen and (max-width: $viewport) {
+			display: block;
+			margin-top: 2vw;
+			width: 100%;
+		}
+	}
+}
+
+&#area_w {
+	display: block;
+	margin-bottom: 10px;
+	
+	> input {
+		width: 60%;
+		
+		@media screen and (max-width: $viewport) {
+			display: block;
+			margin-top: 2vw;
+			width: 100%;
+		}
+	}
+}
+
+textarea {
+	font-size: 16px;
+	box-sizing: border-box;
+	padding: 5px 5px;
+	width: 100%;
+}
+
+.mwform-checkbox-field.horizontal-item {
+	margin-right: 0 !important;
+	margin-left: 0 !important;
+	padding-right: 0 !important;
+	padding-left: 0 !important;
+	display: block;
+	margin-bottom: 10px;
+}
+
+//select
+select {
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+    height: 30px;
+    background-color: white;
+    border: 1px solid silver;
+    border-radius: 0;
+    padding: 0 5px;
+    background-image: url(../images/entry/arrow-select.png);
+    background-repeat: no-repeat;
+    background-position: right center;
+    font-size: 14px;
+}
+
+//IE10以上で動作
+select::-ms-expand {
+  display: none;
+}
+
+@-moz-document url-prefix() {/* firefoxハック */
+	#contact-table select {
+		-webkit-appearance: button;
+	    -moz-appearance: button;
+	    appearance: button;
+		text-indent: 0.2em;
+		background-image: none;
+	}
+}
+@media screen and (-webkit-min-device-pixel-ratio:0) {/* chromeハック */
+	#contact-table select {
+	    text-indent: 0.2em;
+	}
+}
