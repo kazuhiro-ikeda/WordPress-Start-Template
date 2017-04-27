@@ -56,7 +56,7 @@
 	<ul>
 		<li><a href="<?php bloginfo( 'url' ); ?>/">HOME</a></li>
 		<li><a href="<?php bloginfo( 'url' ); ?>/case">募集一覧</a></li>
-		<li class="official_s"><a href="http://www.meiwakikou.com/">オフィシャル HP</a></li>
+		<li class="official_s"><a href="xxxxxxx">オフィシャル HP</a></li>
 	</ul>
 	
 </nav>
