@@ -200,6 +200,12 @@
 	add_image_size( 'ランドスケープS', 160, 120, true);
 	add_image_size( 'ポートレートM', 240, 320, true);
 	add_image_size( 'ポートレートS', 120, 160, true);
+	add_image_size( 'ポートレートS', 1500, 530, true);
+	add_image_size( 'メインビジュアル', 980, 430, true);
+	add_image_size( '案件', 420, 280, true);
+	add_image_size( '案件WIDE', 910, 260, true);
+	add_image_size( 'エントリー', 900, 250, true);
+	add_image_size( 'スペシャル', 1500, 530, true);
 		
 	//カテゴリをID順に取得
 	function get_the_category_orderby_parent( $categories ) {
