@@ -1,25 +1,22 @@
 <?php get_header(); ?>
 
 <div id="main" <?php post_class(); ?> role="main">
-	
-	<div class="ttl_page_sub">募集要項</div>
-	
-	<div id="case_archive_attention">
-		<figure><img src="<?php bloginfo( 'template_url' ); ?>/images/entry/fig_main.jpg" alt=""></figure>
-	
-		<p>クアトロでは、現在従業員を募集しています。<br>募集職種は以下の通りです。ご応募、お待ちしております。</p>
+
+	<div class="ttl_page_sub">
+		<?php if(is_tax('area', 'area_a')): ?>
+		名古屋市内一覧
 		
-		<ul>
-			<li>①希望する職種をクリックしてください。</li>
-			<li>②募集している職種をご確認の上、職種をクリックすると、募集要項をご確認いただけます。</li>
-			<li>③募集要項の下部にある「応募する」ボタンからエントリーください！</li>
-		</ul>
+		<?php elseif(is_tax('area', 'area_b')): ?>
+		名古屋市外一覧
 		
-		<h2 class="branch"><img src="<?php bloginfo( 'template_url' ); ?>/images/entry/ttl_archive.png" alt="募集一覧"></h2>
+		<?php elseif(is_tax('area', 'area_c')): ?>
+		岐阜
 		
+		<?php elseif(is_tax('area', 'area_d')): ?>
+		三重
+		
+		<?php endif; ?>
 	</div>
-	<!-- /#case_archive_attention -->
-	
 
 	<section id="loop">
 		
@@ -36,8 +33,7 @@
 			<li><a href="<?php bloginfo( 'url' ); ?>/area/area_c">岐阜</a></li>
 			<li><a href="<?php bloginfo( 'url' ); ?>/area/area_d">三重</a></li>
 		</ul>
-	
-		
+
 		<div class="items">
 		<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 		<?php remove_filter ( 'the_content', 'wpautop' ); ?>

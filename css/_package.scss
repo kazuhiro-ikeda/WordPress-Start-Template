@@ -26,7 +26,7 @@ header {
 	
 	.logo {
 		display: block;
-		width: 410px;
+		width: 405px;
 		float: left;
 	}
 	
@@ -48,7 +48,7 @@ header {
 			text-align: right;
 			
 			.tel {
-				width: 310px;
+				width: 314px;
 				height: auto;
 				padding-right: 20px;
 			}
@@ -74,7 +74,7 @@ header {
 	
 	> i {
 		padding-left: 1em;
-		color: $insert;
+		color: #c6d800;
 		font-size: 17px;
 		position: relative;
 		top: 1px;
@@ -339,5 +339,19 @@ footer {
 	
 	@media screen and (max-width: $viewport) {
 		margin-bottom: 5vw;
+	}
+}
+
+.ttl_page_sub {
+	width: 980px;
+	margin: 30px auto 30px;
+	font-size: 22px;
+	font-weight: bold;
+	
+	@media screen and (max-width: $viewport) {
+		width: 94%;
+		margin: 5vw auto 5vw;
+		font-size: 18px;
+		font-weight: bold;
 	}
 }
