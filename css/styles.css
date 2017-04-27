@@ -257,25 +257,55 @@ input[type="submit"] { -webkit-appearance: none; border-radius: 0; }
 
 @media screen and (max-width: 640px) { #case_archive_attention > h2 { margin-bottom: 5vw; } }
 
-.nav_style { margin-bottom: 20px; overflow: hidden; }
+.n3_package { margin-bottom: 20px; overflow: hidden; }
 
-.nav_style li { width: 33.333%; float: left; overflow: hidden; }
+.n3_package.alternately li:nth-child(odd) > a { background: #808080; }
 
-@media screen and (max-width: 640px) { .nav_style li { width: 100%; float: none; overflow: hidden; } }
+.n3_package.alternately li:nth-child(even) > a { background: #666666; }
 
-.nav_style li:nth-child(1) a { background: #0068b6; }
+.n3_package li { width: 33.333%; float: left; overflow: hidden; }
 
-.nav_style li:nth-child(2) a { background: #ea613b; }
+@media screen and (max-width: 640px) { .n3_package li { width: 100%; float: none; overflow: hidden; } }
 
-.nav_style li:nth-child(3) a { background: #6cbb63; }
+.n3_package li:nth-child(1) a { background: #00a98d; }
 
-.nav_style li a { display: block; padding: 13px 10px; color: white; font-size: 18px; overflow: hidden; opacity: 1; transition: all 0.7s; }
+.n3_package li:nth-child(2) a { background: #00b5ee; }
 
-@media screen and (max-width: 640px) { .nav_style li a { font-size: 14px; } }
+.n3_package li:nth-child(3) a { background: #f18d00; }
 
-.nav_style li a::after { font-family: FontAwesome; content: "\f0da"; color: #c6d800; float: right; }
+.n3_package li a { display: block; padding: 13px 10px; color: white; font-size: 18px; overflow: hidden; opacity: 1; transition: all 0.7s; }
 
-.nav_style li a:hover { opacity: .5; }
+@media screen and (max-width: 640px) { .n3_package li a { font-size: 14px; } }
+
+.n3_package li a::after { font-family: FontAwesome; content: "\f0da"; color: #c6d800; float: right; }
+
+.n3_package li a:hover { opacity: .5; }
+
+.n4_package { margin-bottom: 20px; overflow: hidden; }
+
+.n4_package.alternately li:nth-child(odd) > a { background: #808080; }
+
+.n4_package.alternately li:nth-child(even) > a { background: #666666; }
+
+.n4_package li { width: 25%; float: left; overflow: hidden; }
+
+@media screen and (max-width: 640px) { .n4_package li { width: 100%; float: none; overflow: hidden; } }
+
+.n4_package li:nth-child(1) a { background: #00a98d; }
+
+.n4_package li:nth-child(2) a { background: #00b5ee; }
+
+.n4_package li:nth-child(3) a { background: #f18d00; }
+
+.n4_package li:nth-child(4) a { background: #8cc63f; }
+
+.n4_package li a { display: block; padding: 13px 10px; color: white; font-size: 18px; overflow: hidden; opacity: 1; transition: all 0.7s; }
+
+@media screen and (max-width: 640px) { .n4_package li a { font-size: 14px; } }
+
+.n4_package li a::after { font-family: FontAwesome; content: "\f0da"; color: #c6d800; float: right; }
+
+.n4_package li a:hover { opacity: .5; }
 
 .ttl_stylelist { font-size: 18px; margin-bottom: 20px; }
 

@@ -27,10 +27,30 @@
 <section id="loop">
 	<h1 class="ttl_page branch"><img src="<?php bloginfo( 'template_url' ); ?>/images/entry/ttl_archive.png" alt="募集一覧"></h1>
 	
-	<ul class="nav_style">
-		<li><a href="<?php bloginfo( 'url' ); ?>/genre/style_a">カテゴリA</a></li>
-		<li><a href="<?php bloginfo( 'url' ); ?>/genre/style_b">カテゴリB</a></li>
-		<li><a href="<?php bloginfo( 'url' ); ?>/genre/style_c">カテゴリC</a></li>
+	<ul class="n3_package">
+		<li><a href="<?php bloginfo( 'url' ); ?>/genre/style_a">スタイルA</a></li>
+		<li><a href="<?php bloginfo( 'url' ); ?>/genre/style_b">スタイルB</a></li>
+		<li><a href="<?php bloginfo( 'url' ); ?>/genre/style_c">スタイルC</a></li>
+	</ul>
+	
+	<ul class="n3_package alternately">
+		<li><a href="<?php bloginfo( 'url' ); ?>/genre/style_a">スタイルA</a></li>
+		<li><a href="<?php bloginfo( 'url' ); ?>/genre/style_b">スタイルB</a></li>
+		<li><a href="<?php bloginfo( 'url' ); ?>/genre/style_c">スタイルC</a></li>
+	</ul>
+	
+	<ul class="n4_package">
+		<li><a href="<?php bloginfo( 'url' ); ?>/genre/style_a">スタイルA</a></li>
+		<li><a href="<?php bloginfo( 'url' ); ?>/genre/style_b">スタイルB</a></li>
+		<li><a href="<?php bloginfo( 'url' ); ?>/genre/style_c">スタイルC</a></li>
+		<li><a href="<?php bloginfo( 'url' ); ?>/genre/style_d">スタイルC</a></li>
+	</ul>
+	
+	<ul class="n4_package alternately">
+		<li><a href="<?php bloginfo( 'url' ); ?>/area/area_a">名古屋市内</a></li>
+		<li><a href="<?php bloginfo( 'url' ); ?>/area/area_b">名古屋市街</a></li>
+		<li><a href="<?php bloginfo( 'url' ); ?>/area/area_c">岐阜</a></li>
+		<li><a href="<?php bloginfo( 'url' ); ?>/area/area_d">三重</a></li>
 	</ul>
 	
 	<div class="items">

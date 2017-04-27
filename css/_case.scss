@@ -1,6 +1,18 @@
 @charset "utf-8";
 /*	case
 ---------------------------------*/
+$style_a: #00a98d;
+$style_b: #00b5ee;
+$style_c: #f18d00;
+$style_d: #8cc63f;
+
+$area_a: #00a98d;
+$area_b: #00b5ee;
+$area_c: #f18d00;
+$area_d: #8cc63f;
+
+$odd: #808080;
+$even: #666666;
 
 //archive top
 #case_archive_attention {
@@ -55,9 +67,23 @@
 
 //nav
 
-.nav_style {
+.n3_package {
 	margin-bottom: 20px;
 	overflow: hidden;
+	
+	&.alternately {
+		li:nth-child(odd) {
+			> a {
+				background: $odd;
+			}
+		}
+		
+		li:nth-child(even) {
+			> a {
+				background: $even;
+			}
+		}
+	}
 	
 	li {
 		width: 33.333%;
@@ -72,19 +98,99 @@
 		
 		&:nth-child(1) {
 			a {
-				background: #0068b6;
+				background: $style_a;
 			}
 		}
 		
 		&:nth-child(2) {
 			a {
-				background: #ea613b;
+				background: $style_b;
 			}
 		}
 		
 		&:nth-child(3) {
 			a {
-				background: #6cbb63;
+				background: $style_c;
+			}
+		}
+		
+		a {
+			display: block;
+			padding: 13px 10px;
+			color: white;
+			font-size: 18px;
+			overflow: hidden;
+			opacity: 1;
+			transition: all .7s;
+			
+			@media screen and (max-width: $viewport) {
+				font-size: 14px;
+			}
+			
+			&::after {
+				font-family: FontAwesome;
+				content: "\f0da";
+				color: #c6d800;
+				float: right;
+			}
+			
+			&:hover {
+				opacity: .5;
+			}
+		}
+	}
+}
+
+.n4_package {
+	margin-bottom: 20px;
+	overflow: hidden;
+	
+	&.alternately {
+		li:nth-child(odd) {
+			> a {
+				background: $odd;
+			}
+		}
+		
+		li:nth-child(even) {
+			> a {
+				background: $even;
+			}
+		}
+	}
+	
+	li {
+		width: 25%;
+		float: left;
+		overflow: hidden;
+		
+		@media screen and (max-width: $viewport) {
+			width: 100%;
+			float: none;
+			overflow: hidden;
+		}
+		
+		&:nth-child(1) {
+			a {
+				background: $style_a;
+			}
+		}
+		
+		&:nth-child(2) {
+			a {
+				background: $style_b;
+			}
+		}
+		
+		&:nth-child(3) {
+			a {
+				background: $style_c;
+			}
+		}
+		
+		&:nth-child(4) {
+			a {
+				background: $style_d;
 			}
 		}
 		
