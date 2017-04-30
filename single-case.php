@@ -13,7 +13,7 @@
 			<section class="primary">
 				<div class="data<?php if(get_field( 'img_main' )) { echo ' narrow';} ?>">
 					<span class="style <?php
-						$terms_name = wp_get_object_terms($post->ID, 'genre_case');
+						$terms_name = wp_get_object_terms($post->ID, 'genre');
 					
 						//タームを出力
 						if(!empty($terms_name)){
@@ -25,7 +25,7 @@
 						}
 					?>"><?php
 					
-					$terms_name = wp_get_object_terms($post->ID, 'genre_case');
+					$terms_name = wp_get_object_terms($post->ID, 'genre');
 					
 					//タームを出力
 					if(!empty($terms_name)){
@@ -41,7 +41,7 @@
 					<h1 class="ttl_job"><?php the_title(); ?></h1>
 					
 					<h2 class="lead <?php
-						$terms_name = wp_get_object_terms($post->ID, 'genre_case');
+						$terms_name = wp_get_object_terms($post->ID, 'genre');
 					
 						//タームを出力
 						if(!empty($terms_name)){
@@ -276,7 +276,7 @@
 				</table>
 				
 				<?php 
-					$location = get_field('google');
+					$location = get_field('map');
 					if( !empty($location) ):
 				?>
 				<?php get_template_part( 'parts/googlemap' ); ?>
@@ -299,16 +299,16 @@
 			<a id="btn_entry" href="<?php echo esc_url(home_url('/')); ?>?page_id=35&post_id=<?php echo $post->ID; ?>">応募フォームに進む</a>
 			
 			<?php $state = get_field("link_tel"); if($state == 'ON'): ?>
-			<p class="block_p linktel_p"><span class="label">お電話でのご応募</span>TEL <span class="number">xxxxxxxx</span></p>
+			<p class="block_p linktel_p"><span class="label">お電話でのご応募</span>TEL <span class="number">0120-23-1055</span></p>
 			
-			<p class="block_s linktel_s"><a href="tel:xxxxxxxx"><span class="label">お電話でのご応募</span>TEL xxxxxxxx</a></p>
+			<p class="block_s linktel_s"><a href="tel:0120231055"><span class="label">お電話でのご応募</span>TEL 0120-23-1055</a></p>
 			
 			<?php else: ?>
 			
 			<?php endif; ?>
 			
 		<?php endwhile; else: //loop ?>
-			<p style="text-align:center; font-size:24px; font-weight:bold; color:#ddd; margin:100px auto; line-height:200%;">お探しの記事は準備中です。<br>近日中に公開となります。</p>
+			<p style="text-align:center; font-size:24px; font-weight:bold; color:#ddd; margin:100px auto; line-height:200%;">お探しの募集は現在ございません。</p>
 			
 		<?php endif; //loop ?>
 	
