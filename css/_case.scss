@@ -24,22 +24,14 @@ $even: #666666;
 		margin: 0 auto 5vw;
 	}
 	
-	> figure {
-		margin-bottom: 50px;
-		
-		@media screen and (max-width: $viewport) {
-			margin-bottom: 5vw;
-		}
-	}
-	
 	> p {
-		color: #f78d00;
+		color: #00a98d;
 		font-size: 24px;
 		line-height: 150%;
 		margin-bottom: 30px;
 		
 		@media screen and (max-width: $viewport) {
-			color: #f78d00;
+			color: #00a98d;
 			font-size: 18px;
 			line-height: 150%;
 			margin-bottom: 5vw;
@@ -298,15 +290,19 @@ $even: #666666;
 				padding: 7px 15px 5px;
 				
 				&.style_a {
-					background: #0068b6;
+					background: $style_a;
 				}
 				
 				&.style_b {
-					background: #ea613b;
+					background: $style_b;
 				}
 				
 				&.style_c {
-					background: #6cbb63;
+					background: $style_c;
+				}
+				
+				&.style_d {
+					background: $style_d;
 				}
 			}
 			
@@ -387,15 +383,19 @@ $even: #666666;
 				padding: 7px 20px 5px;
 				
 				&.style_a {
-					background: #0068b6;
+					background: $style_a;
 				}
 				
 				&.style_b {
-					background: #ea613b;
+					background: $style_b;
 				}
 				
 				&.style_c {
-					background: #6cbb63;
+					background: $style_c;
+				}
+				
+				&.style_d {
+					background: $style_d;
 				}
 			}
 			
@@ -421,15 +421,19 @@ $even: #666666;
 				margin-bottom: 10px;
 				
 				&.style_a {
-					color: #0068b6;
+					color: $style_a;
 				}
 				
 				&.style_b {
-					color: #ea613b;
+					color: $style_b;
 				}
 				
 				&.style_c {
-					color: #6cbb63;
+					color: $style_c;
+				}
+				
+				&.style_d {
+					color: $style_d;
 				}
 			}
 			
@@ -539,15 +543,19 @@ $even: #666666;
 					margin-bottom: 10px;
 					
 					&.style_a {
-						color: #0068b6;
+						color: $style_a;
 					}
 					
 					&.style_b {
-						color: #ea613b;
+						color: $style_b;
 					}
 					
 					&.style_c {
-						color: #6cbb63;
+						color: $style_c;
+					}
+					
+					&.style_d {
+						color: $style_d;
 					}
 				}
 				

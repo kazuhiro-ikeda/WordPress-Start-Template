@@ -27,14 +27,12 @@
 <link rel="shortcut icon" href="<?php bloginfo( 'template_url' ); ?>/favicon.ico">
 <link rel="apple-touch-icon" href="<?php bloginfo( 'template_url' ); ?>/icon.png">
 
-<?php
-	wp_deregister_script( 'jquery' );	
-	wp_enqueue_script( 'jquery', 'http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js', array(), '1.11.0' );
-?>
+<?php wp_deregister_script( 'jquery' ); wp_enqueue_script( 'jquery', 'http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js', array(), '1.11.0' ); ?>
 
 <title><?php full_title(); ?></title>
 
 <?php wp_head(); ?>
+
 </head>
 
 <body <?php body_class(); ?>>
