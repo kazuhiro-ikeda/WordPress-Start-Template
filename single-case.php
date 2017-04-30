@@ -131,7 +131,7 @@
 				<section class="box_block">
 					<div class="data<?php if(get_sub_field( 'img_pr' )) { echo ' narrow';} ?>">
 						<h3 class="ttl <?php
-						$terms_name = wp_get_object_terms($post->ID, 'genre_case');
+						$terms_name = wp_get_object_terms($post->ID, 'genre');
 					
 						//タームを出力
 						if(!empty($terms_name)){
