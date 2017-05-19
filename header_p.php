@@ -29,7 +29,7 @@
 
 <?php
 	wp_deregister_script( 'jquery' );	
-	wp_enqueue_script( 'jquery', 'http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js', array(), '1.11.0' );
+	wp_enqueue_script( 'jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js', array(), '1.11.0' );
 ?>
 
 <title><?php full_title(); ?></title>
