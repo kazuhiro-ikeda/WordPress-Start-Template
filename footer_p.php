@@ -29,6 +29,11 @@
 	
 </div>
 
+<nav id="nav_foot">
+	<a href="#"><i class="fa fa-angle-up" aria-hidden="true"></i></a>
+	
+</nav>
+
 <!--jQuery --> 
 <script src="<?php bloginfo('template_url');?>/js/jquery.common.js"></script>
 <script src="<?php bloginfo('template_url');?>/js/jquery.adjust.js"></script>
