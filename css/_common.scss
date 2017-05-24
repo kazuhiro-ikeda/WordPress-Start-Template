@@ -20,7 +20,11 @@ body {
 	font-weight: 500;//$游ゴシック
 	word-wrap: break-word;
 	-webkit-font-smoothing: subpixel-antialiased;
-	-webkit-text-size-adjust: 100%;	
+	-webkit-text-size-adjust: 100%;
+	
+	@media screen and (max-width: 1060px) {
+		width: 1060px;
+	}
 
 	@media screen and (max-width: $viewport) {
 		width: 100%;
