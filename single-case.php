@@ -288,6 +288,13 @@
 					
 				</div>
 				
+				<?php endif; ?>
+				
+				<?php 
+					$mapurl = get_field('mapurl');
+					if( !empty($mapurl)):
+				?>
+				
 				<p id="mapurl"><a target="_blank" href="<?php the_field( "url", $post->ID); ?>">▶︎GoogleMAPで見る</a></p>
 				<!-- /#mapurl -->
 				
