@@ -410,6 +410,7 @@ $even: #666666;
 				
 				@media screen and (max-width: $viewport) {
 					font-size: 20px;
+					margin-bottom: 0;
 				}
 			}
 			
@@ -456,7 +457,16 @@ $even: #666666;
 				float: right;
 				
 				@media screen and (max-width: $viewport) {
-					margin-bottom: 10vw;
+					display: none;
+				}
+			}
+			
+			.img_case_main_s {
+				display: none;
+				
+				@media screen and (max-width: $viewport) {
+					display: block;
+					margin-bottom: 5vw;
 				}
 			}
 		}//.primary

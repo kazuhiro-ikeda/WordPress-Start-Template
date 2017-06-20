@@ -2,6 +2,22 @@
 
 <div id="main" <?php post_class(); ?> role="main">
 	
+	<script type="application/ld+json">
+	{
+	  "@context": "http://schema.org",
+	  "@type": "JobPosting",
+	  "description": "<?php the_field( "lead", $post->ID); ?>",
+	  "jobBenefits": "<?php the_field( "treatment", $post->ID); ?>",
+	  "jobLocation": {
+	    "@type": "Place",
+	    "address": {
+	      "@type": "PostalAddress",
+	      "addressLocality": "<?php the_field( "place", $post->ID); ?>",
+	    }
+	  },
+	}
+	</script>
+	
 	<div class="ttl_page_sub">募集要項</div>
 
 	<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
@@ -39,6 +55,24 @@
 					?></span>
 					
 					<h1 class="ttl_job"><?php the_title(); ?></h1>
+					
+					<?php 
+						$image = get_field( 'img_main' );
+						if( !empty($image) ): 
+						
+						// vars
+						$url = $image['url'];
+						$alt = $image['alt'];
+					
+						// thumbnail
+						$size = '案件';
+						$thumb = $image['sizes'][ $size ];
+					
+						 ?>
+						 
+					<figure class="img_case_main_s"><img src="<?php echo $thumb; ?>" alt="<?php echo $alt; ?>"></figure>
+							
+					<?php endif; ?>
 					
 					<h2 class="lead <?php
 						$terms_name = wp_get_object_terms($post->ID, 'genre');
