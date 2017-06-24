@@ -310,7 +310,7 @@
 				</table>
 				
 				<?php 
-					$location = get_field('map');
+					$location = get_field('google');
 					if( !empty($location) ):
 				?>
 				<?php get_template_part( 'parts/googlemap' ); ?>
@@ -322,17 +322,10 @@
 					
 				</div>
 				
-				<?php endif; ?>
-				
-				<?php 
-					$mapurl = get_field('mapurl');
-					if( !empty($mapurl)):
-				?>
-				
-				<p id="mapurl"><a target="_blank" href="<?php the_field( "url", $post->ID); ?>">▶︎GoogleMAPで見る</a></p>
+				<p id="mapurl"><a target="_blank" href="http://maps.google.com/maps?q=<?php echo $location['address']; ?>">▶︎GoogleMAPで見る</a></p>
 				<!-- /#mapurl -->
 				
-				<?php endif; ?>
+				<?php endif; //gmap ?>
 				
 			</section>
 			<!-- /#requirements -->
