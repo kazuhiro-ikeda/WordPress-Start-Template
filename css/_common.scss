@@ -140,7 +140,7 @@ p {
 
 /* link */
 a.page-numbers {
-	background-color: #C2B185;
+	background-color: $insert;
 	color: white;
 	display: inline-block;
 	margin-right: 15px;
@@ -149,7 +149,7 @@ a.page-numbers {
 .nav-links .current {
 	display: inline-block;
 	margin-right: 15px;
-	color: #C2B185;
+	color: $insert;
 }
 .dots {
 	margin-right: 15px;
