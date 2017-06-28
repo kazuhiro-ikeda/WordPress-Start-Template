@@ -15,6 +15,7 @@
 <script>
 	$(function() {
 	    $('.item').matchHeight();
+	    $('.img_gallery').matchHeight();
 	});
 </script>
 <script src="<?php bloginfo('template_url');?>/js/lightbox.js"></script>
