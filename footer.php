@@ -16,6 +16,10 @@
 	$(function() {
 	    $('.item').matchHeight();
 	    $('.img_gallery').matchHeight();
+	    $('.caption_gallery').matchHeight();
+	    $('.style_archive').matchHeight();
+	    $('.title_archive').matchHeight();
+	    $('.info_archive').matchHeight();
 	});
 </script>
 <script src="<?php bloginfo('template_url');?>/js/lightbox.js"></script>
