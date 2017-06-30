@@ -53,6 +53,14 @@ $(function(){
         type: "carousel"
     });
 </script>
+<script src="<?php bloginfo('template_url');?>/js/slick.js"></script>
+<script>
+	$('.multiple-items').slick({
+		infinite: true,
+		slidesToShow: 3,
+		slidesToScroll: 3
+	});
+</script>
 
 <?php wp_footer(); ?>
 
