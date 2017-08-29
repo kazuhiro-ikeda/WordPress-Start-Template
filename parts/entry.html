@@ -1,7 +1,6 @@
+[mwform_hidden name="応募する仕事" value="{post_title}"]
 
 [inc_php file='entry_contents']
-
-[mwform_hidden name="応募する仕事" value="{post_title}"]
 
 <table id="table_entry">
 	<tr>
@@ -17,11 +16,11 @@
 		<td>[mwform_text name="ふりがな" id="furigana"] <span class="example">例）やまだ　たろう</span></td>
 	</tr>
 	<tr>
-		<th>年齢<span class="require">※必須</span></th>
+		<th>年齢</th>
 		<td>[mwform_text name="年齢" id="age"] 歳</td>
 	</tr>
 	<tr>
-		<th>性別<span class="require">※必須</span></th>
+		<th>性別</th>
 		<td>[mwform_radio name="性別" id="gender" children="男,女"]</td>
 	</tr>
 	<tr>
@@ -29,8 +28,8 @@
 		<td>[mwform_text name="郵便番号" id="zip"] <span class="example">例）012-3456</span></td>
 	</tr>
 	<tr>
-		<th>現住所<span class="require">※必須</span></th>
-		<td><div id="pref_w">都道府県 [mwform_text name="都道府県" id="pref"]</div><div id="city_w">市区町村 [mwform_text name="市区町村" id="city"]</div><div id="area_w">それ以降 [mwform_text name="エリア" id="area"]</div></td>
+		<th>現住所</th>
+		<td><div id="pref_w">都道府県 [mwform_text name="都道府県" id="pref"]</div><div id="city_w">市区町村 [mwform_text name="市区町村" id="city"]</div><div id="area_w">番地・建物名 [mwform_text name="エリア" id="area"]</div></td>
 	</tr>
 	<tr>
 		<th>電話番号（半角数字）<span class="require">※必須</span></th>
@@ -39,26 +38,6 @@
 	<tr>
 		<th>メールアドレス<span class="require">※必須</span></th>
 		<td>[mwform_text name="メールアドレス" id="mail"] <span class="example">例）aaaaa@bbbbb.com</span></td>
-	</tr>
-	<tr>
-		<th>資格</th>
-		<td>[mwform_textarea name="資格" id="license"]</td>
-	</tr>
-	<tr>
-		<th>最終学歴</th>
-		<td>[mwform_radio name="最終学歴" id="grade" children="高校卒,大学卒,大学院卒,専門学校卒"]</td>
-	</tr>
-	<tr>
-		<th>最終学歴の出身校名</th>
-		<td>[mwform_text name="最終学歴の出身校名" id="school"]</td>
-	</tr>
-	<tr>
-		<th>志望動機・自己PR</th>
-		<td>[mwform_textarea name="志望動機・自己PR" id="pr"]</td>
-	</tr>
-	<tr>
-		<th>職務経歴</th>
-		<td>[mwform_textarea name="職務経" id="career"]</td>
 	</tr>
 	<tr>
 		<th>ご質問・お問合せ内容</th>

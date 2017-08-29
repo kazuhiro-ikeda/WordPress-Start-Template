@@ -27,10 +27,7 @@
 <link rel="shortcut icon" href="<?php bloginfo( 'template_url' ); ?>/favicon.ico">
 <link rel="apple-touch-icon" href="<?php bloginfo( 'template_url' ); ?>/icon.png">
 
-<?php
-	wp_deregister_script( 'jquery' );	
-	wp_enqueue_script( 'jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js', array(), '1.11.0' );
-?>
+<?php wp_deregister_script( 'jquery' ); wp_enqueue_script( 'jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js', array(), '1.11.0' ); ?>
 
 <title><?php full_title(); ?></title>
 
@@ -56,7 +53,7 @@
 	<ul>
 		<li><a href="<?php bloginfo( 'url' ); ?>/">HOME</a></li>
 		<li><a href="<?php bloginfo( 'url' ); ?>/case">募集一覧</a></li>
-		<li class="official_s"><a href="http://jincast.co.jp/">オフィシャル HP</a></li>
+		<li class="official_s"><a target="_blank" href="">オフィシャル HP</a></li>
 	</ul>
 	
 </nav>

@@ -1,41 +1,3 @@
-	<tr>
-		<th>応募する仕事</th>
-		<td>{post_title}</td>
-	</tr>
-	<tr>
-		<th>氏名（全角）<span class="require">※必須</span></th>
-		<td>[mwform_text name="氏名" id="name"] <span class="example">例）山田　太郎</span></td>
-	</tr>
-	<tr>
-		<th>ふりがな（全角）<span class="require">※必須</span></th>
-		<td>[mwform_text name="ふりがな" id="furigana"] <span class="example">例）やまだ　たろう</span></td>
-	</tr>
-	<tr>
-		<th>年齢<span class="require">※必須</span></th>
-		<td>[mwform_text name="年齢" id="age"] 歳</td>
-	</tr>
-	<tr>
-		<th>性別<span class="require">※必須</span></th>
-		<td>[mwform_radio name="性別" id="gender" children="男,女"]</td>
-	</tr>
-	<tr>
-		<th>郵便番号</th>
-		<td>[mwform_text name="郵便番号" id="zip"] <span class="example">例）012-3456</span></td>
-	</tr>
-	<tr>
-		<th>現住所<span class="require">※必須</span></th>
-		<td><div id="pref_w">都道府県 [mwform_text name="都道府県" id="pref"]</div><div id="city_w">市区町村 [mwform_text name="市区町村" id="city"]</div><div id="area_w">それ以降 [mwform_text name="エリア" id="area"]</div></td>
-	</tr>
-	<tr>
-		<th>電話番号（半角数字）<span class="require">※必須</span></th>
-		<td>[mwform_text name="電話番号" id="tel"] <span class="example">例）090-1234-5678</span></td>
-	</tr>
-	<tr>
-		<th>メールアドレス<span class="require">※必須</span></th>
-		<td>[mwform_text name="メールアドレス" id="mail"] <span class="example">例）aaaaa@bbbbb.com</span></td>
-	</tr>
-
-
 {氏名} 様
 
 この度は、ご応募頂きまして 誠にありがとうございます。 
@@ -49,9 +11,12 @@
 万一ご応募から3日以上当方より連絡がない場合は、
 大変お手数ですが、下記までご連絡をお願いいたします。
 
+株式会社xxx
+〒xxx-xxx xxx
+TEL xxx
+
 よろしくお願い致します。
-株式会社xxxxxxxxxxxxxxxxxxxx　採用係
-TEL：xxx-xxxx-xxxx
+
 
 ===【ご応募内容】====================
 [お申し込みの求人]：{応募する仕事}
@@ -68,3 +33,4 @@ TEL：xxx-xxxx-xxxx
 ===========================================
 
 以上、何卒よろしくお願い申し上げます。
+
