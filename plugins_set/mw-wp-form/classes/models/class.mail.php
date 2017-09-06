@@ -2,12 +2,12 @@
 /**
  * Name       : MW WP Form Mail
  * Description: メールクラス
- * Version    : 1.5.1
+ * Version    : 2.2.1
  * Author     : Takashi Kitajima
  * Author URI : http://2inc.org
  * Created    : July 20, 2012
- * Modified   : April 14, 2015
- * License    : GPLv2
+ * Modified   : May 4, 2017
+ * License    : GPLv2 or later
  * License URI: http://www.gnu.org/licenses/gpl-2.0.html
  */
 class MW_WP_Form_Mail {
@@ -37,6 +37,12 @@ class MW_WP_Form_Mail {
 	public $from;
 
 	/**
+	 * Return-Path
+	 * @var string
+	 */
+	public $return_path;
+
+	/**
 	 * 送信者
 	 * @var string
 	 */
@@ -61,17 +67,25 @@ class MW_WP_Form_Mail {
 	public $attachments = array();
 
 	/**
+	 * @var MW_WP_Form_Mail_Parser
+	 */
+	protected $Mail_Parser;
+
+	/**
 	 * メール送信
+	 *
+	 * @return boolean
 	 */
 	public function send() {
-		if ( !$this->to ) {
-			return;
+		if ( ! $this->to ) {
+			return apply_filters( 'mwform_is_mail_sended', false );
 		}
 
-		$sender  = $this->sender;
-		$from    = $this->from;
-		$subject = $this->subject;
-		$body    = $this->body;
+		$sender      = $this->sender;
+		$from        = $this->from;
+		$return_path = $this->return_path;
+		$subject     = $this->subject;
+		$body        = $this->body;
 
 		add_action( 'phpmailer_init'   , array( $this, 'set_return_path' ) );
 		add_filter( 'wp_mail_from'     , array( $this, 'set_mail_from' ) );
@@ -85,37 +99,37 @@ class MW_WP_Form_Mail {
 			$temp_dir = apply_filters( 'mwform_log_directory', $temp_dir );
 		}
 
-		$tos = explode( ',', $this->to );
-		foreach ( $tos as $to ) {
-			$headers = array();
-			if ( $this->cc ) {
-				$headers[] = 'Cc: ' . $this->cc;
-			}
-			if ( $this->bcc ) {
-				$headers[] = 'Bcc: ' . $this->bcc;
-			}
-			$to = trim( $to );
-			if ( !empty( $File ) ) {
-				$contents = sprintf(
-					"====================\n\nSend Date: %s\nTo: %s\nSender: %s\nFrom: %s\nSubject: %s\nheaders:%s\n-----\n%s\n-----\nattachments:\n%s\n\n",
-					date( 'M j Y, H:i:s' ),
-					$to,
-					$sender,
-					$from,
-					$subject,
-					implode( "\n", $headers ),
-					$body,
-					implode( "\n", $this->attachments )
-				);
-				file_put_contents( $temp_dir . '/mw-wp-form-debug.log', $contents, FILE_APPEND );
-			} else {
-				@wp_mail( $to, $subject, $body, $headers, $this->attachments );
-			}
+		$headers = array();
+		if ( $this->cc ) {
+			$headers[] = 'Cc: ' . $this->cc;
+		}
+		if ( $this->bcc ) {
+			$headers[] = 'Bcc: ' . $this->bcc;
+		}
+		$to = trim( $this->to );
+		if ( !empty( $File ) ) {
+			$contents = sprintf(
+				"====================\n\nSend Date: %s\nTo: %s\nSender: %s\nFrom: %s\nReturn-Path: %s\nSubject: %s\nheaders:%s\n-----\n%s\n-----\nattachments:\n%s\n\n",
+				date( 'M j Y, H:i:s' ),
+				$to,
+				$sender,
+				$from,
+				$return_path,
+				$subject,
+				implode( "\n", $headers ),
+				$body,
+				implode( "\n", $this->attachments )
+			);
+			$is_mail_sended = file_put_contents( $temp_dir . '/mw-wp-form-debug.log', $contents, FILE_APPEND );
+		} else {
+			$is_mail_sended = wp_mail( $to, $subject, $body, $headers, $this->attachments );
 		}
 
 		remove_action( 'phpmailer_init'   , array( $this, 'set_return_path' ) );
 		remove_filter( 'wp_mail_from'     , array( $this, 'set_mail_from' ) );
 		remove_filter( 'wp_mail_from_name', array( $this, 'set_mail_from_name' ) );
+
+		return apply_filters( 'mwform_is_mail_sended', $is_mail_sended );
 	}
 
 	/**
@@ -125,7 +139,10 @@ class MW_WP_Form_Mail {
 	 * @return string
 	 */
 	public function set_mail_from( $email ) {
-		return $this->from;
+		if ( filter_var( $this->from, FILTER_VALIDATE_EMAIL ) ) {
+			return $this->from;
+		}
+		return $email;
 	}
 
 	/**
@@ -139,12 +156,12 @@ class MW_WP_Form_Mail {
 	}
 
 	/**
-	 * 返信先を設定
+	 * Return-Path を設定
 	 *
 	 * @param phpmailer $phpmailer
 	 */
 	public function set_return_path( $phpmailer ) {
-		$phpmailer->Sender = $this->from;
+		$phpmailer->Sender = $this->return_path;
 	}
 
 	/**
@@ -235,6 +252,13 @@ class MW_WP_Form_Mail {
 		}
 		$this->from = $admin_mail_from;
 
+		// Return-Path を指定
+		$mail_return_path = get_bloginfo( 'admin_email' );
+		if ( $Setting->get( 'mail_return_path' ) ) {
+			$mail_return_path = $Setting->get( 'mail_return_path' );
+		}
+		$this->return_path = $mail_return_path;
+
 		// 送信者を指定
 		$admin_mail_sender = get_bloginfo( 'name' );
 		if ( $Setting->get( 'mail_sender' ) ) {
@@ -273,6 +297,13 @@ class MW_WP_Form_Mail {
 				$this->to = $Data->get_post_value_by_key( $automatic_reply_email );
 			}
 
+			// Return-Path を指定
+			$mail_return_path = get_bloginfo( 'admin_email' );
+			if ( $Setting->get( 'mail_return_path' ) ) {
+				$mail_return_path = $Setting->get( 'mail_return_path' );
+			}
+			$this->return_path = $mail_return_path;
+
 			// 送信元を指定
 			$reply_mail_from = get_bloginfo( 'admin_email' );
 			if ( $Setting->get( 'mail_from' ) ) {
@@ -307,10 +338,10 @@ class MW_WP_Form_Mail {
 			$this->to = $admin_mail_to;
 		}
 		if ( !$this->from ) {
-			$this->from = $admin_mail_from;;
+			$this->from = $admin_mail_from;
 		}
 		if ( !$this->sender ) {
-			$this->sender = $admin_mail_sender;;
+			$this->sender = $admin_mail_sender;
 		}
 	}
 
@@ -333,15 +364,35 @@ class MW_WP_Form_Mail {
 	 * メールを送信内容に置換
 	 *
 	 * @param MW_WP_Form_Setting $Setting
-	 * @param bool $do_update
 	 */
-	public function parse( $Setting, $do_update = false ) {
-		$Data = MW_WP_Form_Data::getInstance();
-		
-		$Mail_Parser = new MW_WP_Form_Mail_Parser( $this, $Setting );
-		$Mail = $Mail_Parser->get_parsed_mail_object( $do_update );
+	public function parse( $Setting ) {
+		$this->Mail_Parser = new MW_WP_Form_Mail_Parser( $this, $Setting );
+		$Mail = $this->Mail_Parser->get_parsed_mail_object();
 		foreach ( get_object_vars( $Mail ) as $key => $value ) {
 			$this->$key = $value;
+		}
+	}
+
+	/**
+	 * メールをデータベースに保存
+	 *
+	 * @param MW_WP_Form_Setting $Setting
+	 * @return int
+	 */
+	public function save( $Setting ) {
+		$this->Mail_Parser = new MW_WP_Form_Mail_Parser( $this, $Setting );
+		$this->Mail_Parser->save();
+		return $this->get_saved_mail_id();
+	}
+
+	/**
+	 * 保存した問い合わせデータの Post IDを取得する
+	 *
+	 * @return int
+	 */
+	public function get_saved_mail_id(){
+		if ( $this->Mail_Parser ) {
+			return $this->Mail_Parser->get_saved_mail_id();
 		}
 	}
 }

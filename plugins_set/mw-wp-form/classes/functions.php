@@ -2,12 +2,12 @@
 /**
  * Name       : MWF Functions
  * Description: 関数
- * Version    : 1.4.4
+ * Version    : 1.6.0
  * Author     : Takashi Kitajima
  * Author URI : http://2inc.org
  * Created    : May 29, 2013
- * Modified   : May 26, 2015
- * License    : GPLv2
+ * Modified   : January 30, 2017
+ * License    : GPLv2 or later
  * License URI: http://www.gnu.org/licenses/gpl-2.0.html
  */
 class MWF_Functions {
@@ -62,7 +62,7 @@ class MWF_Functions {
 			$fileurl = preg_replace( '/^https?:\/\/(.+)$/', '$1', $fileurl );
 			$filepath = str_replace(
 				$baseurl,
-				realpath( $wp_upload_dir['basedir'] ),
+				$wp_upload_dir['basedir'],
 				$fileurl
 			);
 			return $filepath;
@@ -78,7 +78,7 @@ class MWF_Functions {
 	public static function filepath_to_url( $filepath ) {
 		$wp_upload_dir = wp_upload_dir();
 		$fileurl = str_replace(
-			realpath( $wp_upload_dir['basedir'] ),
+			$wp_upload_dir['basedir'],
 			$wp_upload_dir['baseurl'],
 			$filepath
 		);
@@ -153,23 +153,48 @@ class MWF_Functions {
 	/**
 	 * Tempディレクトリからuploadディレクトリにファイルを移動
 	 *
-	 * @param string ファイルパス
-	 * @return bool
+	 * @param string Temp ファイルのパス
+	 * @param string 新しい保存先ディレクトリ
+	 * @param string 新しいファイル名
+	 * @return string 新しいファイルパス
 	 */
-	public static function move_temp_file_to_upload_dir( $filepath ) {
-		$tempdir = dirname( $filepath );
-		$filename = basename( $filepath );
+	public static function move_temp_file_to_upload_dir( $filepath, $upload_dir = '', $filename = '' ) {
 		$wp_upload_dir = wp_upload_dir();
-		$uploaddir = realpath( $wp_upload_dir['path'] );
-		$new_filename = wp_unique_filename( $uploaddir, $filename );
 
-		if ( $tempdir == $uploaddir ) {
+		if ( !$upload_dir ) {
+			$upload_dir = $wp_upload_dir['path'];
+		} else {
+			$upload_dir = trailingslashit( $wp_upload_dir['basedir'] ) . ltrim( $upload_dir, '/\\' );
+			$bool = wp_mkdir_p( $upload_dir );
+		}
+
+		if ( !$filename ) {
+			$filename = basename( $filepath );
+		}
+
+		if ( !preg_match( '/(\..+?)$/', $filename ) ) {
+			$extension = pathinfo( $filepath, PATHINFO_EXTENSION );
+			$filename = $filename . '.' . $extension;
+		}
+		$filename = sanitize_file_name( $filename );
+		$filename = wp_unique_filename( $upload_dir, $filename );
+
+		$new_filepath = trailingslashit( $upload_dir ) . $filename;
+
+		if ( $filepath == $new_filepath ) {
 			return $filepath;
 		}
-		if ( rename( $filepath, trailingslashit( $uploaddir ) . $new_filename ) ) {
-			return trailingslashit( $uploaddir ) . $new_filename;
+
+		// もし temp ファイルが存在しない場合、一応リネーム後のパスだけ返す
+		if ( !file_exists( $filepath ) ) {
+			return $new_filepath;
 		}
-		return $filepath;
+
+		// 移動できれば移動、移動できなくてもリネーム後のパスだけ返す
+		if ( rename( $filepath, $new_filepath ) ) {
+			return $new_filepath;
+		}
+		return $new_filepath;
 	}
 
 	/**
@@ -198,7 +223,7 @@ class MWF_Functions {
 				'post_mime_type' => $wp_check_filetype['type'],
 				'post_title'     => $key,
 				'post_status'    => 'inherit',
-				'post_content'   => __( 'Uploaded from ', MWF_Config::DOMAIN ) . $post_type->label,
+				'post_content'   => __( 'Uploaded from ', 'mw-wp-form' ) . $post_type->label,
 			);
 			$attach_id   = wp_insert_attachment( $attachment, $filepath, $post_id );
 			$attach_data = wp_generate_attachment_metadata( $attach_id, $filepath );
@@ -259,16 +284,33 @@ class MWF_Functions {
 				);
 				break;
 			case 'docx' :
+				$wp_check_filetype['type'] = array(
+					$wp_check_filetype['type'],
+					'application/zip',
+					'application/msword',
+				);
+				break;
 			case 'xlsx' :
+				$wp_check_filetype['type'] = array(
+					$wp_check_filetype['type'],
+					'application/zip',
+					'application/excel',
+					'application/msexcel',
+					'application/vnd.ms-excel',
+				);
+				break;
 			case 'pptx' :
 				$wp_check_filetype['type'] = array(
 					$wp_check_filetype['type'],
 					'application/zip',
+					'application/mspowerpoint',
+					'application/powerpoint',
+					'application/ppt',
 				);
 				break;
 		}
 
-		if ( version_compare( phpversion(), '5.3.0' ) >= 0 ) {
+		if ( version_compare( phpversion(), '5.3.0' ) >= 0 && defined( 'FILEINFO_MIME_TYPE ' ) ) {
 			if ( !file_exists( $filepath ) ) {
 				return false;
 			}
@@ -297,7 +339,7 @@ class MWF_Functions {
 	 * @return string
 	 */
 	public static function get_tracking_number_title( $post_type ) {
-		$tracking_number_title = esc_html__( 'Tracking Number', MWF_Config::DOMAIN );
+		$tracking_number_title = esc_html__( 'Tracking Number', 'mw-wp-form' );
 		$form_key = self::contact_data_post_type_to_form_key( $post_type );
 		if ( $form_key ) {
 			$tracking_number_title = apply_filters(
@@ -332,6 +374,16 @@ class MWF_Functions {
 	public static function get_form_key_from_form_id( $form_id ) {
 		$form_key = MWF_Config::NAME . '-' . $form_id;
 		return $form_key;
+	}
+
+	/**
+	 * フォーム識別子をフォームの投稿 ID に変換
+	 *
+	 * @param string $form_key
+	 * @return int
+	 */
+	public static function get_form_id_from_form_key( $form_key ) {
+		return preg_replace( '/^' . MWF_Config::NAME . '-(\d+)$/', '$1', $form_key );
 	}
 
 	/**

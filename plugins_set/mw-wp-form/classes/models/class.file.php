@@ -2,12 +2,12 @@
 /**
  * Name       : MW WP Form File
  * Description: Tempディレクトリ、ファイルアップロードの処理を行うクラス
- * Version    : 1.0.7
+ * Version    : 1.0.9
  * Author     : Takashi Kitajima
  * Author URI : http://2inc.org
  * Created    : October 10, 2013
- * Modified   : September 1, 2014
- * License    : GPLv2
+ * Modified   : September 28, 2016
+ * License    : GPLv2 or later
  * License URI: http://www.gnu.org/licenses/gpl-2.0.html
  */
 class MW_WP_Form_File {
@@ -38,6 +38,8 @@ class MW_WP_Form_File {
 	 * @return array ( name属性値 => アップロードできたファイルのURL, … )
 	 */
 	public function upload( array $files = array() ) {
+		$this->clean_temp_dir();
+
 		$uploaded_files = array();
 		foreach ( $files as $key => $file ) {
 			$uploaded_file = $this->single_file_upload( $key );
@@ -56,7 +58,6 @@ class MW_WP_Form_File {
 	 */
 	protected function single_file_upload( $key ) {
 		$this->create_temp_dir();
-		$this->clean_temp_dir();
 
 		$file = '';
 		if ( is_array( $_FILES ) && isset( $_FILES[$key] ) ) {
@@ -105,7 +106,7 @@ class MW_WP_Form_File {
 		$upload_url = $temp_dir['url'];
 		if ( !is_writable( $temp_dir['dir'] ) ) {
 			$wp_upload_dir = wp_upload_dir();
-			$upload_dir    = realpath( $wp_upload_dir['path'] );
+			$upload_dir    = $wp_upload_dir['path'];
 			$upload_url    = $wp_upload_dir['url'];
 		}
 
@@ -130,7 +131,7 @@ class MW_WP_Form_File {
 	public function get_temp_dir() {
 		$wp_upload_dir = wp_upload_dir();
 		$temp_dir_name = '/' . MWF_Config::NAME . '_uploads';
-		$temp_dir['dir'] = realpath( $wp_upload_dir['basedir'] ) . $temp_dir_name;
+		$temp_dir['dir'] = $wp_upload_dir['basedir'] . $temp_dir_name;
 		$temp_dir['url'] = $wp_upload_dir['baseurl'] . $temp_dir_name;
 		return $temp_dir;
 	}

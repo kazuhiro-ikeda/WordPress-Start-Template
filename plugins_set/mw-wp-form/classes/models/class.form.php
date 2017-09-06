@@ -2,12 +2,12 @@
 /**
  * Name       : MW WP Form Form
  * Description: フォームヘルパー
- * Version    : 1.6.3
+ * Version    : 1.11.0
  * Author     : Takashi Kitajima
  * Author URI : http://2inc.org
  * Created    : September 25, 2012
- * Modified   : May 6, 2015
- * License    : GPLv2
+ * Modified   : March 9, 2017
+ * License    : GPLv2 or later
  * License URI: http://www.gnu.org/licenses/gpl-2.0.html
  */
 class MW_WP_Form_Form {
@@ -217,8 +217,9 @@ class MW_WP_Form_Form {
 	public function text( $name, $options = array() ) {
 		$defaults = array(
 			'id'          => null,
+			'class'       => null,
 			'size'        => 60,
-			'maxlength'   => 255,
+			'maxlength'   => null,
 			'value'       => '',
 			'placeholder' => null,
 			'conv-half-alphanumeric' => null,
@@ -226,11 +227,118 @@ class MW_WP_Form_Form {
 		$options = array_merge( $defaults, $options );
 		$attributes = $this->generate_attributes( $options );
 
-		return sprintf(
+		return self::remove_linefeed_space( sprintf(
 			'<input type="text" name="%s"%s />',
 			esc_attr( $name ),
 			$attributes
+		) );
+	}
+
+	/**
+	 * input[type=email]タグ生成
+	 *
+	 * @param string $name name属性
+	 * @param array
+	 * @return string html
+	 */
+	public function email( $name, $options = array() ) {
+		$defaults = array(
+			'id'          => null,
+			'class'       => null,
+			'size'        => 60,
+			'maxlength'   => null,
+			'value'       => '',
+			'placeholder' => null,
+			'conv-half-alphanumeric' => null,
 		);
+		$options = array_merge( $defaults, $options );
+		$attributes = $this->generate_attributes( $options );
+
+		return self::remove_linefeed_space( sprintf(
+			'<input type="email" name="%s"%s />',
+			esc_attr( $name ),
+			$attributes
+		) );
+	}
+
+	/**
+	 * input[type=url]タグ生成
+	 *
+	 * @param string $name name属性
+	 * @param array
+	 * @return string html
+	 */
+	public function url( $name, $options = array() ) {
+		$defaults = array(
+			'id'          => null,
+			'class'       => null,
+			'size'        => 60,
+			'maxlength'   => null,
+			'value'       => '',
+			'placeholder' => null,
+			'conv-half-alphanumeric' => null,
+		);
+		$options = array_merge( $defaults, $options );
+		$attributes = $this->generate_attributes( $options );
+
+		return self::remove_linefeed_space( sprintf(
+			'<input type="url" name="%s"%s />',
+			esc_attr( $name ),
+			$attributes
+		) );
+	}
+
+	/**
+	 * input[type=range]タグ生成
+	 *
+	 * @param string $name name属性
+	 * @param array
+	 * @return string html
+	 */
+	public function range( $name, $options = array() ) {
+		$defaults = array(
+			'id'    => null,
+			'class' => null,
+			'value' => '',
+			'min'   => 0,
+			'max'   => 100,
+			'step'  => 1,
+		);
+		$options = array_merge( $defaults, $options );
+		$attributes = $this->generate_attributes( $options );
+
+		return self::remove_linefeed_space( sprintf(
+			'<input type="range" name="%s"%s />',
+			esc_attr( $name ),
+			$attributes
+		) );
+	}
+
+	/**
+	 * input[type=number]タグ生成
+	 *
+	 * @param string $name name属性
+	 * @param array
+	 * @return string html
+	 */
+	public function number( $name, $options = array() ) {
+		$defaults = array(
+			'id'          => null,
+			'class'       => null,
+			'value'       => '',
+			'min'         => null,
+			'max'         => null,
+			'step'        => 1,
+			'placeholder' => null,
+		);
+		$options = array_merge( $defaults, $options );
+		$attributes = $this->generate_attributes( $options );
+
+		return self::remove_linefeed_space( sprintf(
+			'<input type="number" name="%s"%s />',
+			esc_attr( $name ),
+			$attributes
+		) );
 	}
 
 	/**
@@ -241,11 +349,11 @@ class MW_WP_Form_Form {
 	 * @return string HTML
 	 */
 	public function hidden( $name, $value ) {
-		return sprintf(
+		return self::remove_linefeed_space( sprintf(
 			'<input type="hidden" name="%s" value="%s" />',
 			esc_attr( $name ),
 			esc_attr( $value )
-		);
+		) );
 	}
 
 	/**
@@ -258,19 +366,20 @@ class MW_WP_Form_Form {
 	public function password( $name, $options = array() ) {
 		$defaults = array(
 			'id'          => null,
+			'class'       => null,
 			'size'        => 60,
-			'maxlength'   => 255,
+			'maxlength'   => null,
 			'value'       => '',
 			'placeholder' => null,
 		);
 		$options = array_merge( $defaults, $options );
 		$attributes = $this->generate_attributes( $options );
 
-		return sprintf(
+		return self::remove_linefeed_space( sprintf(
 			'<input type="password" name="%s"%s />',
 			esc_attr( $name ),
 			$attributes
-		);
+		) );
 	}
 
 	/**
@@ -282,6 +391,7 @@ class MW_WP_Form_Form {
 	 */
 	public function zip( $name, $options = array() ) {
 		$defaults = array(
+			'class' => null,
 			'conv-half-alphanumeric' => null,
 			'value' => '',
 		);
@@ -306,6 +416,7 @@ class MW_WP_Form_Form {
 		$_ret  = '<span class="mwform-zip-field">';
 		$_ret .= '〒';
 		$_ret .= $this->text( $name . '[data][0]', array(
+			'class'     => $options['class'],
 			'size'      => 4,
 			'maxlength' => 3,
 			'value'     => $values[0],
@@ -313,6 +424,7 @@ class MW_WP_Form_Form {
 		) );
 		$_ret .= ' ' . $separator . ' ';
 		$_ret .= $this->text( $name . '[data][1]', array(
+			'class'     => $options['class'],
 			'size'      => 5,
 			'maxlength' => 4,
 			'value'     => $values[1],
@@ -320,7 +432,7 @@ class MW_WP_Form_Form {
 		) );
 		$_ret .= $this->separator( $name, $separator );
 		$_ret .= '</span>';
-		return $_ret;
+		return self::remove_linefeed_space( $_ret );
 	}
 
 	/**
@@ -332,6 +444,7 @@ class MW_WP_Form_Form {
 	 */
 	public function tel( $name, $options = array() ) {
 		$defaults = array(
+			'class' => null,
 			'conv-half-alphanumeric' => null,
 			'value' => '',
 		);
@@ -355,6 +468,7 @@ class MW_WP_Form_Form {
 
 		$_ret  = '<span class="mwform-tel-field">';
 		$_ret .= $this->text( $name . '[data][0]', array(
+			'class'     => $options['class'],
 			'size'      => 6,
 			'maxlength' => 5,
 			'value'     => $values[0],
@@ -362,6 +476,7 @@ class MW_WP_Form_Form {
 		) );
 		$_ret .= ' ' . $separator . ' ';
 		$_ret .= $this->text( $name . '[data][1]', array(
+			'class'     => $options['class'],
 			'size'      => 5,
 			'maxlength' => 4,
 			'value'     => $values[1],
@@ -369,6 +484,7 @@ class MW_WP_Form_Form {
 		) );
 		$_ret .= ' ' . $separator . ' ';
 		$_ret .= $this->text( $name . '[data][2]', array(
+			'class'     => $options['class'],
 			'size'      => 5,
 			'maxlength' => 4,
 			'value'     => $values[2],
@@ -376,7 +492,7 @@ class MW_WP_Form_Form {
 		) );
 		$_ret .= $this->separator( $name, $separator );
 		$_ret .= '</span>';
-		return $_ret;
+		return self::remove_linefeed_space( $_ret );
 	}
 
 	/**
@@ -389,6 +505,7 @@ class MW_WP_Form_Form {
 	public function textarea( $name, $options = array() ) {
 		$defaults = array(
 			'id'          => null,
+			'class'       => null,
 			'cols'        => 50,
 			'rows'        => 5,
 			'value'       => '',
@@ -399,12 +516,12 @@ class MW_WP_Form_Form {
 		unset( $_options['value'] );
 		$attributes = $this->generate_attributes( $_options );
 
-		return sprintf(
+		return self::remove_linefeed_space( sprintf(
 			'<textarea name="%s"%s>%s</textarea>',
 			esc_attr( $name ),
 			$attributes,
 			esc_html( $options['value'] )
-		);
+		) );
 	}
 
 	/**
@@ -417,14 +534,15 @@ class MW_WP_Form_Form {
 	 */
 	public function select( $name, $children = array(), $options = array() ) {
 		$defaults = array(
+			'class' => null,
 			'id'    => null,
 			'value' => '',
 		);
 		$options = array_merge( $defaults, $options );
 
-		$attributes = $this->generate_attributes( array(
-			'id' => $options['id'],
-		) );
+		$_options = $options;
+		unset( $_options['value'] );
+		$attributes = $this->generate_attributes( $_options );
 		$_ret = sprintf(
 			'<select name="%s"%s>',
 			esc_attr( $name ),
@@ -440,7 +558,7 @@ class MW_WP_Form_Form {
 			);
 		}
 		$_ret .= '</select>';
-		return $_ret;
+		return self::remove_linefeed_space( $_ret );
 	}
 
 	/**
@@ -453,6 +571,7 @@ class MW_WP_Form_Form {
 	 */
 	public function radio( $name, $children = array(), $options = array() ) {
 		$defaults = array(
+			'class'      => null,
 			'id'         => '',
 			'value'      => '',
 			'vertically' => null,
@@ -463,15 +582,21 @@ class MW_WP_Form_Form {
 		$_ret = '';
 		foreach ( $children as $key => $_value ) {
 			$i ++;
-			$vertically = ( $options['vertically'] === 'true' ) ? 'vertical-item' : '';
+			$vertically = ( $options['vertically'] === 'true' ) ? 'vertical-item' : 'horizontal-item';
 			$attributes_for_label = $this->generate_attributes( array(
 				'for' => $this->get_attr_id( $options['id'], $i ),
 			) );
 			$attributes = $this->generate_attributes( array(
-				'id' => $this->get_attr_id( $options['id'], $i ),
+				'id'    => $this->get_attr_id( $options['id'], $i ),
+				'class' => $options['class'],
 			) );
 			$_ret .= sprintf(
-				'<span class="%s"><label%s><input type="radio" name="%s" value="%s"%s %s />%s</label></span>',
+				'<span class="mwform-radio-field %s">
+					<label%s>
+						<input type="radio" name="%s" value="%s"%s %s />
+						<span class="mwform-radio-field-text">%s</span>
+					</label>
+				</span>',
 				$vertically,
 				$attributes_for_label,
 				esc_attr( $name ),
@@ -481,7 +606,7 @@ class MW_WP_Form_Form {
 				esc_html( $_value )
 			);
 		}
-		return $_ret;
+		return self::remove_linefeed_space( $_ret );
 	}
 
 	/**
@@ -495,7 +620,8 @@ class MW_WP_Form_Form {
 	 */
 	public function checkbox( $name, $children = array(), $options = array(), $separator = ',' ) {
 		$defaults = array(
-			'id'         => '',
+			'id'         => null,
+			'class'      => null,
 			'value'      => '',
 			'vertically' => null,
 		);
@@ -510,15 +636,21 @@ class MW_WP_Form_Form {
 		$_ret = '';
 		foreach ( $children as $key => $_value ) {
 			$i ++;
-			$vertically = ( $options['vertically'] === 'true' ) ? 'vertical-item' : '';
+			$vertically = ( $options['vertically'] === 'true' ) ? 'vertical-item' : 'horizontal-item';
 			$attributes_for_label = $this->generate_attributes( array(
 				'for' => $this->get_attr_id( $options['id'], $i ),
 			) );
 			$attributes = $this->generate_attributes( array(
-				'id' => $this->get_attr_id( $options['id'], $i ),
+				'id'    => $this->get_attr_id( $options['id'], $i ),
+				'class' => $options['class'],
 			) );
 			$_ret .= sprintf(
-				'<span class="%s"><label%s><input type="checkbox" name="%s" value="%s"%s %s />%s</label></span>',
+				'<span class="mwform-checkbox-field %s">
+					<label%s>
+						<input type="checkbox" name="%s" value="%s"%s %s />
+						<span class="mwform-checkbox-field-text">%s</span>
+					</label>
+				</span>',
 				$vertically,
 				$attributes_for_label,
 				esc_attr( $name . '[data][]' ),
@@ -529,7 +661,7 @@ class MW_WP_Form_Form {
 			);
 		}
 		$_ret .= $this->separator( $name, $separator );
-		return $_ret;
+		return self::remove_linefeed_space( $_ret );
 	}
 
 	/**
@@ -537,14 +669,45 @@ class MW_WP_Form_Form {
 	 *
 	 * @param string $name name属性
 	 * @param string $value value属性
+	 * @param array $options
 	 * @return string submitボタン
 	 */
-	public function submit( $name, $value ) {
-		return sprintf(
-			'<input type="submit" name="%s" value="%s" />',
-			esc_attr( $name ),
-			esc_attr( $value )
+	public function submit( $name, $value, $options = array() ) {
+		$defaults = array(
+			'class' => null,
 		);
+		$options = array_merge( $defaults, $options );
+		$attributes = $this->generate_attributes( $options );
+		return self::remove_linefeed_space( sprintf(
+			'<input type="submit" name="%s" value="%s"%s />',
+			esc_attr( $name ),
+			esc_attr( $value ),
+			$attributes
+		) );
+	}
+
+	/**
+	 * submitボタン(button)生成
+	 *
+	 * @param string $name name属性
+	 * @param string $value value属性
+	 * @param array $options
+	 * @param string $element_content
+	 * @return string submitボタン(button)
+	 */
+	public function button_submit( $name, $value, $options = array(), $element_content = '' ) {
+		$defaults = array(
+			'class' => null,
+		);
+		$options = array_merge( $defaults, $options );
+		$attributes = $this->generate_attributes( $options );
+		return self::remove_linefeed_space( sprintf(
+			'<button type="submit" name="%1$s" value="%2$s"%3$s>%4$s</button>',
+			esc_attr( $name ),
+			esc_attr( $value ),
+			$attributes,
+			wp_kses_post( $element_content )
+		) );
 	}
 
 	/**
@@ -552,14 +715,45 @@ class MW_WP_Form_Form {
 	 *
 	 * @param string $name name属性
 	 * @param string $value value属性
+	 * @param array $options
 	 * @return string ボタン
 	 */
-	public function button( $name, $value ) {
-		return sprintf(
-			'<input type="button" name="%s" value="%s" />',
-			esc_attr( $name ),
-			esc_attr( $value )
+	public function button( $name, $value, $options = array() ) {
+		$defaults = array(
+			'class' => null,
 		);
+		$options = array_merge( $defaults, $options );
+		$attributes = $this->generate_attributes( $options );
+		return self::remove_linefeed_space( sprintf(
+			'<input type="button" name="%s" value="%s"%s />',
+			esc_attr( $name ),
+			esc_attr( $value ),
+			$attributes
+		) );
+	}
+
+	/**
+	 * ボタン(button)生成
+	 *
+	 * @param string $name name属性
+	 * @param string $value value属性
+	 * @param array $options
+	 * @param string $element_content
+	 * @return string ボタン(button)
+	 */
+	public function button_button( $name, $value, $options = array(), $element_content = '' ) {
+		$defaults = array(
+			'class' => null,
+		);
+		$options = array_merge( $defaults, $options );
+		$attributes = $this->generate_attributes( $options );
+		return self::remove_linefeed_space( sprintf(
+			'<button type="button" name="%1$s" value="%2$s"%3$s>%4$s</button>',
+			esc_attr( $name ),
+			esc_attr( $value ),
+			$attributes,
+			wp_kses_post( $element_content )
+		) );
 	}
 
 	/**
@@ -571,10 +765,12 @@ class MW_WP_Form_Form {
 	 */
 	public function datepicker( $name, $options = array() ) {
 		$defaults = array(
-			'id'    => null,
-			'size'  => 30,
-			'js'    => '',
-			'value' => '',
+			'id'          => null,
+			'class'       => null,
+			'size'        => 30,
+			'js'          => '',
+			'value'       => '',
+			'placeholder' => null,
 		);
 		$options = array_merge( $defaults, $options );
 		$_options = $options;
@@ -589,9 +785,45 @@ class MW_WP_Form_Form {
 		$_ret .= sprintf(
 			'<script type="text/javascript">jQuery( function( $ ) { $("input[name=\'%s\']").datepicker( { %s } ); } );</script>',
 			esc_js( $name ),
-			$options['js']
+			trim( $options['js'], '{}' )
 		);
-		return $_ret;
+		return self::remove_linefeed_space( $_ret );
+	}
+
+	/**
+	 * monthpicker生成
+	 *
+	 * @param string $name name属性
+	 * @param string $options
+	 * @return string HTML
+	 */
+	public function monthpicker( $name, $options = array() ) {
+		$defaults = array(
+			'id'          => null,
+			'class'       => null,
+			'size'        => 30,
+			'js'          => '',
+			'value'       => '',
+			'placeholder' => null,
+		);
+		$options = array_merge( $defaults, $options );
+		$_options = $options;
+		unset( $_options['js'] );
+		$attributes = $this->generate_attributes( $_options );
+
+		$_ret = sprintf(
+			'<input type="text" name="%s"%s />',
+			esc_attr( $name ),
+			$attributes
+		);
+		if ( $name ) {
+			$_ret .= sprintf(
+				'<script type="text/javascript">jQuery( function( $ ) { $("input[name=\'%s\']").MonthPicker( { %s } ); } );</script>',
+				esc_js( $name ),
+				trim( $options['js'], '{}' )
+			);
+		}
+		return self::remove_linefeed_space( $_ret );
 	}
 
 	/**
@@ -603,16 +835,17 @@ class MW_WP_Form_Form {
 	 */
 	public function file( $name, $options = array() ) {
 		$defaults = array(
-			'id' => '',
+			'id'    => null,
+			'class' => null,
 		);
 		$options = array_merge( $defaults, $options );
 		$attributes = $this->generate_attributes( $options );
 
-		return sprintf(
-			'<input type="file" name="%s" /><span data-mwform-file-delete="%1$s" class="mwform-file-delete">&times;</span>',
+		return self::remove_linefeed_space( sprintf(
+			'<input type="file" name="%1$s"%2$s /><span data-mwform-file-delete="%1$s" class="mwform-file-delete">&times;</span>',
 			esc_attr( $name ),
 			$attributes
-		);
+		) );
 	}
 
 	/**
@@ -652,5 +885,17 @@ class MW_WP_Form_Form {
 			}
 			return $id;
 		}
+	}
+
+	/**
+	 * Removed linefeed codes, tabs and spaces
+	 *
+	 * @param string $string
+	 * @return string
+	 */
+	public static function remove_linefeed_space( $string ) {
+		$string = preg_replace( '/\s+\/>/', ' />', $string );
+		$string = preg_replace( '/>\s*</ms', '><', $string );
+		return $string;
 	}
 }

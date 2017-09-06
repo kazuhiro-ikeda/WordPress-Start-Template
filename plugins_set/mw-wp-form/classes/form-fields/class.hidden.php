@@ -2,12 +2,12 @@
 /**
  * Name       : MW WP Form Hidden
  * Description: hiddenフィールドを出力
- * Version    : 1.6.2
+ * Version    : 1.6.3
  * Author     : Takashi Kitajima
  * Author URI : http://2inc.org
  * Created    : December 14, 2012
- * Modified   : April 7, 2015
- * License    : GPLv2
+ * Modified   : September 28, 2016
+ * License    : GPLv2 or later
  * License URI: http://www.gnu.org/licenses/gpl-2.0.html
  */
 class MW_WP_Form_Field_Hidden extends MW_WP_Form_Abstract_Form_Field {
@@ -20,7 +20,7 @@ class MW_WP_Form_Field_Hidden extends MW_WP_Form_Abstract_Form_Field {
 	protected function set_names() {
 		return array(
 			'shortcode_name' => 'mwform_hidden',
-			'display_name'   => __( 'Hidden', MWF_Config::DOMAIN ),
+			'display_name'   => __( 'Hidden', 'mw-wp-form' ),
 		);
 	}
 
@@ -62,11 +62,11 @@ class MW_WP_Form_Field_Hidden extends MW_WP_Form_Abstract_Form_Field {
 	 */
 	protected function confirm_page() {
 		$value = $this->Data->get_raw( $this->atts['name'] );
-		$echo_value = '';
+		$echo = '';
 		if ( $this->atts['echo'] === 'true' ) {
-			$echo_value = $value;
+			$echo = $value;
 		}
-		return $echo_value . $this->Form->hidden( $this->atts['name'], $value );
+		return esc_html( $echo ) . $this->Form->hidden( $this->atts['name'], $value );
 	}
 
 	/**
@@ -81,14 +81,14 @@ class MW_WP_Form_Field_Hidden extends MW_WP_Form_Abstract_Form_Field {
 			<input type="text" name="name" value="<?php echo esc_attr( $name ); ?>" />
 		</p>
 		<p>
-			<strong><?php esc_html_e( 'Default value', MWF_Config::DOMAIN ); ?></strong>
+			<strong><?php esc_html_e( 'Default value', 'mw-wp-form' ); ?></strong>
 			<?php $value = $this->get_value_for_generator( 'value', $options ); ?>
 			<input type="text" name="value" value="<?php echo esc_attr( $value ); ?>" />
 		</p>
 		<p>
-			<strong><?php esc_html_e( 'Display', MWF_Config::DOMAIN ); ?></strong>
+			<strong><?php esc_html_e( 'Display', 'mw-wp-form' ); ?></strong>
 			<?php $echo = $this->get_value_for_generator( 'echo', $options ); ?>
-			<input type="checkbox" name="echo" value="true" <?php checked( 'true', $echo ); ?> /> <?php esc_html_e( 'Display hidden value.', MWF_Config::DOMAIN ); ?>
+			<input type="checkbox" name="echo" value="true" <?php checked( 'true', $echo ); ?> /> <?php esc_html_e( 'Display hidden value.', 'mw-wp-form' ); ?>
 		</p>
 		<?php
 	}

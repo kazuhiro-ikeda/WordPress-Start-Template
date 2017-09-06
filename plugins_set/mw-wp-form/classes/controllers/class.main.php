@@ -2,12 +2,12 @@
 /**
  * Name       : MW WP Form Main Controller
  * Description: フロントエンドにおいて、適切な画面にリダイレクトさせる
- * Version    : 1.0.6
+ * Version    : 1.5.1
  * Author     : Takashi Kitajima
  * Author URI : http://2inc.org
  * Created    : December 23, 2014
- * Modified   : May 11, 2015
- * License    : GPLv2
+ * Modified   : April 28, 2017
+ * License    : GPLv2 or later
  * License URI: http://www.gnu.org/licenses/gpl-2.0.html
  */
 class MW_WP_Form_Main_Controller {
@@ -40,7 +40,7 @@ class MW_WP_Form_Main_Controller {
 	/**
 	 * @var string
 	 */
-	protected $token_name = 'token';
+	protected $token_name = 'mw_wp_form_token';
 
 	/**
 	 * リダイレクトされてからの complete であれば true
@@ -70,7 +70,10 @@ class MW_WP_Form_Main_Controller {
 	 * WordPressへのリクエストに含まれている、$_POSTの値を削除
 	 */
 	public function remove_query_vars_from_post( $wp_query ) {
-		if ( strtolower( $_SERVER['REQUEST_METHOD'] ) === 'post' && isset( $_POST['token'] ) ) {
+		if ( isset( $_POST[$this->token_name] ) ) {
+			$request_token = $_POST[$this->token_name];
+		}
+		if ( isset( $request_token ) ) {
 			foreach ( $_POST as $key => $value ) {
 				if ( $key == 'token' ) {
 					continue;
@@ -136,8 +139,8 @@ class MW_WP_Form_Main_Controller {
 			$post_condition,
 			$this->Setting->get( 'querystring' )
 		);
-		$url      = $this->Redirected->get_url();
 		$view_flg = $this->Redirected->get_view_flg();
+		$this->Data->set_view_flg( $view_flg );
 
 		// confirm もしくは complete のとき
 		if ( in_array( $post_condition, array( 'confirm', 'complete' ) ) ) {
@@ -146,7 +149,7 @@ class MW_WP_Form_Main_Controller {
 		// complete のとき
 		if ( $view_flg === 'complete' ) {
 			if ( !$this->is_complete_twice() ) {
-				$this->send();
+				$is_mail_sended = $this->send();
 			}
 			// 手動フォームの場合は完了画面に ExecShortcode が無く footer の clear_values が
 			// 効かないためここで消す
@@ -154,6 +157,18 @@ class MW_WP_Form_Main_Controller {
 				$this->Data->clear_values();
 			}
 		}
+
+		if ( isset( $is_mail_sended ) && false === $is_mail_sended ) {
+			$this->Data->set_send_error();
+		} elseif ( isset( $is_mail_sended ) && true === $is_mail_sended ) {
+			do_action(
+				'mwform_after_send_' . $form_key,
+				$this->Data
+			);
+		}
+
+		do_action( 'mwform_before_redirect_' . $form_key );
+		$url = apply_filters( 'mwform_redirect_url_' . $form_key, $this->Redirected->get_url(), $this->Data );
 		$this->redirect( $url );
 
 		// スクロール用スクリプトのロード
@@ -213,6 +228,8 @@ class MW_WP_Form_Main_Controller {
 			$css = $styles[$style];
 			wp_enqueue_style( MWF_Config::NAME . '_style', $css );
 		}
+
+		do_action( 'mwform_enqueue_scripts_' . $this->ExecShortcode->get( 'key' ) );
 		wp_enqueue_script( MWF_Config::NAME, $url . '../../js/form.js', array( 'jquery' ), false, true );
 	}
 
@@ -233,7 +250,7 @@ class MW_WP_Form_Main_Controller {
 		) );
 		wp_enqueue_script( MWF_Config::NAME . '-scroll' );
 	}
-	
+
 	/**
 	 * Nginx Cache Controller 用に header をカスタマイズ
 	 *
@@ -247,16 +264,29 @@ class MW_WP_Form_Main_Controller {
 
 	/**
 	 * メール送信
+	 *
+	 * @return boolean
 	 */
 	protected function send() {
 		$Mail         = new MW_WP_Form_Mail();
-		$form_key     = $this->ExecShortcode->get( 'key' );
+		$form_key     = $this->Data->get_form_key();
 		$attachments  = $this->get_attachments();
 		$Mail_Service = new MW_WP_Form_Mail_Service( $Mail, $form_key, $this->Setting, $attachments );
 
 		// 管理画面で作成した場合だけ自動で送信
 		if ( $this->ExecShortcode->is_generated_by_formkey() ) {
-			$Mail_Service->send_admin_mail();
+			// データベース非保存の場合はファイルも保存されないので、メールで URL が飛ばないように消す
+			if ( !$this->Setting->get( 'usedb' ) ) {
+				foreach ( $attachments as $key => $attachment ) {
+					$this->Data->clear_value( $key );
+				}
+			}
+
+			$is_admin_mail_sended = $Mail_Service->send_admin_mail();
+
+			if ( ! $is_admin_mail_sended ) {
+				return false;
+			}
 
 			// 自動返信メールの送信
 			$automatic_reply_email = $this->Setting->get( 'automatic_reply_email' );
@@ -266,12 +296,14 @@ class MW_WP_Form_Main_Controller {
 					$automatic_reply_email
 				);
 				if ( $automatic_reply_email && !$is_invalid_mail_address ) {
-					$Mail_Service->send_reply_mail();
+					$is_reply_mail_sended = $Mail_Service->send_reply_mail();
 				}
 			}
 
 			// 問い合わせ番号を加算
 			$Mail_Service->update_tracking_number();
+
+			return true;
 		}
 	}
 
@@ -292,7 +324,24 @@ class MW_WP_Form_Main_Controller {
 				}
 				$filepath = MWF_Functions::fileurl_to_path( $upload_file_url );
 				if ( file_exists( $filepath ) ) {
-					$filepath            = MWF_Functions::move_temp_file_to_upload_dir( $filepath );
+					$form_key = $this->Data->get_form_key();
+					$new_upload_dir = apply_filters(
+						'mwform_upload_dir_' . $form_key,
+						'',
+						$this->Data,
+						$key
+					);
+					$new_filename = apply_filters(
+						'mwform_upload_filename_' . $form_key,
+						'',
+						$this->Data,
+						$key
+					);
+					$filepath = MWF_Functions::move_temp_file_to_upload_dir(
+						$filepath,
+						$new_upload_dir,
+						$new_filename
+					);
 					$new_upload_file_url = MWF_Functions::filepath_to_url( $filepath );
 					$this->Data->set( $key, $new_upload_file_url );
 					$attachments[$key]   = $filepath;
@@ -315,11 +364,13 @@ class MW_WP_Form_Main_Controller {
 		foreach ( $upload_files as $key => $file ) {
 			if ( $this->Validation->single_check( $key ) ) {
 				$files[$key] = $file;
+			} elseif ( isset( $files[$key] ) ) {
+				unset( $files[$key] );
 			}
 		}
 		$uploaded_files = $File->upload( $files );
-		$this->Data->set_upload_file_keys();
 		$this->Data->push_uploaded_file_keys( $uploaded_files );
+		$this->Data->regenerate_upload_file_keys();
 	}
 
 	/**
@@ -332,7 +383,7 @@ class MW_WP_Form_Main_Controller {
 			$request_token = $_POST[$this->token_name];
 		}
 		$values   = $this->Data->gets();
-		$form_key = $this->ExecShortcode->get( 'key' );
+		$form_key = $this->Data->get_form_key();
 		if ( isset( $request_token ) && wp_verify_nonce( $request_token, $form_key ) ) {
 			return true;
 		} elseif ( empty( $_POST ) && $values ) {
@@ -350,7 +401,7 @@ class MW_WP_Form_Main_Controller {
 	 */
 	public function mwform_form_end_html( $html ) {
 		if ( is_a( $this->ExecShortcode, 'MW_WP_Form_Exec_Shortcode' ) ) {
-			$form_key = $this->ExecShortcode->get( 'key' );
+			$form_key = $this->Data->get_form_key();
 			$html .= wp_nonce_field( $form_key, $this->token_name, true, false );
 			return $html;
 		}

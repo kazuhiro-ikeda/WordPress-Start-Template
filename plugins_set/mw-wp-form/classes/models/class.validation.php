@@ -7,7 +7,7 @@
  * Author URI : http://2inc.org
  * Created    : July 20, 2012
  * Modified   : April 15, 2015
- * License    : GPLv2
+ * License    : GPLv2 or later
  * License URI: http://www.gnu.org/licenses/gpl-2.0.html
  */
 class MW_WP_Form_Validation {
@@ -81,7 +81,7 @@ class MW_WP_Form_Validation {
 	 */
 	public function set_rules( MW_WP_Form_Setting $Setting ) {
 		$Data = MW_WP_Form_Data::getInstance();
-		
+
 		$rules = array();
 		$validations = $Setting->get('validation' );
 		if ( $validations ) {

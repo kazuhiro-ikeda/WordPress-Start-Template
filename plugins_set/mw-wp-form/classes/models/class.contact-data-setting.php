@@ -2,12 +2,12 @@
 /**
  * Name       : MW WP Form Contact Data Setting
  * Description: 管理画面クラス
- * Version    : 1.0.3
+ * Version    : 1.0.4
  * Author     : Takashi Kitajima
  * Author URI : http://2inc.org
  * Created    : January 1, 2015
- * Modified   : May 26, 2015
- * License    : GPLv2
+ * Modified   : February 2, 2017
+ * License    : GPLv2 or later
  * License URI: http://www.gnu.org/licenses/gpl-2.0.html
  */
 class MW_WP_Form_Contact_Data_Setting {
@@ -57,9 +57,9 @@ class MW_WP_Form_Contact_Data_Setting {
 		if ( MWF_Functions::is_contact_data_post_type( get_post_type( $post_id ) ) ) {
 			$this->post_id = $post_id;
 			$this->response_statuses = array(
-				'not-supported' => esc_html__( 'Not supported', MWF_Config::DOMAIN ),
-				'reservation'   => esc_html__( 'Reservation', MWF_Config::DOMAIN ),
-				'supported'     => esc_html__( 'Supported', MWF_Config::DOMAIN ),
+				'not-supported' => esc_html__( 'Not supported', 'mw-wp-form' ),
+				'reservation'   => esc_html__( 'Reservation', 'mw-wp-form' ),
+				'supported'     => esc_html__( 'Supported', 'mw-wp-form' ),
 			);
 
 			$post_custom = get_post_custom( $post_id );
@@ -164,9 +164,9 @@ class MW_WP_Form_Contact_Data_Setting {
 	/**
 	 * 保存
 	 *
-	 * @param bool $non_permit_keys_save_flg permit_keys以外のメタデータも更新する
+	 * @param bool $is_save_no_permit_value permit_keys以外のメタデータも更新する
 	 */
-	public function save( $non_permit_keys_save_flg = false ) {
+	public function save( $is_save_no_permit_value = false ) {
 		$permit_keys   = $this->get_permit_keys();
 		$permit_values = array();
 		foreach ( $permit_keys as $key ) {
@@ -174,7 +174,10 @@ class MW_WP_Form_Contact_Data_Setting {
 		}
 		update_post_meta( $this->post_id, MWF_config::CONTACT_DATA_NAME, $permit_values );
 
-		if ( $non_permit_keys_save_flg !== true ) {
+		$contact_data_post_type = get_post_type( $this->post_id );
+		do_action( 'mwform_contact_data_save-' . $contact_data_post_type, $this->post_id );
+
+		if ( $is_save_no_permit_value !== true ) {
 			return;
 		}
 
@@ -182,7 +185,7 @@ class MW_WP_Form_Contact_Data_Setting {
 			update_post_meta( $this->post_id, $key, $value );
 		}
 	}
-	
+
 	/**
 	 * データベースに保存に設定されているフォーム（投稿）を取得
 	 *

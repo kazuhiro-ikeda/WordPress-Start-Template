@@ -1,12 +1,12 @@
 <?php
 /**
  * Name       : MW WP Form Admin Controller
- * Version    : 1.1.1
+ * Version    : 1.2.0
  * Author     : Takashi Kitajima
  * Author URI : http://2inc.org
  * Created    : December 31, 2014
- * Modified   : April 15, 2015
- * License    : GPLv2
+ * Modified   : August 22, 2016
+ * License    : GPLv2 or later
  * License URI: http://www.gnu.org/licenses/gpl-2.0.html
  */
 class MW_WP_Form_Admin_Controller extends MW_WP_Form_Controller {
@@ -40,11 +40,11 @@ class MW_WP_Form_Admin_Controller extends MW_WP_Form_Controller {
 	 */
 	public function initialize() {
 		$Admin = new MW_WP_Form_Admin();
-		add_action( 'add_meta_boxes'            , array( $this , 'add_meta_boxes' ) );
-		add_filter( 'default_content'           , array( $this , 'default_content' ) );
-		add_action( 'media_buttons'             , array( $this , 'tag_generator' ) );
-		add_action( 'admin_enqueue_scripts'     , array( $this , 'admin_enqueue_scripts' ) );
-		add_action( 'save_post'                 , array( $Admin, 'save_post' ) );
+		add_action( 'add_meta_boxes'       , array( $this , 'add_meta_boxes' ) );
+		add_filter( 'default_content'      , array( $this , 'default_content' ) );
+		add_action( 'media_buttons'        , array( $this , 'tag_generator' ) );
+		add_action( 'admin_enqueue_scripts', array( $this , 'admin_enqueue_scripts' ) );
+		add_action( 'save_post'            , array( $Admin, 'save_post' ) );
 	}
 
 	/**
@@ -54,7 +54,7 @@ class MW_WP_Form_Admin_Controller extends MW_WP_Form_Controller {
 		// 完了画面内容
 		add_meta_box(
 			MWF_Config::NAME . '_complete_message_metabox',
-			__( 'Complete Message', MWF_Config::DOMAIN ),
+			__( 'Complete Message', 'mw-wp-form' ),
 			array( $this, 'complete_message' ),
 			MWF_Config::NAME, 'normal'
 		);
@@ -62,7 +62,7 @@ class MW_WP_Form_Admin_Controller extends MW_WP_Form_Controller {
 		// URL設定
 		add_meta_box(
 			MWF_Config::NAME . '_url',
-			__( 'URL Options', MWF_Config::DOMAIN ),
+			__( 'URL Options', 'mw-wp-form' ),
 			array( $this, 'url' ),
 			MWF_Config::NAME, 'normal'
 		);
@@ -70,7 +70,7 @@ class MW_WP_Form_Admin_Controller extends MW_WP_Form_Controller {
 		// バリデーション
 		add_meta_box(
 			MWF_Config::NAME . '_validation',
-			__( 'Validation Rule', MWF_Config::DOMAIN ),
+			__( 'Validation Rule', 'mw-wp-form' ),
 			array( $this, 'validation_rule' ),
 			MWF_Config::NAME, 'normal'
 		);
@@ -78,7 +78,7 @@ class MW_WP_Form_Admin_Controller extends MW_WP_Form_Controller {
 		// アドオン
 		add_meta_box(
 			MWF_Config::NAME . '_addon',
-			__( 'Add-ons', MWF_Config::DOMAIN ),
+			__( 'Add-ons', 'mw-wp-form' ),
 			array( $this, 'add_ons' ),
 			MWF_Config::NAME, 'side'
 		);
@@ -86,7 +86,7 @@ class MW_WP_Form_Admin_Controller extends MW_WP_Form_Controller {
 		// フォーム識別子
 		add_meta_box(
 			MWF_Config::NAME . '_formkey',
-			__( 'Form Key', MWF_Config::DOMAIN ),
+			__( 'Form Key', 'mw-wp-form' ),
 			array( $this, 'form_key' ),
 			MWF_Config::NAME, 'side'
 		);
@@ -94,7 +94,7 @@ class MW_WP_Form_Admin_Controller extends MW_WP_Form_Controller {
 		// 自動返信メール設定
 		add_meta_box(
 			MWF_Config::NAME . '_mail',
-			__( 'Automatic Reply Email Options', MWF_Config::DOMAIN ),
+			__( 'Automatic Reply Email Options', 'mw-wp-form' ),
 			array( $this, 'mail_options' ),
 			MWF_Config::NAME, 'side'
 		);
@@ -102,7 +102,7 @@ class MW_WP_Form_Admin_Controller extends MW_WP_Form_Controller {
 		// 管理者メール設定
 		add_meta_box(
 			MWF_Config::NAME . '_admin_mail',
-			__( 'Admin Email Options', MWF_Config::DOMAIN ),
+			__( 'Admin Email Options', 'mw-wp-form' ),
 			array( $this, 'admin_mail_options' ),
 			MWF_Config::NAME, 'side'
 		);
@@ -110,7 +110,7 @@ class MW_WP_Form_Admin_Controller extends MW_WP_Form_Controller {
 		// 設定
 		add_meta_box(
 			MWF_Config::NAME . '_settings',
-			__( 'settings', MWF_Config::DOMAIN ),
+			__( 'settings', 'mw-wp-form' ),
 			array( $this, 'settings' ),
 			MWF_Config::NAME, 'side'
 		);
@@ -119,7 +119,7 @@ class MW_WP_Form_Admin_Controller extends MW_WP_Form_Controller {
 		if ( $this->styles ) {
 			add_meta_box(
 				MWF_Config::NAME . '_styles',
-				__( 'Style setting', MWF_Config::DOMAIN ),
+				__( 'Style setting', 'mw-wp-form' ),
 				array( $this, 'style' ),
 				MWF_Config::NAME, 'side'
 			);
@@ -203,13 +203,14 @@ class MW_WP_Form_Admin_Controller extends MW_WP_Form_Controller {
 	 * 管理者メール設定
 	 */
 	public function admin_mail_options() {
-		$this->assign( 'mail_to'           , $this->get_option( 'mail_to' ) );
-		$this->assign( 'mail_cc'           , $this->get_option( 'mail_cc' ) );
-		$this->assign( 'mail_bcc'          , $this->get_option( 'mail_bcc' ) );
-		$this->assign( 'admin_mail_subject', $this->get_option( 'admin_mail_subject' ) );
-		$this->assign( 'admin_mail_sender' , $this->get_option( 'admin_mail_sender' ) );
-		$this->assign( 'admin_mail_from'   , $this->get_option( 'admin_mail_from' ) );
-		$this->assign( 'admin_mail_content', $this->get_option( 'admin_mail_content' ) );
+		$this->assign( 'mail_to'               , $this->get_option( 'mail_to' ) );
+		$this->assign( 'mail_cc'               , $this->get_option( 'mail_cc' ) );
+		$this->assign( 'mail_bcc'              , $this->get_option( 'mail_bcc' ) );
+		$this->assign( 'admin_mail_subject'    , $this->get_option( 'admin_mail_subject' ) );
+		$this->assign( 'admin_mail_sender'     , $this->get_option( 'admin_mail_sender' ) );
+		$this->assign( 'mail_return_path'      , $this->get_option( 'mail_return_path' ) );
+		$this->assign( 'admin_mail_from'       , $this->get_option( 'admin_mail_from' ) );
+		$this->assign( 'admin_mail_content'    , $this->get_option( 'admin_mail_content' ) );
 		$this->render( 'admin/admin-mail-options' );
 	}
 
@@ -278,7 +279,7 @@ class MW_WP_Form_Admin_Controller extends MW_WP_Form_Controller {
 			$value = $Setting->get( $key );
 		}
 
-		if ( !is_null( $value ) ) {
+		if ( !empty( $value ) ) {
 			return $value;
 		} else {
 			$date     = $post->post_date;

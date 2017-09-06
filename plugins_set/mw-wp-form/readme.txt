@@ -1,11 +1,11 @@
 === MW WP Form ===
-Contributors: inc2734, ryu263, tomothumb, nanniku
+Contributors: inc2734, ryu263, tomothumb, nanniku, mt8.biz, NExt-Season, kuck1u, mypacecreator, mh35
 Donate link: http://www.amazon.co.jp/registry/wishlist/39ANKRNSTNW40
 Tags: plugin, form, confirm, preview, shortcode, mail, chart, graph, html, contact form, form creation, form creator, form manager, form builder, custom form
-Requires at least: 3.7
-Tested up to: 4.2.2
-Stable tag: 2.4.12
-License: GPLv2
+Requires at least: 4.0
+Tested up to: 4.7.4
+Stable tag: 3.2.1
+License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 MW WP Form is shortcode base contact form plugin. This plugin have many feature. For example you can use many validation rules, contact data saving, and chart aggregation using saved contact data.
@@ -40,7 +40,7 @@ https://github.com/inc2734/mw-wp-form
 
 = The following third-party resources =
 
-Google Charts 
+Google Charts
 Source: https://developers.google.com/chart/
 
 = Contributors =
@@ -49,6 +49,13 @@ Source: https://developers.google.com/chart/
 * [Ryujiro Yamamoto](http://webcre-archive.com) ( [ryu263](http://profiles.wordpress.org/ryu263) )
 * [Tsujimoto Tomoyuki](http://kee-non.com) ( [tomothumb](http://profiles.wordpress.org/tomothumb) )
 * [Naoyuki Ohata] ( [nanniku](http://profiles.wordpress.org/nanniku) )
+* [Kazuto Takeshita](http://mt8.biz/) ( [moto hachi](https://profiles.wordpress.org/mt8biz/) )
+* [Atsushi Ando](http://www.next-season.net/) ( [NExt-Season](https://profiles.wordpress.org/next-season/) )
+* [Kazuki Tomiyasu](http://visualive.jp/) ( [KUCKLU](https://profiles.wordpress.org/kuck1u/) )
+* [Kei Nomura](http://mypacecreator.net/) ( [mypacecreator](https://profiles.wordpress.org/mypacecreator/) )
+* [mh35](https://profiles.wordpress.org/mh35)
+* [Takashi Nojima](https://github.com/nojimage)
+* [herikutu](https://github.com/herikutu)
 
 == Installation ==
 
@@ -73,16 +80,153 @@ Do you have questions or issues with MW WP Form? Use these support channels appr
 
 == Changelog ==
 
-= 2.4.12
-= Bugfix  : filter hook 'mwform_value_mwf_xxx' does not work when to use radio or checkboxes.
-= Changed : Changed checkbox default separator ', ' to ','.
+= 3.2.1 =
+* Bugfix  : Fixed a bug that displayed send error page when admin mail address is `false`.
 
-= 2.4.11
-= Bugfix  : Fixed a bug that attachment file does not displayed in contact data list page.
-= Changed : Trim email address on inputs.
+= 3.2.0 =
+* Added   : Added process of mail sending error. When failed mail sending, displayed mail sending error page.
+* Added   : Added filter hook mwform_is_mail_sended
+* Added   : Added filter hook mwform_send_error_content_raw_mw-wp-form-xxx
+* Added   : Added filter hook mwform_send_error_content_mw-wp-form-xxx
 
-= 2.4.10
-= Bugfix  : Fixed a bug that does not scroll when you return to the input screen.
+= 3.1.0 =
+* Added   : Added the month picker field.
+
+= 3.0.1 =
+* Bugfix  : Fixed a bug of action hook mwform_contact_data_save-mwf_xxx
+
+= 3.0.0 =
+* Added   : Added method MWF_Functions::get_form_id_from_form_key( $form_key );
+* Added   : Added action hook mwform_after_exec_shortcode
+* Added   : Added action hook mwform_before_load_content_mw-wp-form-xxx
+* Added   : Added action hook mwform_after_load_content_mw-wp-form-xxx
+* Added   : Added action hook mwform_before_redirect_mw-wp-form-xxx
+* Added   : Added filter hook mwform_redirect_url_mw-wp-form-xxx
+* Added   : Added filter hook mwform_complete_content_raw_mw-wp-form-xxx
+* Added   : Added action hook mwform_settings_meta_box
+* Added   : Added action hook mwform_settings_save_mw-wp-form-xxx
+* Added   : Added action hook mwform_contact_data_save-mwf_xxx
+
+= 2.14.2 =
+* Bugfix  : Fixed type on japanese.
+
+= 2.14.1 =
+* Bugfix  : Fixed a bug that automatic linefeed affects markup of radio and checkbox.
+
+= 2.14.0 =
+* Changed : Update debug log format.
+* Changed : Update checkbox and radio field markup.
+
+= 2.13.1 =
+* Bugfix  : Fix undefined constant error FILEINFO_MIME_TYPE
+
+= 2.13.0 =
+* Added   : Added the button elements.
+* Added   : Added filter hook mwform_custom_mail_tag
+* Added   : Added Method MW_WP_Form_Data::get_view_flg()
+
+= 2.12.0 =
+* Added   : Added filter hook mwform_complete_content_mw-wp-form-xxx
+* Changed : Changed to pass MW_WP_Form_Data object as the 2nd argument of mwform_post_content_mw-wp-form-xxx hook.
+
+= 2.11.0 =
+* Bugfix  : Fixed a bug that to remove the uploaded file when filesize validation error.
+* Bugfix  : Fixed a bug that removing temp files only when uploading is success.
+* Bugfix  : Fixed a bug that xss vulnerability exists in the echo option is enabled in the hidden field.
+
+= 2.10.0 =
+* Added   : Added filter hook mwform_translate_datepicker_mw-wp-form-xxx
+
+= 2.9.0 =
+* Added   : Added the Return-Path setting.
+
+= 2.8.3 =
+* Added   : Added the upload failure of the error message in filesize validation.
+
+= 2.8.2 =
+* Bugfix  : Fixed a json parser bug.
+
+= 2.8.1 =
+* Added   : Added MinImageSize validation.
+* Added   : Added MaxImageSize validation.
+* Bugfix  : Fixed a set_upload_file_keys bug and rename to regenerate_upload_file_keys.
+
+= 2.8.0 =
+* Added   : Support slug attribute. e.g. [mwform_formkey slug="form_slug"]
+* Added   : Added filter hook mwform_inquiry_data_columns-mwf_xxx
+* Added   : Added filter hook mwform_upload_file_keys_mw-wp-form-xxx
+* Added   : Added args of filter hook mwform_upload_dir_mw-wp-form-xxx and mwform_upload_filename_mw-wp-form-xxx
+* Added   : Added the Custom Mail Tag field. This field display value of mwform_custom_mail_tag_mw-wp-form-xxx.
+* Bugfix  : docx, xlsx, pptx upload bug fixed.
+* Bugfix  : Fixed a bug that the extension isn't added when using filter hook mwform_upload_filename_mw-wp-form-xxx.
+* Changed : Sending the file url when saving in database and input {file key} and {image key} in the mail.
+* Changed : Check of the js attribute of datepicker is now strictly. Property MUST be enclosed in double quotes.
+* Changed : Changed the form token name.
+
+= 2.7.0 =
+* Added   : Added Method MW_WP_Form_Mail_Parser::get_saved_mail_id()
+* Added   : Added Method MW_WP_Form_Mail::get_saved_mail_id()
+* Added   : Added filter hook mwform_upload_dir_mw-wp-form-xxx
+* Added   : Added filter hook mwform_upload_filename_mw-wp-form-xxx
+* Added   : Added filter hook mwform_no_save_keys_mw-wp-form-xxx
+* Changed : Changed to save the default values of contact data meta data at the time of email saved.
+* Bugfix  : Fixed a bug that e-mail is not sent when the "from" is in violation of the RFC.
+
+= 2.6.4 =
+* Added   : Add filter hook mwform_content_wpautop_mw-wp-form-xxx
+* Added   : Add argument at mwform_after_send_mw-wp-form-xxx
+* Added   : Add method MW_WP_Form_Data::get_form_key()
+
+= 2.6.3 =
+* Bugfix  : Fixed a eq validation bug.
+
+= 2.6.2 =
+* Bugfix  : Fixed a bug that class attribute can't set at radio.
+* Bugfix  : Fixed a bug that id and class attribute can't set at file.
+
+= 2.6.1 =
+* Changed : Removed for the Generator code.
+* Bugfix  : Fixed a bug that mwform_default_settings doesn't fired.
+
+= 2.6.0 =
+* Bugfix  : JavaScript bug fix on validation.
+* Changed : Multilingual support. Changed domain.
+* Changed : Changed radio and checkbox style.
+* Added   : Added the class attribute setting.
+
+= 2.5.3 =
+* Added   : Japanese zip code validation allows the format of the form 0000000.
+* Bugfix  : Fixed a date validation bug.
+
+= 2.5.2 =
+* Added   : Add new validation rule japanese kana.
+* Added   : Add action hook mwform_before_send_admin_mail_mw-wp-form-xxx.
+* Added   : Add action hook mwform_before_send_reply_mail_mw-wp-form-xxx.
+* Added   : Add action hook mwform_after_send_mw-wp-form-xxx.
+* Added   : Add action hook mwform_enqueue_scripts_mw-wp-form-xxx.
+
+= 2.5.1 =
+* Update readme.txt
+
+= 2.5.0 =
+* Added   : Add html5 email field.
+* Added   : Add html5 url field.
+* Added   : Add html5 range field.
+* Added   : Add html5 number field.
+* Added   : Support attribute placeholder in datepicker.
+* Changed : maxlength default value is null.
+* Bugfix  : Fixed a bug that is CC and BCC have been overlapping sent when To is multiple.
+
+= 2.4.12 =
+* Bugfix  : filter hook 'mwform_value_mwf_xxx' does not work when to use radio or checkboxes.
+* Changed : Changed checkbox default separator ', ' to ','.
+
+= 2.4.11 =
+* Bugfix  : Fixed a bug that attachment file does not displayed in contact data list page.
+* Changed : Trim email address on inputs.
+
+= 2.4.10 =
+* Bugfix  : Fixed a bug that does not scroll when you return to the input screen.
 
 = 2.4.9 =
 * Bugfix  : Fixes a bug that the value of last checkbox is only posted when multiple same name checkboxes created and those post_raw is true.

@@ -1,12 +1,12 @@
 <?php
 /**
  * Name       : MW WP Form Setting
- * Version    : 1.0.1
+ * Version    : 1.3.0
  * Author     : Takashi Kitajima
  * Author URI : http://2inc.org
  * Created    : December 31, 2014
- * Modified   : April 15, 2015
- * License    : GPLv2
+ * Modified   : January 30, 2017
+ * License    : GPLv2 or later
  * License URI: http://www.gnu.org/licenses/gpl-2.0.html
  */
 class MW_WP_Form_Setting {
@@ -16,6 +16,18 @@ class MW_WP_Form_Setting {
 	 * @var int
 	 */
 	protected $post_id;
+
+	/**
+	 * URL引数を有効にするかどうか
+	 * @var false|1
+	 */
+	protected $querystring = false;
+
+	/**
+	 * 問い合わせデータを保存するかどうか
+	 * @var false|1
+	 */
+	protected $usedb = false;
 
 	/**
 	 * 自動返信メールの題名
@@ -72,6 +84,12 @@ class MW_WP_Form_Setting {
 	protected $admin_mail_subject = '';
 
 	/**
+	 * Return-Path
+	 * @var string
+	 */
+	protected $mail_return_path = '';
+
+	/**
 	 * 管理者メールの送信元
 	 * @var string
 	 */
@@ -88,18 +106,6 @@ class MW_WP_Form_Setting {
 	 * @var string
 	 */
 	protected $admin_mail_content = '';
-
-	/**
-	 * URL引数を有効にするかどうか
-	 * @var false|1
-	 */
-	protected $querystring = false;
-
-	/**
-	 * 問い合わせデータを保存するかどうか
-	 * @var false|1
-	 */
-	protected $usedb = false;
 
 	/**
 	 * akismet送信者の対象とするフォームフィールドのname属性
@@ -230,6 +236,8 @@ class MW_WP_Form_Setting {
 			$new_values[$key] = $value;
 		}
 		update_post_meta( $this->post_id, MWF_Config::NAME, $new_values );
+		$form_key = MWF_Functions::get_form_key_from_form_id( $this->post_id );
+		do_action( 'mwform_settings_save_' . $form_key, $this->post_id );
 	}
 
 	/**

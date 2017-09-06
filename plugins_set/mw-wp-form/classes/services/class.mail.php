@@ -1,12 +1,12 @@
 <?php
 /**
  * Name       : MW WP Form Mail Service
- * Version    : 1.1.3
+ * Version    : 1.4.1
  * Author     : Takashi Kitajima
  * Author URI : http://2inc.org
  * Created    : January 1, 2015
- * Modified   : April 14, 2015
- * License    : GPLv2
+ * Modified   : May 4, 2017
+ * License    : GPLv2 or later
  * License URI: http://www.gnu.org/licenses/gpl-2.0.html
  */
 class MW_WP_Form_Mail_Service {
@@ -79,52 +79,84 @@ class MW_WP_Form_Mail_Service {
 
 	/**
 	 * 管理者メールの送信とデータベースへの保存
+	 *
+	 * @return boolean
 	 */
 	public function send_admin_mail() {
-		// save_mail_body でファイルURLではなくファイルのIDが保存されるように
-		foreach ( $this->attachments as $key => $attachment ) {
-			$this->Data->clear_value( $key );
-		}
-
+		$Mail_admin = $this->get_parsed_mail_object( $this->Mail_admin_raw );
 		if ( $this->Setting->get( 'usedb' ) ) {
-			$Mail_admin = $this->get_parsed_mail_object( $this->Mail_admin_raw, true );
-		} else {
-			$Mail_admin = $this->get_parsed_mail_object( $this->Mail_admin_raw );
+			$Mail_admin_for_save = clone $this->Mail_admin_raw;
 		}
 
 		$Mail_admin->set_admin_mail_reaquire_params();
 		$Mail_admin = $this->apply_filters_mwform_mail( $Mail_admin );
 		$Mail_admin = $this->apply_filters_mwform_admin_mail( $Mail_admin );
-		$Mail_admin->send();
+		do_action(
+			'mwform_before_send_admin_mail_' . $this->form_key,
+			clone $Mail_admin,
+			clone $this->Data
+		);
+		$is_admin_mail_sended = $Mail_admin->send();
+
+		// to が false の場合は意図的に送信していない（例えばDB保存だけおこないたい等）ということなので
+		// 送信エラー画面が表示されるのはおかしい。そのためここでは true を返す
+		if ( ! $Mail_admin->to ) {
+			$is_admin_mail_sended = true;
+		}
+
+		if ( isset( $Mail_admin_for_save ) && $is_admin_mail_sended ) {
+			$saved_mail_id = $this->save( $Mail_admin_for_save );
+			$Contact_Data_Setting = new MW_WP_Form_Contact_Data_Setting( $saved_mail_id );
+			$Contact_Data_Setting->save();
+		}
 
 		// DB非保存時は管理者メール送信後、ファイルを削除
 		if ( !$this->Setting->get( 'usedb' ) ) {
 			$File = new MW_WP_Form_File();
 			$File->delete_files( $this->attachments );
 		}
+
+		return $is_admin_mail_sended;
 	}
 
 	/**
 	 * パースしたMailオブジェクトの取得とデータベースへの保存
 	 *
 	 * @param MW_WP_Form_Mail $_Mail
-	 * @param bool $do_update
 	 * @return MW_WP_Form_Mail
 	 */
-	protected function get_parsed_mail_object( MW_WP_Form_Mail $_Mail, $do_update = false ) {
+	protected function get_parsed_mail_object( MW_WP_Form_Mail $_Mail ) {
 		$Mail = clone $_Mail;
-		$Mail->parse( $this->Setting, $do_update );
+		$Mail->parse( $this->Setting );
 		return $Mail;
 	}
 
 	/**
+	 * メールをデータベースに保存し、保存されたメール（投稿）の ID を返す
+	 *
+	 * @param MW_WP_Form_Mail $Mail
+	 * @return int 保存されたメール（投稿）の ID
+	 */
+	protected function save( MW_WP_Form_Mail $Mail ) {
+		return $Mail->save( $this->Setting );
+	}
+
+	/**
 	 * 自動返信メールの送信
+	 *
+	 * @return boolean
 	 */
 	public function send_reply_mail() {
 		$Mail_auto = $this->get_parsed_mail_object( $this->Mail_auto_raw );
 		$Mail_auto->set_reply_mail_reaquire_params();
 		$Mail_auto = $this->apply_filters_mwform_auto_mail( $Mail_auto );
-		$Mail_auto->send();
+		do_action(
+			'mwform_before_send_reply_mail_' . $this->form_key,
+			clone $Mail_auto,
+			clone $this->Data
+		);
+		$is_reply_mail_sended = $Mail_auto->send();
+		return $is_reply_mail_sended;
 	}
 
 	/**

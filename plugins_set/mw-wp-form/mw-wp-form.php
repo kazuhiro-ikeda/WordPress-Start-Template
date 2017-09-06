@@ -3,14 +3,14 @@
  * Plugin Name: MW WP Form
  * Plugin URI: http://plugins.2inc.org/mw-wp-form/
  * Description: MW WP Form is shortcode base contact form plugin. This plugin have many feature. For example you can use many validation rules, contact data saving, and chart aggregation using saved contact data.
- * Version: 2.4.12
+ * Version: 3.2.1
  * Author: Takashi Kitajima
  * Author URI: http://2inc.org
  * Created : September 25, 2012
- * Modified: June 23, 2015
+ * Modified: May 4, 2017
  * Text Domain: mw-wp-form
  * Domain Path: /languages/
- * License: GPLv2
+ * License: GPLv2 or later
  * License URI: http://www.gnu.org/licenses/gpl-2.0.html
  */
 include_once( plugin_dir_path( __FILE__ ) . 'classes/functions.php' );
@@ -37,10 +37,12 @@ class MW_WP_Form {
 		'alphanumeric'  => '',
 		'katakana'      => '',
 		'hiragana'      => '',
+		'kana'          => '',
 		'zip'           => '',
 		'tel'           => '',
 		'mail'          => '',
 		'date'          => '',
+		'month'         => '',
 		'url'           => '',
 		'eq'            => '',
 		'between'       => '',
@@ -107,6 +109,7 @@ class MW_WP_Form {
 		include_once( $plugin_dir_path . 'classes/models/class.session.php' );
 		include_once( $plugin_dir_path . 'classes/models/class.setting.php' );
 		include_once( $plugin_dir_path . 'classes/models/class.validation.php' );
+		include_once( $plugin_dir_path . 'classes/models/class.json-parser.php' );
 		include_once( $plugin_dir_path . 'classes/services/class.mail-parser.php' );
 		include_once( $plugin_dir_path . 'classes/services/class.exec-shortcode.php' );
 		include_once( $plugin_dir_path . 'classes/services/class.mail.php' );
@@ -117,7 +120,7 @@ class MW_WP_Form {
 	 * initialize
 	 */
 	public function initialize() {
-		load_plugin_textdomain( MWF_Config::DOMAIN, false, basename( dirname( __FILE__ ) ) . '/languages' );
+		load_plugin_textdomain( 'mw-wp-form', false, basename( dirname( __FILE__ ) ) . '/languages' );
 
 		add_action( 'after_setup_theme', array( $this, 'after_setup_theme' ), 11 );
 		add_action( 'init', array( $this, 'register_post_type' ) );
@@ -163,8 +166,8 @@ class MW_WP_Form {
 
 		add_submenu_page(
 			'edit.php?post_type=' . MWF_Config::NAME,
-			esc_html__( 'Chart', MWF_Config::DOMAIN ),
-			esc_html__( 'Chart', MWF_Config::DOMAIN ),
+			esc_html__( 'Chart', 'mw-wp-form' ),
+			esc_html__( 'Chart', 'mw-wp-form' ),
 			MWF_Config::CAPABILITY,
 			MWF_Config::NAME . '-chart',
 			array( $this, 'display_chart' )
@@ -192,8 +195,8 @@ class MW_WP_Form {
 
 		add_submenu_page(
 			'edit.php?post_type=' . MWF_Config::NAME,
-			__( 'Inquiry data', MWF_Config::DOMAIN ),
-			__( 'Inquiry data', MWF_Config::DOMAIN ),
+			__( 'Inquiry data', 'mw-wp-form' ),
+			__( 'Inquiry data', 'mw-wp-form' ),
 			MWF_Config::CAPABILITY,
 			MWF_Config::NAME . '-save-data',
 			array( $this, 'display_stores_inquiry_data_form_list' )
@@ -250,7 +253,6 @@ class MW_WP_Form {
 	 * @param WP_Screen $screen
 	 */
 	public function current_screen( $screen ) {
-		$contact_data_post_types = MW_WP_Form_Contact_Data_Setting::get_posts();
 		if ( $screen->id === MWF_Config::NAME ) {
 			$validation_rules = $this->get_validation_rules();
 			$Controller = new MW_WP_Form_Admin_Controller( $validation_rules );
@@ -288,13 +290,13 @@ class MW_WP_Form {
 			'labels'   => array(
 				'name' => 'MW WP Form',
 				'singular_name'      => 'MW WP Form',
-				'add_new_item'       => __( 'Add New Form', MWF_Config::DOMAIN ),
-				'edit_item'          => __( 'Edit Form', MWF_Config::DOMAIN ),
-				'new_item'           => __( 'New Form', MWF_Config::DOMAIN ),
-				'view_item'          => __( 'View Form', MWF_Config::DOMAIN ),
-				'search_items'       => __( 'Search Forms', MWF_Config::DOMAIN ),
-				'not_found'          => __( 'No Forms found', MWF_Config::DOMAIN ),
-				'not_found_in_trash' => __( 'No Forms found in Trash', MWF_Config::DOMAIN ),
+				'add_new_item'       => __( 'Add New Form', 'mw-wp-form' ),
+				'edit_item'          => __( 'Edit Form', 'mw-wp-form' ),
+				'new_item'           => __( 'New Form', 'mw-wp-form' ),
+				'view_item'          => __( 'View Form', 'mw-wp-form' ),
+				'search_items'       => __( 'Search Forms', 'mw-wp-form' ),
+				'not_found'          => __( 'No Forms found', 'mw-wp-form' ),
+				'not_found_in_trash' => __( 'No Forms found in Trash', 'mw-wp-form' ),
 			),
 			'capability_type' => 'page',
 			'public'          => false,
@@ -311,11 +313,11 @@ class MW_WP_Form {
 				'labels' => array(
 					'name'               => $form->post_title,
 					'singular_name'      => $form->post_title,
-					'edit_item'          => __( 'Edit ', MWF_Config::DOMAIN ) . ':' . $form->post_title,
-					'view_item'          => __( 'View', MWF_Config::DOMAIN ) . ':' . $form->post_title,
-					'search_items'       => __( 'Search', MWF_Config::DOMAIN ) . ':' . $form->post_title,
-					'not_found'          => __( 'No data found', MWF_Config::DOMAIN ),
-					'not_found_in_trash' => __( 'No data found in Trash', MWF_Config::DOMAIN ),
+					'edit_item'          => __( 'Edit ', 'mw-wp-form' ) . ':' . $form->post_title,
+					'view_item'          => __( 'View', 'mw-wp-form' ) . ':' . $form->post_title,
+					'search_items'       => __( 'Search', 'mw-wp-form' ) . ':' . $form->post_title,
+					'not_found'          => __( 'No data found', 'mw-wp-form' ),
+					'not_found_in_trash' => __( 'No data found in Trash', 'mw-wp-form' ),
 				),
 				'capability_type' => 'page',
 				'public'          => false,
