@@ -1,10 +1,9 @@
 <?php get_header(); ?>
 
 <div id="main" <?php post_class(); ?> role="main">
-	
-	<div class="ttl_case_line em6"><span>募集要項一覧</span></div>
 
 	<section id="loop">
+		<div class="ttl_case_line em6"><span>募集要項一覧</span></div>
 		
 		<?php get_template_part( 'nav_p' ); ?>
 	
