@@ -4,16 +4,15 @@
 	
 	<div class="ttl_page_sub">
 		<?php if(is_tax('genre', 'style_a')): ?>
-		受付・事務
+		職種１
 		
 		<?php elseif(is_tax('genre', 'style_b')): ?>
-		総務・経理
-		
+		職種２		
 		<?php elseif(is_tax('genre', 'style_c')): ?>
-		医療事務
+		職種３
 		
 		<?php elseif(is_tax('genre', 'style_d')): ?>
-		その他
+		職種４
 		
 		<?php endif; ?>
 	</div>

@@ -2,7 +2,7 @@
 
 <div id="main" <?php post_class(); ?> role="main">
 	
-	<div class="ttl_page_sub">応募フォーム</div>
+	<div class="ttl_case_line em8"><span>お問合せフォーム</span></div>
 
 	<?php $template_slug = get_post($wp_query->post->ID)->post_name; ?>
 	<?php get_template_part( 'parts/'.$template_slug ); ?>
@@ -18,11 +18,10 @@
 			
 			<p class="thanks-text">営業日３日以内を目安にご連絡をさしあげますので <br>
 				もうしばらくお待ちくださいませ。 <br><br>
-				xxxxx<br>
-				〒xxxxxx<br>
-				xxxxxx<br>
-				TEL xxxxxx<br>
-				TEL：xxxxxx</p>
+				Company Name<br>
+				〒zip-code<br>
+				address<br>
+				TEL 0000-00-0000</p>
 	
 			<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 			<?php remove_filter ( 'the_content', 'wpautop' ); ?>

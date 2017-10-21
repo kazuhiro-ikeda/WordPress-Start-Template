@@ -1,60 +1,104 @@
 @charset "utf-8";
 /*	case
 ---------------------------------*/
-$style_a: #00a98d;
-$style_b: #00b5ee;
-$style_c: #f18d00;
-$style_d: #8cc63f;
+$style_a: #799ECB;
+$style_b: #796DA5;
+$style_c: #0089BD;
+$style_d: #73BCC0;
 
-$area_a: #00a98d;
-$area_b: #00b5ee;
-$area_c: #f18d00;
-$area_d: #8cc63f;
+$area_a: #799ECB;
+$area_b: #796DA5;
+$area_c: #0089BD;
+$area_d: #73BCC0;
 
 $odd: #808080;
 $even: #666666;
 
-//archive top
-#case_archive_attention {
+//ttl
+.ttl_case_line {
 	width: 980px;
-	margin: 0 auto 50px;
+	margin: 0 auto 20px;
+	font-size: 20px;
+	letter-spacing: 3px;
+	font-weight: bold;
+	position: relative;
 	
 	@media screen and (max-width: $viewport) {
-		width: 94%;
-		margin: 0 auto 5vw;
+		width: 100%;
+		margin: 0 auto 3vw;
+		font-size: 20px;
+		letter-spacing: 0;
+		font-weight: bold;
+		position: relative;
 	}
 	
-	> p {
-		color: #00a98d;
-		font-size: 24px;
-		line-height: 150%;
-		margin-bottom: 30px;
-		
-		@media screen and (max-width: $viewport) {
-			color: #00a98d;
-			font-size: 18px;
-			line-height: 150%;
-			margin-bottom: 5vw;
+	> span {
+		display: inline-block;
+		background: white;
+		padding-right: 5px;
+	}
+	
+	&::before {
+		content: url(../images/case/dice.png);
+		padding-right: 5px;
+		position: relative;
+		top: 1px;
+	}
+	
+	&.em4 {
+		&::after {
+			content: "";
+			border-top: 1px solid silver;
+			position: absolute;
+			top: 50%;
+			left: 7em;
+			width: calc(100% - 7em);
 		}
 	}
 	
-	> ul {
-		line-height: 200%;
-		margin-bottom: 60px;
-		font-size: 16px;
-		
-		@media screen and (max-width: $viewport) {
-			margin-bottom: 5vw;
+	&.em5 {
+		&::after {
+			content: "";
+			border-top: 1px solid silver;
+			position: absolute;
+			top: 50%;
+			left: 8em;
+			width: calc(100% - 8em);
 		}
 	}
 	
-	> h2 {
-		margin-bottom: 60px;
-		
-		@media screen and (max-width: $viewport) {
-			margin-bottom: 5vw;
+	&.em6 {
+		&::after {
+			content: "";
+			border-top: 1px solid silver;
+			position: absolute;
+			top: 50%;
+			left: 9em;
+			width: calc(100% - 9em);
 		}
 	}
+	
+	&.em7 {
+		&::after {
+			content: "";
+			border-top: 1px solid silver;
+			position: absolute;
+			top: 50%;
+			left: 10em;
+			width: calc(100% - 10em);
+		}
+	}
+	
+	&.em8 {
+		&::after {
+			content: "";
+			border-top: 1px solid silver;
+			position: absolute;
+			top: 50%;
+			left: 11em;
+			width: calc(100% - 11em);
+		}
+	}	
 }
 
 //nav

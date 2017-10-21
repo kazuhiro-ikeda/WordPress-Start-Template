@@ -18,7 +18,7 @@
 	}
 	</script>
 	
-	<div class="ttl_page_sub">募集要項</div>
+	<div class="ttl_case_line em4"><span>募集要項</span></div>
 
 	<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 	<?php remove_filter ( 'the_content', 'wpautop' ); ?>
@@ -125,7 +125,7 @@
 				$gallery = get_field('gallery');
 				if( !empty($pr) || !empty($img_wide) || !empty($gallery)):
 			?>
-			<h2 class="ttl_sec_case branch"><img src="<?php bloginfo( 'template_url' ); ?>/images/entry/ttl_pr.png" alt="PR Contents"></h2>
+			<h2 class="ttl_sec_case branch"><img src="<?php bloginfo( 'template_url' ); ?>/images/case/ttl_pr.png" alt="PR Contents"></h2>
 			
 			<?php endif; ?>
 			
@@ -221,7 +221,7 @@
 			<!-- /#gallery -->
 			
 			<section id="requirements">
-				<h2 class="ttl_sec_case branch"><img src="<?php bloginfo( 'template_url' ); ?>/images/entry/ttl_requirements.png" alt="募集要項"></h2>
+				<h2 class="ttl_sec_case branch"><img src="<?php bloginfo( 'template_url' ); ?>/images/case/ttl_requirements.png" alt="募集要項"></h2>
 				<table>
 					<?php if( get_field("job")): ?>
 					<tr>
@@ -333,9 +333,9 @@
 			<a id="btn_entry" href="<?php echo esc_url(home_url('/')); ?>?page_id=35&post_id=<?php echo $post->ID; ?>">応募フォームに進む</a>
 			
 			<?php $state = get_field("link_tel"); if($state == 'ON'): ?>
-			<p class="block_p linktel_p"><span class="label">お電話でのご応募</span>TEL <span class="number">0120-23-1055</span></p>
+			<p class="block_p linktel_p"><span class="label">お電話でのご応募</span>TEL <span class="number">0000-00-0000</span></p>
 			
-			<p class="block_s linktel_s"><a href="tel:0120231055"><span class="label">お電話でのご応募</span>TEL 0120-23-1055</a></p>
+			<p class="block_s linktel_s"><a href="tel:0000000000"><span class="label">お電話でのご応募</span>TEL 0000-00-0000</a></p>
 			
 			<?php else: ?>
 			

@@ -4,16 +4,16 @@
 
 	<div class="ttl_page_sub">
 		<?php if(is_tax('area', 'area_a')): ?>
-		名古屋市内一覧
+		東海の案件一覧
 		
 		<?php elseif(is_tax('area', 'area_b')): ?>
-		名古屋市外一覧
+		関東の案件一覧
 		
 		<?php elseif(is_tax('area', 'area_c')): ?>
-		岐阜
+		関西の案件一覧
 		
 		<?php elseif(is_tax('area', 'area_d')): ?>
-		三重
+		九州の案件一覧
 		
 		<?php endif; ?>
 	</div>

@@ -2,7 +2,7 @@
 
 <div id="main" <?php post_class(); ?> role="main">
 	
-	<div class="ttl_page_sub">応募フォーム</div>
+	<div class="ttl_case_line em6"><span>応募フォーム</span></div>
 
 	<?php $template_slug = get_post($wp_query->post->ID)->post_name; ?>
 	<?php get_template_part( 'parts/'.$template_slug ); ?>
