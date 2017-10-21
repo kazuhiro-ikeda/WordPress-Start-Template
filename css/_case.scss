@@ -275,6 +275,14 @@ $even: #666666;
 		margin: 0 auto;
 	}
 	
+	&.archive {
+		margin: 30px auto 0;
+		
+		@media screen and (max-width: $viewport) {
+			margin: 5vw auto 0;
+		}
+	}
+	
 	.items {
 		overflow: hidden;
 		

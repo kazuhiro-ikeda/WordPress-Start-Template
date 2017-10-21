@@ -2,7 +2,7 @@
 
 <div id="main" <?php post_class(); ?> role="main">
 
-	<section id="loop">
+	<section id="loop" class="archive">
 		<div class="ttl_case_line em6"><span>募集要項一覧</span></div>
 		
 		<?php get_template_part( 'nav_p' ); ?>
