@@ -2,7 +2,7 @@
 	
 </footer>
 
-<nav id="nav_foot">
+<nav id="nav_foot_normal">
 	<a href="#"><i class="fa fa-angle-up" aria-hidden="true"></i></a>
 	
 </nav>

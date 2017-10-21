@@ -1,40 +1,43 @@
-
 <div id="Glide" class="glide">
+
+	<?php 
 	
-	<!-- 
-    <div class="glide__arrows">
-        <button class="glide__arrow prev" data-glide-dir="<">prev</button>
-        <button class="glide__arrow next" data-glide-dir=">">next</button>
-    </div>
-	-->
+	$images = get_field('slider');
 	
-	<?php if( have_rows( 'slider' ) ): ?>
-    <div class="glide__wrapper">
-        <ul class="glide__track">
-		<?php while( have_rows( 'slider' ) ): the_row(); 
-			// vars
-			$image = get_sub_field( 'img' );
-			$caption = get_sub_field( 'caption' );
-			
-			// vars img
-			$url = $image['url'];
-			$alt = $image['alt'];
-			$size = 'スライダー';
-			$thumb = $image['sizes'][ $size ];
-		?>
-        <li class="glide__slide">
-	        <img src="<?php echo $thumb; ?>" alt="<?php echo $alt; ?>">
-			<div class="caption"><p><?php echo $caption; ?></p></div>
-			<!-- /.caption -->
-        </li>
-		
-	<?php endwhile; ?>
-	</ul>
-	
+	if( $images ): ?>
+	    <div class="glide__wrapper">
+       		<ul class="glide__track">
+	            <?php foreach( $images as $image ): ?>
+	                <li class="glide__slide"><img src="<?php echo $image['sizes']['スライダー']; ?>" alt="<?php echo $image['alt']; ?>" /></li>
+	                
+	            <?php endforeach; ?>
+	        </ul>
+	    </div>
+	    <!-- /.glide__wrapper -->
+	    
 	<?php endif; ?>
-
-    </div>
-
-    <!-- <div class="glide__bullets"></div> -->
-
+	
 </div>
+<!-- /#Glide.glide -->
+	
+<div id="Glide_s" class="glide">
+
+	<?php 
+	
+	$images = get_field('slider_s');
+	
+	if( $images ): ?>
+	    <div class="glide__wrapper">
+       		<ul class="glide__track">
+	            <?php foreach( $images as $image ): ?>
+	                <li class="glide__slide"><img src="<?php echo $image['sizes']['スライダーSP']; ?>" alt="<?php echo $image['alt']; ?>" /></li>
+	                
+	            <?php endforeach; ?>
+	        </ul>
+	    </div>
+	    <!-- /.glide__wrapper -->
+	    
+	<?php endif; ?>
+	
+</div>
+<!-- /#Glide_s.glide -->

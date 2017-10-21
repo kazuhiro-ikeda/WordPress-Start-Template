@@ -30,7 +30,23 @@
 </div>
 
 <nav id="nav_foot">
-	<a href="#"><i class="fa fa-angle-up" aria-hidden="true"></i></a>
+	<?php if(is_singular( 'case' )): ?>
+
+	<div class="inner_case">
+		<a href="<?php echo esc_url(home_url('/')); ?>?page_id=55&post_id=<?php echo $post->ID; ?>"><i class="fa fa-envelope-o" aria-hidden="true"></i>WEB応募</a>
+		<a href="tel:xxxxxxx"><i class="fa fa-phone-square" aria-hidden="true"></i>TEL問合せ</a>
+		
+	</div>
+	<!-- /.inner_case -->
+	
+	<?php else: ?>
+	<div class="inner_other">
+		<a href="#"><i class="fa fa-angle-up" aria-hidden="true"></i></a>
+		
+	</div>
+	<!-- /.inner_other -->
+	
+	<?php endif; ?>
 	
 </nav>
 
@@ -79,6 +95,11 @@ $(function(){
     $("#Glide").glide({
         type: "carousel"
     });
+    
+     $("#Glide_s").glide({
+        type: "carousel"
+    });
+    
 </script>
 
 <?php wp_footer(); ?>

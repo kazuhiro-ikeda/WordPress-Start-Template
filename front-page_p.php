@@ -1,5 +1,7 @@
 <?php get_header(); ?>
 
+<?php get_template_part( 'parts/glide_cms' ); ?>
+
 <div id="main" <?php post_class(); ?> role="main">
 
 <div id="home_contents">
@@ -25,7 +27,7 @@
 ?>
 			
 <section id="loop">
-	<h1 class="ttl_page branch"><img src="<?php bloginfo( 'template_url' ); ?>/images/entry/ttl_archive.png" alt="募集一覧"></h1>
+	<h1 class="ttl_case_line em4"><span>募集一覧</span></h1>
 	
 	<?php get_template_part( 'nav_p' ); ?>
 	

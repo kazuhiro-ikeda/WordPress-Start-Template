@@ -58,10 +58,3 @@
 	
 </nav>
 <!-- /#nav_s -->
-
-<!-- 設定後
-<?php if(is_front_page()): ?>
-	<?php get_template_part( 'parts/visual_main' ); ?>
-
-<?php endif; ?>
--->

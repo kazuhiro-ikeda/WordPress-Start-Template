@@ -1,11 +1,11 @@
 [
     {
-        "key": "group_587c7831790e4",
-        "title": "\u30a8\u30f3\u30c8\u30ea\u30fc",
+        "key": "group_587c7831790e4-2",
+        "title": "エントリー",
         "fields": [
             {
                 "key": "field_587c784e87daa",
-                "label": "\u753b\u50cf \u5fc5\u9808\u30b5\u30a4\u30ba\uff1a900px x 250px \u4ee5\u4e0a",
+                "label": "画像 必須サイズ：900px x 250px 以上",
                 "name": "img",
                 "type": "image",
                 "instructions": "",
@@ -17,7 +17,7 @@
                     "id": ""
                 },
                 "return_format": "array",
-                "preview_size": "\u30a8\u30f3\u30c8\u30ea\u30fc",
+                "preview_size": "エントリー",
                 "library": "all",
                 "min_width": "",
                 "min_height": "",
@@ -29,7 +29,7 @@
             },
             {
                 "key": "field_587c78aae2d95",
-                "label": "\u672c\u6587",
+                "label": "本文",
                 "name": "text",
                 "type": "wysiwyg",
                 "instructions": "",
@@ -52,7 +52,7 @@
                 {
                     "param": "page",
                     "operator": "==",
-                    "value": "93"
+                    "value": "55"
                 }
             ]
         ],
@@ -81,12 +81,85 @@
         "description": ""
     },
     {
+        "key": "group_5879afc4e9752",
+        "title": "メインビジュアル",
+        "fields": [
+            {
+                "key": "field_59eb91800ae17",
+                "label": "スライダー 必須画像サイズ：1500px x 530px",
+                "name": "slider",
+                "type": "gallery",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "min": "",
+                "max": "",
+                "insert": "append",
+                "library": "all",
+                "min_width": "",
+                "min_height": "",
+                "min_size": "",
+                "max_width": "",
+                "max_height": "",
+                "max_size": "",
+                "mime_types": ""
+            },
+            {
+                "key": "field_59eb91970ae18",
+                "label": "スライダー SP 必須画像サイズ：640px x 530px",
+                "name": "slider_s",
+                "type": "gallery",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "min": "",
+                "max": "",
+                "insert": "append",
+                "library": "all",
+                "min_width": "",
+                "min_height": "",
+                "min_size": "",
+                "max_width": "",
+                "max_height": "",
+                "max_size": "",
+                "mime_types": ""
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "page",
+                    "operator": "==",
+                    "value": "54"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": 1,
+        "description": ""
+    },
+    {
         "key": "group_587718a9bc0fb",
-        "title": "\u6848\u4ef6",
+        "title": "案件",
         "fields": [
             {
                 "key": "field_58771ff3ea7a3",
-                "label": "\u30e1\u30a4\u30f3\u753b\u50cf \uff0a\u5fc5\u9808\u30b5\u30a4\u30ba\uff1a420px x 280px \u4ee5\u4e0a",
+                "label": "メイン画像 ＊必須サイズ：420px x 280px 以上",
                 "name": "img_main",
                 "type": "image",
                 "instructions": "",
@@ -98,7 +171,7 @@
                     "id": ""
                 },
                 "return_format": "array",
-                "preview_size": "\u6848\u4ef6",
+                "preview_size": "案件",
                 "library": "all",
                 "min_width": "",
                 "min_height": "",
@@ -110,7 +183,7 @@
             },
             {
                 "key": "field_5877202cde01d",
-                "label": "\u30ea\u30fc\u30c9\u6587",
+                "label": "リード文",
                 "name": "lead",
                 "type": "textarea",
                 "instructions": "",
@@ -129,7 +202,7 @@
             },
             {
                 "key": "field_5877204ef77df",
-                "label": "\u672c\u6587",
+                "label": "本文",
                 "name": "text",
                 "type": "wysiwyg",
                 "instructions": "",
@@ -148,7 +221,7 @@
             },
             {
                 "key": "field_588736a8b4c5f",
-                "label": "\u30ef\u30a4\u30c9\u753b\u50cf \u753b\u50cf \uff0a\u5fc5\u9808\u30b5\u30a4\u30ba\uff1a920px x 260px \u4ee5\u4e0a",
+                "label": "ワイド画像 画像 ＊必須サイズ：920px x 260px 以上",
                 "name": "img_wide",
                 "type": "image",
                 "instructions": "",
@@ -160,7 +233,7 @@
                     "id": ""
                 },
                 "return_format": "array",
-                "preview_size": "\u6848\u4ef6WIDE",
+                "preview_size": "案件WIDE",
                 "library": "all",
                 "min_width": "",
                 "min_height": "",
@@ -172,7 +245,7 @@
             },
             {
                 "key": "field_587720953c331",
-                "label": "PR\u30b3\u30f3\u30c6\u30f3\u30c4",
+                "label": "PRコンテンツ",
                 "name": "pr",
                 "type": "repeater",
                 "instructions": "",
@@ -187,11 +260,11 @@
                 "min": 0,
                 "max": 0,
                 "layout": "block",
-                "button_label": "\u30b3\u30f3\u30c6\u30f3\u30c4\u3092\u8ffd\u52a0",
+                "button_label": "コンテンツを追加",
                 "sub_fields": [
                     {
                         "key": "field_587720b83c332",
-                        "label": "\u898b\u51fa\u3057",
+                        "label": "見出し",
                         "name": "ttl",
                         "type": "text",
                         "instructions": "",
@@ -210,7 +283,7 @@
                     },
                     {
                         "key": "field_587720d13c333",
-                        "label": "\u672c\u6587",
+                        "label": "本文",
                         "name": "text",
                         "type": "textarea",
                         "instructions": "",
@@ -229,7 +302,7 @@
                     },
                     {
                         "key": "field_587720f53c334",
-                        "label": "\u753b\u50cf\uff0a\u5fc5\u9808\u30b5\u30a4\u30ba\uff1a420px x 280px \u4ee5\u4e0a",
+                        "label": "画像＊必須サイズ：420px x 280px 以上",
                         "name": "img_pr",
                         "type": "image",
                         "instructions": "",
@@ -241,7 +314,7 @@
                             "id": ""
                         },
                         "return_format": "array",
-                        "preview_size": "\u6848\u4ef6",
+                        "preview_size": "案件",
                         "library": "all",
                         "min_width": "",
                         "min_height": "",
@@ -255,7 +328,7 @@
             },
             {
                 "key": "field_5877213754cb3",
-                "label": "\u30ae\u30e3\u30e9\u30ea\u30fc",
+                "label": "ギャラリー",
                 "name": "gallery",
                 "type": "repeater",
                 "instructions": "",
@@ -270,11 +343,11 @@
                 "min": 0,
                 "max": 0,
                 "layout": "block",
-                "button_label": "\u753b\u50cf\u3092\u8ffd\u52a0",
+                "button_label": "画像を追加",
                 "sub_fields": [
                     {
-                        "key": "field_5877215a54cb4",
-                        "label": "\u753b\u50cf\uff0a\u5fc5\u9808\u30b5\u30a4\u30ba\uff1a420px x 280px \u4ee5\u4e0a",
+                        "key": "field_59dd33e6d66b9",
+                        "label": "画像",
                         "name": "img_gallery",
                         "type": "image",
                         "instructions": "",
@@ -286,7 +359,7 @@
                             "id": ""
                         },
                         "return_format": "array",
-                        "preview_size": "\u6848\u4ef6",
+                        "preview_size": "案件",
                         "library": "all",
                         "min_width": "",
                         "min_height": "",
@@ -298,7 +371,7 @@
                     },
                     {
                         "key": "field_5877217e54cb5",
-                        "label": "\u30ad\u30e3\u30d7\u30b7\u30e7\u30f3",
+                        "label": "キャプション",
                         "name": "text_caption",
                         "type": "text",
                         "instructions": "",
@@ -319,7 +392,7 @@
             },
             {
                 "key": "field_58771d5ba8f01",
-                "label": "\u8077\u7a2e",
+                "label": "職種",
                 "name": "job",
                 "type": "text",
                 "instructions": "",
@@ -338,7 +411,7 @@
             },
             {
                 "key": "field_58771ce9dc143",
-                "label": "\u96c7\u7528\u5f62\u614b",
+                "label": "雇用形態",
                 "name": "style",
                 "type": "text",
                 "instructions": "",
@@ -357,7 +430,7 @@
             },
             {
                 "key": "field_58771d97e53a1",
-                "label": "\u4ed5\u4e8b\u5185\u5bb9",
+                "label": "仕事内容",
                 "name": "detail",
                 "type": "textarea",
                 "instructions": "",
@@ -376,7 +449,7 @@
             },
             {
                 "key": "field_58771dae5b32c",
-                "label": "\u5bfe\u8c61\u3068\u306a\u308b\u65b9",
+                "label": "対象となる方",
                 "name": "target",
                 "type": "textarea",
                 "instructions": "",
@@ -395,7 +468,7 @@
             },
             {
                 "key": "field_58771db95b32d",
-                "label": "\u8cc7\u683c",
+                "label": "資格",
                 "name": "license",
                 "type": "textarea",
                 "instructions": "",
@@ -414,7 +487,7 @@
             },
             {
                 "key": "field_58771dd95b32e",
-                "label": "\u52e4\u52d9\u5730",
+                "label": "勤務地",
                 "name": "place",
                 "type": "textarea",
                 "instructions": "",
@@ -433,7 +506,7 @@
             },
             {
                 "key": "field_58771decdc69f",
-                "label": "\u52e4\u52d9\u5730\uff08\u4e00\u89a7\u4e00\u884c\u8868\u793a\uff09",
+                "label": "勤務地（一覧一行表示）",
                 "name": "place_archive",
                 "type": "text",
                 "instructions": "",
@@ -452,7 +525,7 @@
             },
             {
                 "key": "field_58771e3724877",
-                "label": "\u52e4\u52d9\u6642\u9593",
+                "label": "勤務時間",
                 "name": "time",
                 "type": "textarea",
                 "instructions": "",
@@ -471,7 +544,7 @@
             },
             {
                 "key": "field_58771e5ab7eae",
-                "label": "\u7d66\u4e0e",
+                "label": "給与",
                 "name": "salary",
                 "type": "textarea",
                 "instructions": "",
@@ -490,7 +563,7 @@
             },
             {
                 "key": "field_58771e68b7eaf",
-                "label": "\u7d66\u4e0e\uff08\u4e00\u89a7\u4e00\u884c\u8868\u793a\uff09",
+                "label": "給与（一覧一行表示）",
                 "name": "salary_archive",
                 "type": "text",
                 "instructions": "",
@@ -509,7 +582,7 @@
             },
             {
                 "key": "field_58771e8acbc93",
-                "label": "\u4f11\u65e5\u4f11\u6687",
+                "label": "休日休暇",
                 "name": "dayoff",
                 "type": "textarea",
                 "instructions": "",
@@ -528,7 +601,7 @@
             },
             {
                 "key": "field_58771e9bcbc94",
-                "label": "\u5f85\u9047\u30fb\u798f\u5229\u539a\u751f",
+                "label": "待遇・福利厚生",
                 "name": "treatment",
                 "type": "textarea",
                 "instructions": "",
@@ -547,7 +620,7 @@
             },
             {
                 "key": "field_58771ec0cbc95",
-                "label": "\u5fdc\u52df\u65b9\u6cd5",
+                "label": "応募方法",
                 "name": "entry",
                 "type": "textarea",
                 "instructions": "",
@@ -558,7 +631,7 @@
                     "class": "",
                     "id": ""
                 },
-                "default_value": "",
+                "default_value": "下記応募ボタンより応募フォームにてご応募下さい。\r\n追って、こちらよりその後の選考日程をメールにてお知らせいたします。\r\n※ご質問やご不明な点があれば、何でもお気軽にお問合せください。\r\n※応募の秘密は厳守します。現在勤務中の方もご応募ください。\r\n※興味のある方のお問合せも大歓迎！まずは話だけでも聞いてみたいという方もお待ちしております。",
                 "placeholder": "",
                 "maxlength": "",
                 "rows": "",
@@ -566,7 +639,7 @@
             },
             {
                 "key": "field_58771f227b120",
-                "label": "\u305d\u306e\u4ed6",
+                "label": "その他",
                 "name": "memo",
                 "type": "textarea",
                 "instructions": "",
@@ -585,7 +658,7 @@
             },
             {
                 "key": "field_5900546ca2545",
-                "label": "\u30de\u30c3\u30d7",
+                "label": "マップ",
                 "name": "google",
                 "type": "google_map",
                 "instructions": "",
@@ -603,7 +676,7 @@
             },
             {
                 "key": "field_58873bebaa638",
-                "label": "\u96fb\u8a71\u756a\u53f7\u30ea\u30f3\u30af",
+                "label": "電話番号リンク",
                 "name": "link_tel",
                 "type": "radio",
                 "instructions": "",
@@ -640,7 +713,23 @@
         "style": "default",
         "label_placement": "top",
         "instruction_placement": "label",
-        "hide_on_screen": "",
+        "hide_on_screen": [
+            "permalink",
+            "the_content",
+            "excerpt",
+            "custom_fields",
+            "discussion",
+            "comments",
+            "revisions",
+            "slug",
+            "author",
+            "format",
+            "page_attributes",
+            "featured_image",
+            "categories",
+            "tags",
+            "send-trackbacks"
+        ],
         "active": 1,
         "description": ""
     }

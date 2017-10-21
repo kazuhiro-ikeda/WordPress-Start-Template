@@ -390,12 +390,12 @@ $even: #666666;
 #case {
 	width: 980px;
 	min-width: 980px;
-	margin: 0 auto;
+	margin: 30px auto 0;
 	
 	@media screen and (max-width: $viewport) {
 		width: 94%;
 		min-width: 94%;
-		margin: 0 auto; 
+		margin: 5vw auto 0; 
 	}
 	
 	.ttl_case {

@@ -17,13 +17,12 @@
 	  },
 	}
 	</script>
-	
-	<div class="ttl_case_line em4"><span>募集要項</span></div>
 
 	<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 	<?php remove_filter ( 'the_content', 'wpautop' ); ?>
 
 	<article id="case">
+		<div class="ttl_case_line em4"><span>募集要項</span></div>
 		
 		<div class="inner">		
 			<section class="primary">
