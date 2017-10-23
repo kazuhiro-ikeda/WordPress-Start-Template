@@ -268,18 +268,18 @@ $even: #666666;
 
 #loop {
 	width: 980px;
-	margin: 0 auto;
+	margin: 0 auto 60px;
 	
 	@media screen and (max-width: $viewport) {
 		width: 94vw;
-		margin: 0 auto;
+		margin: 0 auto 10vw;
 	}
 	
 	&.archive {
-		margin: 30px auto 0;
+		margin: 30px auto 60px;
 		
 		@media screen and (max-width: $viewport) {
-			margin: 5vw auto 0;
+			margin: 5vw auto 10vw;
 		}
 	}
 	

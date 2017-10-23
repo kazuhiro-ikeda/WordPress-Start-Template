@@ -1,13 +1,12 @@
 <?php get_header(); ?>
 
 <div id="main" <?php post_class(); ?> role="main">
-	
-	<div class="ttl_case_line em6"><span>応募フォーム</span></div>
 
 	<?php $template_slug = get_post($wp_query->post->ID)->post_name; ?>
 	<?php get_template_part( 'parts/'.$template_slug ); ?>
 
 	<section id="entry">
+		<div class="ttl_case_line em6"><span>応募フォーム</span></div>
 		
 		<div class="inner">
 			<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>

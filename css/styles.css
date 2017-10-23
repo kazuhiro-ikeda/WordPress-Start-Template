@@ -308,13 +308,13 @@ input[type="submit"] { -webkit-appearance: none; border-radius: 0; }
 
 .ttl_stylelist { font-size: 18px; margin-bottom: 20px; }
 
-#loop { width: 980px; margin: 0 auto; }
+#loop { width: 980px; margin: 0 auto 60px; }
 
-@media screen and (max-width: 640px) { #loop { width: 94vw; margin: 0 auto; } }
+@media screen and (max-width: 640px) { #loop { width: 94vw; margin: 0 auto 10vw; } }
 
-#loop.archive { margin: 30px auto 0; }
+#loop.archive { margin: 30px auto 60px; }
 
-@media screen and (max-width: 640px) { #loop.archive { margin: 5vw auto 0; } }
+@media screen and (max-width: 640px) { #loop.archive { margin: 5vw auto 10vw; } }
 
 #loop .items { overflow: hidden; }
 
