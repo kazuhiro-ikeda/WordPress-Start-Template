@@ -361,7 +361,7 @@ input[type="submit"] { -webkit-appearance: none; border-radius: 0; }
 
 #case .ttl_sec_case { margin-bottom: 20px; }
 
-#case > .inner { border: 1px solid silver; padding: 36px; }
+#case > .inner { border: 1px solid silver; padding: 30px; }
 
 @media screen and (max-width: 640px) { #case > .inner { padding: 6vw; } }
 
