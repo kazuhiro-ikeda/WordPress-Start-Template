@@ -220,7 +220,7 @@
 	add_image_size( 'メインビジュアル', 980, 430, true);
 	add_image_size( '案件', 420, 280, true);
 	add_image_size( '案件WIDE', 910, 260, true);
-	add_image_size( 'エントリー', 918, 250, true);
+	add_image_size( 'エントリー', 1836, 560, true);
 	add_image_size( 'スライダー', 1500, 530, true);
 	add_image_size( 'スライダーSP', 640, 530, true);
 		
