@@ -5,7 +5,7 @@
         "fields": [
             {
                 "key": "field_587c784e87daa",
-                "label": "画像 必須サイズ：900px x 250px 以上",
+                "label": "画像 必須サイズ：918px x 250px 以上",
                 "name": "img",
                 "type": "image",
                 "instructions": "",
