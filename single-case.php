@@ -53,7 +53,7 @@
 					
 					?></span>
 					
-					<h1 class="ttl_job"><?php the_title(); ?></h1>
+					<h1 class="ttl_job"><?php the_field( "title_case", $post->ID); ?></h1>
 					
 					<?php 
 						$image = get_field( 'img_main' );

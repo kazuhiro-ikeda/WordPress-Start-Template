@@ -49,7 +49,7 @@
 					}
 					
 					?></span>
-		<h2 class="title_archive"><?php the_field( "job", $post->ID); ?></h2>
+		<h2 class="title_archive"><?php the_field( "title_case", $post->ID); ?></h2>
 		<table class="info_archive">
 			<tr>
 				<th>勤務地</th>

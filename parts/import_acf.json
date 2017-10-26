@@ -158,6 +158,25 @@
         "title": "案件",
         "fields": [
             {
+                "key": "field_59f26db53deec",
+                "label": "案件表示名",
+                "name": "title_case",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "maxlength": ""
+            },
+            {
                 "key": "field_58771ff3ea7a3",
                 "label": "メイン画像 ＊必須サイズ：420px x 280px 以上",
                 "name": "img_main",
