@@ -19,7 +19,7 @@
 			<img src="<?php echo $thumb; ?>" alt="<?php echo $alt; ?>">
 			
 			<?php else: ?>
-			<img src="<?php bloginfo( 'template_url' ); ?>/images/entry/img.jpg" alt="">
+			<img src="<?php bloginfo( 'template_url' ); ?>/images/case/img.jpg" alt="">
 			
 			<?php endif; ?>
 			
