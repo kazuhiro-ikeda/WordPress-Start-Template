@@ -26,6 +26,7 @@
 <link rel="alternate" hreflang="ja" href="<?php the_permalink(); ?>">
 <link rel="shortcut icon" href="<?php bloginfo( 'template_url' ); ?>/favicon.ico">
 <link rel="apple-touch-icon" href="<?php bloginfo( 'template_url' ); ?>/icon.png">
+<meta name="format-detection" content="telephone=no">
 
 <?php wp_deregister_script( 'jquery' ); wp_enqueue_script( 'jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js', array(), '1.11.0' ); ?>
 
