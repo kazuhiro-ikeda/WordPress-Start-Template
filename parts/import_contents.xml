@@ -16,7 +16,7 @@
 <!-- 7. WordPress will then import each of the posts, pages, comments, categories, etc. -->
 <!--    contained in this file into your site. -->
 
-<!-- generator="WordPress/4.8.2" created="2017-10-26 04:52" -->
+<!-- generator="WordPress/4.8.2" created="2017-10-26 22:54" -->
 <rss version="2.0"
 	xmlns:excerpt="http://wordpress.org/export/1.2/excerpt/"
 	xmlns:content="http://purl.org/rss/1.0/modules/content/"
@@ -29,7 +29,7 @@
 	<title>ヴィ企画</title>
 	<link>http://localhost:8888/vbaito-site</link>
 	<description>Just another WordPress site</description>
-	<pubDate>Thu, 26 Oct 2017 04:52:05 +0000</pubDate>
+	<pubDate>Thu, 26 Oct 2017 22:54:23 +0000</pubDate>
 	<language>ja</language>
 	<wp:wxr_version>1.2</wp:wxr_version>
 	<wp:base_site_url>http://localhost:8888/vbaito-site</wp:base_site_url>
@@ -1832,9 +1832,7 @@
 		<dc:creator><![CDATA[tamias]]></dc:creator>
 		<guid isPermaLink="false">http://localhost:8888/gurankure-site/?page_id=2</guid>
 		<description></description>
-		<content:encoded><![CDATA[<h1 style="text-align: center;"><span style="color: #799ECB;">ADVA WebTeam RecruitSite/span></h1>
-<h2 style="text-align: center;">-アドバ ウェブチームの採用サイト-</h2>
-<p style="text-align: center;"></p>]]></content:encoded>
+		<content:encoded><![CDATA[]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
 		<wp:post_id>54</wp:post_id>
 		<wp:post_date><![CDATA[2017-08-07 17:11:52]]></wp:post_date>
@@ -1926,8 +1924,9 @@
 			<wp:meta_key><![CDATA[text]]></wp:meta_key>
 			<wp:meta_value><![CDATA[下記、必要事項をご記入のうえ、「確認する」ボタンをクリックしてください。
 『※』マークは必須項目になっております。必ずご入力ください。
-Company Name
-TEL. 0000-00-0000]]></wp:meta_value>
+応募はもちろんのこと、不明点やご質問などあれば、お電話でも受付しております。
+お気軽に下記までご連絡ください。
+株式会社ヴィ企画 / 採用受付TEL：0120-51-9995]]></wp:meta_value>
 		</wp:postmeta>
 		<wp:postmeta>
 			<wp:meta_key><![CDATA[_text]]></wp:meta_key>
@@ -1994,7 +1993,7 @@ TEL. 0000-00-0000]]></wp:meta_value>
 		<td>[mwform_text name="ふりがな" id="furigana"] <span class="example">例）やまだ　たろう</span></td>
 	</tr>
 	<tr>
-		<th>年齢<span class="require">※必須</span></th>
+		<th>年齢</th>
 		<td>[mwform_text name="年齢" id="age"] 歳</td>
 	</tr>
 	<tr>
@@ -2006,7 +2005,7 @@ TEL. 0000-00-0000]]></wp:meta_value>
 		<td>[mwform_text name="郵便番号" id="zip"] <span class="example">例）012-3456</span></td>
 	</tr>
 	<tr>
-		<th>現住所<span class="require">※必須</span></th>
+		<th>現住所</th>
 		<td><div id="pref_w">都道府県 [mwform_text name="都道府県" id="pref"]</div><div id="city_w">市区町村 [mwform_text name="市区町村" id="city"]</div><div id="area_w">番地・建物名 [mwform_text name="エリア" id="area"]</div></td>
 	</tr>
 	<tr>
@@ -2017,7 +2016,8 @@ TEL. 0000-00-0000]]></wp:meta_value>
 		<th>メールアドレス<span class="require">※必須</span></th>
 		<td>[mwform_text name="メールアドレス" id="mail"] <span class="example">例）aaaaa@bbbbb.com</span></td>
 	</tr>
-	<tr>
+	<!--
+        <tr>
 		<th>最終学歴</th>
 		<td>[mwform_radio name="最終学歴" id="grade" children="中卒,高卒,大学卒,専門卒,院卒"]</td>
 	</tr>
@@ -2029,6 +2029,7 @@ TEL. 0000-00-0000]]></wp:meta_value>
 		<th>職務経歴</th>
 		<td>[mwform_textarea name="職務経歴" id="career"]</td>
 	</tr>
+        -->
 	<tr>
 		<th>ご質問・お問い合わせ内容</th>
 		<td>[mwform_textarea name="ご質問・お問い合わせ内容" id="message"]</td>
@@ -2374,6 +2375,391 @@ TEL. 0000-00-0000]]></wp:meta_value>
 			<wp:comment_parent>0</wp:comment_parent>
 			<wp:comment_user_id>0</wp:comment_user_id>
 		</wp:comment>
+	</item>
+	<item>
+		<title>お問い合わせ</title>
+		<link>http://localhost:8888/vbaito-site/mw-wp-form/mw-wp-form-272/</link>
+		<pubDate>Thu, 26 Oct 2017 22:43:51 +0000</pubDate>
+		<dc:creator><![CDATA[tamias]]></dc:creator>
+		<guid isPermaLink="false">http://localhost:8888/vbaito-site/?post_type=mw-wp-form&#038;p=272</guid>
+		<description></description>
+		<content:encoded><![CDATA[[inc_php file='entry_contents']
+
+<table id="table_entry">
+	<tr>
+		<th>お名前（全角）<span class="require">※必須</span></th>
+		<td>[mwform_text name="お名前" id="name"] <span class="example">例）山田　太郎</span></td>
+	</tr>
+	<tr>
+		<th>ふりがな（全角）<span class="require">※必須</span></th>
+		<td>[mwform_text name="ふりがな" id="furigana"] <span class="example">例）やまだ　たろう</span></td>
+	</tr>
+	<tr>
+		<th>お電話番号（半角数字）<span class="require">※必須</span></th>
+		<td>[mwform_text name="お電話番号" id="tel"] </td>
+	</tr>
+	<tr>
+		<th>メールアドレス<span class="require">※必須</span></th>
+		<td>[mwform_text name="メールアドレス" id="mail"] <span class="example">例）aaaaa@bbbbb.com</span></td>
+	</tr>	
+        <tr>
+		<th>ご希望の連絡方法<span class="require">※必須</span></th>
+		<td>[mwform_radio name="連絡方法" id="how" children="お電話,メール,どちらでも"]</td>
+	</tr>
+	<tr>
+		<th>お問い合わせ内容<span class="require">※必須</span></th>
+		<td>[mwform_textarea name="メッセージ" id="message"]</td>
+	</tr>
+</table>
+
+[mwform_submitButton name="send" class="btn_send" confirm_value="確認する" submit_value="送信する"]
+
+]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>272</wp:post_id>
+		<wp:post_date><![CDATA[2017-10-27 07:43:51]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2017-10-26 22:43:51]]></wp:post_date_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[mw-wp-form-272]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[mw-wp-form]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
+			<wp:meta_value><![CDATA[1]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[mw-wp-form]]></wp:meta_key>
+			<wp:meta_value><![CDATA[a:26:{s:11:"querystring";b:0;s:5:"usedb";b:0;s:12:"mail_subject";s:64:"{お名前} 様 お問い合わせありがとうございます";s:9:"mail_from";s:0:"";s:11:"mail_sender";s:0:"";s:12:"mail_content";s:935:"{お名前} 様
+
+この度は、お問い合わせ頂きまして誠にありがとうございます。 
+
+お問い合わせから遅くとも3営業日以内を目安にご連絡をさしあげますので 
+もうしばらくお待ちくださいませ。 
+
+万一お問い合わせから3日以上当方より連絡がない場合は、
+大変お手数ですが、下記までご連絡をお願いいたします。
+
+よろしくお願い致します。
+
+株式会社ヴィ企画 / 採用受付TEL：0120-51-9995
+
+
+===【お問い合わせ】====================
+[お名前]：{お名前} 様
+[ふりがな]：{ふりがな} 様
+[お電話番号]：{お電話番号}
+[メールアドレス]：{メールアドレス}
+[ご希望の連絡方法]：{連絡方法}
+[お問合せ内容]：
+{メッセージ}
+
+===========================================
+
+以上、何卒よろしくお願い申し上げます。";s:21:"automatic_reply_email";s:21:"メールアドレス";s:7:"mail_to";s:0:"";s:7:"mail_cc";s:0:"";s:8:"mail_bcc";s:0:"";s:18:"admin_mail_subject";s:56:"{お名前}様よりお問い合わせがありました";s:16:"mail_return_path";s:0:"";s:15:"admin_mail_from";s:0:"";s:17:"admin_mail_sender";s:0:"";s:18:"admin_mail_content";s:347:"===【お問い合わせ内容】====================
+[お名前]：{お名前} 様
+[ふりがな]：{ふりがな} 様
+[お電話番号]：{お電話番号}
+[メールアドレス]：{メールアドレス}
+[ご希望の連絡方法]：{連絡方法}
+[お問合せ内容]：
+{メッセージ}
+
+===========================================";s:14:"akismet_author";s:0:"";s:20:"akismet_author_email";s:0:"";s:18:"akismet_author_url";s:0:"";s:16:"complete_message";s:0:"";s:9:"input_url";s:0:"";s:16:"confirmation_url";s:0:"";s:12:"complete_url";s:0:"";s:20:"validation_error_url";s:0:"";s:10:"validation";a:0:{}s:5:"style";s:0:"";s:6:"scroll";b:0;}]]></wp:meta_value>
+		</wp:postmeta>
+	</item>
+	<item>
+		<title>お問い合わせ</title>
+		<link>http://localhost:8888/vbaito-site/contact/</link>
+		<pubDate>Thu, 26 Oct 2017 22:44:11 +0000</pubDate>
+		<dc:creator><![CDATA[tamias]]></dc:creator>
+		<guid isPermaLink="false">http://localhost:8888/vbaito-site/?page_id=273</guid>
+		<description></description>
+		<content:encoded><![CDATA[[mwform_formkey key="272"]]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>273</wp:post_id>
+		<wp:post_date><![CDATA[2017-10-27 07:44:11]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2017-10-26 22:44:11]]></wp:post_date_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[contact]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[page]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
+			<wp:meta_value><![CDATA[1]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_keywords]]></wp:meta_key>
+			<wp:meta_value><![CDATA[]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_description]]></wp:meta_key>
+			<wp:meta_value><![CDATA[]]></wp:meta_value>
+		</wp:postmeta>
+	</item>
+	<item>
+		<title>お問い合わせ：お問い合わせありがとうございます</title>
+		<link>http://localhost:8888/vbaito-site/contact_thanks/</link>
+		<pubDate>Thu, 26 Oct 2017 22:44:43 +0000</pubDate>
+		<dc:creator><![CDATA[tamias]]></dc:creator>
+		<guid isPermaLink="false">http://localhost:8888/vbaito-site/?page_id=275</guid>
+		<description></description>
+		<content:encoded><![CDATA[[mwform_formkey key="272"]]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>275</wp:post_id>
+		<wp:post_date><![CDATA[2017-10-27 07:44:43]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2017-10-26 22:44:43]]></wp:post_date_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[contact_thanks]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[page]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_keywords]]></wp:meta_key>
+			<wp:meta_value><![CDATA[]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_description]]></wp:meta_key>
+			<wp:meta_value><![CDATA[]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_dp_original]]></wp:meta_key>
+			<wp:meta_value><![CDATA[273]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
+			<wp:meta_value><![CDATA[1]]></wp:meta_value>
+		</wp:postmeta>
+	</item>
+	<item>
+		<title>登録</title>
+		<link>http://localhost:8888/vbaito-site/mw-wp-form/mw-wp-form-277/</link>
+		<pubDate>Thu, 26 Oct 2017 22:44:57 +0000</pubDate>
+		<dc:creator><![CDATA[tamias]]></dc:creator>
+		<guid isPermaLink="false">http://localhost:8888/vbaito-site/?post_type=mw-wp-form&#038;p=277</guid>
+		<description></description>
+		<content:encoded><![CDATA[<table class="table_entry_c">
+	<tr>
+		<th>お名前（全角）<span class="require pink">※必須</span></th>
+		<td>[mwform_text name="お名前" id="name"] <span class="example">例）山田　太郎</span></td>
+	</tr>
+	<tr>
+		<th>年齢<span class="require pink">※必須</span></th>
+		<td>[mwform_radio name="年齢" id="age" children="10代,20代,30代,40代,50代,60代以上"]</td>
+	</tr>
+	<tr>
+		<th>性別<span class="require pink">※必須</span></th>
+		<td>[mwform_radio name="性別" id="gender" children="男,女"]</td>
+	</tr>
+	<tr>
+		<th>郵便番号</th>
+		<td>[mwform_text name="郵便番号" id="zip"] <span class="example">例）012-3456</span></td>
+	</tr>
+	<tr>
+		<th>現住所</th>
+		<td><div id="pref_w">都道府県 [mwform_text name="都道府県" id="pref"]</div><div id="city_w">市区町村 [mwform_text name="市区町村" id="city"]</div><div id="area_w">番地・建物名 [mwform_text name="エリア" id="area"]</div></td>
+	</tr>
+	<tr>
+		<th>お電話番号（半角数字）<span class="require pink">※必須</span></th>
+		<td>[mwform_text name="お電話番号" id="tel"] <span class="example">例）090-1234-5678</span></td>
+	</tr>
+	<tr>
+		<th>メールアドレス<span class="require pink">※必須</span></th>
+		<td>[mwform_text name="メールアドレス" id="mail"] <span class="example">例）aaaaa@bbbbb.com</span></td>
+	</tr>
+</table>
+
+<p class="text_registration">上記内容で登録される方は下記「登録する」ボタンを押してください。<br class="inline_p">さらに希望条件を入力して登録される場合は、以下ご入力後「登録する」ボタンを押してください。</p>
+
+[mwform_submit name="send" class="btn_registration" value="送信する"]
+
+<table class="table_entry_c">
+	<tr>
+		<th>希望の職種を教えてください</th>
+		<td>
+			[mwform_checkbox name="希望の職種" id="syokusyu" children="工場関連の仕事,倉庫・物流関連の仕事,体を動かすアクティブワーク,リフト作業の仕事,事務・コールセンター関連の仕事,組付・検査などの軽作業のお仕事,その他" separator=","][mwform_textarea name="希望の職種その他" id="syokusyu_other" placeholder="その他の場合はご記入ください"]	
+		</td>
+	</tr>
+	<tr>
+		<th>希望の条件を教えてください</th>
+		<td>
+			[mwform_checkbox name="希望の条件" id="jyouken" children="直接雇用のお仕事,派遣のお仕事,未経験OKのお仕事,高収入のお仕事,短期のお仕事,長期のお仕事,週2～3日のスポットワーク,週5日以上のレギュラーワーク,家庭や家事と両立できるお仕事,扶養内で働けるお仕事,週払い・日払いありのお仕事,その他" separator=","][mwform_textarea name="希望の条件その他" id="jyoukenu_other" placeholder="その他の場合はご記入ください"]
+		</td>
+	</tr>
+	<tr>
+		<th>希望のエリアを教えてください</th>
+		<td>
+			<div class="area_box">
+			[mwform_checkbox name="希望のエリア" id="hope_area" children="愛知県知多エリア,愛知県三河エリア,愛知県名古屋エリア" separator=","]
+			
+			</div>
+			<!-- /.area_box -->
+			
+			<h3>その他エリア</h3>
+			[mwform_textarea name="希望の条件その他" id="jyoukenu_other" placeholder="その他の場合はご記入ください"]	
+			
+		</td>
+	</tr>
+	<tr>
+		<th>その他ご希望や相談内容が<br>あればご記入ください</th>
+		<td>[mwform_textarea name="その他ご希望や相談内容" id="other_message" placeholder=""]</td>
+	</tr>
+
+</table>
+
+[mwform_submit name="send" class="btn_registration" value="送信する"]]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>277</wp:post_id>
+		<wp:post_date><![CDATA[2017-10-27 07:44:57]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2017-10-26 22:44:57]]></wp:post_date_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[mw-wp-form-277]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[mw-wp-form]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
+			<wp:meta_value><![CDATA[1]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[mw-wp-form]]></wp:meta_key>
+			<wp:meta_value><![CDATA[a:26:{s:11:"querystring";b:0;s:5:"usedb";b:0;s:12:"mail_subject";s:54:"{お名前}様 ご登録ありがとうございます";s:9:"mail_from";s:0:"";s:11:"mail_sender";s:0:"";s:12:"mail_content";s:1199:"{お名前} 様
+
+この度は、ご登録頂きまして誠にありがとうございます。 
+
+ご登録から遅くとも3営業日以内を目安にご連絡をさしあげますので 
+もうしばらくお待ちくださいませ。 
+
+万一ご応募から3日以上当方より連絡がない場合は、
+大変お手数ですが、下記までご連絡をお願いいたします。
+
+よろしくお願い致します。
+
+株式会社ヴィ企画 / 採用受付TEL：0120-51-9995
+
+
+===【ご登録内容】====================
+[お名前]：{お名前} 様
+[年齢]：{年齢}
+[性別]：{性別}
+[住所]：〒{郵便番号} {都道府県}{市区町村}{エリア}
+[お電話番号]：{お電話番号}
+[メールアドレス]：{メールアドレス}
+
+[希望の職種]：{希望の職種} {希望の職種その他}
+[希望の条件]：{希望の条件} {希望の条件その他}
+[希望のエリア]：{希望のエリア}
+[その他のエリア]：{希望の条件その他}
+[その他ご希望や相談内容]：{その他ご希望や相談内容}
+
+===========================================
+
+以上、何卒よろしくお願い申し上げます。";s:21:"automatic_reply_email";s:21:"メールアドレス";s:7:"mail_to";s:0:"";s:7:"mail_cc";s:0:"";s:8:"mail_bcc";s:0:"";s:18:"admin_mail_subject";s:47:"{お名前}様よりご登録がありました";s:16:"mail_return_path";s:0:"";s:15:"admin_mail_from";s:0:"";s:17:"admin_mail_sender";s:0:"";s:18:"admin_mail_content";s:634:"===【ご登録内容】====================
+[お名前]：{お名前} 様
+[年齢]：{年齢}
+[性別]：{性別}
+[住所]：〒{郵便番号} {都道府県}{市区町村}{エリア}
+[お電話番号]：{お電話番号}
+[メールアドレス]：{メールアドレス}
+
+[希望の職種]：{希望の職種} {希望の職種その他}
+[希望の条件]：{希望の条件} {希望の条件その他}
+[希望のエリア]：{希望のエリア}
+[その他のエリア]：{希望の条件その他}
+[その他ご希望や相談内容]：{その他ご希望や相談内容}
+
+===========================================
+";s:14:"akismet_author";s:0:"";s:20:"akismet_author_email";s:0:"";s:18:"akismet_author_url";s:0:"";s:16:"complete_message";s:0:"";s:9:"input_url";s:0:"";s:16:"confirmation_url";s:0:"";s:12:"complete_url";s:0:"";s:20:"validation_error_url";s:0:"";s:10:"validation";a:0:{}s:5:"style";s:0:"";s:6:"scroll";b:0;}]]></wp:meta_value>
+		</wp:postmeta>
+	</item>
+	<item>
+		<title>登録</title>
+		<link>http://localhost:8888/vbaito-site/registration/</link>
+		<pubDate>Thu, 26 Oct 2017 22:45:24 +0000</pubDate>
+		<dc:creator><![CDATA[tamias]]></dc:creator>
+		<guid isPermaLink="false">http://localhost:8888/vbaito-site/?page_id=278</guid>
+		<description></description>
+		<content:encoded><![CDATA[[mwform_formkey key="277"]]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>278</wp:post_id>
+		<wp:post_date><![CDATA[2017-10-27 07:45:24]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2017-10-26 22:45:24]]></wp:post_date_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[registration]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[page]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
+			<wp:meta_value><![CDATA[1]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_keywords]]></wp:meta_key>
+			<wp:meta_value><![CDATA[]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_description]]></wp:meta_key>
+			<wp:meta_value><![CDATA[]]></wp:meta_value>
+		</wp:postmeta>
+	</item>
+	<item>
+		<title>登録：ご登録ありがとうございます</title>
+		<link>http://localhost:8888/vbaito-site/registration_thanks/</link>
+		<pubDate>Thu, 26 Oct 2017 22:45:53 +0000</pubDate>
+		<dc:creator><![CDATA[tamias]]></dc:creator>
+		<guid isPermaLink="false">http://localhost:8888/vbaito-site/?page_id=280</guid>
+		<description></description>
+		<content:encoded><![CDATA[[mwform_formkey key="277"]]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>280</wp:post_id>
+		<wp:post_date><![CDATA[2017-10-27 07:45:53]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2017-10-26 22:45:53]]></wp:post_date_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[registration_thanks]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[page]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_keywords]]></wp:meta_key>
+			<wp:meta_value><![CDATA[]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_description]]></wp:meta_key>
+			<wp:meta_value><![CDATA[]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_dp_original]]></wp:meta_key>
+			<wp:meta_value><![CDATA[278]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
+			<wp:meta_value><![CDATA[1]]></wp:meta_value>
+		</wp:postmeta>
 	</item>
 </channel>
 </rss>

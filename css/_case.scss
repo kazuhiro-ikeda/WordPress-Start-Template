@@ -51,8 +51,13 @@ $even: #666666;
 			border-top: 1px solid silver;
 			position: absolute;
 			top: 50%;
-			left: 7em;
-			width: calc(100% - 7em);
+			left: 6.5em;
+			width: calc(100% - 6.5em);
+			
+			@media screen and (max-width: $viewport) {
+				left: 6em;
+				width: calc(100% - 6em);
+			}
 		}
 	}
 	
@@ -62,8 +67,13 @@ $even: #666666;
 			border-top: 1px solid silver;
 			position: absolute;
 			top: 50%;
-			left: 8em;
-			width: calc(100% - 8em);
+			left: 7.5em;
+			width: calc(100% - 7.5em);
+			
+			@media screen and (max-width: $viewport) {
+				left: 7em;
+				width: calc(100% - 7em);
+			}
 		}
 	}
 	
@@ -73,8 +83,13 @@ $even: #666666;
 			border-top: 1px solid silver;
 			position: absolute;
 			top: 50%;
-			left: 9em;
-			width: calc(100% - 9em);
+			left: 8.5em;
+			width: calc(100% - 8.5em);
+			
+			@media screen and (max-width: $viewport) {
+				left: 7em;
+				width: calc(100% - 9em);
+			}
 		}
 	}
 	
@@ -84,8 +99,13 @@ $even: #666666;
 			border-top: 1px solid silver;
 			position: absolute;
 			top: 50%;
-			left: 10em;
-			width: calc(100% - 10em);
+			left: 9.5em;
+			width: calc(100% - 9.5em);
+			
+			@media screen and (max-width: $viewport) {
+				left: 9em;
+				width: calc(100% - 9em);
+			}
 		}
 	}
 	
@@ -95,8 +115,13 @@ $even: #666666;
 			border-top: 1px solid silver;
 			position: absolute;
 			top: 50%;
-			left: 11em;
-			width: calc(100% - 11em);
+			left: 10.5em;
+			width: calc(100% - 10.5em);
+			
+			@media screen and (max-width: $viewport) {
+				left: 10em;
+				width: calc(100% - 109em);
+			}
 		}
 	}	
 }
