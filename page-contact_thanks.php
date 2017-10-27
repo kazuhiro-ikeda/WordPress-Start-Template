@@ -9,18 +9,16 @@
 		<div class="ttl_case_line em8"><span>お問合せフォーム</span></div>
 		
 		<div class="inner">
-			<style scoped>
-			 .thanks-text {margin-top: 120px; margin-bottom: 120px; text-align: center; line-height: 200%;}
-			</style>
+		
 			
-			<p class="thanks-text" style="color: #f18d00; font-weight: bold">この度は、お問合せいただきまして <br>誠にありがとうございます。</p>
+			<p class="thanks-text insert">この度は、お問合せいただきまして <br>誠にありがとうございます。</p>
 			
 			<p class="thanks-text">営業日３日以内を目安にご連絡をさしあげますので <br>
 				もうしばらくお待ちくださいませ。 <br><br>
 				Company Name<br>
 				〒zip-code<br>
 				address<br>
-				TEL 0000-00-0000</p>
+				TEL <span class="inline_p">0000-00-0000</span><a class="inline_s" href="tel:xxx">0000-00-0000</a></p>
 	
 			<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 			<?php remove_filter ( 'the_content', 'wpautop' ); ?>

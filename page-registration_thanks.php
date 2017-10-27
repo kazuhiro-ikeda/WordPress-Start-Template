@@ -9,11 +9,8 @@
 		<div class="ttl_case_line em6"><span>登録フォーム</span></div>
 		
 		<div class="inner">
-			<style scoped>
-			 .thanks-text {margin-top: 120px; margin-bottom: 120px; text-align: center; line-height: 200%;}
-			</style>
 			
-			<p class="thanks-text" style="color: #005CA8; font-weight: bold">この度は、数ある企業の中から弊社へご応募頂きまして <br>誠にありがとうございます。</p>
+			<p class="thanks-text insert">この度は、数ある企業の中から弊社へご応募頂きまして <br>誠にありがとうございます。</p>
 			
 			<p class="thanks-text">これより、エントリーフォーム内容を元に書類選考を進めさせていただきます。 <br><br>
 				結果に関しましては、合否に関わらず<br>
@@ -22,7 +19,7 @@
 				Company Name<br>
 				〒zip-code<br>
 				address<br>
-				TEL 0000-00-0000</p>
+				TEL <span class="inline_p">0000-00-0000</span><a class="inline_s" href="tel:xxx">0000-00-0000</a></p>
 	
 			<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 			<?php remove_filter ( 'the_content', 'wpautop' ); ?>

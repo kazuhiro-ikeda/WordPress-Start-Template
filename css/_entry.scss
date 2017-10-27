@@ -397,3 +397,15 @@ select::-ms-expand {
 	    text-indent: 0.2em;
 	}
 }
+
+.thanks-text {
+	margin-top: 120px;
+	margin-bottom: 120px;
+	text-align: center;
+	line-height: 200%;
+	
+	&.insert {
+		font-weight: bold;
+		color: $insert;
+	}
+}
