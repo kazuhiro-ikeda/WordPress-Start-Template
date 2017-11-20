@@ -32,7 +32,7 @@
 
 <title>
 	<?php if(is_singular( 'case' )): ?>
-	<?php the_field( "title_case", $post->ID); ?>｜<?php bloginfo( 'name' ); ?>s
+	<?php the_field( "title_case", $post->ID); ?>｜<?php bloginfo( 'name' ); ?>
 	
 	<?php else: ?>
 	<?php full_title(); ?>
