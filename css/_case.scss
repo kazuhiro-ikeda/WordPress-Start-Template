@@ -745,7 +745,8 @@ $even: #666666;
 		
 		#btn_entry {
 			display: block;
-			background: #c1272d;
+			background: #d91412;
+			text-align: center;
 			color: white;
 			font-size: 16px;
 			font-weight: bold;
@@ -810,7 +811,7 @@ $even: #666666;
 	}//.inner
 	
 	#historyback {
-			margin-top: 30px;
+			margin: 30px auto 60px;
 			text-align: center;
 			
 			> a {

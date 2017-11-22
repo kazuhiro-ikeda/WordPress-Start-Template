@@ -489,7 +489,7 @@ input[type="submit"] { -webkit-appearance: none; border-radius: 0; }
 
 #case > .inner #requirements #mapurl { text-align: right; text-decoration: underline; }
 
-#case > .inner #btn_entry { display: block; background: #c1272d; color: white; font-size: 16px; font-weight: bold; width: 230px; padding: 15px 20px; margin: 0 auto; transition: all 0.7s; position: relative; }
+#case > .inner #btn_entry { display: block; background: #d91412; text-align: center; color: white; font-size: 16px; font-weight: bold; width: 230px; padding: 15px 20px; margin: 0 auto; transition: all 0.7s; position: relative; }
 
 #case > .inner #btn_entry::after { color: #c6d800; font-family: FontAwesome; content: "\f0da"; position: absolute; top: 15px; right: 10px; }
 
@@ -509,7 +509,7 @@ input[type="submit"] { -webkit-appearance: none; border-radius: 0; }
 
 #case > .inner .linktel_s .label::after { font-family: FontAwesome; color: #c6d800; content: "\f0da"; padding-left: 2vw; }
 
-#case #historyback { margin-top: 30px; text-align: center; }
+#case #historyback { margin: 30px auto 60px; text-align: center; }
 
 #case #historyback > a { font-size: 16px; font-weight: bold; transition: all 0.7s; }
 
