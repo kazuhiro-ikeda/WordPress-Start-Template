@@ -341,7 +341,7 @@
 			<?php endif; ?>
 			
 		<?php endwhile; else: //loop ?>
-			<p style="text-align:center; font-size:24px; font-weight:bold; color:#ddd; margin:100px auto; line-height:200%;">お探しの募集は現在ございません。</p>
+			<p style="text-align:center; font-size:24px; font-weight:bold; color:#ddd; margin:100px auto; line-height:200%;">申し訳ございませんが、<br>現在お探しの募集情報はありません。<br>再度検索をお試し下さい。</p>
 			
 		<?php endif; //loop ?>
 	

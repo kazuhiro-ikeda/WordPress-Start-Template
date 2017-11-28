@@ -28,7 +28,7 @@
 		<?php get_template_part( 'loop' ); ?>
 		
 		<?php endwhile; else: ?>
-			<p style="text-align:center; font-size:24px; font-weight:bold; color:#ddd; margin:100px auto; line-height:200%;">お探しの記事は準備中です。<br>近日中に公開となります。</p>
+			<p style="text-align:center; font-size:24px; font-weight:bold; color:#ddd; margin:100px auto; line-height:200%;">申し訳ございませんが、<br>現在お探しの募集情報はありません。<br>再度検索をお試し下さい。</p>
 			
 		<?php endif; ?>
 		
