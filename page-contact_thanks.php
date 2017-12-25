@@ -6,7 +6,7 @@
 	<?php get_template_part( 'parts/'.$template_slug ); ?>
 
 	<section id="entry">
-		<div class="ttl_case_line em8"><span>お問合せフォーム</span></div>
+		<div class="ttl_case_line em6"><span>お問い合わせ</span></div>
 		
 		<div class="inner">
 		
