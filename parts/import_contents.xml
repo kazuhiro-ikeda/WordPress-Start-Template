@@ -2414,9 +2414,9 @@
 	</tr>
 </table>
 
-[mwform_bback class="btn_back" value="back"]戻る[/mwform_bback]
-
 [mwform_submitButton name="send" class="btn_send" confirm_value="確認する" submit_value="送信する"]
+
+[mwform_bback class="btn_back" value="back"]戻る[/mwform_bback]
 
 ]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
