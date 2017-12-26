@@ -1926,7 +1926,7 @@
 『※』マークは必須項目になっております。必ずご入力ください。
 応募はもちろんのこと、不明点やご質問などあれば、お電話でも受付しております。
 お気軽に下記までご連絡ください。
-株式会社ヴィ企画 / 採用受付TEL：0120-51-9995]]></wp:meta_value>
+xxx / xxxx]]></wp:meta_value>
 		</wp:postmeta>
 		<wp:postmeta>
 			<wp:meta_key><![CDATA[_text]]></wp:meta_key>
@@ -2409,8 +2409,8 @@
 		<td>[mwform_radio name="連絡方法" id="how" children="お電話,メール,どちらでも"]</td>
 	</tr>
 	<tr>
-		<th>お問い合わせ内容<span class="require">※必須</span></th>
-		<td>[mwform_textarea name="メッセージ" id="message"]</td>
+		<th>ご質問・お問い合わせ内容<span class="require">※必須</span></th>
+		<td>[mwform_textarea name="ご質問・お問い合わせ内容" id="message"]</td>
 	</tr>
 </table>
 
