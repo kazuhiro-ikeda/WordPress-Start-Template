@@ -4,9 +4,9 @@ Author : Kazuhiro Ikeda
 
 $(function(){
 	
-	//ふわっと
+	//ふわっとpagetop
 	$(function() {
-	    var topBtn = $('#pagetop');    
+	    var topBtn = $('#xxx');    
 	    topBtn.hide();
 	    //スクロールが100に達したらボタン表示
 	    $(window).scroll(function () {
