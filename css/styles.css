@@ -240,7 +240,7 @@ input[type="submit"] { -webkit-appearance: none; border-radius: 0; }
 ---------------------------------*/
 .ttl_case_line { width: 980px; margin: 0 auto 20px; font-size: 20px; letter-spacing: 3px; font-weight: bold; position: relative; }
 
-@media screen and (max-width: 640px) { .ttl_case_line { width: 100%; margin: 0 auto 3vw; font-size: 20px; letter-spacing: 0; font-weight: bold; position: relative; } }
+@media screen and (max-width: 640px) { .ttl_case_line { width: 100%; margin: 0 auto 3vw; font-size: 16px; letter-spacing: 0; font-weight: bold; position: relative; } }
 
 .ttl_case_line > span { display: inline-block; background: white; padding-right: 5px; }
 
