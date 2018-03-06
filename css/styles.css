@@ -45,14 +45,14 @@ body:after { content: url("../images/") url(""); display: none; }
 
 /*	common
 ---------------------------------*/
-body { color: black; font-family: "游ゴシック", YuGothic, "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", Meiryo, メイリオ, sans-serif; font-size: 14px; font-weight: 500; word-wrap: break-word; -webkit-font-smoothing: subpixel-antialiased; -webkit-text-size-adjust: 100%; }
+body { color: #333; font-family: "游ゴシック", YuGothic, "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", Meiryo, メイリオ, sans-serif; font-size: 14px; font-weight: 500; word-wrap: break-word; -webkit-font-smoothing: subpixel-antialiased; -webkit-text-size-adjust: 100%; }
 
 @media screen and (max-width: 1060px) { body { width: 1060px; } }
 
 @media screen and (max-width: 640px) { body { width: 100%; font-size: 14px; } }
 
 /* link */
-a { color: black; text-decoration: none; }
+a { color: #333; text-decoration: none; }
 
 a:active, a:focus { outline: none; }
 
@@ -70,12 +70,6 @@ img { max-width: 100%; height: auto; }
 /* heading */
 /* text */
 p { text-align: justify; }
-
-/*	screen
----------------------------------*/
-.screen { width: 980px; margin: 0 auto; }
-
-@media screen and (max-width: 640px) { .screen { width: 100%; margin: 0 auto; } }
 
 /*	clearfix
 ---------------------------------*/
@@ -115,6 +109,10 @@ a.page-numbers { background-color: #799ECB; color: white; display: inline-block;
 .nav-links a.next { border: none; }
 
 .nav-links a.prev { border: none; }
+
+.jsPagination { margin-bottom: 60px; }
+
+@media screen and (max-width: 640px) { .jsPagination { margin-bottom: 10vw; } }
 
 .jsPagination ul { text-align: center !important; }
 
@@ -391,7 +389,7 @@ input[type="submit"] { -webkit-appearance: none; border-radius: 0; }
 
 @media screen and (max-width: 640px) { #case > .inner > .primary .ttl_job { font-size: 20px; margin-bottom: 0; } }
 
-#case > .inner > .primary .lead { color: black; font-size: 16px; font-weight: bold; line-height: 150%; margin-bottom: 10px; }
+#case > .inner > .primary .lead { color: #333; font-size: 16px; font-weight: bold; line-height: 150%; margin-bottom: 10px; }
 
 #case > .inner > .primary .lead.style_a { color: #799ECB; }
 
@@ -441,7 +439,7 @@ input[type="submit"] { -webkit-appearance: none; border-radius: 0; }
 
 @media screen and (max-width: 640px) { #case > .inner #pr .box_block > figure { width: 80%; margin: 0 auto; float: none; text-align: center; } }
 
-#case > .inner #pr .box_block .ttl { color: black; font-size: 18px; line-height: 150%; margin-bottom: 10px; }
+#case > .inner #pr .box_block .ttl { color: #333; font-size: 18px; line-height: 150%; margin-bottom: 10px; }
 
 #case > .inner #pr .box_block .ttl.style_a { color: #799ECB; }
 
