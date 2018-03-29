@@ -2002,7 +2002,7 @@ xxx / xxxx]]></wp:meta_value>
 	</tr>
 	<tr>
 		<th>郵便番号</th>
-		<td>[mwform_text name="郵便番号" id="zip"] <span class="example">例）0123456 ハイフンなし</span></td>
+		<td>[mwform_text name="郵便番号" id="zip"] <span class="example">例）012-3456</span></td>
 	</tr>
 	<tr>
 		<th>現住所</th>
