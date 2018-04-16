@@ -24,6 +24,19 @@ $(function(){
 	        return false;
 	    });
 	});
+	
+	//バナー	
+	$(window).scroll(function () {
+	    var s = $(this).scrollTop();
+	    var a = 700;  
+	    var b = $( "footer" ).offset();
+		    var c = b.top;
+	    if (s > a && s <= ( c-$(window).height() ) ) {
+	        $( "#xxx" ).fadeIn( "slow" );
+	    } else if( s <= a || s > ( c - $(window).height() ) ) {
+	        $( "#xxx" ).fadeOut( "slow" );
+	    }
+	});
 		
 	//ロールオーバー
 		
