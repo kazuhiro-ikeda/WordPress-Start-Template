@@ -153,6 +153,17 @@ $require: #c1272d;
 	display: block;
 }
 
+.mw_wp_form_confirm .confirm_attention {
+	display: block;
+	line-height: 150%;
+	margin-bottom: 20px;
+	
+	@media screen and (max-width: $viewport) {
+		line-height: 150%;
+		margin-bottom: 3vw;
+	}
+}
+
 //form
 input[type="submit"] {
 	display: block;
