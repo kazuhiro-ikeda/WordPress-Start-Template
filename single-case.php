@@ -321,7 +321,7 @@
 					
 				</div>
 				
-				<p id="mapurl"><a target="_blank" href="http://maps.google.com/maps?q=<?php echo $location['address']; ?>">▶︎GoogleMAPで見る</a></p>
+				<p id="mapurl"><a target="_blank" href="http://maps.google.com/maps?q=<?php echo $location['lat']; ?>,<?php echo $location['lng']; ?>">▶︎GoogleMAPで見る</a></p>
 				<!-- /#mapurl -->
 				
 				<?php endif; //gmap ?>
