@@ -387,6 +387,33 @@ footer {
 	}
 }
 
+#mainvisual {
+	border-bottom: 1px solid #b3b3b3;
+	margin-bottom: 50px;
+	
+	@media screen and (max-width: $viewport) {
+		display: none;
+	}
+	
+	> img {
+		width: 100%;
+		display: block;
+	}
+}
+
+#mainvisual_s {
+	display: none;
+	
+	@media screen and (max-width: $viewport) {
+		display: block;
+	}
+	
+	> img {
+		width: 100%;
+		display: block;
+	}
+}
+
 //ttl
 .ttl_page {
 	margin-bottom: 30px;

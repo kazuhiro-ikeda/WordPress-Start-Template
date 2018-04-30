@@ -1,6 +1,7 @@
 <?php get_header(); ?>
 
-<?php get_template_part( 'parts/glide_cms' ); ?>
+<?php //get_template_part( 'parts/glide_cms' ); ?>
+<?php get_template_part( 'parts/mainvisual' ); ?>
 
 <div id="main" <?php post_class(); ?> role="main">
 
