@@ -329,7 +329,7 @@
 			</section>
 			<!-- /#requirements -->
 			
-			<a id="btn_entry" href="<?php echo esc_url(home_url('/')); ?>?page_id=35&post_id=<?php echo $post->ID; ?>">応募フォームに進む</a>
+			<a id="btn_entry" href="<?php echo esc_url(home_url('/')); ?>?page_id=55&post_id=<?php echo $post->ID; ?>">応募フォームに進む</a>
 			
 			<?php $state = get_field("link_tel"); if($state == 'ON'): ?>
 			<p class="block_p linktel_p"><span class="label">お電話でのご応募</span>TEL <span class="number">0000-00-0000</span></p>
