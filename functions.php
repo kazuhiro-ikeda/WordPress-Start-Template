@@ -144,11 +144,16 @@
 	}	
 	add_filter( 'excerpt_length', 'custom_excerpt_length', 999);
 	
-	//read more リンク
+	function new_excerpt_more($more) {
+		return '…';
+	}
+	add_filter('excerpt_more', 'new_excerpt_more');
+	
+	/*//read more リンク
 	function new_excerpt_more( $more ) {
 	return '<br><a class="read-more" href="'. get_permalink( get_the_ID() ) . '">続きを見る→</a>';
 	}
-	add_filter( 'excerpt_more', 'new_excerpt_more' );
+	add_filter( 'excerpt_more', 'new_excerpt_more' );*/
 	
 	//エディタのスタイル
 	add_editor_style( 'editor-style.css' );

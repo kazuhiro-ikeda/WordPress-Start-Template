@@ -22,7 +22,7 @@
 	$args = array(
 		'post_type' => 'case',
 		'paged' => $paged,
-		'posts_per_page' => -1,
+		'posts_per_page' => 18,
 	);
 	$the_query = new WP_Query($args);
 ?>
