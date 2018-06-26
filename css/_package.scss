@@ -200,6 +200,10 @@ footer {
 		.place {
 			float: left;
 			
+			@media all and (-ms-high-contrast: none){
+				line-height: 1.5;
+			}
+			
 			@media screen and (max-width: $viewport) {
 				float: none;
 				padding: 2vw 2vw 5vw;
@@ -212,7 +216,7 @@ footer {
 				
 				@media screen and (max-width: $viewport) {
 					display: block;
-					padding-right: 0;
+					padding-right: 0; 
 					margin-bottom: 2vw;
 				}
 			}
@@ -233,6 +237,10 @@ footer {
 		#copyright {
 			float: right;
 			font-size: 13px;
+			
+			@media all and (-ms-high-contrast: none){
+				line-height: 1.5;
+			}
 			
 			@media screen and (max-width: $viewport) {
 				display: block;
