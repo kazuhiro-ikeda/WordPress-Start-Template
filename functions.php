@@ -16,7 +16,7 @@
 	add_action( 'login_enqueue_scripts', 'my_login_logo' );
 	*/
 	
-	//カテゴリ選択制限
+	/*//カテゴリ選択制限
 	add_action( 'admin_print_footer_scripts', 'limit_category_select' );
 	function limit_category_select() {
 		?>
@@ -41,7 +41,7 @@
 		</script>
 		<?php
 	}
-	//カテゴリ選択制限ここまで
+	//カテゴリ選択制限ここまで*/
 	
 	
 	//スラッグ強制
