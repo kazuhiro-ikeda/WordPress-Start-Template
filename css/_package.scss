@@ -360,6 +360,16 @@ footer {
 		width: 94vw;
 		margin: 0px auto 5vw;
 	}
+	
+	.single-content {
+		p, ul {
+			font-size: 18px;
+			
+			@media (max-width: $viewport) {
+				font-size: 14px;
+			}
+		}
+	}
 }
 
 #Glide {
