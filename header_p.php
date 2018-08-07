@@ -53,7 +53,7 @@
 	<ul>
 		<li><a href="<?php bloginfo( 'url' ); ?>/">HOME</a></li>
 		<li><a href="<?php bloginfo( 'url' ); ?>/case">募集一覧</a></li>
-		<li class="official_s"><a target="_blank" href="">オフィシャル HP</a></li>
+		<li class="official_s"><a target="_blank" href="">コーポレートサイト</a></li>
 	</ul>
 	
 </nav>
