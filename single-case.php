@@ -309,19 +309,18 @@
 				</table>
 				
 				<?php 
-					$location = get_field('google');
-					if( !empty($location) ):
+					$google_iframe = get_field('google_iframe');
+					if( !empty($google_iframe) ):
 				?>
-				<?php get_template_part( 'parts/googlemap' ); ?>
 				
 				<h2 class="ttl_sec_case">勤務地・所在地</h2>
 				
 				<div class="acf-map" style="width: 100%; height: 220px; margin-bottom: 10px;">
-					<div class="marker" data-lat="<?php echo $location['lat']; ?>" data-lng="<?php echo $location['lng']; ?>"></div>
+					<?php the_field( "google_iframe", $post->ID); ?>
 					
 				</div>
 				
-				<p id="mapurl"><a target="_blank" href="http://maps.google.com/maps?q=<?php echo $location['lat']; ?>,<?php echo $location['lng']; ?>">▶︎GoogleMAPで見る</a></p>
+				<p id="mapurl"><a target="_blank" href="<?php the_field( "google_url", $post->ID); ?>">▶︎GoogleMAPで見る</a></p>
 				<!-- /#mapurl -->
 				
 				<?php endif; //gmap ?>
