@@ -1,6 +1,10 @@
 @charset "utf-8";
 @import "_reset.scss";
 @import "_preload.scss";
+@import "_glide.core.scss";
+@import "_glide.theme.scss";
+@import "_slick.scss";
+@import "_slick-theme.scss";
 @import "_common.scss";
 @import "_device.scss";
 @import "_header.scss";
@@ -12,8 +16,4 @@
 @import "_case.scss";
 @import "_home.scss";
 //@import "_package.scss";
-@import "_glide.core.scss";
-@import "_glide.theme.scss";
 @import "_lightbox.scss";
-@import "_slick.scss";
-@import "_slick-theme.scss";
