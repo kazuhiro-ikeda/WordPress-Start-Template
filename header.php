@@ -48,7 +48,7 @@
 	
 <header>
 	<div id="site__id">
-		<<?php diverge_site_id(); ?> id="header__logo"><a href="<?php bloginfo( 'url' ); ?>"><img src="<?php bloginfo( 'template_url' ); ?>/images/common/logo.png" alt="<?php bloginfo( 'name' ); ?>"></a></<?php diverge_site_id(); ?>>
+		<<?php diverge_site_id(); ?>  class="logo"><a href="<?php bloginfo( 'url' ); ?>"><img src="<?php bloginfo( 'template_url' ); ?>/images/common/logo.png" alt="<?php bloginfo( 'name' ); ?>"></a></<?php diverge_site_id(); ?>>
 		<<?php diverge_tagline(); ?> class="tagline"><a href="<?php bloginfo( 'url' ); ?>"><img src="<?php bloginfo( 'template_url' ); ?>/images/common/tagline.png" alt="<?php bloginfo( 'description' ); ?>"></a></<?php diverge_tagline(); ?>>
 	</div>
 	<!-- /site-id -->
