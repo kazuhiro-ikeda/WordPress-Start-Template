@@ -533,7 +533,7 @@ input[type="submit"] { -webkit-appearance: none; border-radius: 0; }
 
 #case > .inner > .primary { overflow: hidden; }
 
-#case > .inner > .primary .style { display: block; background: #799ECB; color: white; font-size: 18px; font-weight: bold; padding: 7px 20px 5px; }
+#case > .inner > .primary .style { display: block; background: #799ECB; color: white; font-size: 18px; font-weight: bold; line-height: 1.25; padding: 7px 20px 5px; }
 
 #case > .inner > .primary .style.style_a { background: #799ECB; }
 
