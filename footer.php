@@ -30,9 +30,21 @@
 <script src="<?php bloginfo('template_url');?>/js/slick.js"></script>
 <script>
 	$('.multiple-items').slick({
+		autoplay: true,
 		infinite: true,
 		slidesToShow: 3,
-		slidesToScroll: 3
+		slidesToScroll: 1,
+		responsive: [
+			{
+			breakpoint: 769,
+				settings: {
+				arrows: false,
+				centerMode: true,
+				centerPadding: '20vw',
+				slidesToShow: 1
+				}
+			}
+		]
 	});
 </script>
 
