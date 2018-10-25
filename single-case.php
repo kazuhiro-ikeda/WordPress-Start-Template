@@ -115,7 +115,7 @@
 			</section>
 			<!-- /.primary -->
 			
-			<a id="btn_requirements" href="#requirements">募集要項を見る<i class="fa fa-caret-right" aria-hidden="true"></i></a>
+			<a id="btn_requirements" href="#requirements_anc">募集要項を見る<i class="fa fa-caret-right" aria-hidden="true"></i></a>
 			
 			
 			<?php 
@@ -219,6 +219,8 @@
 			</section>
 			<!-- /#gallery -->
 			
+			<div id="requirements_anc" class="anc"></div>
+			<!-- /#requirements_anc.anc -->
 			<section id="requirements">
 				<h2 class="ttl_sec_case branch"><img src="<?php bloginfo( 'template_url' ); ?>/images/case/ttl_requirements.png" alt="募集要項"></h2>
 				<table>
