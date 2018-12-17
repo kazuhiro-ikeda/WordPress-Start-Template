@@ -241,71 +241,6 @@ footer {
 	}
 }
 
-#nav_foot {
-	display: none;
-	
-	@media screen and (max-width: $viewport) {
-		display: none;
-		
-		.inner_other {
-			box-sizing: border-box;
-			position: fixed;
-			width: 100%;
-			left: 0;
-			bottom: 10vw;
-			padding: 4vw;
-			overflow: hidden;
-			
-			> a {
-				box-sizing: border-box;
-				display: block;
-				width: 12vw;
-				height: 12vw;
-				border-radius: 6vw;
-				text-align: center;
-				font-size: 6vw;
-				font-weight: bold;
-				color: white;
-				padding-top: 2vw;
-				background: $insert;
-				float: right;
-			}
-		}
-		
-		.inner_case {
-			box-sizing: border-box;
-			position: fixed;
-			width: 100%;
-			left: 0;
-			bottom: 0;
-			padding: 0;
-			overflow: hidden;
-			
-			a {
-				display: block;
-				width: 50%;
-				box-sizing: border-box;
-				text-align: center;
-				color: white;
-				padding: 4vw 0 3vw;
-				float: left;
-				
-				i {
-					padding-right: 2vw;
-				}
-				
-				&:first-of-type {
-					background: #799ECB;
-				}
-				
-				&:last-of-type {
-					background: #73BCC0;
-				}
-			}
-		}
-	}
-}
-
 //global_s
 
 #global_s {
@@ -351,7 +286,17 @@ footer {
 	}
 	
 	.single-content {
-		p, ul {
+		p {
+			font-size: 18px;
+			text-align: center;
+			
+			@media (max-width: $viewport) {
+				font-size: 14px;
+				text-align: left;
+			}
+		}
+		
+		ul {
 			font-size: 18px;
 			
 			@media (max-width: $viewport) {

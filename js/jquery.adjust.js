@@ -43,9 +43,9 @@ $(function(){
 	    var b = $( "footer" ).offset();
 		    var c = b.top;
 	    if (s > a && s <= ( c-$(window).height() ) ) {
-	        $( "#xxx" ).fadeIn( "slow" );
+	        $( "#nav_foot" ).fadeIn( "slow" );
 	    } else if( s <= a || s > ( c - $(window).height() ) ) {
-	        $( "#xxx" ).fadeOut( "slow" );
+	        $( "#nav_foot" ).fadeOut( "slow" );
 	    }
 	});
 	

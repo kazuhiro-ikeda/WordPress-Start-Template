@@ -2,7 +2,7 @@
 /*	footer
 ---------------------------------*/
 
-#nav_foot_normal {
+#nav_foot {
 	display: none;
 	
 	@media screen and (max-width: $viewport) {
@@ -24,7 +24,7 @@
 				height: 12vw;
 				border-radius: 6vw;
 				text-align: center;
-				font-size: 6vw;
+				font-size: 5vw;
 				font-weight: bold;
 				color: white;
 				padding-top: 2vw;
@@ -33,5 +33,41 @@
 			}
 		}
 		
+		.inner_case {
+			box-sizing: border-box;
+			position: fixed;
+			width: 100%;
+			left: 0;
+			bottom: 0;
+			padding: 0;
+			overflow: hidden;
+			
+			a {
+				display: block;
+				box-sizing: border-box;
+				width: 33.33%;
+				text-align: center;
+				color: white;
+				padding: 4vw 0 3vw;
+				float: left;
+				font-weight: bold;
+				
+				i {
+					padding-right: 2vw;
+				}
+				
+				&:nth-of-type(1) {
+					background: #0061a3;
+				}
+				
+				&:nth-of-type(2) {
+					background: #008594;
+				}
+				
+				&:nth-of-type(3) {
+					background: #828fab;
+				}
+			}
+		}
 	}
 }
