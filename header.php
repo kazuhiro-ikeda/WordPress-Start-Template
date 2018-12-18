@@ -22,6 +22,7 @@
 
 
 <link rel="stylesheet" type="text/css" href="<?php bloginfo( 'stylesheet_url' ); ?>">
+<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 <script src="https://use.fontawesome.com/38e4e444a4.js"></script>
 <link rel="alternate" hreflang="ja" href="<?php the_permalink(); ?>">
 <link rel="shortcut icon" href="<?php bloginfo( 'template_url' ); ?>/favicon.ico">
@@ -46,17 +47,30 @@
 
 <body <?php body_class(); ?>>
 	
-<header>
-	<div id="site__id">
-		<<?php diverge_site_id(); ?>  class="logo"><a href="<?php bloginfo( 'url' ); ?>"><img src="<?php bloginfo( 'template_url' ); ?>/images/common/logo.png" alt="<?php bloginfo( 'name' ); ?>"></a></<?php diverge_site_id(); ?>>
-		<<?php diverge_tagline(); ?> class="tagline"><a href="<?php bloginfo( 'url' ); ?>"><img src="<?php bloginfo( 'template_url' ); ?>/images/common/tagline.png" alt="<?php bloginfo( 'description' ); ?>"></a></<?php diverge_tagline(); ?>>
+<header class="normal">
+	<div class="inner">
+		<<?php diverge_site_id(); ?> class="logo"><a href="<?php bloginfo( 'url' ); ?>"><img src="<?php bloginfo( 'template_url' ); ?>/images/common/logo.png" alt="<?php bloginfo( 'name' ); ?>"></a></<?php diverge_site_id(); ?>>
+		
 	</div>
-	<!-- /site-id -->
+	<!-- /.inner -->
 
 </header>
 
-<a class="toggle" data-title="global_s">
-	<span></span>
-	<span></span>
-	<span></span>
-</a>
+<header class="device">
+	<a class="logo" href="<?php bloginfo( 'url' ); ?>/"><img src="<?php bloginfo( 'template_url' ); ?>/images/common/logo_s.png" alt="<?php bloginfo( 'name' ); ?>"></a>
+	
+	<div class="btn_toggle">
+		<span class="toggle" data-title="global_s">
+			<span></span>
+			<span></span>
+			<span></span>
+			
+		</span>
+		
+		<div class="text">MENU</div>
+		<!-- /.btn_toggle -->
+		
+	</div>
+	<!-- /.btn_toggle -->
+	
+</header>
