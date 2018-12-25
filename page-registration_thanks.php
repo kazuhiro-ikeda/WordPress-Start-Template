@@ -5,7 +5,7 @@
 	<?php $template_slug = get_post($wp_query->post->ID)->post_name; ?>
 	<?php get_template_part( 'parts/'.$template_slug ); ?>
 
-	<section id="entry">
+	<section id="entry" class="form_complete">
 		<div class="ttl_case_line em6"><span>登録フォーム</span></div>
 		
 		<div class="inner">

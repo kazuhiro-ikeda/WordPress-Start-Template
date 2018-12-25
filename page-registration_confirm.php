@@ -5,21 +5,10 @@
 	<?php $template_slug = get_post($wp_query->post->ID)->post_name; ?>
 	<?php get_template_part( 'parts/'.$template_slug ); ?>
 
-	<section id="entry" class="form_complete">
-		<div class="ttl_case_line em6"><span>お問い合わせ</span></div>
+	<section id="entry" class="form_confirm">
+		<div class="ttl_case_line em6"><span>登録フォーム</span></div>
 		
 		<div class="inner">
-		
-			
-			<p class="thanks-text insert">この度は、お問合せいただきまして <br>誠にありがとうございます。</p>
-			
-			<p class="thanks-text">営業日３日以内を目安にご連絡をさしあげますので <br>
-				もうしばらくお待ちくださいませ。 <br><br>
-				Company Name<br>
-				〒zip-code<br>
-				address<br>
-				TEL <span class="inline_p">0000-00-0000</span><a class="inline_s" href="tel:xxx">0000-00-0000</a></p>
-	
 			<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 			<?php remove_filter ( 'the_content', 'wpautop' ); ?>
 			<?php the_content(); ?>
