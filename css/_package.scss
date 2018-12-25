@@ -26,27 +26,38 @@ header {
 	
 	.logo {
 		display: block;
-		width: 529px;
+		width: 438px;
 		float: left;
-		padding-top: 8px;
 	}
 	
 	.info {
 		float: right;
-		width: 375px;
-		text-align: right;
+		width: 466px;
+		padding-top: 13px;
+		
+		> p {
+			font-size: 12px;
+			text-align: right;
+			padding-bottom: 7px;
+			border-bottom: 1px solid silver;
+			margin-bottom: 5px;
+		}
 		
 		.inner {
+			padding-top: 5px;
 			text-align: right;
 			
 			.tel {
-				width: 375px;
+				width: 315px;
 				height: auto;
-				border-top: 1px solid silver;
-				padding-top: 10px;
-				margin-top: 10px;
+				padding-right: 20px;
 			}
 			
+			.btn_official {
+				//#id style
+				position: relative;
+				top: -4px;
+			}
 		}//.inner
 	}//.info
 }//#id
@@ -189,10 +200,6 @@ footer {
 		.place {
 			float: left;
 			
-			@media all and (-ms-high-contrast: none){
-				line-height: 1.5;
-			}
-			
 			@media screen and (max-width: $viewport) {
 				float: none;
 				padding: 2vw 2vw 5vw;
@@ -205,7 +212,7 @@ footer {
 				
 				@media screen and (max-width: $viewport) {
 					display: block;
-					padding-right: 0; 
+					padding-right: 0;
 					margin-bottom: 2vw;
 				}
 			}
@@ -227,15 +234,76 @@ footer {
 			float: right;
 			font-size: 13px;
 			
-			@media all and (-ms-high-contrast: none){
-				line-height: 1.5;
-			}
-			
 			@media screen and (max-width: $viewport) {
 				display: block;
 				float: none;
 				background: white;
 				padding: 2vw;
+			}
+		}
+	}
+}
+
+#nav_foot {
+	display: none;
+	
+	@media screen and (max-width: $viewport) {
+		display: none;
+		
+		.inner_other {
+			box-sizing: border-box;
+			position: fixed;
+			width: 100%;
+			left: 0;
+			bottom: 10vw;
+			padding: 4vw;
+			overflow: hidden;
+			
+			> a {
+				box-sizing: border-box;
+				display: block;
+				width: 12vw;
+				height: 12vw;
+				border-radius: 6vw;
+				text-align: center;
+				font-size: 6vw;
+				font-weight: bold;
+				color: white;
+				padding-top: 2vw;
+				background: $insert;
+				float: right;
+			}
+		}
+		
+		.inner_case {
+			box-sizing: border-box;
+			position: fixed;
+			width: 100%;
+			left: 0;
+			bottom: 0;
+			padding: 0;
+			overflow: hidden;
+			
+			a {
+				display: block;
+				width: 50%;
+				box-sizing: border-box;
+				text-align: center;
+				color: white;
+				padding: 4vw 0 3vw;
+				float: left;
+				
+				i {
+					padding-right: 2vw;
+				}
+				
+				&:first-of-type {
+					background: #799ECB;
+				}
+				
+				&:last-of-type {
+					background: #73BCC0;
+				}
 			}
 		}
 	}
@@ -278,31 +346,11 @@ footer {
 //contents
 #home_contents {
 	width: 980px;
-	margin: 0px auto 50px;
+	margin: 0px auto 30px;
 	
 	@media screen and (max-width: $viewport) {
 		width: 94vw;
 		margin: 0px auto 5vw;
-	}
-	
-	.single-content {
-		p {
-			font-size: 18px;
-			text-align: center;
-			
-			@media (max-width: $viewport) {
-				font-size: 14px;
-				text-align: left;
-			}
-		}
-		
-		ul {
-			font-size: 18px;
-			
-			@media (max-width: $viewport) {
-				font-size: 14px;
-			}
-		}
 	}
 }
 
@@ -358,7 +406,6 @@ footer {
 	
 	@media screen and (max-width: $viewport) {
 		display: block;
-		margin-bottom: 5vw;
 	}
 	
 	> img {
