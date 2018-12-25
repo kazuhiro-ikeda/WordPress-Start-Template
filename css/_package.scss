@@ -266,7 +266,7 @@ footer {
 				height: 12vw;
 				border-radius: 6vw;
 				text-align: center;
-				font-size: 6vw;
+				font-size: 5vw;
 				font-weight: bold;
 				color: white;
 				padding-top: 2vw;
@@ -286,23 +286,28 @@ footer {
 			
 			a {
 				display: block;
-				width: 50%;
 				box-sizing: border-box;
+				width: 33.33%;
 				text-align: center;
 				color: white;
 				padding: 4vw 0 3vw;
 				float: left;
+				font-weight: bold;
 				
 				i {
 					padding-right: 2vw;
 				}
 				
-				&:first-of-type {
-					background: #799ECB;
+				&:nth-of-type(1) {
+					background: #009fb0;
 				}
 				
-				&:last-of-type {
-					background: #73BCC0;
+				&:nth-of-type(2) {
+					background: #1f296b;
+				}
+				
+				&:nth-of-type(3) {
+					background: #009cdd;
 				}
 			}
 		}
