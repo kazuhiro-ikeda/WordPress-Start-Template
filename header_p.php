@@ -42,7 +42,19 @@
 	
 	<div id="id_s">
 		<a class="logo" href="<?php bloginfo( 'url' ); ?>/"><img src="<?php bloginfo( 'template_url' ); ?>/images/common/logo.png" alt="<?php bloginfo( 'name' ); ?>"></a>
-		<span class="toggle" data-title="global_s"><img src="<?php bloginfo( 'template_url' ); ?>/images/common/toggle.png" alt="MENU"></span>
+		<div class="btn_toggle">
+			<span class="toggle" data-title="global_s">
+				<span></span>
+				<span></span>
+				<span></span>
+				
+			</span>
+			
+			<div class="text">MENU</div>
+			<!-- /.btn_toggle -->
+			
+		</div>
+		<!-- /.btn_toggle -->
 		
 	</div>
 	<!-- /#id_s -->

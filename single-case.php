@@ -350,7 +350,7 @@
 		<!-- /.inner -->
 		
 		<div id="historyback">
-			<a href="javascript:history.back()">募集一覧へもどる</a>
+			<span onClick="history.back();">募集一覧へもどる</span>
 			
 		</div>
 		<!-- /#historyback -->

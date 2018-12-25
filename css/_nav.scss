@@ -48,7 +48,7 @@
 }
 
 .toggle span:nth-of-type(2) {
-	top: 2.6vw;
+	top: 2.9vw;
 }
 
 .toggle span:nth-of-type(3) {
@@ -110,8 +110,8 @@
 }
 
 .toggle.active span:nth-of-type(1) {
-	-webkit-transform: translateY(2.6vw) rotate(-45deg);
-	transform: translateY(2.6vw) rotate(-45deg);
+	-webkit-transform: translateY(2.8vw) rotate(-45deg);//2.8は2.9より短めに少し調整
+	transform: translateY(2.8vw) rotate(-45deg);//2.8は2.9より短めに少し調整
 }
 
 .toggle.active span:nth-of-type(2) {
@@ -119,6 +119,6 @@
 }
 
 .toggle.active span:nth-of-type(3) {
-	-webkit-transform: translateY(-2.6vw) rotate(45deg);
-	transform: translateY(-2.6vw) rotate(45deg);
+	-webkit-transform: translateY(-2.8vw) rotate(45deg);//2.8は2.9より短めに少し調整
+	transform: translateY(-2.8vw) rotate(45deg);//2.8は2.9より短めに少し調整
 }
