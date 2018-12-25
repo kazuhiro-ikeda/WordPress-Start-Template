@@ -98,7 +98,7 @@ header {
 		
 		.logo {
 			display: block;
-			width: 76vw;
+			width: 80vw;
 			float: left;
 		}
 	}
@@ -345,11 +345,31 @@ footer {
 //contents
 #home_contents {
 	width: 980px;
-	margin: 0px auto 30px;
+	margin: 0px auto 50px;
 	
 	@media screen and (max-width: $viewport) {
 		width: 94vw;
 		margin: 0px auto 5vw;
+	}
+	
+	.single-content {
+		p {
+			font-size: 16px;
+			text-align: center !important;
+			
+			@media (max-width: $viewport) {
+				font-size: 3.4vw;
+				text-align: left !important;
+			}
+		}
+		
+		ul {
+			font-size: 16px;
+			
+			@media (max-width: $viewport) {
+				font-size: 14px;
+			}
+		}
 	}
 }
 
