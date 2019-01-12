@@ -354,7 +354,7 @@ footer {
 	
 	.single-content {
 		p {
-			font-size: 16px;
+			font-size: 18px;
 			text-align: center !important;
 			
 			@media (max-width: $viewport) {
@@ -364,7 +364,7 @@ footer {
 		}
 		
 		ul {
-			font-size: 16px;
+			font-size: 18px;
 			
 			@media (max-width: $viewport) {
 				font-size: 14px;
@@ -425,6 +425,7 @@ footer {
 	
 	@media screen and (max-width: $viewport) {
 		display: block;
+		margin-bottom: 5vw;
 	}
 	
 	> img {
