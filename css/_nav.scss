@@ -6,13 +6,13 @@
 .btn_toggle {
 	width: 9vw;
 	padding: 2vw 2vw 1.8vw;
-	background: $insert;
+	//background: $insert;
 	float: right;
 	
 	.text {
 		font-family: $roboto;
-		color: white;
-		font-size: 2vw;
+		color: $insert;
+		font-size: 3vw;
 		line-height: 1;
 		text-align: center;
 		margin-top: 1vw;
@@ -36,10 +36,10 @@
 	left: 0;
 	width: 100%;
 	height: 2px;
-	background-color: white;
+	background-color: $insert;
 	
 	.page-home & {
-		background-color: white;
+		background-color: $insert;
 	}
 }
 
@@ -48,7 +48,7 @@
 }
 
 .toggle span:nth-of-type(2) {
-	top: 2.9vw;
+	top: 2.8vw;
 }
 
 .toggle span:nth-of-type(3) {
@@ -78,8 +78,8 @@
 
 @keyframes menu-close {
 	30% {
-		transform: scale(0);
-		opacity: 0;
+		transform: scale(1);
+		opacity: 1;
 	}
 	100% {
 		transform: scale(1);
@@ -89,8 +89,8 @@
 
 @-webkit-keyframes menu-open {
 	30% {
-		-webkit-transform: scale(0);
-		opacity: 0;
+		-webkit-transform: scale(1);
+		opacity: 1;
 	}
 	100% {
 		-webkit-transform: scale(1);
@@ -100,8 +100,8 @@
 
 @keyframes menu-open {
 	30% {
-		transform: scale(0);
-		opacity: 0;
+		transform: scale(1);
+		opacity: 1;
 	}
 	100% {
 		transform: scale(1);
@@ -110,8 +110,8 @@
 }
 
 .toggle.active span:nth-of-type(1) {
-	-webkit-transform: translateY(2.8vw) rotate(-45deg);//2.8は2.9より短めに少し調整
-	transform: translateY(2.8vw) rotate(-45deg);//2.8は2.9より短めに少し調整
+	-webkit-transform: translateY(2.7vw) rotate(-45deg);
+	transform: translateY(2.7vw) rotate(-45deg);
 }
 
 .toggle.active span:nth-of-type(2) {
@@ -119,6 +119,6 @@
 }
 
 .toggle.active span:nth-of-type(3) {
-	-webkit-transform: translateY(-2.8vw) rotate(45deg);//2.8は2.9より短めに少し調整
-	transform: translateY(-2.8vw) rotate(45deg);//2.8は2.9より短めに少し調整
+	-webkit-transform: translateY(-2.7vw) rotate(45deg);
+	transform: translateY(-2.7vw) rotate(45deg);
 }
