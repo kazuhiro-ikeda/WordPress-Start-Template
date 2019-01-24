@@ -363,7 +363,7 @@ $even: #666666;
 				color: white;
 				font-size: 16px;
 				line-height: 125%;
-				background: #999;
+				background: $insert;
 				padding: 7px 15px 5px;
 				
 				&.style_a {
@@ -492,7 +492,7 @@ $even: #666666;
 			}
 			
 			.lead {
-				color: $base;
+				color: $insert;
 				font-size: 16px;
 				font-weight: bold;
 				line-height: 150%;
@@ -624,7 +624,7 @@ $even: #666666;
 				}
 				
 				.ttl {
-					color: $base;
+					color: $insert;
 					font-size: 18px;
 					line-height: 150%;
 					margin-bottom: 10px;
