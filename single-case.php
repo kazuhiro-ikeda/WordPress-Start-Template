@@ -350,7 +350,7 @@
 		<!-- /.inner -->
 		
 		<div id="historyback">
-			<span onClick="history.back();">募集一覧へもどる</span>
+			<a href="<?php bloginfo( 'url' ); ?>/case">募集一覧へもどる</a>
 			
 		</div>
 		<!-- /#historyback -->

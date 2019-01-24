@@ -811,25 +811,25 @@ $even: #666666;
 	}//.inner
 	
 	#historyback {
-			margin: 30px auto 60px;
-			text-align: center;
+		margin: 30px auto 60px;
+		text-align: center;
+		
+		a {
+			font-size: 16px;
+			font-weight: bold;
+			transition: all .7s;
+			cursor: pointer;
+		
+			&::before {
+				color: #c6d800;
+				font-family: FontAwesome;
+				content: "\f0d9";
+				padding-right: 20px;
+			}
 			
-			span {
-				font-size: 16px;
-				font-weight: bold;
-				transition: all .7s;
-				cursor: pointer;
-			
-				&::before {
-					color: #c6d800;
-					font-family: FontAwesome;
-					content: "\f0d9";
-					padding-right: 20px;
-				}
-				
-				&:hover {
-					opacity: .5;
-				}
-			}			
-		}//historyback
+			&:hover {
+				opacity: .5;
+			}
+		}			
+	}//historyback
 }

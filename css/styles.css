@@ -556,11 +556,11 @@ input[type="submit"] { -webkit-appearance: none; border-radius: 0; }
 
 #case #historyback { margin: 30px auto 60px; text-align: center; }
 
-#case #historyback span { font-size: 16px; font-weight: bold; transition: all 0.7s; cursor: pointer; }
+#case #historyback a { font-size: 16px; font-weight: bold; transition: all 0.7s; cursor: pointer; }
 
-#case #historyback span::before { color: #c6d800; font-family: FontAwesome; content: "\f0d9"; padding-right: 20px; }
+#case #historyback a::before { color: #c6d800; font-family: FontAwesome; content: "\f0d9"; padding-right: 20px; }
 
-#case #historyback span:hover { opacity: .5; }
+#case #historyback a:hover { opacity: .5; }
 
 /*	home
 ---------------------------------*/

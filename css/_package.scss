@@ -136,7 +136,7 @@ header {
 //footer
 footer {
 	border-top: 1px solid silver;
-	padding: 50px 0 30px;
+	padding: 26px 0 30px;
 	
 	@media screen and (max-width: $viewport) {
 		margin-top: 10vw;
@@ -165,7 +165,7 @@ footer {
 		
 		.tel {
 			display: block;
-			width: 80%;
+			width: 100%;
 			margin-bottom: 5vw;
 		}
 	}
@@ -193,6 +193,7 @@ footer {
 		
 		.place {
 			float: left;
+			padding-top: 5px;
 			
 			@media screen and (max-width: $viewport) {
 				float: none;
@@ -227,6 +228,7 @@ footer {
 		#copyright {
 			float: right;
 			font-size: 13px;
+			padding-top: 5px;
 			
 			@media screen and (max-width: $viewport) {
 				display: block;
