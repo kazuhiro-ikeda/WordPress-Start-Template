@@ -737,6 +737,13 @@ $even: #666666;
 				}
 			}//table
 			
+			.acf-map {
+				iframe {
+					width: 100%;
+					height: 220px;
+				}
+			}
+			
 			#mapurl {
 				text-align: right;
 				text-decoration: underline;
