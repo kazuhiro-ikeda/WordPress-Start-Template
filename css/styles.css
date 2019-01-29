@@ -104,6 +104,8 @@ a.page-numbers { background-color: #799ECB; color: white; display: inline-block;
 
 .nav-links .current { display: inline-block; margin-right: 15px; color: #799ECB; }
 
+.page-numbers.current { display: inline-block; margin-right: 15px; color: #799ECB; }
+
 .dots { margin-right: 15px; }
 
 .nav-links a.next { border: none; }

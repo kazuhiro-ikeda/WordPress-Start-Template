@@ -135,17 +135,27 @@ a.page-numbers {
 	margin-right: 15px;
 	padding: 6px 6px 6px;
 }
+
 .nav-links .current {
 	display: inline-block;
 	margin-right: 15px;
 	color: $insert;
 }
+
+.page-numbers.current {
+	display: inline-block;
+	margin-right: 15px;
+	color: $insert;
+}
+
 .dots {
 	margin-right: 15px;
 }
+
 .nav-links a.next {
 	border: none;
 }
+
 .nav-links a.prev {
 	border: none;
 }
