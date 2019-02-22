@@ -38,20 +38,7 @@
 						    }
 						  }
 						}
-					?>"><?php
-					
-					$terms_name = wp_get_object_terms($post->ID, 'genre');
-					
-					//タームを出力
-					if(!empty($terms_name)){
-					  if(!is_wp_error( $terms_name )){
-					    foreach($terms_name as $term){
-					      echo $term->name; 
-					    }
-					  }
-					}
-					
-					?></span>
+					?>"><?php the_field( "job", $post->ID); ?></span>
 					
 					<h1 class="ttl_job"><?php the_field( "title_case", $post->ID); ?></h1>
 					
