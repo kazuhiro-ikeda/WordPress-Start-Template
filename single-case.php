@@ -337,7 +337,7 @@
 		<!-- /.inner -->
 		
 		<div id="historyback">
-			<a href="<?php bloginfo( 'url' ); ?>/case">募集一覧へもどる</a>
+			<a href="javascript:window.history.back()">募集一覧へもどる</a>
 			
 		</div>
 		<!-- /#historyback -->
