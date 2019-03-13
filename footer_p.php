@@ -73,6 +73,7 @@
 	    $('.style_archive').matchHeight();
 	    $('.title_archive').matchHeight();
 	    $('.info_archive').matchHeight();
+	    $('#loop .box').matchHeight();
 	});
 </script>
 <script src="<?php bloginfo('template_url');?>/js/lightbox.js"></script>
