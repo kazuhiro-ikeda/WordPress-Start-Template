@@ -2,12 +2,14 @@
 
 <div id="main" <?php post_class(); ?> role="main">
 
-	<section id="loop" class="archive">
-		<div class="ttl_case_line em4"><span>募集一覧</span></div>
+	<div class="ttl_page_sub">
+		<?php single_tag_title(); ?>の募集一覧
+	</div>
+
+	<section id="loop">
 		
 		<?php get_template_part( 'nav_p' ); ?>
-	
-		
+
 		<div class="items">
 		<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 		<?php remove_filter ( 'the_content', 'wpautop' ); ?>

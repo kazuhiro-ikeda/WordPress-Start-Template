@@ -3,19 +3,8 @@
 <div id="main" <?php post_class(); ?> role="main">
 
 	<div class="ttl_page_sub">
-		<?php if(is_tax('area', 'area_a')): ?>
-		東海の案件一覧
+		<?php single_tag_title(); ?>の募集一覧
 		
-		<?php elseif(is_tax('area', 'area_b')): ?>
-		関東の案件一覧
-		
-		<?php elseif(is_tax('area', 'area_c')): ?>
-		関西の案件一覧
-		
-		<?php elseif(is_tax('area', 'area_d')): ?>
-		九州の案件一覧
-		
-		<?php endif; ?>
 	</div>
 
 	<section id="loop">

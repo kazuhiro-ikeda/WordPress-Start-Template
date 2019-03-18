@@ -3,18 +3,8 @@
 <div id="main" <?php post_class(); ?> role="main">
 	
 	<div class="ttl_page_sub">
-		<?php if(is_tax('genre', 'style_a')): ?>
-		職種１
+		<?php single_tag_title(); ?>の募集一覧
 		
-		<?php elseif(is_tax('genre', 'style_b')): ?>
-		職種２		
-		<?php elseif(is_tax('genre', 'style_c')): ?>
-		職種３
-		
-		<?php elseif(is_tax('genre', 'style_d')): ?>
-		職種４
-		
-		<?php endif; ?>
 	</div>
 
 	<section id="loop">
