@@ -366,6 +366,10 @@ $even: #666666;
 				background: $insert;
 				padding: 7px 15px 5px;
 				
+				@media all and (-ms-high-contrast: none){
+					padding: 9px 15px 5px;
+				}
+				
 				&.style_a {
 					background: $style_a;
 				}
@@ -390,6 +394,10 @@ $even: #666666;
 				line-height: 125%;
 				background: #4d4d4d;
 				padding: 10px 15px;
+				
+				@media all and (-ms-high-contrast: none){
+					padding: 13px 15px 10px;
+				}
 			}
 			
 			table {
@@ -459,6 +467,15 @@ $even: #666666;
 				font-weight: bold;
 				padding: 7px 20px 5px;
 				
+				@media (max-width: $viewport) {
+					padding: 8px 20px 5px;
+					font-size: 4vw;
+				}
+				
+				@media all and (-ms-high-contrast: none){
+					padding: 14px 20px 5px;
+				}
+				
 				&.style_a {
 					background: $style_a;
 				}
@@ -485,10 +502,15 @@ $even: #666666;
 				padding: 10px 20px;
 				margin-bottom: 20px;
 				
+				@media all and (-ms-high-contrast: none){
+					padding: 17px 20px 10px;
+				}
+				
 				@media screen and (max-width: $viewport) {
-					font-size: 20px;
+					font-size: 5vw;
 					margin-bottom: 0;
 				}
+				
 			}
 			
 			.lead {
@@ -762,6 +784,10 @@ $even: #666666;
 			margin: 0 auto;
 			transition: all .7s;
 			position: relative;
+			
+			@media all and (-ms-high-contrast: none){
+				padding: 21px 20px 15px;
+			}
 			
 			&::after {
 				color: #c6d800;

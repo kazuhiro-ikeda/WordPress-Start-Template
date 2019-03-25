@@ -1,22 +1,6 @@
 <?php get_header(); ?>
 
 <div id="main" <?php post_class(); ?> role="main">
-	
-	<script type="application/ld+json">
-	{
-	  "@context": "http://schema.org",
-	  "@type": "JobPosting",
-	  "description": "<?php the_field( "lead", $post->ID); ?>",
-	  "jobBenefits": "<?php the_field( "treatment", $post->ID); ?>",
-	  "jobLocation": {
-	    "@type": "Place",
-	    "address": {
-	      "@type": "PostalAddress",
-	      "addressLocality": "<?php the_field( "place", $post->ID); ?>",
-	    }
-	  },
-	}
-	</script>
 
 	<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 	<?php remove_filter ( 'the_content', 'wpautop' ); ?>
@@ -322,7 +306,7 @@
 			<?php $state = get_field("link_tel"); if($state == 'ON'): ?>
 			<p class="block_p linktel_p"><span class="label">お電話でのご応募</span>TEL <span class="number">0000-00-0000</span></p>
 			
-			<p class="block_s linktel_s"><a href="tel:0000000000"><span class="label">お電話でのご応募</span>TEL 0000-00-0000</a></p>
+			<p class="block_s linktel_s"><a href="tel:0000000000" onclick="gtag('event', 'click', {'event_category': 'telephone','event_label': 'telclick', 'value': location.href});"><span class="label">お電話でのご応募</span>TEL 0000-00-0000</a></p>
 			
 			<?php else: ?>
 			
