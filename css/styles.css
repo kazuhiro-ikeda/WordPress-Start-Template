@@ -412,7 +412,11 @@ input[type="submit"] { -webkit-appearance: none; border-radius: 0; }
 
 #loop .items .box table th { width: 3em; background: #999; padding: 2px 5px; color: white; vertical-align: middle; }
 
+@media all and (-ms-high-contrast: none) { #loop .items .box table th { padding: 5px 5px 2px; } }
+
 #loop .items .box table td { background: #e6e6e6; padding: 2px 5px; vertical-align: middle; }
+
+@media all and (-ms-high-contrast: none) { #loop .items .box table td { padding: 7px 5px 2px; } }
 
 #case { width: 980px; min-width: 980px; margin: 30px auto 0; }
 

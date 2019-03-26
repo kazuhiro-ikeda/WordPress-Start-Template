@@ -415,12 +415,20 @@ $even: #666666;
 					padding: 2px 5px;
 					color: white;
 					vertical-align: middle;
+					
+					@media all and (-ms-high-contrast: none){
+						padding: 5px 5px 2px;
+					}
 				}
 				
 				td {
 					background: #e6e6e6;
 					padding: 2px 5px;
 					vertical-align: middle;
+					
+					@media all and (-ms-high-contrast: none){
+						padding: 7px 5px 2px;
+					}
 				}
 			}
 		}//.box
