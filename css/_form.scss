@@ -449,6 +449,17 @@ textarea {
 	margin-bottom: 10px;
 }
 
+.mwform-radio-field.horizontal-item {
+	@media (max-width: $viewport) {
+		margin-right: 0 !important;
+		margin-left: 0 !important;
+		padding-right: 0 !important;
+		padding-left: 0 !important;
+		display: block;
+		margin-bottom: 1vw;
+	}
+}
+
 //select
 select {
     -webkit-appearance: button;
