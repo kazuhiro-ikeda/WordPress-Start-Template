@@ -18,10 +18,13 @@ body {
 	color: $base;
 	font-family: $游ゴシック;
 	font-size: 14px;
-	font-weight: 500;//$游ゴシック
 	word-wrap: break-word;
 	-webkit-font-smoothing: subpixel-antialiased;
 	-webkit-text-size-adjust: 100%;
+	
+	@media all and (-ms-high-contrast: none) {
+		font-weight: 500;//$游ゴシック
+	}
 	
 	@media screen and (max-width: 1060px) {
 		width: 1060px;
@@ -65,9 +68,7 @@ img {
 }
 
 /* heading */
-h1, h2, h3, h4, h5, h6 {
-	//line-height: $heading_line-height;
-}
+h1, h2, h3, h4, h5, h6 {}
 
 /* text */
 p {
@@ -115,6 +116,10 @@ p {
 .pagination {
 	text-align: center;
 	margin-bottom: 60px;
+	
+	@media (max-width: $viewport) {
+		margin-bottom: 5vw;
+	}
 }
 
 /* heading */
