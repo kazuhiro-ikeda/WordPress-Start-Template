@@ -6,7 +6,7 @@ $(function(){
 	
 	//ふわっとpagetop
 	$(function() {
-	    var topBtn = $('#xxx');    
+	    var topBtn = $('hoge');    
 	    topBtn.hide();
 	    //スクロールが100に達したらボタン表示
 	    $(window).scroll(function () {
@@ -28,9 +28,9 @@ $(function(){
 	//スチィッキーヘッダー
 	$(window).scroll(function(){
 		if ($(window).scrollTop() > 100) {
-			$('header.normal').addClass('fixed');
+			$('hoge').addClass('fixed');
 		} else {
-			$('header.normal').removeClass('fixed');
+			$('hoge').removeClass('fixed');
 		}
 	});
 		
@@ -128,12 +128,7 @@ $(function(){
 	$( '#mw_wp_form_mw-wp-form-識別ナンバー select#pref option[value=""]' ).html( '都道府県' );
 	
 	//br 除去
-	$( '.hogehogehoge' ).find( 'br' ).replaceWith( '' );
-	
-	//googlemap
-	$('.map').click(function () {
-		$(this).find('iframe').css("pointer-events", "all");
-	});	
+	$( '.hoge' ).find( 'br' ).replaceWith( '' );
 			
 			
 });// END TAG
