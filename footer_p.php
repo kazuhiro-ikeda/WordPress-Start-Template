@@ -8,8 +8,8 @@
 	<?php get_template_part( 'parts/id' ); ?>
 	
 	<div id="footer_id_s">
-		<a class="logo" href="<?php bloginfo( 'url' ); ?>/"><img src="<?php bloginfo( 'template_url' ); ?>/images/common/logo.png" alt="<?php bloginfo( 'name' ); ?>"></a>
-		<a class="tel" href="tel:xxxxxxxx"><img src="<?php bloginfo( 'template_url' ); ?>/images/common/tel.png" alt="xxxxxxxx"></a>
+		<a class="logo" href="<?php echo home_url(); ?>/"><img src="<?php echo get_template_directory_uri(); ?>/images/common/logo.png" alt="<?php bloginfo( 'name' ); ?>"></a>
+		<a class="tel" href="tel:xxxxxxxx"><img src="<?php echo get_template_directory_uri(); ?>/images/common/tel.png" alt="xxxxxxxx"></a>
 		<a class="btn_official" href="http://xxxxxxxxxxxxxxxxxxxx/" target="_blank">コーポレートサイト<i class="fa fa-chevron-right" aria-hidden="true"></i></a>
 		
 	</div>
@@ -55,7 +55,7 @@
 <!-- /.block_s -->
 
 <!--jQuery -->
-<script src="<?php bloginfo('template_url');?>/js/glide.js"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/js/glide.js"></script>
 <script>
     $("#Glide").glide({
         type: "carousel"
@@ -66,9 +66,9 @@
     });
     
 </script>
-<script src="<?php bloginfo('template_url');?>/js/jquery.common.js"></script>
-<script src="<?php bloginfo('template_url');?>/js/jquery.adjust.js"></script>
-<script src="<?php bloginfo('template_url');?>/js/jquery.matchHeight.js"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/js/jquery.common.js"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/js/jquery.adjust.js"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/js/jquery.matchHeight.js"></script>
 <script>
 	$(function() {
 	    $('.item').matchHeight();
@@ -80,7 +80,7 @@
 	    $('#loop .box').matchHeight();
 	});
 </script>
-<script src="<?php bloginfo('template_url');?>/js/lightbox.js"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/js/lightbox.js"></script>
 
 <?php wp_footer(); ?>
 

@@ -1,10 +1,7 @@
-<?php header( 'X-UA-Compatible: IE=edge' ); ?>
-
 <!doctype html>
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 
 <?php if (is_mobile()) : //smartphone only ?>
 <?php if(is_page( 'entry' )): ?>
@@ -21,12 +18,12 @@
 <?php  endif ; //if_mobile ?>
 
 
-<link rel="stylesheet" type="text/css" href="<?php bloginfo( 'stylesheet_url' ); ?>">
+<link rel="stylesheet" type="text/css" href="<?php echo get_stylesheet_uri(); ?>">
 <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 <script src="https://use.fontawesome.com/38e4e444a4.js"></script>
 <link rel="alternate" hreflang="ja" href="<?php the_permalink(); ?>">
-<link rel="shortcut icon" href="<?php bloginfo( 'template_url' ); ?>/favicon.ico">
-<link rel="apple-touch-icon" href="<?php bloginfo( 'template_url' ); ?>/icon.png">
+<link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/favicon.ico">
+<link rel="apple-touch-icon" href="<?php echo get_template_directory_uri(); ?>/icon.png">
 <meta name="format-detection" content="telephone=no">
 
 <?php wp_deregister_script( 'jquery' ); wp_enqueue_script( 'jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js', array(), '1.11.0' ); ?>
@@ -49,7 +46,7 @@
 	
 <header class="normal">
 	<div class="inner">
-		<<?php diverge_site_id(); ?> class="logo"><a href="<?php bloginfo( 'url' ); ?>"><img src="<?php bloginfo( 'template_url' ); ?>/images/common/logo.png" alt="<?php bloginfo( 'name' ); ?>"></a></<?php diverge_site_id(); ?>>
+		<<?php diverge_site_id(); ?> class="logo"><a href="<?php echo home_url(); ?>/"><img src="<?php echo get_template_directory_uri(); ?>/images/common/logo.png" alt="<?php bloginfo( 'name' ); ?>"></a></<?php diverge_site_id(); ?>>
 		
 	</div>
 	<!-- /.inner -->
@@ -57,7 +54,7 @@
 </header>
 
 <header class="device">
-	<a class="logo" href="<?php bloginfo( 'url' ); ?>/"><img src="<?php bloginfo( 'template_url' ); ?>/images/common/logo_s.png" alt="<?php bloginfo( 'name' ); ?>"></a>
+	<a class="logo" href="<?php echo home_url(); ?>/"><img src="<?php echo get_template_directory_uri(); ?>/images/common/logo_s.png" alt="<?php bloginfo( 'name' ); ?>"></a>
 	
 	<div class="btn_toggle">
 		<span class="toggle" data-title="global_s">

@@ -8,8 +8,8 @@
 </nav>
 
 <!--jQuery --> 
-<script src="<?php bloginfo('template_url');?>/js/jquery.common.js"></script>
-<script src="<?php bloginfo('template_url');?>/js/jquery.matchHeight.js"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/js/jquery.common.js"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/js/jquery.matchHeight.js"></script>
 <script>
 	$(function() {
 	    $('.item').matchHeight();
@@ -21,14 +21,14 @@
 	    $('#loop .box').matchHeight();
 	});
 </script>
-<script src="<?php bloginfo('template_url');?>/js/lightbox.js"></script>
-<script src="<?php bloginfo('template_url');?>/js/glide.js"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/js/lightbox.js"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/js/glide.js"></script>
 <script>
     $("#Glide").glide({
         type: "carousel"
     });
 </script>
-<script src="<?php bloginfo('template_url');?>/js/slick.js"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/js/slick.js"></script>
 <script>
 	$('.multiple-items').slick({
 		autoplay: true,
