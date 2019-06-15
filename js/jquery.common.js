@@ -108,7 +108,20 @@ $(function(){
         if (window.innerWidth <= 640) {
             $('.toggle').click();
         }
-    });	
+    });
+    
+    $( ".toggle_nav_s" ).css( "cursor", "pointer" );
+	$( ".toggle_nav_s" ).on( "click", function() {
+		var panelId = $(this).attr( "data-title" );
+		var panel = "#" + panelId;
+		$(this).toggleClass( "active" );//開いた時、ボタンにクラスを追加
+		$(panel).fadeToggle( "fast" );//”slow”、”normal”、”fast”
+	});
+	
+	$("footer .drawer .parent.n1").attr("data-title","link_a");
+	$("footer .drawer #link_1").attr("id","link_a");
+	$("footer .drawer .parent.n2").attr("data-title","link_b");
+	$("footer .drawer #link_2").attr("id","link_b");	
 	
 	
 	//投稿コンテンツの段落にクリアフィックス
