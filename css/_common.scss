@@ -46,13 +46,20 @@ a:active, a:focus {
 }
 
 /* element */
-.btn {
-	opacity: 1;
-	transition: opacity 0.5s;
-}
-.btn:hover {
-	opacity: 0.5;
+.image {
+	display: inline;
 	
+	@media (max-width: $viewport) {
+		display: none;
+	}
+}
+
+.image_s {
+	display: none;
+	
+	@media (max-width: $viewport) {
+		display: inline;
+	}
 }
 
 /* adjust anchor */
