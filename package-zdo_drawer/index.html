@@ -1,0 +1,20 @@
+
+<div class="zdo_drawer_menu">
+	<div class="zdo_drawer_bg"></div>
+	<!-- /.zdo_drawer_bg -->
+	
+	<div class="inner">
+		<a href="<?php echo home_url(); ?>/" class="logo"><img src="<?php echo get_template_directory_uri(); ?>/images/common/logo.png" alt="<?php bloginfo( 'name' ); ?>"></a>
+		
+	</div>
+	<!-- /.inner -->
+	
+	<button type="button" class="circle_drawer_button"></button>
+	
+	<nav class="zdo_drawer_nav_wrapper" id="drawer_menu">
+		<?php get_template_part( 'drawer' ); ?>
+		
+	</nav>
+	
+</div>
+<!-- .zdo_drawer_menu -->

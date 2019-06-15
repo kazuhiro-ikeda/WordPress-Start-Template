@@ -51,7 +51,7 @@ body { color: #333; font-family: "游ゴシック", YuGothic, "Hiragino Kaku Got
 
 @media screen and (max-width: 1060px) { body { width: 1060px; } }
 
-@media screen and (max-width: 640px) { body { width: 100%; font-size: 14px; } }
+@media screen and (max-width: 640px) { body { width: 100%; font-size: 3.4vw; } }
 
 /* link */
 a { color: #333; text-decoration: none; }
