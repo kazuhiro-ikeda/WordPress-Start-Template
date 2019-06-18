@@ -48,26 +48,40 @@
 	<div class="inner">
 		<<?php diverge_site_id(); ?> class="logo"><a href="<?php echo home_url(); ?>/"><img src="<?php echo get_template_directory_uri(); ?>/images/common/logo.png" alt="<?php bloginfo( 'name' ); ?>"></a></<?php diverge_site_id(); ?>>
 		
+		<nav id="global">
+			<?php get_template_part( 'drawer' ); ?>
+			
+		</nav>
+		
 	</div>
 	<!-- /.inner -->
 
 </header>
 
 <header class="device">
-	<a class="logo" href="<?php echo home_url(); ?>/"><img src="<?php echo get_template_directory_uri(); ?>/images/common/logo_s.png" alt="<?php bloginfo( 'name' ); ?>"></a>
+	<div class="inner">
+		<a class="logo" href="<?php echo home_url(); ?>/"><img src="<?php echo get_template_directory_uri(); ?>/images/common/logo_s.png" alt="<?php bloginfo( 'name' ); ?>"></a>
 	
-	<div class="btn_toggle">
-		<span class="toggle" data-title="global_s">
-			<span></span>
-			<span></span>
-			<span></span>
+		<div class="btn_toggle">
+			<span class="toggle" data-title="global_s">
+				<span></span>
+				<span></span>
+				<span></span>
+				
+			</span>
 			
-		</span>
-		
-		<div class="text">MENU</div>
+			<div class="text">MENU</div>
+			<!-- /.btn_toggle -->
+			
+		</div>
 		<!-- /.btn_toggle -->
-		
+	
 	</div>
-	<!-- /.btn_toggle -->
+	<!-- /.inner -->
+	
+	<nav id="global_s">
+		<?php get_template_part( 'drawer_s' ); ?>
+		
+	</nav>
 	
 </header>

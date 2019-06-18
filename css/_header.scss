@@ -1,3 +1,73 @@
 @charset "utf-8";
 /*	header
 ---------------------------------*/
+header.normal {
+	width: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 30000;
+	background: transparent;
+	transition: background .5s;
+	
+	&.fixed {
+		background: white;
+	}
+	
+	@media (max-width: $viewport) {
+		display: none;
+	}
+	
+	.inner {
+		padding: 20px;
+		display: flex;
+		justify-content: space-between;
+		
+		.logo {
+			display: block;
+			width: 410px;
+			//margin: 10px 0 0;
+		}
+		
+		#global {}
+	}
+}
+
+header.device {
+	display: none;
+	
+	@media (max-width: $viewport) {
+		display: block;
+		position: fixed;
+		width: 100%;
+		top: 0;
+		left: 0;
+		z-index: 30000;
+		background: transparent;
+		transition: background .5s;
+		
+		&.fixed {
+			background: white;
+		}
+		
+		&.active {
+			background: white;
+		}
+	}
+	
+	.inner {
+		padding: 3vw;
+		display: flex;
+		justify-content: space-between;
+		
+		.logo {
+			display: block;
+			width: 58vw;
+			//margin: 4vw 0 0;
+		}
+	}
+	
+	#global_s {
+		display: none;
+	}
+}
