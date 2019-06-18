@@ -2,6 +2,22 @@
 /*	footer
 ---------------------------------*/
 
+#global_foot {
+	@media (max-width: $viewport) {
+		display: none;
+	}
+}
+
+#global_foot_s {
+	display: none;
+	
+	@media (max-width: $viewport) {
+		display: block;
+	}
+}
+
+footer {}
+
 #nav_foot_normal {
 	display: none;
 	

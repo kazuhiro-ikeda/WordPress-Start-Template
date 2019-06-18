@@ -1,4 +1,15 @@
 <footer>
+	<div id="global_foot">
+		<?php get_template_part( 'drawer' ); ?>
+		
+	</div>
+	<!-- /#global_foot -->
+	
+	<div id="global_foot_s">
+		<?php get_template_part( 'drawer_s' ); ?>
+		
+	</div>
+	<!-- /#global_foot_s -->
 	
 </footer>
 
