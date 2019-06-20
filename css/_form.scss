@@ -3,6 +3,20 @@
 ---------------------------------*/
 $require: #c1272d;
 
+.entry_contents,
+.confirm_attention {
+	margin: 0 0 30px;
+	
+	@media (max-width: $viewport) {
+		margin: 0 0 3vw;
+	}
+	
+	p {
+		line-height: 1.8;
+	}
+}
+
+
 .ttl_single_case {
 	text-align: center;
 	padding-top: 80px;
