@@ -16,6 +16,12 @@
 	add_action( 'login_enqueue_scripts', 'my_login_logo' );
 	*/
 	
+	//管理画面スタイルシート
+	/*function my_admin_style(){
+	    wp_enqueue_style( 'my_admin_style', get_template_directory_uri().'/css/admin_style.css' );
+	}
+	add_action( 'admin_enqueue_scripts', 'my_admin_style' );*/
+	
 	//スラッグ強制
 	function auto_post_slug( $slug, $post_ID, $post_status, $post_type ) {
 	    if ( preg_match( '/(%[0-9a-f]{2})+/', $slug ) ) {
