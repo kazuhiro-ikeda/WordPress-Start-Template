@@ -19,7 +19,7 @@
 
 
 <link rel="stylesheet" type="text/css" href="<?php echo get_stylesheet_uri(); ?>">
-<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,500,500i,700,700i,900,900i&display=swap" rel="stylesheet">
 <script src="https://use.fontawesome.com/38e4e444a4.js"></script>
 <link rel="alternate" hreflang="ja" href="<?php the_permalink(); ?>">
 <link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/favicon.ico">
