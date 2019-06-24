@@ -9,10 +9,10 @@ Author URI: http://tamias.co.jp/
 */
 
 
-	//案件登録
+	//採用情報登録
 		function case_post_type() {
 			register_post_type( 'case' , array(
-				'labels'        => array( 'name' => '案件' ),
+				'labels'        => array( 'name' => '採用情報' ),
 				'public'        => true,
 				'menu_position' => 6,
 				'hierarchical'  => true ,
