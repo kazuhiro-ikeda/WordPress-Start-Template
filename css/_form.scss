@@ -335,22 +335,28 @@ button.btn_back {
 		text-align: left;
 		vertical-align: top;
 		font-weight: normal;
-		padding: 15px;
+		padding: 20px 15px 15px;
+		
+		@media all and (-ms-high-contrast: none) {
+			padding: 24px 15px 15px;
+		}
 		
 		@media screen and (max-width: $viewport) {
 			display: block;
 			width: 100%;
 			background: #e6e6e6;
+			padding: 2vw;
 		}
 	}
 	
 	td {
 		box-sizing: border-box;
-		padding: 15px;
+		padding: 16px 15px 15px;
 		
 		@media screen and (max-width: $viewport) {
 			display: block;
 			width: 100%;
+			padding: 2vw;
 		}
 	}
 }
