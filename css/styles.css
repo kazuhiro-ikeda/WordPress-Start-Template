@@ -319,6 +319,30 @@ header.device #global_s { display: none; }
 
 /*	pages
 ---------------------------------*/
+#page_404 { padding: 100px 0 0; }
+
+@media (max-width: 640px) { #page_404 { width: 88vw; margin: 0 auto; padding: 20vw 0 20vw; } }
+
+#page_404 .lead_404 { font-size: 20px; font-weight: bold; line-height: 1.5; margin: 0 0 20px; text-align: center; }
+
+@media (max-width: 640px) { #page_404 .lead_404 { font-size: 4.2vw; margin: 0 0 3vw; text-align: left; } }
+
+#page_404 .text_404 { line-height: 1.8; text-align: center; margin: 0 0 100px; }
+
+@media (max-width: 640px) { #page_404 .text_404 { text-align: left; margin: 0 0 10vw; } }
+
+#page_404 .btn_top_404 { display: flex; justify-content: space-between; align-items: center; width: 240px; height: 52px; box-sizing: border-box; padding: 0 10px 0 10px; border: 1px solid #000; background: #E6E6E6; line-height: 1; margin: 0 auto 120px; transition: all 0.5s; }
+
+@media (max-width: 640px) { #page_404 .btn_top_404 { width: 60vw; height: 12vw; padding: 0 0 0 3vw; margin: 0 auto 10vw; } }
+
+@media all and (-ms-high-contrast: none) { #page_404 .btn_top_404 { padding: 5px 10px 0 10px; } }
+
+#page_404 .btn_top_404:hover { opacity: .5; }
+
+@media (max-width: 640px) { #page_404 .btn_top_404:hover { opacity: 1; } }
+
+#page_404 .btn_top_404::after { content: "▶︎"; }
+
 /*	case
 ---------------------------------*/
 .ttl_case_line { width: 980px; margin: 0 auto 20px; font-size: 20px; letter-spacing: 3px; font-weight: bold; position: relative; }
