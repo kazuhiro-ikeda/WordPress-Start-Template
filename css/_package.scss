@@ -240,6 +240,103 @@ footer {
 	}
 }
 
+#footer_id_seal {
+	background: #cccccc;
+	padding: 10px 0;
+	
+	@media screen and (max-width: $viewport) {
+		background: #cccccc;
+		padding: 5vw 0 0;
+	}
+	
+	.inner {
+		width: 980px;
+		margin: 0 auto;
+		overflow: hidden;
+		
+		@media screen and (max-width: $viewport) {
+			width: 100%;
+			margin: 0 auto;
+			overflow: hidden;
+			position: relative;
+		}
+		
+		.data {
+			float: left;
+			padding-top: 20px;
+			
+			@media (max-width: $viewport) {
+				float: none;
+				padding-top: 0;
+			}
+		}
+		
+		.seal {
+			width: 100px;
+			float: right;
+			
+			@media (max-width: $viewport) {
+				width: 8vw;
+				position: absolute;
+				bottom: 9vw;
+				right: 3vw;
+			}
+		}
+		
+		.place {
+			margin-bottom: 20px;
+			
+			@media all and (-ms-high-contrast: none){
+				line-height: 1.5;
+			}
+			
+			@media screen and (max-width: $viewport) {
+				float: none;
+				padding: 2vw 2vw 5vw;
+			}
+			
+			> strong {
+				font-size: 18px;
+				padding-right: 10px;
+				letter-spacing: 2px;
+				
+				@media screen and (max-width: $viewport) {
+					display: block;
+					padding-right: 0; 
+					margin-bottom: 2vw;
+				}
+			}
+			
+			> span {
+				font-size: 13px;
+				position: relative;
+				top: -2px;
+				
+				@media screen and (max-width: $viewport) {
+					display: block;
+					position: static;
+					top: 0;
+				}
+			}
+		}
+		
+		#copyright {
+			font-size: 13px;
+			
+			@media all and (-ms-high-contrast: none){
+				line-height: 1.5;
+			}
+			
+			@media screen and (max-width: $viewport) {
+				display: block;
+				float: none;
+				background: white;
+				padding: 2vw;
+			}
+		}
+	}
+}
+
 #nav_foot {
 	display: none;
 	

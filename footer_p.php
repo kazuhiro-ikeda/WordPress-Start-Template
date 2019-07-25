@@ -27,6 +27,29 @@
 	<!-- /.inner -->
 	
 </div>
+<!-- /#footer_id -->
+
+<div id="footer_id_seal">
+	<div class="inner">
+		<div class="data">
+			<address class="place"><strong>テキストテキストテキスト</strong><span>テキストテキストテキスト</span></address>
+		
+			<address id="copyright">テキストテキストテキスト</address>
+		
+		</div>
+		<!-- /.data -->
+		
+		<div class="seal">
+			<a href="https://cpissl.cpi.ad.jp/cpissl/" target="_blank"><img src="https://cpissl.cpi.ad.jp/cpissl/images/cpitrustlogo.gif" Border="0"></a>
+			
+		</div>
+		<!-- /.seal -->
+		
+	</div>
+	<!-- /.inner -->
+	
+</div>
+<!-- /#footer_id_seal -->
 
 <div class="block_s">
 	<nav id="nav_foot">
