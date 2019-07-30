@@ -470,7 +470,7 @@ header.device #global_s { display: none; }
 
 #loop .items .box table tr:first-of-type { border-bottom: 1px solid white; }
 
-#loop .items .box table th { width: 3em; background: #999; padding: 2px 5px; color: white; vertical-align: middle; }
+#loop .items .box table th { width: 3em; background: #999; padding: 2px 5px; color: white; vertical-align: middle; white-space: nowrap; }
 
 @media all and (-ms-high-contrast: none) { #loop .items .box table th { padding: 5px 5px 2px; } }
 
@@ -769,6 +769,8 @@ button.btn_back:hover { opacity: .3; }
 #table_entry td, .table_entry_c td { box-sizing: border-box; padding: 16px 15px 15px; }
 
 @media screen and (max-width: 640px) { #table_entry td, .table_entry_c td { display: block; width: 100%; padding: 2vw; } }
+
+@media all and (-ms-high-contrast: none) { #table_entry td.ie, .table_entry_c td.ie { padding: 23px 15px 15px; } }
 
 input[type="text"] { height: 32px; font-size: 16px; box-sizing: border-box; padding: 0 5px; width: 400px; }
 

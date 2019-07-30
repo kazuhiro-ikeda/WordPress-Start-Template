@@ -358,6 +358,12 @@ button.btn_back {
 			width: 100%;
 			padding: 2vw;
 		}
+		
+		&.ie {
+			@media all and (-ms-high-contrast: none) {
+				padding: 23px 15px 15px;
+			}
+		}
 	}
 }
 
