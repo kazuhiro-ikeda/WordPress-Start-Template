@@ -752,6 +752,8 @@ button.btn_back:hover { opacity: .3; }
 
 .require { color: #c1272d; font-weight: bold; padding-left: 10px; }
 
+@media all and (-ms-high-contrast: none) { .mw_wp_form_confirm #table_entry td, .table_entry_c td { padding: 23px 15px 15px; } }
+
 #table_entry, .table_entry_c { width: 100%; line-height: 150%; margin-bottom: 60px; }
 
 @media screen and (max-width: 640px) { #table_entry, .table_entry_c { margin-bottom: 10vw; } }
