@@ -212,18 +212,21 @@ a.page-numbers {
 		display: none;
 	}
 }
+
 .sp-block {
 	display: none;
 	@media screen and (max-width: $viewport) {
 		display: block;
 	}
 }
+
 .pc-inline {
 	display: inline;
 	@media screen and (max-width: $viewport) {
 		display: none;
 	}
 }
+
 .sp-inline {
 	display: none;
 	@media screen and (max-width: $viewport) {
@@ -238,18 +241,21 @@ a.page-numbers {
 		display: none;
 	}
 }
+
 .block_s {
 	display: none;
 	@media screen and (max-width: $viewport) {
 		display: block;
 	}
 }
+
 .inline_p {
 	display: inline;
 	@media screen and (max-width: $viewport) {
 		display: none;
 	}
 }
+
 .inline_s {
 	display: none;
 	@media screen and (max-width: $viewport) {
