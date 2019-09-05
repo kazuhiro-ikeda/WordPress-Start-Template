@@ -772,6 +772,8 @@ button.btn_back:hover { opacity: .3; }
 
 .require { color: #c1272d; font-weight: bold; padding-left: 10px; }
 
+.mw_wp_form_confirm #table_entry td, .table_entry_c td { padding: 19px 15px 15px; }
+
 @media all and (-ms-high-contrast: none) { .mw_wp_form_confirm #table_entry td, .table_entry_c td { padding: 23px 15px 15px; } }
 
 #table_entry, .table_entry_c { width: 100%; line-height: 150%; margin-bottom: 60px; }
@@ -791,6 +793,8 @@ button.btn_back:hover { opacity: .3; }
 #table_entry td, .table_entry_c td { box-sizing: border-box; padding: 16px 15px 15px; }
 
 @media screen and (max-width: 640px) { #table_entry td, .table_entry_c td { display: block; width: 100%; padding: 2vw; } }
+
+#table_entry td.ie, .table_entry_c td.ie { padding: 19px 15px 15px; }
 
 @media all and (-ms-high-contrast: none) { #table_entry td.ie, .table_entry_c td.ie { padding: 23px 15px 15px; } }
 

@@ -314,6 +314,8 @@ button.btn_back {
 //table
 .mw_wp_form_confirm #table_entry, .table_entry_c {
 	td {
+		padding: 19px 15px 15px;
+		
 		@media all and (-ms-high-contrast: none) {
 			padding: 23px 15px 15px;
 		}
@@ -368,6 +370,8 @@ button.btn_back {
 		}
 		
 		&.ie {
+			padding: 19px 15px 15px;//応募する仕事
+			
 			@media all and (-ms-high-contrast: none) {
 				padding: 23px 15px 15px;
 			}
