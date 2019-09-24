@@ -478,6 +478,11 @@ textarea {
 	width: 100%;
 }
 
+input[type="radio"] {
+	position: relative;
+	top: -3px;
+}
+
 .mwform-checkbox-field.horizontal-item {
 	margin-right: 0 !important;
 	margin-left: 0 !important;
