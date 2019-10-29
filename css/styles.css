@@ -634,7 +634,7 @@ header.device #global_s { display: none; }
 
 #case > .inner #btn_entry { display: block; background: #d91412; text-align: center; color: white; font-size: 16px; font-weight: bold; width: 230px; padding: 15px 20px; margin: 0 auto; transition: all 0.7s; position: relative; }
 
-@media all and (-ms-high-contrast: none) { #case > .inner #btn_entry { padding: 21px 20px 15px; } }
+@media all and (-ms-high-contrast: none) { #case > .inner #btn_entry { padding: 23px 20px 15px; } }
 
 #case > .inner #btn_entry::after { color: #c6d800; font-family: FontAwesome; content: "\f0da"; position: absolute; top: 15px; right: 10px; }
 
@@ -757,6 +757,8 @@ header.device #global_s { display: none; }
 .mw_wp_form_confirm .display_confirm { display: block; }
 
 .confirm_attention { display: none; }
+
+.mw_wp_form_confirm .privacy-policy { display: none; }
 
 .mw_wp_form_confirm .confirm_attention { display: block; line-height: 150%; margin-bottom: 20px; }
 
