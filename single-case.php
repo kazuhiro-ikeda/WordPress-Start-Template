@@ -321,32 +321,30 @@
 		<!-- /.inner -->
 		
 		<div id="historyback">
-			<a href="javascript:window.history.back()">戻る</a>
+			<script>
+				var ref = document.referrer;
+				var hereHost = window.location.hostname;
+				 
+				var sStr = "^https?://" + hereHost;
+				var rExp = new RegExp( sStr, "i" );
+				 
+				if( ref.length == 0 ) {
+				    // リファラなし
+				    document.write('<a href="<?php echo home_url(); ?>/case">募集一覧を見る</a>');
+				}
+				else if( ref.match( rExp ) ) {
+				    // マッチした場合
+				    document.write('<a href="javascript:window.history.back()">戻る</a>');
+				}
+				else {
+				    // マッチしない場合
+				    document.write('<a href="<?php echo home_url(); ?>/case">募集一覧を見る</a>');
+				}
 			
+			</script>
+		
 		</div>
 		<!-- /#historyback -->
-		
-		<script>
-		var ref = document.referrer;
-		var hereHost = window.location.hostname;
-		 
-		var sStr = "^https?://" + hereHost;
-		var rExp = new RegExp( sStr, "i" );
-		 
-		if( ref.length == 0 ) {
-		    // リファラなし
-		    //document.write("none");
-		}
-		else if( ref.match( rExp ) ) {
-		    // マッチした場合
-		    //document.write("self");
-		}
-		else {
-		    // マッチしない場合
-		    //document.write("other");
-		}
-		
-		</script>
 	
 	</article>
 	<!-- /#case -->
