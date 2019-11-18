@@ -367,7 +367,7 @@ header.device #global_s { display: none; }
 ---------------------------------*/
 .ttl_case_line { width: 980px; margin: 0 auto 20px; font-size: 20px; letter-spacing: 3px; font-weight: bold; position: relative; }
 
-@media screen and (max-width: 640px) { .ttl_case_line { width: 100%; margin: 0 auto 3vw; font-size: 16px; letter-spacing: 0; font-weight: bold; position: relative; } }
+@media screen and (max-width: 640px) { .ttl_case_line { width: 100%; margin: 0 auto 6vw; font-size: 16px; letter-spacing: 0; font-weight: bold; position: relative; } }
 
 .ttl_case_line > span { display: inline-block; background: white; padding-right: 5px; }
 
@@ -447,7 +447,7 @@ header.device #global_s { display: none; }
 
 #loop { width: 980px; margin: 0 auto 60px; }
 
-@media screen and (max-width: 640px) { #loop { width: 94vw; margin: 0 auto 10vw; } }
+@media screen and (max-width: 640px) { #loop { width: 88vw; margin: 0 auto 10vw; } }
 
 #loop.archive { margin: 30px auto 60px; }
 
@@ -455,24 +455,29 @@ header.device #global_s { display: none; }
 
 #loop .items { overflow: hidden; }
 
-#loop .items .box { box-sizing: border-box; width: 32%; float: left; margin-right: 2%; border: 1px solid silver; padding: 10px; margin-bottom: 23px; }
+#loop .items .box { width: 310px; box-sizing: border-box; border: 1px solid silver; padding: 9px; float: left; margin: 0 25px 25px 0; }
 
-@media screen and (max-width: 640px) { #loop .items .box { box-sizing: border-box; width: 100%; float: none; margin-right: 0; border: 1px solid silver; padding: 10px; margin-bottom: 5vw; } }
+@media (max-width: 640px) { #loop .items .box { width: 100%; padding: 2vw; float: none; margin: 0 0 5vw; } }
 
 #loop .items .box:nth-of-type(3n) { margin-right: 0; }
 
-#loop .items .box a { display: block; opacity: 1; transition: all 0.7s; }
+#loop .items .box a { display: block; opacity: 1; transition: all 0.3s; }
 
 #loop .items .box a:hover { opacity: .5; }
 
-#loop .items .box figure { height: 160px; overflow: hidden; }
+#loop .items .box figure { width: 290px; height: 170px; overflow: hidden; }
 
-@media screen and (max-width: 640px) { #loop .items .box figure { height: 50vw; }
-  #loop .items .box figure > img { width: 100%; height: auto; } }
+@media screen and (max-width: 640px) { #loop .items .box figure { width: 100%; height: auto; } }
 
-#loop .items .box .style_archive { display: block; color: white; font-size: 16px; line-height: 125%; background: #799ECB; padding: 7px 15px 5px; }
+#loop .items .box figure img { display: block; }
+
+@media (max-width: 640px) { #loop .items .box figure img { width: 100%; height: auto; } }
+
+#loop .items .box .style_archive { display: block; color: white; font-size: 16px; line-height: 1.25; background: #799ECB; width: 100%; box-sizing: border-box; padding: 7px 15px 5px; }
 
 @media all and (-ms-high-contrast: none) { #loop .items .box .style_archive { padding: 9px 15px 5px; } }
+
+@media (max-width: 640px) { #loop .items .box .style_archive { font-size: 3.4vw; padding: 1vw 2vw 1vw; } }
 
 #loop .items .box .style_archive.style_a { background: #799ECB; }
 
@@ -482,11 +487,15 @@ header.device #global_s { display: none; }
 
 #loop .items .box .style_archive.style_d { background: #73BCC0; }
 
-#loop .items .box .title_archive { display: block; color: white; font-size: 16px; line-height: 125%; background: #4d4d4d; padding: 10px 15px; }
+#loop .items .box .title_archive { display: block; color: white; font-size: 16px; line-height: 1.25; background: #4d4d4d; padding: 10px 15px; }
 
 @media all and (-ms-high-contrast: none) { #loop .items .box .title_archive { padding: 13px 15px 10px; } }
 
-#loop .items .box table { width: 100%; line-height: 150%; font-size: 12px; }
+@media (max-width: 640px) { #loop .items .box .title_archive { font-size: 3.4vw; padding: 2vw 2vw 2vw; } }
+
+#loop .items .box table { width: 100%; line-height: 1.5; font-size: 12px; }
+
+@media (max-width: 640px) { #loop .items .box table { font-size: 2.8vw; } }
 
 #loop .items .box table tr:first-of-type { border-bottom: 1px solid white; }
 
@@ -494,9 +503,13 @@ header.device #global_s { display: none; }
 
 @media all and (-ms-high-contrast: none) { #loop .items .box table th { padding: 5px 5px 2px; } }
 
+@media (max-width: 640px) { #loop .items .box table th { padding: 1vw 2vw; } }
+
 #loop .items .box table td { background: #e6e6e6; padding: 2px 5px; vertical-align: middle; }
 
 @media all and (-ms-high-contrast: none) { #loop .items .box table td { padding: 7px 5px 2px; } }
+
+@media (max-width: 640px) { #loop .items .box table td { padding: 1vw 2vw; } }
 
 #case { width: 980px; min-width: 980px; margin: 30px auto 0; }
 

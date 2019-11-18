@@ -201,7 +201,7 @@
 	add_image_size( 'ポートレートS', 120, 160, true);
 	add_image_size( 'メインビジュアル', 3000, 1060, true);
 	add_image_size( 'メインビジュアルSP', 640, 530, true);
-	add_image_size( '案件', 420, 280, true);
+	add_image_size( '案件', 580, 340, true);
 	add_image_size( '案件WIDE', 910, 260, true);
 	add_image_size( 'エントリー', 1840, 500, true);
 	add_image_size( 'スライダー', 3000, 1060, true);

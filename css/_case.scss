@@ -25,7 +25,7 @@ $even: #666666;
 	
 	@media screen and (max-width: $viewport) {
 		width: 100%;
-		margin: 0 auto 3vw;
+		margin: 0 auto 6vw;
 		font-size: 16px;
 		letter-spacing: 0;
 		font-weight: bold;
@@ -296,7 +296,7 @@ $even: #666666;
 	margin: 0 auto 60px;
 	
 	@media screen and (max-width: $viewport) {
-		width: 94vw;
+		width: 88vw;
 		margin: 0 auto 10vw;
 	}
 	
@@ -312,22 +312,18 @@ $even: #666666;
 		overflow: hidden;
 		
 		.box {
+			width: 310px;
 			box-sizing: border-box;
-			width: 32%;
-			float: left;
-			margin-right: 2%;
 			border: 1px solid silver;
-			padding: 10px;
-			margin-bottom: 23px;
+			padding: 9px;
+			float: left;
+			margin: 0 25px 25px 0;
 			
-			@media screen and (max-width: $viewport) {
-				box-sizing: border-box;
+			@media (max-width: $viewport) {
 				width: 100%;
+				padding: 2vw;
 				float: none;
-				margin-right: 0;
-				border: 1px solid silver;
-				padding: 10px;
-				margin-bottom: 5vw;
+				margin: 0 0 5vw;
 			}
 			
 			&:nth-of-type(3n) {
@@ -337,21 +333,27 @@ $even: #666666;
 			a {
 				display: block;
 				opacity: 1;
-				transition: all .7s;
+				transition: all .3s;
 				
 				&:hover {
 					opacity: .5;
 				}
 			}
 			
-			 figure {
-				height: 160px;
+			figure {
+				width: 290px;
+				height: 170px;
 				overflow: hidden;
 				
 				@media screen and (max-width: $viewport) {
-					height: 50vw;
+					width: 100%;
+					height: auto;
+				}
+				
+				img {
+					display: block;
 					
-					> img {
+					@media (max-width: $viewport) {
 						width: 100%;
 						height: auto;
 					}
@@ -362,12 +364,19 @@ $even: #666666;
 				display: block;
 				color: white;
 				font-size: 16px;
-				line-height: 125%;
+				line-height: 1.25;
 				background: $insert;
+				width: 100%;
+				box-sizing: border-box;
 				padding: 7px 15px 5px;
 				
 				@media all and (-ms-high-contrast: none){
 					padding: 9px 15px 5px;
+				}
+				
+				@media (max-width: $viewport) {
+					font-size: 3.4vw;
+					padding: 1vw 2vw 1vw;
 				}
 				
 				&.style_a {
@@ -391,19 +400,28 @@ $even: #666666;
 				display: block;
 				color: white;
 				font-size: 16px;
-				line-height: 125%;
+				line-height: 1.25;
 				background: #4d4d4d;
 				padding: 10px 15px;
 				
 				@media all and (-ms-high-contrast: none){
 					padding: 13px 15px 10px;
 				}
+				
+				@media (max-width: $viewport) {
+					font-size: 3.4vw;
+					padding: 2vw 2vw 2vw;
+				}
 			}
 			
 			table {
 				width: 100%;
-				line-height: 150%;
+				line-height: 1.5;
 				font-size: 12px;
+				
+				@media (max-width: $viewport) {
+					font-size: 2.8vw;
+				}
 				
 				tr:first-of-type {
 					border-bottom: 1px solid white;
@@ -420,6 +438,10 @@ $even: #666666;
 					@media all and (-ms-high-contrast: none){
 						padding: 5px 5px 2px;
 					}
+					
+					@media (max-width: $viewport) {
+						padding: 1vw 2vw;
+					}
 				}
 				
 				td {
@@ -429,6 +451,10 @@ $even: #666666;
 					
 					@media all and (-ms-high-contrast: none){
 						padding: 7px 5px 2px;
+					}
+					
+					@media (max-width: $viewport) {
+						padding: 1vw 2vw;
 					}
 				}
 			}
