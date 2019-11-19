@@ -15,7 +15,7 @@
 		
 	<?php endif; ?>
 	
-	</div>
-	<!-- /#main -->
+</div>
+<!-- /#main -->
 
 <?php get_footer(); ?>
