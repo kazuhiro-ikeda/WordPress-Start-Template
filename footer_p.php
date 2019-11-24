@@ -94,7 +94,6 @@
 <script src="<?php echo get_template_directory_uri(); ?>/js/jquery.matchHeight.js"></script>
 <script>
 	$(function() {
-	    $('.item').matchHeight();
 	    $('.img_gallery').matchHeight();
 	    $('.caption_gallery').matchHeight();
 	    $('.style_archive').matchHeight();
