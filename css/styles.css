@@ -703,33 +703,33 @@ header.device #global_s { display: none; }
 
 .error { display: block; margin: 10px 0; }
 
-.privacy-policy { background: #e6e6e6; padding: 20px; margin-bottom: 60px; }
+.form_privacy-policy { background: #e6e6e6; padding: 20px; margin-bottom: 60px; }
 
-.privacy-policy .ttl { font-size: 15px; font-weight: bold; line-height: 1.5; margin-bottom: 10px; }
+.form_privacy-policy .ttl { font-size: 15px; font-weight: bold; line-height: 1.5; margin-bottom: 10px; }
 
-@media (max-width: 640px) { .privacy-policy .ttl { font-size: 4vw; font-weight: bold; line-height: 1.5; margin-bottom: 2vw; } }
+@media (max-width: 640px) { .form_privacy-policy .ttl { font-size: 4vw; font-weight: bold; line-height: 1.5; margin-bottom: 2vw; } }
 
-.privacy-policy .agree_text { font-size: 15px; line-height: 1.5; margin-bottom: 10px; }
+.form_privacy-policy .agree_text { font-size: 15px; line-height: 1.5; margin-bottom: 10px; }
 
-@media (max-width: 640px) { .privacy-policy .agree_text { font-size: 3.4vw; line-height: 1.5; } }
+@media (max-width: 640px) { .form_privacy-policy .agree_text { font-size: 3.4vw; line-height: 1.5; } }
 
-.privacy-policy .inner_box { height: 130px; background: white; overflow-y: scroll; border: 1px solid #b1b1b1; padding: 20px; margin-bottom: 20px; line-height: 1.8; }
+.form_privacy-policy .inner_box { height: 130px; background: white; overflow-y: scroll; border: 1px solid #b1b1b1; padding: 20px; margin-bottom: 20px; line-height: 1.8; }
 
-.privacy-policy .inner_box .ttl { font-weight: bold; margin-bottom: 20px; }
+.form_privacy-policy .inner_box .ttl { font-weight: bold; margin-bottom: 20px; }
 
-@media (max-width: 640px) { .privacy-policy .inner_box .ttl { margin-bottom: 3vw; } }
+@media (max-width: 640px) { .form_privacy-policy .inner_box .ttl { margin-bottom: 3vw; } }
 
-.privacy-policy .inner_box p { margin-bottom: 20px; }
+.form_privacy-policy .inner_box p { margin-bottom: 20px; }
 
-@media (max-width: 640px) { .privacy-policy .inner_box p { margin-bottom: 3vw; } }
+@media (max-width: 640px) { .form_privacy-policy .inner_box p { margin-bottom: 3vw; } }
 
-.privacy-policy .inner_box ul { margin-left: 1em; margin-bottom: 20px; line-height: 1.8; list-style-type: decimal; list-style-position: outside; }
+.form_privacy-policy .inner_box ul { margin-left: 1em; margin-bottom: 20px; line-height: 1.8; list-style-type: decimal; list-style-position: outside; }
 
-@media (max-width: 640px) { .privacy-policy .inner_box ul { margin-left: 1em; margin-bottom: 3vw; } }
+@media (max-width: 640px) { .form_privacy-policy .inner_box ul { margin-left: 1em; margin-bottom: 3vw; } }
 
-.privacy-policy .inner_box ul li { margin-bottom: 20px; }
+.form_privacy-policy .inner_box ul li { margin-bottom: 20px; }
 
-.privacy-policy .inner_box .right_text { text-align: right; }
+.form_privacy-policy .inner_box .right_text { text-align: right; }
 
 #registration_message { width: 980px; margin: 50px auto 50px; }
 
