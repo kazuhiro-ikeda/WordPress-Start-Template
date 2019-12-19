@@ -819,15 +819,15 @@ button.btn_back:hover { opacity: .3; }
 
 @media all and (-ms-high-contrast: none) { #table_entry td.ie, .table_entry_c td.ie { padding: 23px 15px 15px; } }
 
-input[type="text"] { height: 32px; font-size: 16px; box-sizing: border-box; padding: 0 5px; width: 400px; }
+input[type="text"], input[type="email"] { height: 32px; font-size: 16px; box-sizing: border-box; padding: 0 5px; width: 400px; }
 
-@media screen and (max-width: 640px) { input[type="text"] { width: 100% !important; border: 1px solid #ccc; margin-bottom: 3vw; } }
+@media screen and (max-width: 640px) { input[type="text"], input[type="email"] { width: 100% !important; border: 1px solid #ccc; margin-bottom: 3vw; } }
 
-input[type="text"]#age { width: 100px; }
+input[type="text"]#age, input[type="email"]#age { width: 100px; }
 
-@media screen and (max-width: 640px) { input[type="text"]#age { width: 20% !important; } }
+@media screen and (max-width: 640px) { input[type="text"]#age, input[type="email"]#age { width: 20% !important; } }
 
-@media screen and (max-width: 640px) { input[type="text"]#days { width: 20% !important; } }
+@media screen and (max-width: 640px) { input[type="text"]#days, input[type="email"]#days { width: 20% !important; } }
 
 #zip { box-sizing: border-box; height: 32px; width: 120px; padding: 0 5px; }
 
@@ -851,7 +851,7 @@ input[type="text"]#age { width: 100px; }
 
 @media screen and (max-width: 640px) { #area_w > input { display: block; margin-top: 2vw; width: 100%; } }
 
-textarea { font-size: 16px; box-sizing: border-box; padding: 5px 5px; width: 100%; }
+textarea { font-size: 16px; box-sizing: border-box; padding: 5px 5px; width: 100%; border: 1px solid #ccc; }
 
 input[type="radio"] { position: relative; top: -3px; }
 

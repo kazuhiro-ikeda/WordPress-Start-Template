@@ -385,7 +385,8 @@ button.btn_back {
 
 //form
 
-input[type="text"] {
+input[type="text"],
+input[type="email"] {
 	height: 32px;
 	font-size: 16px;
 	box-sizing: border-box;
@@ -480,6 +481,7 @@ textarea {
 	box-sizing: border-box;
 	padding: 5px 5px;
 	width: 100%;
+	border: 1px solid #ccc;
 }
 
 input[type="radio"] {
