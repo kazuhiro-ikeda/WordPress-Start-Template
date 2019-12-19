@@ -509,9 +509,9 @@ input[type="radio"] {
 
 //select
 select {
-    -webkit-appearance: button;
-    -moz-appearance: button;
-    appearance: button;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
     height: 30px;
     background-color: white;
     border: 1px solid silver;
