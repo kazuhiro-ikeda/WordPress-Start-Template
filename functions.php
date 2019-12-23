@@ -152,6 +152,15 @@
 				}
 	}
 	
+	//アンカーリンクコントロール
+	function hashControll() {
+		if(is_front_page()){
+			//
+		} else {
+			echo home_url().'/';
+		}
+	}
+	
 	//子ページ条件判定
 	function is_subpage( $pagename ) {
 	  if ( is_page() ) { //固定ページである。
