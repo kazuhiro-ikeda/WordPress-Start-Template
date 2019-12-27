@@ -26,7 +26,15 @@
 
 <?php wp_deregister_script( 'jquery' ); wp_enqueue_script( 'jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js', array(), '1.11.0' ); ?>
 
-<title><?php full_title(); ?></title>
+<title>
+	<?php if(is_singular( 'case' )): ?>
+	<?php the_field( "title_case", $post->ID); ?>｜<?php bloginfo( 'name' ); ?>
+	
+	<?php else: ?>
+	<?php full_title(); ?>
+	
+	<?php endif; ?>
+</title>
 
 <?php wp_head(); ?>
 
