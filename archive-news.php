@@ -17,9 +17,9 @@
 				
 				<div class="data">
 					<?php 
-					    $term  = wp_get_object_terms($post->ID, 'genre_news');
+					    /*$term  = wp_get_object_terms($post->ID, 'genre_news');
 					    $term_slug = $term[0]->slug;
-					    $term_name = $term[0]->name;
+					    $term_name = $term[0]->name;*/
 					 ?>
 					 
 					<div class="information">

@@ -3,9 +3,9 @@
 	<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 	<article id="single_news">
 		<?php 
-		    $term  = wp_get_object_terms($post->ID, 'genre_news');
+		    /*$term  = wp_get_object_terms($post->ID, 'genre_news');
 		    $term_slug = $term[0]->slug;
-		    $term_name = $term[0]->name;
+		    $term_name = $term[0]->name;*/
 		 ?>
 			
 		<div class="information">
