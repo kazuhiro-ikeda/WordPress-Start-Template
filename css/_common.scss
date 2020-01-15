@@ -59,7 +59,7 @@ $heading_line-height: 125%;
 	}
 }
 
-@mixin img_svg($x_number: 200px, $y_number: 30px) {
+@mixin svg($x_number: 200px, $y_number: 30px) {
 	img {
 		width: $x_number;
 		height: $y_number;
