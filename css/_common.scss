@@ -93,6 +93,7 @@ body {
 	word-wrap: break-word;
 	-webkit-font-smoothing: subpixel-antialiased;
 	-webkit-text-size-adjust: 100%;
+	overflow: hidden;
 	
 	@media all and (-ms-high-contrast: none) {
 		font-weight: 500;//$游ゴシック
