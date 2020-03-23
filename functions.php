@@ -1,4 +1,14 @@
 <?php
+	function hide_inline_edit_link() {
+	?>
+	<style type="text/css">
+	span.inline {
+	    display: none;
+	}
+	</style>
+	<?php
+	}
+	add_action( 'admin_print_styles-edit.php', 'hide_inline_edit_link' );
 	
 	/*
 	//ログイン画面カスタマイズ
