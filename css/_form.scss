@@ -3,6 +3,16 @@
 ---------------------------------*/
 $require: #c1272d;
 
+.steps_form {
+	width: 700px;
+	margin: 60px auto 60px;
+	
+	@media (max-width: $viewport) {
+		width: 88vw;
+		margin: 5vw auto 5vw;
+	}
+}
+
 .entry_contents,
 .confirm_attention {
 	margin: 0 0 30px;

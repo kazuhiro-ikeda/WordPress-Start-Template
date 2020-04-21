@@ -8,6 +8,12 @@
 	<section id="entry" class="form_complete">
 		<div class="ttl_case_line em6"><span>応募フォーム</span></div>
 		
+		<div class="steps_form">
+			<img class="image" src="<?php echo get_template_directory_uri(); ?>/images/form/step_3.jpg" alt="step_1">
+			<img class="image_s" src="<?php echo get_template_directory_uri(); ?>/images/form/step_3_s.jpg" alt="">
+		</div>
+		<!-- /.steps_form -->
+		
 		<div class="inner">
 			
 			<p class="thanks-text insert">この度は、数ある企業の中から弊社へご応募頂きまして <br>誠にありがとうございます。</p>

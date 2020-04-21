@@ -8,6 +8,12 @@
 	<section id="entry">
 		<div class="ttl_case_line em6"><span>応募フォーム</span></div>
 		
+		<div class="steps_form">
+			<img class="image" src="<?php echo get_template_directory_uri(); ?>/images/form/step_1.jpg" alt="step_1">
+			<img class="image_s" src="<?php echo get_template_directory_uri(); ?>/images/form/step_1_s.jpg" alt="">
+		</div>
+		<!-- /.steps_form -->
+		
 		<div class="inner">
 			<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 			<?php remove_filter ( 'the_content', 'wpautop' ); ?>

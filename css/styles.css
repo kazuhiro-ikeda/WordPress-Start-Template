@@ -120,8 +120,6 @@ a.page-numbers { background-color: #799ECB; color: white; display: inline-block;
 
 .page-numbers.current { display: inline-block; margin-right: 15px; color: #799ECB; }
 
-.dots { margin-right: 15px; }
-
 .nav-links a.next { border: none; }
 
 .nav-links a.prev { border: none; }
@@ -683,6 +681,10 @@ header.device #global_s { display: none; }
 
 /*	entry
 ---------------------------------*/
+.steps_form { width: 700px; margin: 60px auto 60px; }
+
+@media (max-width: 640px) { .steps_form { width: 88vw; margin: 5vw auto 5vw; } }
+
 .entry_contents, .confirm_attention { margin: 0 0 30px; }
 
 @media (max-width: 640px) { .entry_contents, .confirm_attention { margin: 0 0 3vw; } }
