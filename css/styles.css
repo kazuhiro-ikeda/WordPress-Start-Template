@@ -41,8 +41,7 @@ input, select { vertical-align: middle; }
 
 /*	preload
 ---------------------------------*/
-body:after { content: url("../images/") url(""); display: none; }
-
+/*body:after { content: url("../images/") url(""); display: none; }*/
 @media (max-width: 640px) { .denwa .tel { display: none; } }
 
 .denwa .tel_s { display: none; }
