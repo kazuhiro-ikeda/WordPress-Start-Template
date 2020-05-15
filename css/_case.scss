@@ -78,6 +78,16 @@ $even: #666666;
 	}
 	
 	&.em6 {
+		&.oubo {
+			width: 700px;
+			margin: 60px auto 30px;
+			
+			@media (max-width: $viewport) {
+				width: 100%;
+				margin: 5vw auto 5vw;
+			}
+		}
+		
 		&::after {
 			content: "";
 			border-top: 1px solid silver;
