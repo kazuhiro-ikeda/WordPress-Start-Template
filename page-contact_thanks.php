@@ -8,10 +8,14 @@
 	<section id="entry" class="form_complete">
 		<div class="ttl_case_line em6"><span>お問い合わせ</span></div>
 		
-		<div class="inner">
+		<div class="steps_form">
+			<img class="image" src="<?php echo get_template_directory_uri(); ?>/images/form/step_3.jpg" alt="step_1">
+			<img class="image_s" src="<?php echo get_template_directory_uri(); ?>/images/form/step_3_s.jpg" alt="">
+		</div>
+		<!-- /.steps_form -->
 		
-			
-			<p class="thanks-text insert">この度は、お問合せいただきまして <br>誠にありがとうございます。</p>
+		<div class="inner">
+			<p class="thanks-text insert">この度は、お問合せいただきまして<br>誠にありがとうございます。</p>
 			
 			<p class="thanks-text">営業日３日以内を目安にご連絡をさしあげますので <br>
 				もうしばらくお待ちくださいませ。 <br><br>

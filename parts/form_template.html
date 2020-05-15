@@ -1,71 +1,87 @@
-
 [mwform_hidden name="応募する仕事" value="{title_case}"]
-[mwform_hidden name="案件名" value="{post_title}"]
+[mwform_hidden name="url" value="{post_name}"]
 
-[inc_php file='entry_contents']
+<div class="wrap_form">
+	[inc_php file='entry_contents']
+	
+	<p class="confirm_attention">以下の内容でよろしければ、送信ボタンを押してください。</p>
+	
+	<table class="table_entry">
+		<tr>
+			<th>応募する仕事</th>
+			<td>{title_case}</td>
+		</tr>
+		<tr>
+			<th>氏名<span class="require">※必須</span></th>
+			<td>[mwform_text name="氏名" id="name" placeholder="例）山田　太郎"]</td>
+		</tr>
+		<tr>
+			<th>ふりがな<span class="require">※必須</span></th>
+			<td>[mwform_text name="ふりがな" id="furigana" placeholder="例）やまだ　たろう"] </td>
+		</tr>
+		<tr>
+			<th>年齢</th>
+			<td>[mwform_text name="年齢" id="age" placeholder=""] 歳</td>
+		</tr>
+		<tr>
+			<th>郵便番号</th>
+			<td><span class="mark_zip">〒</span> [mwform_text name="郵便番号" id="zip" placeholder="例）0123456"]</td>
+		</tr>
+		<tr>
+			<th>現住所<span class="require">※必須</span></th>
+			<td><div id="pref_w">[mwform_text name="都道府県" id="pref" placeholder="都道府県"]</div><div id="city_w">[mwform_text name="市区町村" id="city" placeholder="市区町村"]</div><div id="area_w">[mwform_text name="エリア" id="area" placeholder="番地・建物名"]</div></td>
+		</tr>
+		<tr>
+			<th>電話番号<span class="require">※必須</span></th>
+			<td>[mwform_text name="電話番号" id="tel" placeholder="例）09012345678"] </td>
+		</tr>
+		<tr>
+			<th>メール<span class="require">※必須</span></th>
+			<td>[mwform_text name="メール" id="mail" placeholder="例）aaaaa@bbbbb.com"]</td>
+		</tr>
+		<tr>
+			<th>備考</th>
+			<td>[mwform_textarea name="備考" id="message" placeholder="ご要望やご質問あればご記入ください。"]</td>
+		</tr>
+	</table>
 
-<table id="table_entry">
-	<tr>
-		<th>応募する仕事</th>
-		<td>{title_case}</td>
-	</tr>
-	<tr>
-		<th>お名前（全角）<span class="require">※必須</span></th>
-		<td>[mwform_text name="お名前" id="name"] <span class="example">例）山田　太郎</span></td>
-	</tr>
-	<tr>
-		<th>ふりがな（全角）<span class="require">※必須</span></th>
-		<td>[mwform_text name="ふりがな" id="furigana"] <span class="example">例）やまだ　たろう</span></td>
-	</tr>
-	<tr>
-		<th>年齢<span class="require">※必須</span></th>
-		<td>[mwform_text name="年齢" id="age"] 歳</td>
-	</tr>
-	<tr>
-		<th>性別</th>
-		<td>[mwform_radio name="性別" id="gender" children="男,女"]</td>
-	</tr>
-	<tr>
-		<th>郵便番号</th>
-		<td>[mwform_text name="郵便番号" id="zip"] <span class="example">例）012-3456</span></td>
-	</tr>
-	<tr>
-		<th>現住所<span class="require">※必須</span></th>
-		<td><div id="pref_w">都道府県 [mwform_text name="都道府県" id="pref"]</div><div id="city_w">市区町村 [mwform_text name="市区町村" id="city"]</div><div id="area_w">番地・建物名 [mwform_text name="エリア" id="area"]</div></td>
-	</tr>
-	<tr>
-		<th>お電話番号（半角数字）<span class="require">※必須</span></th>
-		<td>[mwform_text name="お電話番号" id="tel"] <span class="example">例）090-1234-5678</span></td>
-	</tr>
-	<tr>
-		<th>メールアドレス<span class="require">※必須</span></th>
-		<td>[mwform_text name="メールアドレス" id="mail"] <span class="example">例）aaaaa@bbbbb.com</span></td>
-	</tr>
-	<tr>
-		<th>最終学歴</th>
-		<td>[mwform_radio name="最終学歴" id="grade" children="中卒,高卒,大学卒,専門卒,院卒"]</td>
-	</tr>
-	<tr>
-		<th>志望動機/自己PR</th>
-		<td>[mwform_textarea name="志望動機/自己PR" id="pr"]</td>
-	</tr>
-	<tr>
-		<th>職務経歴</th>
-		<td>[mwform_textarea name="職務経歴" id="career"]</td>
-	</tr>
-	<tr>
-		<th>ご質問・お問い合わせ内容</th>
-		<td>[mwform_textarea name="ご質問・お問い合わせ内容" id="message"]</td>
-	</tr>
-</table>
+	<div class="form_privacy-policy">
+		<h3 class="ttl">個人情報保護方針</h3>			
+				
+		<div class="inner_box">				
+			<h2 class="ttl">個人情報の取り扱いについて</h2>
+			<p>テキストテキストテキストテキスト</p>
+	
+			<h2 class="ttl">テキスト</h2>
+			<p><strong>テキストテキストテキスト</strong><br>
+				テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト。<br>
+				<strong>テキストテキスト</strong><br>
+				テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+				
+		</div>
+		<!-- /.inner_box -->
+				
+		<div class="agree_text">
+			上記をお読みいただき、同意していただける場合は「同意する」にチェックを入れてください。<span class="require">※必須</span><br>
+			[mwform_checkbox name="同意" children="同意する" separator=","]	
+						
+		</div>
+		<!-- /.agree_text -->
+		
+	</div>
+	<!-- /.form_privacy-policy -->
 
-[mwform_submitButton name="send" class="btn_send" confirm_value="確認する" submit_value="送信する"]
+	
+	[mwform_submitButton name="send" class="btn_send_narrow" confirm_value="確認する" submit_value="送信する"]
+	
+	[mwform_bback class="btn_back_narrow" value="back"]戻る[/mwform_bback]
+	
+</div>
+<!-- /.wrap_form -->
 
+{氏名} 様
 
-
-{お名前} 様
-
-この度は、ご応募頂きまして 誠にありがとうございます。 
+この度は、ご応募頂きまして誠にありがとうございます。 
 
 これより、エントリーフォーム内容を確認させて頂き、選考を進めさせていただきます。 
 
@@ -76,8 +92,8 @@
 万一ご応募から3日以上当方より連絡がない場合は、
 大変お手数ですが、下記までご連絡をお願いいたします。
 
-株式会社xxx
-〒xxx-xxx xxx
+xxx
+〒xxx
 TEL xxx
 
 よろしくお願い致します。
@@ -85,21 +101,16 @@ TEL xxx
 
 ===【ご応募内容】====================
 [お申し込みの求人]：{応募する仕事}
-[案件URL]：https://example.com/case/{url}
-[お名前]：{お名前} 様
+[URL]xxxxx/{url}/
+[氏名]：{氏名} 様
 [ふりがな]：{ふりがな} 様
 [年齢]：{年齢} 歳
 [性別]：{性別}
 [住所]：〒{郵便番号} {都道府県}{市区町村}{エリア}
-[お電話番号]：{お電話番号}
-[メールアドレス]：{メールアドレス}
-[最終学歴]：{最終学歴}
-[志望動機/自己PR]：
-{志望動機/自己PR}
-[職務経歴]：
-{職務経歴}
-[ご質問・お問い合わせ内容]：
-{ご質問・お問い合わせ内容}
+[電話番号]：{電話番号}
+[メール]：{メール}
+[備考]：
+{備考}
 
 =====================================
 
@@ -107,9 +118,81 @@ TEL xxx
 
 
 
+<div class="wrap_form">
+	[inc_php file='entry_contents']
+	
+	<p class="confirm_attention">以下の内容でよろしければ、送信ボタンを押してください。</p>
+	
+	<table class="table_entry">
+		<tr>
+			<th>貴社名</th>
+			<td>[mwform_text name="貴社名" id="name" placeholder="例）株式会社山田"]</td>
+		</tr>
+		<tr>
+			<th>氏名<span class="require">※必須</span></th>
+			<td>[mwform_text name="氏名" id="furigana" placeholder="例）山田　太郎"] </td>
+		</tr>
+		<tr>
+			<th>ふりがな<span class="require">※必須</span></th>
+			<td>[mwform_text name="ふりがな" id="furigana" placeholder="例）やまだ　たろう"] </td>
+		</tr>
+		<tr>
+			<th>電話番号<span class="require">※必須</span></th>
+			<td>[mwform_text name="電話番号" id="tel" placeholder="例）09012345678"] </td>
+		</tr>
+		<tr>
+			<th>メール<span class="require">※必須</span></th>
+			<td>[mwform_text name="メール" id="mail" placeholder="例）aaaaa@bbbbb.com"]</td>
+		</tr>
+		<tr>
+			<th>郵便番号</th>
+			<td><span class="mark_zip">〒</span> [mwform_text name="郵便番号" id="zip" placeholder="例）0123456"]</td>
+		</tr>
+		<tr>
+			<th>現住所<span class="require">※必須</span></th>
+			<td><div id="pref_w">[mwform_text name="都道府県" id="pref" placeholder="都道府県"]</div><div id="city_w">[mwform_text name="市区町村" id="city" placeholder="市区町村"]</div><div id="area_w">[mwform_text name="エリア" id="area" placeholder="番地・建物名"]</div></td>
+		</tr>
+		<tr>
+			<th>内容<span class="require">※必須</span></th>
+			<td>[mwform_textarea name="内容" id="message" placeholder="ご質問・お問い合わせ内容をご記入ください。"]</td>
+		</tr>
+	</table>
 
+	<div class="form_privacy-policy">
+		<h3 class="ttl">個人情報保護方針</h3>			
+				
+		<div class="inner_box">				
+			<h2 class="ttl">個人情報の取り扱いについて</h2>
+			<p>テキストテキストテキストテキスト</p>
+	
+			<h2 class="ttl">テキスト</h2>
+			<p><strong>テキストテキストテキスト</strong><br>
+				テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト。<br>
+				<strong>テキストテキスト</strong><br>
+				テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+				
+		</div>
+		<!-- /.inner_box -->
+				
+		<div class="agree_text">
+			上記をお読みいただき、同意していただける場合は「同意する」にチェックを入れてください。<span class="require">※必須</span><br>
+			[mwform_checkbox name="同意" children="同意する" separator=","]	
+						
+		</div>
+		<!-- /.agree_text -->
+		
+	</div>
+	<!-- /.form_privacy-policy -->
 
-{お名前} 様
+	
+	[mwform_submitButton name="send" class="btn_send_narrow" confirm_value="確認する" submit_value="送信する"]
+	
+	[mwform_bback class="btn_back_narrow" value="back"]戻る[/mwform_bback]
+	
+</div>
+<!-- /.wrap_form -->
+
+{氏名} 様
 
 この度は、お問い合わせいただきまして誠にありがとうございます。 
 
@@ -119,21 +202,22 @@ TEL xxx
 万一3日以上当方より連絡がない場合は、
 大変お手数ですが、下記までご連絡をお願いいたします。
 
-株式会社xxx
-〒xxx-xxx xxx
+xxx
+〒xxx
 TEL xxx
 
 よろしくお願い致します。
 
 
 ===【お問い合わせ内容】====================
-[お名前]：{お名前} 様
+[貴社名]：{貴社名}
+[氏名]：{氏名} 様
 [ふりがな]：{ふりがな} 様
-[お電話番号]：{お電話番号}
-[メールアドレス]：{メールアドレス}
-[ご希望の連絡方法]：{連絡方法}
-[ご質問・お問い合わせ内容]：
-{ご質問・お問い合わせ内容}
+[電話番号]：{電話番号}
+[メール]：{メール}
+[現住所]：〒{郵便番号} {都道府県}{市区町村}{エリア}
+[内容]：
+{内容}
 
 ===========================================
 
