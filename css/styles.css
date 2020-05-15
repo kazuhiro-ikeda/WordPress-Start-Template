@@ -678,15 +678,7 @@ header.device #global_s { display: none; }
 
 #case #historyback a:hover { opacity: .5; }
 
-.ttl_form { text-align: center; margin: 90px 0 60px; }
-
-@media (max-width: 640px) { .ttl_form { margin: 10vw 0 5vw; } }
-
-.ttl_form img { width: 980px; height: 52px; }
-
-@media (max-width: 640px) { .ttl_form img { width: 100%; height: auto; } }
-
-/*	entry
+/*	form
 ---------------------------------*/
 .steps_form { width: 700px; margin: 90px auto 60px; }
 
