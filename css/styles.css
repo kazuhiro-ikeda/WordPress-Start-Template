@@ -710,15 +710,19 @@ header.device #global_s { display: none; }
 
 @media (max-width: 640px) { .table_entry { margin: 0 0 3vw; font-size: 3.4vw !important; } }
 
+@media (max-width: 640px) { .table_entry tr.job td { padding: 0 0 2vw; } }
+
 .table_entry th { box-sizing: border-box; text-align: left; vertical-align: top; font-weight: bold; white-space: nowrap; padding: 0 10px 20px 0; }
+
+@media (max-width: 640px) { .table_entry th { padding: 0 1em 1vw 0; } }
 
 .table_entry td { padding: 0 0 20px; }
 
-.table_entry .mark_zip { font-size: 16px; }
+@media (max-width: 640px) { .table_entry td { padding: 0 0 1vw; } }
 
-@media (max-width: 640px) { .table_entry .mark_zip { font-size: 3.4vw; } }
+.table_entry .mark_zip { font-size: 16px; padding: 2px 0 0; }
 
-.table_entry .shigoto { height: 32px; font-size: 16px; }
+@media (max-width: 640px) { .table_entry .mark_zip { font-size: 3.4vw; padding: 0; position: relative; top: -1vw; } }
 
 .table_entry input[type="text"], .table_entry input[type="email"] { width: 100%; height: 32px; font-size: 16px; box-sizing: border-box; padding: 0 5px; }
 
@@ -750,9 +754,15 @@ header.device #global_s { display: none; }
 
 .table_entry #pref_w { display: block; margin-bottom: 10px; }
 
+@media (max-width: 640px) { .table_entry #pref_w { margin: 0 0 1vw; } }
+
 .table_entry #city_w { display: block; margin-bottom: 10px; }
 
+@media (max-width: 640px) { .table_entry #city_w { margin: 0 0 1vw; } }
+
 .table_entry #area_w { display: block; margin-bottom: 10px; }
+
+@media (max-width: 640px) { .table_entry #area_w { margin: 0 0 1vw; } }
 
 @media (max-width: 640px) { .mw_wp_form_confirm .wrap_narrow #table_entry_narrow td .mark_zip { position: relative; top: 0vw; } }
 

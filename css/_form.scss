@@ -99,7 +99,15 @@ $require: #c1272d;
 		font-size: 3.4vw !important;
 	}
 	
-	tr {}
+	tr {
+		&.job {
+			td {
+				@media (max-width: $viewport) {
+					padding: 0 0 2vw;
+				}
+			}
+		}
+	}
 	
 	th {
 		box-sizing: border-box;
@@ -108,23 +116,30 @@ $require: #c1272d;
 		font-weight: bold;
 		white-space: nowrap;
 		padding: 0 10px 20px 0;
+		
+		@media (max-width: $viewport) {
+			padding: 0 1em 1vw 0;
+		}
 	}
 	
 	td {
 		padding: 0 0 20px;
+		
+		@media (max-width: $viewport) {
+			padding: 0 0 1vw;
+		}
 	}
 	
 	.mark_zip {
 		font-size: 16px;
+		padding: 2px 0 0;
 		
 		@media (max-width: $viewport) {
 			font-size: 3.4vw;
+			padding: 0;
+			position: relative;
+			top: -1vw;
 		}
-	}
-	
-	.shigoto {
-		height: 32px;
-		font-size: 16px;
 	}
 	
 	input[type="text"],
@@ -210,16 +225,28 @@ $require: #c1272d;
 	#pref_w {
 		display: block;
 		margin-bottom: 10px;
+		
+		@media (max-width: $viewport) {
+			margin: 0 0 1vw;
+		}
 	}
 	
 	#city_w {
 		display: block;
 		margin-bottom: 10px;
+		
+		@media (max-width: $viewport) {
+			margin: 0 0 1vw;
+		}
 	}
 	
 	#area_w {
 		display: block;
 		margin-bottom: 10px;
+		
+		@media (max-width: $viewport) {
+			margin: 0 0 1vw;
+		}
 	}
 }
 
