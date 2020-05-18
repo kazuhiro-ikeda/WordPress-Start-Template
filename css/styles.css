@@ -694,15 +694,15 @@ header.device #global_s { display: none; }
 
 .wrap_form .require { color: #c1272d; font-weight: bold; padding-left: 0; }
 
-.wrap_form input[type="submit"].btn_send_narrow { display: block; width: 270px; padding: 15px 20px; margin: 0 auto 30px; border: none; text-align: center; color: white; font-size: 16px; background-color: #d91412; cursor: pointer; opacity: 1; transition: opacity 0.7s; background-image: url(../images/form/bg_btn.png); background-size: 6px; background-repeat: no-repeat; background-position: right 12px center; }
+.wrap_form input[type="submit"].btn_send_narrow { display: block; width: 270px; padding: 10px 20px; margin: 0 auto 30px; border: none; text-align: center; color: white; font-size: 16px; background-color: #d91412; cursor: pointer; opacity: 1; transition: opacity 0.7s; background-image: url(../images/form/bg_btn.png); background-size: 6px; background-repeat: no-repeat; background-position: right 12px center; border-radius: 30px; }
 
-@media (max-width: 640px) { .wrap_form input[type="submit"].btn_send_narrow { width: 40vw; padding: 2vw 5vw; margin: 0 auto 3vw; font-size: 3.4vw; } }
+@media (max-width: 640px) { .wrap_form input[type="submit"].btn_send_narrow { width: 40vw; padding: 2vw 5vw; margin: 0 auto 3vw; font-size: 3.4vw; border-radius: 5vw; } }
 
 .wrap_form input[type="submit"].btn_send_narrow:hover { opacity: .3; }
 
-.wrap_form button.btn_back_narrow { display: block; width: 270px; padding: 15px 20px; margin: 0 auto 60px; border: none; text-align: center; color: white; font-size: 16px; background-color: #999; cursor: pointer; opacity: 1; transition: opacity 0.7s; background-image: url(../images/form/bg_btn_back.png); background-size: 6px; background-repeat: no-repeat; background-position: left 12px center; }
+.wrap_form button.btn_back_narrow { display: block; width: 270px; padding: 10px 20px; margin: 0 auto 60px; border: none; text-align: center; color: white; font-size: 16px; background-color: #999; cursor: pointer; opacity: 1; transition: opacity 0.7s; background-image: url(../images/form/bg_btn_back.png); background-size: 6px; background-repeat: no-repeat; background-position: left 12px center; border-radius: 30px; }
 
-@media (max-width: 640px) { .wrap_form button.btn_back_narrow { width: 40vw; padding: 2vw 5vw; margin: 0 auto 3vw; font-size: 3.4vw; } }
+@media (max-width: 640px) { .wrap_form button.btn_back_narrow { width: 40vw; padding: 2vw 5vw; margin: 0 auto 3vw; font-size: 3.4vw; border-radius: 5vw; } }
 
 .wrap_form button.btn_back_narrow:hover { opacity: .3; }
 

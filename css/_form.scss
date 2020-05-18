@@ -31,7 +31,7 @@ $require: #c1272d;
 	input[type="submit"].btn_send_narrow {
 		display: block;
 		width: 270px;
-		padding: 15px 20px;
+		padding: 10px 20px;
 		margin: 0 auto 30px;
 		border: none;
 		text-align: center;
@@ -45,12 +45,14 @@ $require: #c1272d;
 		background-size: 6px;
 		background-repeat: no-repeat;
 		background-position: right 12px center;
+		border-radius: 30px;
 		
 		@media (max-width: $viewport) {
 			width: 40vw;
 			padding: 2vw 5vw;
 			margin: 0 auto 3vw;
 			font-size: 3.4vw;
+			border-radius: 5vw;
 		}
 		
 		&:hover {
@@ -61,7 +63,7 @@ $require: #c1272d;
 	button.btn_back_narrow {
 		display: block;
 		width: 270px;
-		padding: 15px 20px;
+		padding: 10px 20px;
 		margin: 0 auto 60px;
 		border: none;
 		text-align: center;
@@ -75,12 +77,14 @@ $require: #c1272d;
 		background-size: 6px;
 		background-repeat: no-repeat;
 		background-position: left 12px center;
+		border-radius: 30px;
 		
 		@media (max-width: $viewport) {
 			width: 40vw;
 			padding: 2vw 5vw;
 			margin: 0 auto 3vw;
 			font-size: 3.4vw;
+			border-radius: 5vw;
 		}
 		
 		&:hover {
