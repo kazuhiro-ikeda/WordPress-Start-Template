@@ -724,7 +724,7 @@ header.device #global_s { display: none; }
 
 @media (max-width: 640px) { .table_entry .mark_zip { font-size: 3.4vw; padding: 0; position: relative; top: -1vw; } }
 
-.table_entry input[type="text"], .table_entry input[type="email"] { width: 100%; height: 32px; font-size: 16px; box-sizing: border-box; padding: 0 5px; }
+.table_entry input[type="text"], .table_entry input[type="email"] { width: 100%; height: 32px; font-size: 16px; box-sizing: border-box; border: 1px solid #ccc; padding: 0 5px; }
 
 @media screen and (max-width: 640px) { .table_entry input[type="text"], .table_entry input[type="email"] { width: 100% !important; border: 1px solid #ccc; font-size: 3.4vw; height: 9vw; margin-bottom: 3vw; } }
 
