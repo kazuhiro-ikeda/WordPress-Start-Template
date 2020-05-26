@@ -738,7 +738,7 @@ header.device #global_s { display: none; }
 
 @media (max-width: 640px) { .table_entry input[type="text"]::placeholder, .table_entry input[type="email"]::placeholder { font-size: 3vw; } }
 
-.table_entry #zip { box-sizing: border-box; height: 32px; width: 120px; font-size: 16px; padding: 0 5px; }
+.table_entry #zip { box-sizing: border-box; height: 32px; width: 120px; font-size: 16px; border: 1px solid #ccc !important; padding: 0 5px; }
 
 @media screen and (max-width: 640px) { .table_entry #zip { box-sizing: border-box; width: 30vw; height: 9vw; font-size: 3.4vw; padding: 0 5px; border: 1px solid #ccc; margin-bottom: 3vw; } }
 
@@ -844,7 +844,7 @@ input[type="radio"] { position: relative; top: -3px; }
 
 .mwform-radio-field.horizontal-item { margin-right: 0 !important; margin-left: 0 !important; padding-right: 0 !important; padding-left: 0 !important; display: inline; margin-bottom: 10px; /*@media (max-width: $viewport) { margin-right: 0 !important; margin-left: 0 !important; padding-right: 0 !important; padding-left: 0 !important; display: block; margin-bottom: 1vw; }*/ }
 
-select { -webkit-appearance: none; -moz-appearance: none; appearance: none; height: 30px; background-color: white; border: 1px solid silver; border-radius: 0; padding: 0 5px; background-image: url(../images/entry/arrow-select.png); background-repeat: no-repeat; background-position: right center; width: 100px; }
+select { -webkit-appearance: none; -moz-appearance: none; appearance: none; height: 30px; background-color: white; border: 1px solid #ccc; border-radius: 0; padding: 0 5px; background-image: url(../images/entry/arrow-select.png); background-repeat: no-repeat; background-position: right center; width: 100px; }
 
 @media screen and (max-width: 640px) { select { width: 20%; background-image: none; } }
 
