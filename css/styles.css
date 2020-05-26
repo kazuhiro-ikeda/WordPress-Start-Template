@@ -720,6 +720,8 @@ header.device #global_s { display: none; }
 
 @media (max-width: 640px) { .table_entry td { padding: 0 0 1vw; } }
 
+@media (max-width: 640px) { .table_entry td .mwform-radio-field.horizontal-item { display: inline-block; margin: 1.5vw 0 1.5vw; } }
+
 .table_entry .mark_zip { font-size: 16px; padding: 2px 0 0; }
 
 @media (max-width: 640px) { .table_entry .mark_zip { font-size: 3.4vw; padding: 0; position: relative; top: -1vw; } }

@@ -1,4 +1,29 @@
 <?php
+	add_action('wp_dashboard_setup', function() {
+	    $tmp = [
+	            //'wp_welcome_panel',//WordPressへようこそ！
+	            //'dashboard_activity',//アクティビティ
+	            //'dashboard_recent_comments',//最近のコメント
+	            //'dashboard_incoming_links',//被リンク
+	            //'dashboard_plugins',//プラグイン
+	            //'dashboard_quick_press',//クイック投稿
+	            //'dashboard_recent_drafts',//最近の下書き
+	            //'dashboard_primary',//WordPressブログ
+	            //'dashboard_secondary',//WordPressフォーラム
+	            'dashboard_site_health',//サイトヘルスステータス
+	    ];
+	    foreach ($tmp as $v) {
+	        if ( $v == 'wp_welcome_panel' ) {
+	            remove_action('welcome_panel', 'wp_welcome_panel');
+	        } else {
+	            global $wp_meta_boxes;
+	            unset($wp_meta_boxes['dashboard']['normal']['core'][$v]);
+	            unset($wp_meta_boxes['dashboard']['side']['core'][$v]);
+	        }
+	    }
+	});
+	
+	//hide quick edit
 	function hide_inline_edit_link() {
 	?>
 	<style type="text/css">

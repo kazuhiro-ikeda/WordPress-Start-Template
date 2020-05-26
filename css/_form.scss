@@ -132,6 +132,13 @@ $require: #c1272d;
 		@media (max-width: $viewport) {
 			padding: 0 0 1vw;
 		}
+		
+		.mwform-radio-field.horizontal-item {
+			@media (max-width: $viewport) {
+				display: inline-block;
+				margin: 1.5vw 0 1.5vw;
+			}
+		}
 	}
 	
 	.mark_zip {
