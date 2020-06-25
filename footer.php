@@ -20,6 +20,18 @@
 
 <!--jQuery --> 
 <script src="<?php echo get_template_directory_uri(); ?>/js/jquery.common.js"></script>
+<script>
+	//usage with class="mailtoui"
+	window.addEventListener('load', function(){
+		if(/chrom(e|ium)/.test(navigator.userAgent.toLowerCase())){
+			var script = $('<script>').attr({
+			'type': 'text/javascript',
+			'src': 'https://cdn.jsdelivr.net/npm/mailtoui@1.0.3/dist/mailtoui-min.js'
+			});
+			$('body')[0].appendChild(script[0]);
+		}
+	});
+</script>
 <script src="<?php echo get_template_directory_uri(); ?>/js/jquery.matchHeight.js"></script>
 <script>
 	$(function() {
