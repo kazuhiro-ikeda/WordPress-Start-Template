@@ -2,6 +2,7 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
+<meta name="google" content="notranslate">
 
 <?php if (is_mobile()) : //smartphone only ?>
 <?php if(is_page( 'entry' )): ?>

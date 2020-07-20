@@ -844,7 +844,7 @@ input[type="radio"] { position: relative; top: -3px; }
 
 .mwform-radio-field.horizontal-item { margin-right: 0 !important; margin-left: 0 !important; padding-right: 0 !important; padding-left: 0 !important; display: inline; margin-bottom: 10px; /*@media (max-width: $viewport) { margin-right: 0 !important; margin-left: 0 !important; padding-right: 0 !important; padding-left: 0 !important; display: block; margin-bottom: 1vw; }*/ }
 
-select { -webkit-appearance: none; -moz-appearance: none; appearance: none; height: 30px; background-color: white; border: 1px solid #ccc; border-radius: 0; padding: 0 5px; background-image: url(../images/entry/arrow-select.png); background-repeat: no-repeat; background-position: right center; width: 100px; }
+select { -webkit-appearance: none; -moz-appearance: none; appearance: none; height: 30px; background-color: white; border: 1px solid #ccc; border-radius: 0; padding: 0 5px; background-repeat: no-repeat; background-position: right center; width: 100px; }
 
 @media screen and (max-width: 640px) { select { width: 20%; background-image: none; } }
 

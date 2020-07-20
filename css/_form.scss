@@ -497,7 +497,7 @@ select {
     border: 1px solid #ccc;
     border-radius: 0;
     padding: 0 5px;
-    background-image: url(../images/entry/arrow-select.png);
+    //background-image: url(../images/entry/arrow-select.png);
     background-repeat: no-repeat;
     background-position: right center;
     width: 100px;
@@ -543,3 +543,5 @@ select::-ms-expand {
 		color: $insert;
 	}
 }
+
+
