@@ -57,6 +57,20 @@
 	}
 	add_action( 'admin_enqueue_scripts', 'my_admin_style' );*/
 	
+	/* feed にアイキャッチを item の直下に吐き出し
+	function theme_add_feed_eyecatch( $the_list ) {
+		$string = $the_list;
+		$image = wp_get_attachment_image_src( get_post_thumbnail_id() );
+	
+		if ( false !== $image )
+			$string .= '<image>' . esc_url( $image[0] ) . '</image>';
+		else
+			$string .= '<image></image>';
+	
+		return $string;
+	}
+	add_filter( 'the_category_rss', 'theme_add_feed_eyecatch', 10, 1 );*/
+	
 	//スラッグ強制
 	function auto_post_slug( $slug, $post_ID, $post_status, $post_type ) {
 	    if ( preg_match( '/(%[0-9a-f]{2})+/', $slug ) ) {
