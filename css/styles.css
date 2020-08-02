@@ -195,6 +195,8 @@ a.page-numbers { background-color: #799ECB; color: white; display: inline-block;
 /* iOS */
 input[type="submit"] { -webkit-appearance: none; border-radius: 0; }
 
+.logged-in header.normal { top: 32px; }
+
 /*	header
 ---------------------------------*/
 header.normal { width: 100%; position: fixed; top: 0; left: 0; z-index: 30000; background: transparent; transition: background 0.5s; }
