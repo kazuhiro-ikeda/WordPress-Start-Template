@@ -135,10 +135,11 @@ $(function(){
 	
 	//MW WP Form 必須
 	$( '#mw_wp_form_mw-wp-form-識別ナンバー select option[value=""]' ).html( 'お問合せ内容を選択' );
-	$( '#mw_wp_form_mw-wp-form-識別ナンバー select#year option[value=""]' ).html( '西暦' );
-	$( '#mw_wp_form_mw-wp-form-識別ナンバー select#month option[value=""]' ).html( '月' );
-	$( '#mw_wp_form_mw-wp-form-識別ナンバー select#day option[value=""]' ).html( '日' );
-	$( '#mw_wp_form_mw-wp-form-識別ナンバー select#pref option[value=""]' ).html( '都道府県' );
+	
+	$('#day_field').attr({
+	  'readonly': 'readonly',
+	  'onfocus': 'this.blur()'
+	});
 	
 	//br 除去
 	$( '.hoge' ).find( 'br' ).replaceWith( '' );
