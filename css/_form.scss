@@ -381,11 +381,11 @@ $require: #c1272d;
 
 #entry {
 	width: 750px;
-	margin: 0 auto;
+	margin: 90px auto 0;
 	
 	@media screen and (max-width: $viewport) {
 		width: 88vw;
-		margin: 0 auto;
+		margin: 10vw auto 0;
 	}
 	
 	.inner {		

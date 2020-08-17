@@ -808,9 +808,9 @@ header.device #global_s { display: none; }
 
 .form_privacy-policy .inner_box .right_text { text-align: right; }
 
-#entry { width: 750px; margin: 0 auto; }
+#entry { width: 750px; margin: 90px auto 0; }
 
-@media screen and (max-width: 640px) { #entry { width: 88vw; margin: 0 auto; } }
+@media screen and (max-width: 640px) { #entry { width: 88vw; margin: 10vw auto 0; } }
 
 #entry .inner figure { margin-bottom: 20px; }
 
