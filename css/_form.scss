@@ -502,6 +502,10 @@ select {
     background-position: right center;
     width: 100px;
     
+    @media all and (-ms-high-contrast: none) {
+	    background-image: url(../images/entry/arrow-select.png);
+    }
+    
     @media screen and (max-width: $viewport) {
 	    width: 20%;
 	    background-image: none;

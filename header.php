@@ -20,13 +20,11 @@
 
 
 <link rel="stylesheet" type="text/css" href="<?php echo get_stylesheet_uri(); ?>">
-<link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,500,500i,700,700i,900,900i&display=swap" rel="stylesheet">
 <script src="https://use.fontawesome.com/38e4e444a4.js"></script>
 <link rel="alternate" hreflang="ja" href="<?php the_permalink(); ?>">
 <link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/favicon.ico">
 <link rel="apple-touch-icon" href="<?php echo get_template_directory_uri(); ?>/icon.png">
 <meta name="format-detection" content="telephone=no">
-<meta name="google" content="notranslate">
 
 <?php wp_deregister_script( 'jquery' ); wp_enqueue_script( 'jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js', array(), '1.11.0' ); ?>
 

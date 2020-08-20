@@ -848,6 +848,8 @@ input[type="radio"] { position: relative; top: -3px; }
 
 select { -webkit-appearance: none; -moz-appearance: none; appearance: none; height: 30px; background-color: white; border: 1px solid #ccc; border-radius: 0; padding: 0 5px; background-repeat: no-repeat; background-position: right center; width: 100px; }
 
+@media all and (-ms-high-contrast: none) { select { background-image: url(../images/entry/arrow-select.png); } }
+
 @media screen and (max-width: 640px) { select { width: 20%; background-image: none; } }
 
 select#now { width: 140px; }
