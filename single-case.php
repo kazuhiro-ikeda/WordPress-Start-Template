@@ -6,7 +6,7 @@
 	if( !empty($gfj_title) ):
 ?>
 <script type="application/ld+json"> {
-    "@context" : "http://schema.org/",
+    "@context" : "https://schema.org/",
     "@type" : "JobPosting",
     "title" : "<?php the_field( "gfj_title", $post->ID); ?>",
     "description" : "<?php the_field( "gfj_description", $post->ID); ?>",
@@ -40,7 +40,7 @@
 
 <?php else: ?>
 <script type="application/ld+json"> {
-    "@context" : "http://schema.org/",
+    "@context" : "https://schema.org/",
     "@type" : "JobPosting",
     "title" : "<?php the_field( "job", $post->ID); ?>",
     "description" : "<?php the_field( "detail", $post->ID); ?>",
