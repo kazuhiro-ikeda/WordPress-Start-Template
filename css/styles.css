@@ -752,7 +752,7 @@ header.device #global_s { display: none; }
 
 @media (max-width: 640px) { .table_entry textarea { height: 20vw; font-size: 3.4vw !important; } }
 
-.table_entry textarea::placeholder { color: #ccc; }
+.table_entry textarea::placeholder { color: #d2d2d2; }
 
 @media (max-width: 640px) { .table_entry textarea::placeholder { font-size: 3vw; } }
 
