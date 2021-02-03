@@ -37,6 +37,8 @@
 	<?php endif; ?>
 </title>
 
+<meta property="og:title" content="<?php if(is_singular( 'case' )): ?><?php the_field( "title_case", $post->ID); ?><?php elseif(is_post_type_archive( 'case' )): ?>求人案件一覧<?php else: ?><?php echo get_the_title(); ?><?php endif; ?>">
+
 <?php wp_head(); ?>
 
 </head>

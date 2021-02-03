@@ -69,17 +69,13 @@
 				?>
 				<tr>
 					<th>仕事内容</th>
-					<td><?php 
-							        $text = mb_substr(get_field('detail'),0 ,60 ,'utf-8'); 
-							        $str = $text;
-														echo strip_tags( $str, '<br>');
-							        
-							        $number = mb_strlen(get_field('detail'));
-							        
-							        if($number > 60) {
-								        echo '…';
-							        }
-							?></td>
+					<td><?php if (is_mobile()) : //smartphone only ?>
+						<?php $text = mb_substr(get_field('detail'), 0, 32, 'utf-8' ); echo $text.'…'; ?>
+									
+						<?php else : //pc tablet ?>
+						<?php $text = mb_substr(get_field('detail'), 0, 62, 'utf-8' ); echo $text.'…'; ?>
+									
+						<?php  endif ; //if_mobile ?></td>
 				</tr>
 				
 				<?php endif; ?>
@@ -138,10 +134,16 @@
 		</div>
 		<!-- /.inner_box -->
 		
-		<div class="btns_case">
-			<a class="btn_inner n1" href="<?php the_permalink(); ?>">募集の詳細を見る</a>
+		<div class="btns">
+			<span class="text_label">募集詳細と応募はこちらから</span>
 			
-			<a class="btn_inner n2" href="<?php echo esc_url(home_url('/')); ?>?page_id=55&post_id=<?php echo $post->ID; ?>">応募する</a>
+			<div class="inner_btns">
+				<a class="btn_detail_more btn_inner" href="<?php the_permalink(); ?>">募集の詳細を見る</a>
+			
+				<a class="btn_dierct_entry btn_inner" href="<?php echo esc_url(home_url('/')); ?>?page_id=55&post_id=<?php echo $post->ID; ?>">応募する</a>
+			
+			</div>
+			<!-- /.inner_btns -->
 			
 		</div>
 		<!-- /.btns -->
